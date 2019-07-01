@@ -150,15 +150,15 @@ Volvelle最基本的构成是由三个层次，固定的表面层，可旋转的
 ## 5. 应用举例
 利用半径方向和圆周方向两种不同的编码方式混合编码的一个例子（手部CT扫描数据的可视化）：
 
-![1561970398314](assets/1561970398314.png)
+![1561970398314](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-01/1561970398314.png)
 
 利用changing picture option来切换千足虫外表面视图和切片视图的一个例子：
 
-![1561970329405](.\assets\1561970329405.png)
+![1561970329405](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-01/1561970329405.png)
 
 人体头部CT扫面数据利用透明模型来进行可视化的一个例子：
 
-![1561970367667](assets/1561970367667.png)
+![1561970367667](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-01/1561970367667.png)
 
 
 
