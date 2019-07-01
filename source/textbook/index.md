@@ -1,7 +1,7 @@
 ---
-title: 数据可视化的基本原理与方法
+title: "数据可视化的基本原理与方法
 date: 2013-07-31 13:51:28
-layout: post
+layout: post"
 tags: []
 ---
 

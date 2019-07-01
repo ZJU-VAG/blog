@@ -1,5 +1,5 @@
 ---
-title: 关于美国休斯顿大学Guoning Chen博士学术报告的通知
+title: "关于美国休斯顿大学Guoning Chen博士学术报告的通知"
 tags: ["通知", "报告", "学术交流"]
 date: 2012-06-16
 author: admin

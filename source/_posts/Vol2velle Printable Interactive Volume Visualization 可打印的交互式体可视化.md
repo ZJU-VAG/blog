@@ -1,5 +1,5 @@
 ---
-title: Vol2velle Printable Interactive Volume Visualization 可打印的交互式体可视化
+title: "Vol2velle Printable Interactive Volume Visualization 可打印的交互式体可视化"
 tags: ["论文评述", "报告"]
 date: 2016-12-27
 author: 潘嘉铖

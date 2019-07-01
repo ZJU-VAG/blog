@@ -214,7 +214,7 @@ body {
   border-radius: 1px;
 }
 
-.site-nav-toggle button .btn-bar + .btn-bar {
+.site-nav-toggle button .btn-bar+.btn-bar {
   margin-top: 4px;
 }
 
@@ -724,9 +724,9 @@ body {
   font-weight: 300;
 }
 
-.post-content > table,
-.post-content > table tr th,
-.post-content > table tr td {
+.post-content>table,
+.post-content>table tr th,
+.post-content>table tr td {
   border: 1px solid #e7e8e9;
 }
 
@@ -766,6 +766,7 @@ body {
   /* width: 80%; */
   display: table;
   margin: 0 auto;
+  max-width: 80%;
 }
 
 .post-content ul,
@@ -1439,7 +1440,7 @@ pre .javascript .function {
   border-left: 2px solid #4990e2;
 }
 
-.toc-article li.active > a {
+.toc-article li.active>a {
   color: #4990e2;
 }
 
@@ -1447,11 +1448,11 @@ pre .javascript .function {
   border-left: 2px solid #4990e2;
 }
 
-.toc-article li:hover > a {
+.toc-article li:hover>a {
   color: #4990e2;
 }
 
-.toc-article > ol > li {
+.toc-article>ol>li {
   border-left: none !important;
 }
 

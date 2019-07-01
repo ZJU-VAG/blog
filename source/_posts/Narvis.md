@@ -1,0 +1,101 @@
+---
+title: "NarVis: Authoring Narrative Slideshows for Introducing Data Visualization Designs"
+tags: ["论文评述", "报告"]
+date: 2019-06-13
+author: 潘如晟
+mathjax: true
+---
+
+论文：NarVis: Authoring Narrative Slideshows for Introducing Data Visualization Designs
+
+作者：Qianwen Wang, Zhen Li, Siwei Fu, Weiwei Cui, Huamin Qu
+
+发表：IEEE InfoVis 2018
+
+本文是港科跟微软亚洲研究院合作的，除了最后一位作者屈华民老师，前面几位都是他的学生。其中 Cuiweiwei 已经毕业，目前在微软亚研院工作。
+
+这篇文章主要介绍了一个叫 Narvis 的叙事可视化创作工具，通过对复杂可视化设计先解构再逐步还原的方法来制作教学幻灯片，从而为教师提供得力的工具并帮助学生更好的理解。
+
+## 介绍
+
+在可视化教学这一场景中，老师往往需要向没有可视化背景的受众进行介绍，那么制作教程有哪些形式？1.写一份文档，主要通过文字详细说明阐述。完备但不易于理解。2.做一个视频，例如录制一个 demo。更生动和直观，但是费时费力。3.制作 PPT 比视频简单一些，效果类似，而且更好掌控节奏。综合来看，是一个比较折中的选择。但是幻灯片要做的漂亮生动其实也很难，而且费时费力，主要是 Tool 的限制。此外，PPT 要做的容易理解也很难，关键在于如何按照正确的 Sequence。
+
+本文提出的 Narvis 工具，能够自动化的创作幻灯片，来辅助高级可视化设计的介绍，面向教师和学生的需求用户开发。
+
+## 贡献
+
+1. 对创作工具的设计进行分析
+2. 对可视化的设计层层解构，反向分析设计源头
+3. 设计并实现了 Narvis 系统
+
+## 相关工作
+
+### 叙事可视化的结构
+
+一般侧重于研究可视设计的过程，但是很少讨论用于解释可视化设计的叙事结构
+
+### 解构数据可视化
+
+一方面，理清数据可视化设计空间有助于用户更好的理解。另一方面，从理论上认识数据可视化的基本组件可以帮助人们更直观的理解它们。
+
+### 叙事可视化的创作工具
+
+现有工具不适合制作讲解可视编码与组件的教学作品。Narvis 能够方便制作叙事教程幻灯片，通过分解可视化设计并逐步解释其可视化组件来介绍可视化设计。
+
+## 设计需求
+
+1. 支持高效和富有表现力的图形编辑
+
+2. 避免一些无意识的疏漏
+
+3. 有效收集反馈
+
+4. 避免信息过载
+
+5. 提供清晰的叙事逻辑
+
+6. 保持概览的醒目性
+
+## 解构可视化组件
+
+[![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/%E5%9B%BE%E7%89%87-1.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/图片-1.png)
+
+### 组件之间关系
+
+-   channel 之间：提出了两种度量：复杂度和表现力。其中复杂度升序，表现力降序，有助于提高学习效率。
+
+-   primitive 之间：没啥关系
+
+-   unit 之间：独立和非独立两种
+
+### 系统流程介绍
+
+[![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/%E5%9B%BE%E7%89%87-2.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/图片-2.png)
+
+-   组成：Input Analysis+Authoring+Viewing
+
+-   Input Analysis：解析输入的 SVG 文件，生成 SVG 元素的树，聚类得到 visual units。
+
+-   Authoring：organizing units（Units panel） + introduce units（Channels panel+Editing panel）
+
+-   Viewing：可以把幻灯片导出为 HTML 文件或者在线预览。在线预览时可收集用户点击数据等作为反馈。
+
+## 评估
+
+[![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/Snipaste_2019-06-13_21-05-58.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/Snipaste_2019-06-13_21-05-58.png)
+
+## 结论
+
+### Narvis 优势
+
+1. 为清晰的叙事结构提供了一个高效的序列组织工具，并内置了常用操作的模板来简化使用步骤。
+
+2. 提供了避免信息过载和无意识信息遗漏的机制，从而保证了能够高效生成高质量的幻灯片。
+
+### 改进
+
+1. 增加通道面板的灵活性
+
+2. 增加自动模式检测来更好的增强叙事逻辑
+
+3. 针对不同的用户（期刊读者、领域专家）定制

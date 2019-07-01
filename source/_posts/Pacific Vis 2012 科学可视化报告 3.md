@@ -1,0 +1,25 @@
+---
+title: Pacific Vis 2012 科学可视化报告
+tags: ["报告", "学术会议"]
+date: 2012-3-1
+author: admin
+mathjax: true
+---
+
+今天是 Pacific Vis2012 的第三天，主要探讨和报告了本次会议所收录的科学可视化相关工作。会议邀请了来自 UT Austion 大学的教授 Chandrajit Bajaj[[1\]](http://www.cs.utexas.edu/~bajaj/cvc/index.shtml)介绍其过去十年运用可视化和几何的方法解决生物计算问题方面的工作。接下来是论文报告环节。今天的主题论文报告分为三个环节，其中两个 Session 是流场可视化，另一个 Session 是体绘制。来自布朗大学的 Devon Penney 介绍了他们关于使用不同的绘制效果(全局光照、纹理等)对基于 Streamtube 流场可视化方法的用户研究。Mathias Schot 等也介绍了其使用图形的方法解决可视化问题的研究，他们提出用 Occlusion Shading 解决 Phong Shading 无法捕捉细节细节信息的缺陷，如下图所示：
+
+[![OcclusionShading](http://www.cad.zju.edu.cn/home/vagwiki/wordpress/wp-content/uploads/2012/06/OcclusionShading.png)](http://www.cad.zju.edu.cn/home/vagwiki/wordpress/wp-content/uploads/2012/06/OcclusionShading.png)
+
+浙江大学的黄劲博士介绍了一种保持输出连续性的基于 LIC 的曲面流场可视化方法。Maik Schulze 将广泛应用于计算机视觉研究领域内的 APAP(as perpendicular as possible)曲面表示引进三到 3D 静态流场可视化，该曲面是原始标量场（该标量场的梯度场即为所需可视化的 3D Steady Flow Field）等值面表达的一部分，可视化结果如下所示：
+
+[![APAP](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/06/APAP.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/06/APAP.png)
+
+Victor Matvienko 和 Hanqi Guo 都提出使用波干扰的方法增强可视化结果。Victor Matvienko 介绍了其使用波干扰进行流场可视化，该方法可增强可视化结果的对比度。如下图所示：
+
+[![WaveInterferenceFlowVis](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/06/WaveInterferenceFlowVis.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/06/WaveInterferenceFlowVis.png)
+
+袁晓如教授介绍了其模拟广泛应用于生物学、医学领域内的干扰显微镜进行体绘制增强可视化。
+
+[![InterferenceMicroscopyVolumeRendering](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/06/InterferenceMicroscopyVolumeRendering.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/06/InterferenceMicroscopyVolumeRendering.png)
+
+论文报告结束之后便是大家期待已久的 Banquet。期间 Pacific Vis2013 的主办单位悉尼大学向大家发出了盛情的邀请，并粗略介绍了主办地的概况。
