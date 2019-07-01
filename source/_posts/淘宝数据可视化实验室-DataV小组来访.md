@@ -1,0 +1,23 @@
+---
+
+title: 淘宝数据可视化实验室-DataV小组来访
+
+tags: ["新闻","学术交流"]
+
+date: 2012-3-12
+
+author: admin
+
+mathjax: true
+
+---
+
+3月11日，淘宝数据可视化实验室-DataV小组成员来到实验室与本组的老师和同学进行了面对面的交流。
+
+首先，是由本组的陈为教授和彭帝超博士后向远道而来的客人介绍了我们小组近几年在可视化方面的一些工作情况和成果。接着，是淘宝数据可视化实验室负责人向本组成员展示了淘宝在数据可视化方面这几年所做的一些工作，以及接下去的工作目标。
+
+[![Taobao1](http://www.cad.zju.edu.cn/home/vagwiki/wordpress/wp-content/uploads/2012/06/Taobao1.jpg)](http://www.cad.zju.edu.cn/home/vagwiki/wordpress/wp-content/uploads/2012/06/Taobao1.jpg)
+
+
+
+双方通过交流，发现了许多相互之间可以借鉴和学习的东西。大家都觉得进一步加深学校和企业的交流，可以促使可视化技术更好的推广与发展。

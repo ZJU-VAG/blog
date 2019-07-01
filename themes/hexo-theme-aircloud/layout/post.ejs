@@ -6,8 +6,10 @@
     </div>
 
     <div class="post-meta">
-        <span
-            class="attr"><%= __('post.postTime') %>：<span><%- page.date.format(config.date_format) +" "+ page.date.format(config.time_format)%></span></span>
+        <!-- <span
+            class="attr"><%= __('post.postTime') %>：<span><%- page.date.format(config.date_format) +" "+ page.date.format(config.time_format)%></span></span> -->
+        <span class="attr"><%= __('post.postTime') %>：<span><%- page.date.format(config.date_format)%></span></span>
+        <span class="attr"><span><%- page.author%></span></span>
         <% if (page.tags.length){ %>
         <span class="attr">/
             <% page.tags.forEach(function(tag){ %>

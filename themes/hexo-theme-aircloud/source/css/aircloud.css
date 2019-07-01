@@ -214,7 +214,7 @@ body {
   border-radius: 1px;
 }
 
-.site-nav-toggle button .btn-bar+.btn-bar {
+.site-nav-toggle button .btn-bar + .btn-bar {
   margin-top: 4px;
 }
 
@@ -367,8 +367,8 @@ body {
     top: 40px;
     background-color: white;
     width: 100%;
-    border-bottom: 1px solid #CCCCCC;
-    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
   }
 
   .nav .contents ul {
@@ -426,7 +426,7 @@ body {
 }
 
 .post-preview .post-info a h3:hover {
-  color: #4990E2;
+  color: #4990e2;
 }
 
 .post-preview .post-info p {
@@ -502,7 +502,7 @@ body {
     flex-direction: column;
     padding-left: 10px;
     padding-right: 10px;
-    border-bottom: 1px solid #EEEEEE;
+    border-bottom: 1px solid #eeeeee;
   }
 
   .post-preview .post-time {
@@ -640,7 +640,7 @@ body {
 }
 
 .one-tag-list .post-preview a .post-title:hover {
-  color: #4990E2;
+  color: #4990e2;
 }
 
 @media screen and (max-width: 680px) {
@@ -676,7 +676,7 @@ body {
   }
 
   .one-tag-list .post-preview a .post-title:hover {
-    color: #4990E2;
+    color: #4990e2;
   }
 }
 
@@ -724,9 +724,9 @@ body {
   font-weight: 300;
 }
 
-.post-content>table,
-.post-content>table tr th,
-.post-content>table tr td {
+.post-content > table,
+.post-content > table tr th,
+.post-content > table tr td {
   border: 1px solid #e7e8e9;
 }
 
@@ -751,19 +751,21 @@ body {
 
 .post-content a {
   text-decoration: none;
-  color: #4990E2;
+  color: #4990e2;
 }
 
 .post-content p {
   color: #404040;
   font-size: 14px;
   line-height: 30px;
-  text-indent: 2em;
+  /* text-indent: 2em; */
   letter-spacing: 1px;
 }
 
 .post-content p img {
-  width: 80%;
+  /* width: 80%; */
+  display: table;
+  margin: 0 auto;
 }
 
 .post-content ul,
@@ -798,7 +800,6 @@ body {
 .post-content ol li li li {
   list-style: lower-latin;
 }
-
 
 .post-content pre {
   text-indent: 0;
@@ -858,7 +859,7 @@ body {
 }
 
 .post-content li p {
-  display: inline;
+  display: block;
 }
 
 .index-about {
@@ -897,6 +898,7 @@ body {
 }
 
 .index-container .index-middle {
+  margin-left: 30px;
   max-width: 784px;
   flex: 1;
 }
@@ -1058,7 +1060,7 @@ body {
 }
 
 .archives-container .one-tag-list ul li a span:hover {
-  color: #4990E2;
+  color: #4990e2;
 }
 
 @media screen and (max-width: 680px) {
@@ -1296,7 +1298,8 @@ pre .javascript .function {
 }
 
 .footer p {
-  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro",
+    Arial, sans-serif;
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 0;
@@ -1308,14 +1311,16 @@ pre .javascript .function {
 
 .footer p a {
   font-weight: 300;
-  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro",
+    Arial, sans-serif;
   cursor: pointer;
   color: #333333;
 }
 
 .footer p span a {
   font-weight: 300;
-  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro",
+    Arial, sans-serif;
   cursor: pointer;
   color: #979797;
   text-decoration: none;
@@ -1364,7 +1369,8 @@ pre .javascript .function {
 
   .footer p {
     word-break: break-all;
-    font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
+    font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro",
+      Arial, sans-serif;
     font-size: 11px;
     margin-top: 5px;
     margin-bottom: 0;
@@ -1376,7 +1382,8 @@ pre .javascript .function {
   .footer p span a {
     font-size: 11px;
     font-weight: 300;
-    font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
+    font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro",
+      Arial, sans-serif;
     cursor: pointer;
     color: #979797;
     text-decoration: none;
@@ -1429,22 +1436,22 @@ pre .javascript .function {
 }
 
 .toc-article li.active {
-  border-left: 2px solid #4990E2;
+  border-left: 2px solid #4990e2;
 }
 
-.toc-article li.active>a {
-  color: #4990E2;
+.toc-article li.active > a {
+  color: #4990e2;
 }
 
 .toc-article li:hover {
-  border-left: 2px solid #4990E2;
+  border-left: 2px solid #4990e2;
 }
 
-.toc-article li:hover>a {
-  color: #4990E2;
+.toc-article li:hover > a {
+  color: #4990e2;
 }
 
-.toc-article>ol>li {
+.toc-article > ol > li {
   border-left: none !important;
 }
 
