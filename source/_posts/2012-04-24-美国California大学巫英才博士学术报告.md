@@ -1,7 +1,7 @@
 ---
 title: 美国California大学巫英才博士学术报告
 tags: ["报告", "通知"]
-date: 2012-4-24
+date: 2012-04-24
 author: admin
 mathjax: true
 ---

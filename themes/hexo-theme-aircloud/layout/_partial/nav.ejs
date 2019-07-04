@@ -21,6 +21,12 @@
                     <span><%= __('nav.tags') %></span>
                 </a>
             </li>
+            <li <% if(is_current('author')){ %> <%- "class=active" %> <% } %>>
+                <a href="<%= url_for(config.author_dir) %>">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span><%= __('nav.author') %></span>
+                </a>
+            </li>
             <li <% if(is_current('archive')){ %> <%- "class=active" %> <% } %>>
                 <a href="<%= url_for(config.archive_dir) %>">
                     <i class="iconfont icon-guidang2"></i>

@@ -15,7 +15,10 @@ layout: layout
                 </h3>
             </a>
             <p>
-                <span class="tag"><%= post.author %> &nbsp; &nbsp;</span>
+
+                <span><a class="tag" href="<%= config.root %>author/#<%= post.author %>"
+                        title="<%= post.author %>"><%= post.author %> &nbsp; &nbsp;</a></span>
+                <!-- <span class="tag"><%= post.author %> &nbsp; &nbsp;</span> -->
                 <% if (post.tags.length){
                     console.log(post.tags)
                 %>
