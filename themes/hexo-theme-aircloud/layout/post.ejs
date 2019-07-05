@@ -9,7 +9,8 @@
         <!-- <span
             class="attr"><%= __('post.postTime') %>：<span><%- page.date.format(config.date_format) +" "+ page.date.format(config.time_format)%></span></span> -->
         <span class="attr"><%= __('post.postTime') %>：<span><%- page.date.format(config.date_format)%></span></span>
-        <span class="attr"><span><%- page.author%></span></span>
+        <span class="attr"><a class="tag" href="<%= config.root %>author/#<%= page.author %>"
+                title="<%= page.author %>"><%= page.author %></a></span>
         <% if (page.tags.length){ %>
         <span class="attr">/
             <% page.tags.forEach(function(tag){ %>

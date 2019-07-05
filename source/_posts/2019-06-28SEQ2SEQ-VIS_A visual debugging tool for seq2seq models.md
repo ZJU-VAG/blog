@@ -35,7 +35,7 @@ mathjax: true
 
 ### 本文模型
 
-![img](https://uploader.shimo.im/f/PVmHTdHpiYgMWPji.png!thumbnail)
+![img](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/1.png)
 
 seq2seq 模型通过五个阶段，将源序列翻译为目标序列：（S1）Encoder：将源序列编码为潜在向量（S2）Decoder：将其解码为目标序列（S3）Attention：编码器和解码器之间注意力联系（S4）Prediction：在每个时间步骤中，预测单词概率（S5）beam Search：集束搜索。
 
@@ -49,7 +49,7 @@ Seq2seq模型在给定前缀的情况下预测所有下一个单词的概率。�
 
 ![img](http://www.cad.zju.edu.cn/home/vagblog/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif)
 
-![img](https://uploader.shimo.im/f/95fC5hnHsxIz1Tvg.png!thumbnail)
+![img](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/2.png)
 
 ### 黑箱问题
 
@@ -80,11 +80,11 @@ Seq2Seq-Vis——针对 seq2seq 模型的可视化调试工具，使用户可以
 
 ### 界面概览
 
-![img](https://uploader.shimo.im/f/GwhJftK9xXM5n4Ri.png!thumbnail)
+![img](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/3.png)
 
 ### 翻译视图（Translation View）
 
-![img](https://uploader.shimo.im/f/rHCadTcY5UUo265s.png!thumbnail)
+![img](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/4.png)
 
 E：编码器以蓝色显示。
 
@@ -96,7 +96,7 @@ TopK List：每个时间步的前K个预测。每个词的概率采用条形图�
 
 ### 邻域视图（Neighborhood View）
 
-![img](https://uploader.shimo.im/f/WiBzNbYmktEz8mWj.png!original)
+![img](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/5.png)
 
 Seq2seq模型在每个阶段产生高维向量，例如编码器状态，解码器状态或上下文状态， 很难直接解释，但我们可以通过查看产生类似向量的样例来估计它们的含义。
 
@@ -104,7 +104,7 @@ G反映的是预先计算好状态的数据集的最近邻域的状态轨迹（�
 
 ### 交互
 
-![img](https://uploader.shimo.im/f/nDc3sBos1fYI23uK.png!thumbnail)
+![img](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/6.png)
 
 *model-focused模式*：直接修改模型。
 
@@ -114,18 +114,18 @@ G反映的是预先计算好状态的数据集的最近邻域的状态轨迹（�
 
 
 
-![img](https://uploader.shimo.im/f/tz5PkzasdOs7BNJk.png!thumbnail)
+![img](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/7.png)
 
 ## 6. 总结与未来工作
 
 - 总结：
 
-1. 针对机器翻译中最常用的 Seq2Seq 模型，提出Seq2Seq-Vis可视化调试工具，能够深入探索模型的所有阶段。
+	1. 针对机器翻译中最常用的 Seq2Seq 模型，提出Seq2Seq-Vis可视化调试工具，能够深入探索模型的所有阶段。
 
-2. 既能可视化模型的决策过程，又允许开发人员直接修改模型。
+	2. 既能可视化模型的决策过程，又允许开发人员直接修改模型。
 
 - 未来工作：
 
-1. 改进投影算法。
+	1. 改进投影算法。
 
-2. 扩展支持的序列类型，包括音频，图像和视频等。
+	2. 扩展支持的序列类型，包括音频，图像和视频等。
