@@ -1,5 +1,5 @@
 ---
-title:  EdWordle: Consistency-preserving Word Cloud Editing
+title: " EdWordle: Consistency-preserving Word Cloud Editing"
 tags: ["论文评述", "报告"]
 date: 2018-06-08
 author: 陈则衔

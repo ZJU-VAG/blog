@@ -1,15 +1,9 @@
 ---
-
 title: "Manifold: A Model-agnostic Framework for Interpretation and Diagnosis of Machine Learning Models"
-
 tags: ["论文评述", "报告"]
-
 date: 2018-11-13
-
 author: 陆俊华
-
 mathjax: true
-
 ---
 
 

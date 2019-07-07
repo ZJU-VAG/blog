@@ -1,5 +1,5 @@
 ---
-title:  Investigating the Effect of the Multiple Comparisons Problem in Visual Analysis
+title: " Investigating the Effect of the Multiple Comparisons Problem in Visual Analysis"
 tags: ["论文评述", "报告"]
 date: 2018-07-13
 author: 梅鸿辉

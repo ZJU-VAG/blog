@@ -1,5 +1,5 @@
 ---
-title:  HiPiler: Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples
+title: " HiPiler: Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples"
 tags: ["论文评述", "报告"]
 date: 2018-06-22
 author: 王叙萌

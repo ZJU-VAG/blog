@@ -1,5 +1,5 @@
 ---
-title:  Clustering Trajectories by Relevant Parts for Air Traffic Analysis
+title: " Clustering Trajectories by Relevant Parts for Air Traffic Analysis"
 tags: ["论文评述", "报告"]
 date: 2018-06-01
 author: 张天野

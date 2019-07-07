@@ -1,5 +1,5 @@
 ---
-title:  Structure-aware Fisheye Views for Efficient Large Graph Exploration
+title: " Structure-aware Fisheye Views for Efficient Large Graph Exploration"
 tags: ["论文评述", "报告"]
 date: 2018-09-11
 author: 潘嘉铖

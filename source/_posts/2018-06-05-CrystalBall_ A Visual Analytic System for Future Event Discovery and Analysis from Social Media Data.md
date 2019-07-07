@@ -1,5 +1,5 @@
 ---
-title:  CrystalBall: A Visual Analytic System for Future Event Discovery and Analysis from Social Media Data
+title: " CrystalBall: A Visual Analytic System for Future Event Discovery and Analysis from Social Media Data"
 tags: ["论文评述", "报告"]
 date: 2018-06-05
 author: 胡元哲

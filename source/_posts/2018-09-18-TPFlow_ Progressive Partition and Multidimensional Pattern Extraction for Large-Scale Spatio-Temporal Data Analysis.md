@@ -1,5 +1,6 @@
 ---
-title:  TPFlow: Progressive Partition and Multidimensional Pattern Extraction for Large-Scale Spatio-Temporal Data Analysis
+title: " TPFlow: Progressive Partition and Multidimensional Pattern Extraction for Large-Scale Spatio-Temporal Data Analysis"
+tags: ["论文评述", "报告"]
 date: 2018-09-18
 author: 张天野
 mathjax: true

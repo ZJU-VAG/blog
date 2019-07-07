@@ -1,5 +1,5 @@
 ---
-title: Wavelet-based Visual Analysis of Dynamic Networks
+title: "Wavelet-based Visual Analysis of Dynamic Networks"
 tags: ["论文评述", "报告"]
 date: 2019-01-07
 author: 潘嘉铖

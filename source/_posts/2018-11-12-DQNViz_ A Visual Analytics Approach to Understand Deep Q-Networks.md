@@ -1,5 +1,5 @@
 ---
-title:  DQNViz: A Visual Analytics Approach to Understand Deep Q-Networks
+title: " DQNViz: A Visual Analytics Approach to Understand Deep Q-Networks"
 tags: ["论文评述", "报告"]
 date: 2018-11-12
 author: 张天野

@@ -1,5 +1,5 @@
 ---
-title:  Clustrophile 2: Guided Visual Clustering Analysis
+title: " Clustrophile 2: Guided Visual Clustering Analysis"
 tags: ["论文评述", "报告"]
 date: 2018-09-10
 author: 胡元哲

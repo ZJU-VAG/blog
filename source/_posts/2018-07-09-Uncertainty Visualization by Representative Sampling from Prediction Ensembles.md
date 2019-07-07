@@ -1,5 +1,5 @@
 ---
-title:  Uncertainty Visualization by Representative Sampling from Prediction Ensembles
+title: " Uncertainty Visualization by Representative Sampling from Prediction Ensembles"
 tags: ["论文评述", "报告"]
 date: 2018-07-09
 author: 魏雅婷

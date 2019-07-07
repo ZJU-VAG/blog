@@ -1,5 +1,5 @@
 ---
-title:  GraphScape: A Model for Automated Reasoning about Visualization Similarity and Sequencing
+title: " GraphScape: A Model for Automated Reasoning about Visualization Similarity and Sequencing"
 tags: ["论文评述", "报告"]
 date: 2018-05-18
 author: 王叙萌

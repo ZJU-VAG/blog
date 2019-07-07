@@ -1,5 +1,5 @@
 ---
-title:  Trust, but Verify: Optimistic Visualizations of Approximate Queries for Exploring Big Data
+title: " Trust, but Verify: Optimistic Visualizations of Approximate Queries for Exploring Big Data"
 tags: ["论文评述", "报告"]
 date: 2018-06-01
 author: 张天野

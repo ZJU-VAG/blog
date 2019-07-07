@@ -1,5 +1,5 @@
 ---
-title: Exploring Evolution of Dynamic Networks via Diachronic Node Embeddings
+title: "Exploring Evolution of Dynamic Networks via Diachronic Node Embeddings"
 tags: ["论文评述", "报告"]
 date: 2019-04-19
 author: 潘嘉铖
