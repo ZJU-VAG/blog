@@ -1,15 +1,9 @@
 ---
-
 title: "Embedded Merge & Split Visual Adjustment of Data Grouping"
-"
 tags: ["论文评述", "报告"]
-
 date: 2018-12-09
-
 author: 梅鸿辉
-
 mathjax: true
-
 ---
 
 
