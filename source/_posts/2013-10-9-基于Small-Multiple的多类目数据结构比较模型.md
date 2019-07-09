@@ -2,7 +2,7 @@
 title: 基于Small-Multiple的多类目数据结构比较模型
 tags: ["论文评述"]
 date: 2013-10-9
-author: guofangzhou
+author: 郭方舟
 mathjax: true
 ---
 
@@ -12,7 +12,7 @@ mathjax: true
 
 作者：Johannes Kehrer, Harald Piringer, Wolfgang Berger, and M. Eduard Groller
 
-本文提出了一种针对Small-Multiple布局中的多类目数据的结构比较模型，在该模型中，包含三种比较，绝对比较，相对比较和层级间比较。
+本文提出了一种针对 Small-Multiple 布局中的多类目数据的结构比较模型，在该模型中，包含三种比较，绝对比较，相对比较和层级间比较。
 
 绝对比较是指选定一个绝对参考，其他的项与选定项进行比较。
 

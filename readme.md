@@ -199,7 +199,7 @@
 	4. 第四步: 更改默认转义规则
 	
 	    因为 `hexo` 默认的转义规则会将一些字符进行转义，比如 `_` 转为 `<em>`, 所以我们需要对默认的规则进行修改.
-	    首先， 打开<path-to-your-project/node_modules/kramed/lib/rules、inline.js,
+	    首先， 打开<path-to-your-project/node_modules/kramed/lib/rules/inline.js,
 	
 	    然后，把:
 	    ```
