@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        VAICo: 图像比较的可视分析 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        VAICo: 图像比较的可视分析
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2014-04-29 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2014-04-29</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陈海东"
+                title="陈海东">陈海东</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>题目: <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=6634107&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F2945%2F6634084%2F06634107.pdf%3Farnumber%3D6634107" target="_blank" rel="noopener">VAICo: Visual Analysis for Image Comparison</a></p>
+<p>作者: Johanna Schmidt, M. Eduard Groller, and Stefan Bruckner</p>
+<p>发表会议: VAST2013</p>
+<p>比较是数据分析的一个重要任务，可帮助用户快速理解数据中的差异性、异常等。比较可视化(Comparative Visualization) 旨在通过可视化的手段帮助用户分析比较数据。作为可视化领域的一个重要分支，在过去几十年里，学者们提出了一系列方法和技术啊。概括地讲，常用的比较可视化设计原则可以分为三大类（如下图所示）: Juxtaposition; Superposition; Explicit Encoding 。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/04/Cmp.jpg" alt="img"></p>
+<p>本文作者之一 <a href="http://www.cg.tuwien.ac.at/staff/EduardGroeller.html" target="_blank" rel="noopener">M. Eduard Groller</a>，近年来一直致力于比较式可视化的研究，感兴趣的读者可查看其在 PacificVis 2014 会议上的 Keynote [<a href="http://www.visual.k.u-tokyo.ac.jp/pvis2014/doc/keynote2.pdf" target="_blank" rel="noopener">slides</a>] 。</p>
+<p>本文主要致力于图像比较的可视分析。下图是本文方法的一个基本处理流程：给定一组待比较图像，本文的方法首先在每个像素位置处采用 MSE（Mean Squared Error） 度量不同图像在该位置上的差异性；然后，采用区域增长算法 （Region Growing） 将整个差异性图像进行分割，为了避免分割差异较小区域，作者在分割前采用了阈值阶段处理；最后，在每个差异存在区域，采用聚类方法对来自不同输入图像在该区域内的结果进行聚类分析。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/04/pipeline1.png" alt="img"></p>
+<p>在交互式可视比较分析过程中，作者采用所有图像的均值数据作为分析的上下文，用颜色的深浅表示差异区域内差异性的大小，并采用一种列表结果表示每个类所包含图像的多少，用户可自由展开任何节点进行探索分析。如下图所示: </p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/04/MainComp.jpg" alt="img"></p>
+<p>下图是本文方法应用于 Puzzel 数据集的结果。该数据集包含 10 张图片， side-by-side 的比较很难发现其中的差异，如下图所示：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/04/rst1.png" alt="img"></p>
+<p>采用本文的方法之后，用户可清晰的观察其中的差异性，并分析是哪些图像导致的查一下，如下图所示:</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/04/rst2.png" alt="img"></p>
+<p>此外， 本文还进行了一个简单的方法评估实验，证明了该方法的有效性，但该方法也存在一定的缺陷，如对图像缩放、移动等比较敏感，无法捕获非颜色特征带来的差异。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

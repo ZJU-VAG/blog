@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Visplause: 一个基于合理性检查的时序数据质量评估系统 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、简介："><span class="toc-text">一、简介：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、数据概览："><span class="toc-text">二、数据概览：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、案例分析"><span class="toc-text">四、案例分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、总结"><span class="toc-text">六、总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Visplause: 一个基于合理性检查的时序数据质量评估系统
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-05-05 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-05-05</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#张天野"
+                title="张天野">张天野</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="一、简介："><a href="#一、简介：" class="headerlink" title="一、简介："></a><strong>一、简介：</strong></h2><p>本文提出的方法普遍适用于各种形式的时序数据。由于本文是在研究能源数据时受到的启发，因此文章以能源数据为例进行介绍。能源数据多取自各个能源站中的传感器，如光伏电厂、风车、水电厂等。在对获取到的能源数据进行下一步的预测或统计任务前，均需要对数据进行质量评估，避免利用大误差数据进行工作。常见的能源数据质量检测方法是数据合理性检查（plausibility check），但是目前如何利用可视化的方法将合理性检查的结果进行统一管理、分析仍然是一个问题。</p>
+<p>针对现在的数据量大、数据维度高、合理性检查多样性、实际检查的时间区间局限性等挑战，本文利用了基于数据属性和合理性检查结果的元数据，根据结构化的元数据将数据从维度上分为若干个子集，从而构建了一个层次结构，实现了可扩展的数据的集合。</p>
+<h2 id="二、数据概览："><a href="#二、数据概览：" class="headerlink" title="二、数据概览："></a><strong>二、数据概览：</strong><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/data.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/data.png" alt="img"></a></h2><p>文章使用的数据包括95个光伏电站的传感器数据和若干个气象站的传感器数据，共计160余条时间序列，9000余条数据记录。每个时间序列都会进行若干次合理性检查（plausibility check），每次合理性检查会指定一个检查规则，例如上图右下角第一列数据，指定的规则为是否大于0，检查结果由一个二进制序列表示，符合规则的记录用1表示，反之用0表示。本文使用的检查规则共529条，可以概括为如下：</p>
+<ol>
+<li><p>是否数据缺失</p>
+</li>
+<li><p>是否数据异常：白天为0， 晚上不为0，数据点离群，数据产生非0的重复等等。</p>
+</li>
+<li><p>是否违反了约束条件：违反边界条件，时间节点异常，时间戳重复等等。</p>
+</li>
+</ol>
+<p>对于每个检查出来的具有质量问题的记录都会赋予其一个严重程度指标，包括：严重、警告、不严重三种。上述所有的数据缺失都标记为严重，数据异常和违反约束将视数据的偏离程度而定，偏离大的标记为严重，微小的偏离标记为不严重。</p>
+<p>于是传感器读取的元数据中又可以加上质量问题的类别、子类、严重程度等若干信息（见上图右上角），文章将通过结构化的元数据中记录的数据属性对所有有质量问题的时序数据进行层次划分。</p>
+<p><strong>三、系统介绍</strong></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/system.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/system.png" alt="img"></a></p>
+<p>系统采用的是增量式设计，初始状态时的系统仅包含上图的a、c部分，且没有构建好的层次结构，整个系统为一条线。之后，用户根据需要构建出文章中的层次结构，逐步加入需要的视图，例如时间分布情况、问题严重程度、时序曲线、原始数据等视图，最终共同构成了上述完整的系统。</p>
+<p>图中a部分为用户自己构造的层次结构，可根据问题类别、时序数据、传感器种类等分类方法区分不同层次；b部分为一个简单的检查规则和符合要求的时序数据统计；c部分为经过变形的scale-stack bar chart用于统计各个类别的数据质量问题在相应的时序序列中的出现占比；d部分为每一行代表的问题类别出现的频率在时间上分布；e为严重程度统计；h为原始时序数据；i为原始数据。</p>
+<p>其中scale-stack bar chart是为了解决直方图中不同类别的数据数量相差过多的问题。它将区间线性的分为四段，每段均从0开始，表示一个数量级上的数据分布情况。</p>
+<h2 id="四、案例分析"><a href="#四、案例分析" class="headerlink" title="四、案例分析"></a><strong>四、案例分析</strong></h2><p>文章通过三个任务，分别进行了三个案例分析，这里对案例不再进行阐述，三个任务包括：</p>
+<ol>
+<li><p>常规数据质量评估</p>
+</li>
+<li><p>数据质量问题原因分析</p>
+</li>
+<li><p>数据的选择与导出。</p>
+</li>
+</ol>
+<p><strong>五、设计决策</strong></p>
+<p>文章采用整整两页的篇幅，对设计中的十个决策问题阐述了做出此决策的理由，被进行论证的十个决策如下：</p>
+<ol>
+<li><p>表格布局</p>
+</li>
+<li><p>合理性检查的层次结构构造</p>
+</li>
+<li><p>层次结构的缩进布局</p>
+</li>
+<li><p>比例堆叠柱状图</p>
+</li>
+<li><p>统一的颜色映射</p>
+</li>
+<li><p>多类问题的专用色方案</p>
+</li>
+<li><p>特征分布的不同分割</p>
+</li>
+<li><p>用区域展示特征分布</p>
+</li>
+<li><p>关联视图展示相似性</p>
+</li>
+<li><p>高度集中的初始仪表盘设计</p>
+</li>
+</ol>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a><strong>六、总结</strong></h2><p>文章提出的方法具有两个特色：充分利用了元数据进行层次结构的构造以及对合理性检查进行的层次分类。这个方法的理念不局限于能源数据，能适用于几乎全部时序数据的质量评估或是异常检测。文章的各个设计决策都经过反复仔细推敲，并且提出了一种新的系统设计理念：从无到有。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

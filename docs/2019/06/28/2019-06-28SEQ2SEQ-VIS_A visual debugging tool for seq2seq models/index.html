@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        SEQ2SEQ-VIS: A Visual Debugging Tool forSequence-to-Sequence Models - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-背景"><span class="toc-text">2. 背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sequence-to-Sequence"><span class="toc-text">Sequence to Sequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Attention-based-Model"><span class="toc-text">Attention-based Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本文模型"><span class="toc-text">本文模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-动机"><span class="toc-text">3. 动机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#黑箱问题"><span class="toc-text">黑箱问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-本文工作"><span class="toc-text">4. 本文工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务"><span class="toc-text">任务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-可视化设计"><span class="toc-text">5.可视化设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#界面概览"><span class="toc-text">界面概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#翻译视图（Translation-View）"><span class="toc-text">翻译视图（Translation View）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#邻域视图（Neighborhood-View）"><span class="toc-text">邻域视图（Neighborhood View）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交互"><span class="toc-text">交互</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-总结与未来工作"><span class="toc-text">6. 总结与未来工作</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        SEQ2SEQ-VIS: A Visual Debugging Tool forSequence-to-Sequence Models
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-06-28 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-06-28</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#赵喆"
+                title="赵喆">赵喆</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：SEQ2SEQ-VIS: A Visual Debugging Tool forSequence-to-Sequence Models</p>
+<p>作者：Hendrik Strobelt; Sebastian Gehrmann; Michael Bhrisch; Adam Perer; Hanspeter Pfister; Alexander M. Rush</p>
+<p>发表：IEEE VAST 2018</p>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>本文介绍了一种针对 seq2seq 模型的可视化调试工具 Seq2Seq-Vis，从而更高效地进行分析和调试模型。</p>
+<h2 id="2-背景"><a href="#2-背景" class="headerlink" title="2. 背景"></a>2. 背景</h2><h3 id="Sequence-to-Sequence"><a href="#Sequence-to-Sequence" class="headerlink" title="Sequence to Sequence"></a><em>Sequence to Sequence</em></h3><p><strong>RNN最重要的一个变种，也叫Encoder-Decoder模型</strong></p>
+<p>基本思想就是利用两个RNN，一个RNN作为encoder，另一个RNN作为decoder，encoder负责将输入序列压缩成指定长度的向量，这个向量就可以看成是这个序列的语义。decoder则负责根据语义向量生成指定的序列。</p>
+<p>这个模型不限制输入和输出的序列长度，应用非常广泛。主要包括：机器翻译，自然语言生成、图像描述以及文本摘要等。</p>
+<h3 id="Attention-based-Model"><a href="#Attention-based-Model" class="headerlink" title="Attention-based Model"></a><em>Attention-based Model</em></h3><p><strong>指的是神经网络模型增加Attention机制</strong></p>
+<p>具体来说，当人们注意到某个目标或某个场景时，该目标内部以及该场景内每一处空间位置上的注意力分布是不一样的。举例：翻译“Tom chase Jerry”中的Jerry时，“Tom”，“chase”和“Jerry”分别拥有不同的attention权重，即这三个词对翻译后的“杰瑞”有不同的影响力。</p>
+<h3 id="本文模型"><a href="#本文模型" class="headerlink" title="本文模型"></a>本文模型</h3><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/1.png" alt="img"></p>
+<p>seq2seq 模型通过五个阶段，将源序列翻译为目标序列：（S1）Encoder：将源序列编码为潜在向量（S2）Decoder：将其解码为目标序列（S3）Attention：编码器和解码器之间注意力联系（S4）Prediction：在每个时间步骤中，预测单词概率（S5）beam Search：集束搜索。</p>
+<p>重点讲一下beam Search：</p>
+<p>Seq2seq模型在给定前缀的情况下预测所有下一个单词的概率。虽然人们可以在每个时间步骤中简单地采用最高概率词，但是这种选择可能导致错误的路径。设置Beam Size为k，永远选择所有序列中概率最大的k个。一旦所有K个光束通过生成停止标记而终止，则最终预测是具有最高分数的翻译。</p>
+<h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3. 动机"></a>3. 动机</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif" alt="img"></p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/2.png" alt="img"></p>
+<h3 id="黑箱问题"><a href="#黑箱问题" class="headerlink" title="黑箱问题"></a>黑箱问题</h3><ol>
+<li>神经网络模型的复杂结构导致不可解释性和不确定性。</li>
+<li>决策过程的不透明导致无法追踪错误源头。</li>
+</ol>
+<h2 id="4-本文工作"><a href="#4-本文工作" class="headerlink" title="4. 本文工作"></a>4. 本文工作</h2><p>Seq2Seq-Vis——针对 seq2seq 模型的可视化调试工具，使用户可以可视化模型执行过程中的注意力、单词预测、搜索树、状态轨迹和近邻词列表等，从而更高效地进行分析和调试。</p>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ol>
+<li><p>检查模型决策：允许用户理解、描述并具体化模型的错误。</p>
+</li>
+<li><p>连接样本和决策：通过关联内部状态与相关的训练样本来描述模型决策。</p>
+</li>
+<li><p>测试可选决策：可以对模型内部进行操作。</p>
+</li>
+</ol>
+<h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><ol>
+<li><p>创建模型所有五个阶段的常见可视编码。</p>
+</li>
+<li><p>通过查询大型训练样例数据库，实现最近邻搜索。</p>
+</li>
+<li><p>为模型的不同阶段生成合理的替代决策。</p>
+</li>
+</ol>
+<h2 id="5-可视化设计"><a href="#5-可视化设计" class="headerlink" title="5.可视化设计"></a>5.可视化设计</h2><h3 id="界面概览"><a href="#界面概览" class="headerlink" title="界面概览"></a>界面概览</h3><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/3.png" alt="img"></p>
+<h3 id="翻译视图（Translation-View）"><a href="#翻译视图（Translation-View）" class="headerlink" title="翻译视图（Translation View）"></a>翻译视图（Translation View）</h3><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/4.png" alt="img"></p>
+<p>E：编码器以蓝色显示。</p>
+<p>D：解码器以黄色显示。</p>
+<p>Attention Vis：注意力通过加权的二分连接显示。为了减少视觉混乱，对注意力图进行了修剪。</p>
+<p>TopK List：每个时间步的前K个预测。每个词的概率采用条形图编码，黄色高亮显示它最终选择结果。</p>
+<h3 id="邻域视图（Neighborhood-View）"><a href="#邻域视图（Neighborhood-View）" class="headerlink" title="邻域视图（Neighborhood View）"></a>邻域视图（Neighborhood View）</h3><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/5.png" alt="img"></p>
+<p>Seq2seq模型在每个阶段产生高维向量，例如编码器状态，解码器状态或上下文状态， 很难直接解释，但我们可以通过查看产生类似向量的样例来估计它们的含义。</p>
+<p>G反映的是预先计算好状态的数据集的最近邻域的状态轨迹（采用t-SNE或MDS投影）。为了便于理解较长轨迹，F视图中每一个小窗口都是G视图中的切分，重点关注每一个词。H反映的是最近邻域列表。</p>
+<h3 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h3><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/6.png" alt="img"></p>
+<p><em>model-focused模式</em>：直接修改模型。</p>
+<p>切换成更改attention权重模式。b.选择target中待修改权重的词。c.重复点击encoder中的词，为其赋予更大的权重。d.最后确认修改。e.模型被更改，会按照新给定的权重重新计算。</p>
+<p><em>language-focused</em>模式：1.更改source和target，触发比较模式。2.从TopK List中手动选择最佳单词。触发前缀解码，在特定路径P上强制进行集束搜索。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-04/7.png" alt="img"></p>
+<h2 id="6-总结与未来工作"><a href="#6-总结与未来工作" class="headerlink" title="6. 总结与未来工作"></a>6. 总结与未来工作</h2><ul>
+<li><p>总结：</p>
+<ol>
+<li><p>针对机器翻译中最常用的 Seq2Seq 模型，提出Seq2Seq-Vis可视化调试工具，能够深入探索模型的所有阶段。</p>
+</li>
+<li><p>既能可视化模型的决策过程，又允许开发人员直接修改模型。</p>
+</li>
+</ol>
+</li>
+<li><p>未来工作：</p>
+<ol>
+<li><p>改进投影算法。</p>
+</li>
+<li><p>扩展支持的序列类型，包括音频，图像和视频等。</p>
+</li>
+</ol>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

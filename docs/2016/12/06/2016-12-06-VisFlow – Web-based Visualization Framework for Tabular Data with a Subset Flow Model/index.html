@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        VisFlow – Web-based Visualization Framework for Tabular Data with a Subset Flow Model - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-动机"><span class="toc-text">2 动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-贡献"><span class="toc-text">3 贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-相关工作"><span class="toc-text">4 相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-VisFlow-框架"><span class="toc-text">5 VisFlow 框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-数据"><span class="toc-text">5.1 数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-流程图"><span class="toc-text">5.2 流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-用户界面"><span class="toc-text">5.3 用户界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-案例分析"><span class="toc-text">6 案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-案例-1：基因调控网络分析"><span class="toc-text">6.1 案例 1：基因调控网络分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-案例-2-棒球投球分析"><span class="toc-text">6.2 案例 2:棒球投球分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-总结"><span class="toc-text">7 总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        VisFlow – Web-based Visualization Framework for Tabular Data with a Subset Flow Model
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-12-06 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-12-06</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#刘良军"
+                title="刘良军">刘良军</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文: VisFlow – Web-based Visualization Framework for Tabular Data with a Subset Flow Model</p>
+<p>作者: Bowen Yu and Cláudio T. Silva Fellow</p>
+<p>发表期刊: TVCG 2016</p>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h2><p>数据流系统允许用户通过直接编辑流程图来对数据进行处理、过滤和展示。用户自定义的数据流有益于进行可视分析，包括按需要呈现多个图以及执行不同类型的交互性查询。本文提出了一个用于分析表格数据的 WEB 可视化框架 VisFlow，在这个框架中使用了一种叫 subset flow model 的的数据流模型。VisFlow 着眼于数据流的交互查询，克服了过去计算性数据流系统的交互问题。VisFlow 实现了数据的可视化，同时支持在数据流中进行交互选择，brushing 和 linking。同时本文实现了以 VisFlow 框架为基础的原型系统，并且通过案例分析来验证了 VisFlow 系统的有效性。</p>
+<h2 id="2-动机"><a href="#2-动机" class="headerlink" title="2 动机"></a>2 动机</h2><p>目前存在许多基于数据流的系统，但是这些系统对于数据的可视分析来说都存在一些问题：</p>
+<ol>
+<li><p>许多数据流系统是以进行数据的计算与处理为目的进行设计的，在这些系统中，其数据流程图其实是程序的视觉抽象，比如它的输入与输出对应的是调用的程序方法的参数，因此使用这些系统需要用户具有一定的编程背景；</p>
+</li>
+<li><p>对数据进行使用了数据流的分析平台通常并不是专门设计来进行可视化的，这些系统所得到的可视结果大部分都是数据的统计信息的可视展示，并不支持交互的数据探索。然而，能通过交互进行数据选择和过滤是可视分析的一个基本要求。</p>
+</li>
+<li><p>那些针对可视化进行设计的数据流系统主要的目的也只是产生渲染的可视流程，在这些系统中，交互有限，通常仅仅只能进行浏览。</p>
+</li>
+</ol>
+<p>因此为了支持用户在可视分析系统中动态的查询以及自定义数据的分析过程，本文提出了 VisFlow 框架，支持用户以可视的方式直接自定义数据分析流程从而帮助用户的分析。</p>
+<h2 id="3-贡献"><a href="#3-贡献" class="headerlink" title="3 贡献"></a>3 贡献</h2><ol>
+<li><p>提出可以使用 subset flow model 来处理以前的数据流系统中存在的交互性和复杂性问题，并以此提出了一个 WEB 可视化框架 VisFlow。</p>
+</li>
+<li><p>基于 VisFlow 框架实现了一个原型系统，这个系统可以在浏览器上使用。</p>
+</li>
+<li><p>通过专业领域数据分析的案例分析验证了该框架的有效性以及实用性。</p>
+</li>
+</ol>
+<h2 id="4-相关工作"><a href="#4-相关工作" class="headerlink" title="4 相关工作"></a>4 相关工作</h2><p>Domino 可视方法</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/001.png" alt></p>
+<p>IBM SPSS Modeler 数据分析系统</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/002.jpg" alt></p>
+<p>Voreen 一个用于体绘制的快速原型环境</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/003.gif" alt></p>
+<p>ExPlates</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/004.png" alt></p>
+<h2 id="5-VisFlow-框架"><a href="#5-VisFlow-框架" class="headerlink" title="5 VisFlow 框架"></a>5 VisFlow 框架</h2><h3 id="5-1-数据"><a href="#5-1-数据" class="headerlink" title="5.1 数据"></a>5.1 数据</h3><p>VisFlow 针对的是表格类型的数据。表格类型的数据可以分为两类：a)不同的数据项之间相互独立;b)不同的数据项之间存在关联</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/005.png" alt></p>
+<p>Visflow 支持异构数据，可以对异构数据进行组合和可视化。比如，一个图通常用两个表格表示，节点表以及边表。VisFlow 支持将两个数据传入渲染生成图的可视化结果。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/006.png" alt></p>
+<h3 id="5-2-流程图"><a href="#5-2-流程图" class="headerlink" title="5.2 流程图"></a>5.2 流程图</h3><p>VisFlow 中的流程图是由节点，端口，连接边三部分组成的一个有向无环图。</p>
+<ol>
+<li><p>节点包含六种类型：Data sources、Visualizations、Value generators、Filters、Property binders、Set operations。</p>
+</li>
+<li><p>每个节点都有输入输出端口，左边的输入端口，右边的为输出端口。包含一个点的端口表示该端口只能连接一条边，包含三个点的端口表示该端口可以连接多条边。Visualizations 还会有一个选择输出端口。</p>
+</li>
+<li><p>连接边上传输的数据一般有两类，第一类是子集数据，第二类是常量数据。</p>
+</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/007.png" alt></p>
+<h3 id="5-3-用户界面"><a href="#5-3-用户界面" class="headerlink" title="5.3 用户界面"></a>5.3 用户界面</h3><p>用户界面分为三个部分：左边的工具栏，中间的 SVG 画布，右边的节点设置栏。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/008.png" alt></p>
+<h3 id="6-案例分析"><a href="#6-案例分析" class="headerlink" title="6 案例分析"></a>6 案例分析</h3><h4 id="6-1-案例-1：基因调控网络分析"><a href="#6-1-案例-1：基因调控网络分析" class="headerlink" title="6.1 案例 1：基因调控网络分析"></a>6.1 案例 1：基因调控网络分析</h4><p>这个 case study 表明 VisFlow 能够辅助分析专业领域数据，并且不需要进行编程。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/009.png" alt></p>
+<h3 id="6-2-案例-2-棒球投球分析"><a href="#6-2-案例-2-棒球投球分析" class="headerlink" title="6.2 案例 2:棒球投球分析"></a>6.2 案例 2:棒球投球分析</h3><p>这个 case study 表明 VisFlow 可以直接交互分析同棒球数据一样复杂的特定领域数据，而且使用方便有效。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/12/011.png" alt></p>
+<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7 总结"></a>7 总结</h2><p>本文使用 subset flow model 平衡了数据处理、可视化交互性和易用性三者之间的关系，但也因此使得系统不支持对数据进行循环分析，也不支持迭代过滤。本文针对系统的易用性做了许多设计：</p>
+<ol>
+<li><p>流程图中使用的是相对通用的图表;</p>
+</li>
+<li><p>流程图中任意两个结点之间最多一条边;</p>
+</li>
+<li><p>可视结点都有一个选择输出端口，减少了对过滤的需求;</p>
+</li>
+<li><p>系统使用简单，不需要大量的训练，学习成本低;</p>
+</li>
+<li><p>没有大量的输入/输出值。</p>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

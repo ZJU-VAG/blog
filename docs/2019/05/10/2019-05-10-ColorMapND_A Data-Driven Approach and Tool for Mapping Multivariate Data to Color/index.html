@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        ColorMapND: A Data-Driven Approach and Tool for Mapping Multivariate Data to Color - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统界面"><span class="toc-text">系统界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础框架"><span class="toc-text">基础框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本任务"><span class="toc-text">基本任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#色彩映射"><span class="toc-text">色彩映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法"><span class="toc-text">解决方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他功能"><span class="toc-text">其他功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多元着色插值"><span class="toc-text">多元着色插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理大规模数据"><span class="toc-text">处理大规模数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例分析"><span class="toc-text">案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#America’s-Mood-Map"><span class="toc-text">America’s Mood Map</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        ColorMapND: A Data-Driven Approach and Tool for Mapping Multivariate Data to Color
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-05-10 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-05-10</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#顾宇辉"
+                title="顾宇辉">顾宇辉</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：ColorMapND: A Data-Driven Approach and Tool for Mapping Multivariate Data to Color</p>
+<p>作者：Shenghui Cheng, Wei Xu, Klaus Mueller</p>
+<p>发表：IEEE TVCG 2018</p>
+<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>目前为止几乎没有支持将多元数据到颜色的研究，已有的一些方法能够将低维数据映射到颜色，但只支持2~3个变量。</p>
+<h2 id="系统界面"><a href="#系统界面" class="headerlink" title="系统界面"></a>系统界面</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu3.png" alt="img"></a></p>
+<p>系统由四个视图构成，Color Legend（本文方法生成的调色板）， Pseudo Colored Plot（着色图），Local Enhancement（对选择区域进行对比度增强）和Channel View（对单个属性分布着色）。</p>
+<h2 id="基础框架"><a href="#基础框架" class="headerlink" title="基础框架"></a>基础框架</h2><h3 id="基本任务"><a href="#基本任务" class="headerlink" title="基本任务"></a>基本任务</h3><ol>
+<li>数据样本间的相异性可以通过颜色来感知。</li>
+<li>属性间的相异性可以通过颜色来感知。</li>
+<li>将数据样本与属性之间的关联表示为可感知的颜色标记</li>
+</ol>
+<h3 id="色彩映射"><a href="#色彩映射" class="headerlink" title="色彩映射"></a>色彩映射</h3><p>本文的多元数据映射到颜色的方法 简单说就是 将数据点嵌入到Radviz空间，在根据嵌入点的坐标 计算得到相应的色彩值。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu4.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu4.png" alt="img"></a></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>任务一和任务三可以通过RadViz来解决，由于Radviz的特性，数据样本 越相似，布局位置肯定越接近；数据样本某个属性的值相对越高，它与边缘上的属性点位置也会越近。任务二通过一种新的基于相似性的属性排序和间距来解决，通过哈密尔顿回路 对属性进行排序  ，根据属性相关性 确定 间距。</li>
+</ol>
+<p>   将优化后的RadViz显示器 与 等形状的彩色地图融合，形成ICD（circular interactive multivariate color mapping display）。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%875.png" alt="img"></a></p>
+<ol>
+<li><p>三大基本任务中相异性都需要通过颜色来感知， 这一过程的基础是需要一个精确的色彩空间。这个色彩空间需要符合以下3点要求：</p>
+<p>a. 感知均匀；</p>
+<p>b. 圆盘形状；</p>
+<p>c. 颜色空间的色调饱和度切片应该是等亮度的。</p>
+</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu5.png" alt="img"></a></p>
+<p>CIE HCL (Hue Chroma Luminance)符合了以上要求，但在显示器所用的sRGB色彩空间环境下只能显示部分色彩，因此需要在可见部分中找到最大直径的CIE HCL切片来作为ICD中使用的色彩空间。</p>
+<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="多元着色插值"><a href="#多元着色插值" class="headerlink" title="多元着色插值"></a>多元着色插值</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu7.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu7.png" alt="img"></a></p>
+<p>Adaptive kernel density estimation（AKDE）是核回归（kernel regression）方法的一种，是使用核函数对数据进行非参数估计（nonparametric estimation）的回归模型。本文对着色图根据数据样本进行AKDE插值讨论了三种策略：</p>
+<ol>
+<li>先着色，后插值（效果不好，颜色偏差）</li>
+<li>先插值，后着色（布局过程需要不断迭代，初始位置丢失，代价昂贵）</li>
+<li>先插值，根据插值计算权值来着色（Nadaraya-Watson回归）</li>
+</ol>
+<h3 id="处理大规模数据"><a href="#处理大规模数据" class="headerlink" title="处理大规模数据"></a>处理大规模数据</h3><p>当数据样本过多时，会造成ICD过于密集遮挡调色板的问题。本文使用了hashmap采样来解决这个问题，既解决了遮挡色板的问题，又能保持整体分布。下图分别为原始、降采样和hashmap采样三种效果。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu8.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu8.png" alt="img"></a></p>
+<h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><h3 id="America’s-Mood-Map"><a href="#America’s-Mood-Map" class="headerlink" title="America’s Mood Map"></a>America’s Mood Map</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu1.png" alt="img"></a><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/gu2.png" alt="img"></a></p>
+<p>从华盛顿和俄勒冈州来看，这两个州的人性格非常相似，但与相邻的加州却有很大的不同，主要的区别是外向。另一方面，蒙大拿州是一个相对“正常”和“和平”的州——它在所有属性上几乎是平等的，值也很低。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>通过ICD，可以得到多元数据的着色方案。</li>
+<li>颜色能在一定程度上表现数据样本的组成和相关性。</li>
+<li>颜色对数据相关性的表达未定量地评估。</li>
+<li>HCL空间和sRGB空间不能完美覆盖。</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

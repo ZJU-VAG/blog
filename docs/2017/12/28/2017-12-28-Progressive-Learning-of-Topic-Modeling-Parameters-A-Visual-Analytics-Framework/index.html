@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Progressive Learning of Topic Modeling Parameters: A Visual Analytics Framework - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法框架"><span class="toc-text">方法框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视分析界面"><span class="toc-text">可视分析界面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主题模型输出概览"><span class="toc-text">主题模型输出概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题总结"><span class="toc-text">主题总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检查语料库特征分布"><span class="toc-text">检查语料库特征分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档相关反馈"><span class="toc-text">文档相关反馈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#话题收敛过程"><span class="toc-text">话题收敛过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验"><span class="toc-text">实验</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Progressive Learning of Topic Modeling Parameters: A Visual Analytics Framework
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-12-28 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-12-28</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#张天野"
+                title="张天野">张天野</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Progressive Learning of Topic Modeling Parameters: A Visual Analytics Framework</p>
+<p>作者：Mennatallah El-Assady, Rita Sevastjanova, Fabian Sperrle, Daniel Keim, and Christopher Collins</p>
+<p>发表：IEEE VAST 2017</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>主题模型是一类用于将文档根据在其内部的主题分布归类的非监督机器学习方法。主要思路为，根据文档及其中的词汇建立起文档描述向量，从而求解出文档中的主题分布与每个主题中的关键词分布。主题模型是一类非监督的黑盒模型，本文希望能帮助理解主题模型的输出，并使得所用的模型适应当前数据与任务的特性，以增强模型的可靠性。而可视分析恰恰能通过人的参与和反馈，完成数据和任务驱动的模型构造过程。本文的主要贡献包括：</p>
+<ol>
+<li>提出了一个有人参与的主题模型循序渐进改进方式</li>
+<li>设计了四个根据四个任务驱动的可视化窗口</li>
+<li>通过实证测试与定性实验验证了方法的有效性</li>
+</ol>
+<h2 id="方法框架"><a href="#方法框架" class="headerlink" title="方法框架"></a>方法框架</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/%E6%A1%86%E6%9E%B6.png" alt="img"></p>
+<p>上图为本文提出方法的总体框架，可以分为以下三个部分：</p>
+<ol>
+<li>参数空间分析(左)</li>
+<li>可视分析界面(右)</li>
+<li>话题收敛过程(中)</li>
+</ol>
+<h2 id="可视分析界面"><a href="#可视分析界面" class="headerlink" title="可视分析界面"></a>可视分析界面</h2><p>本文提供了四个不同粒度的可视分析界面（如下图），分别对应了以下四个分析任务：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/%E7%95%8C%E9%9D%A2.png" alt="img"></p>
+<p>T1.主题模型输出概览</p>
+<p>T2.理解主题描述</p>
+<p>T3.检查语料库特征分布</p>
+<p>T4.文档相关反馈</p>
+<h3 id="主题模型输出概览"><a href="#主题模型输出概览" class="headerlink" title="主题模型输出概览"></a>主题模型输出概览</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/%E5%8F%AF%E8%A7%86%E5%8C%961.png" alt="img"></p>
+<p>如图，主题模型输出概览界面中，左边跟右边的两列分别是由两个主题模型计算出来的多个主题，根据他们之间的匹配度从上到下排列，原点大小表示属于这个主题的文档数量。连线的颜色表示主题匹配对应的三种结果：绿色完全匹配，蓝色仅相似匹配，黄色不匹配，线条透明度表示匹配度大小。中间的一列是相似的两个主题间的常用词汇。选择某一对感兴趣的主题后，进入下一层的主题总结视图。</p>
+<h3 id="主题总结"><a href="#主题总结" class="headerlink" title="主题总结"></a>主题总结</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/%E5%8F%AF%E8%A7%86%E5%8C%962.png" alt="img"></p>
+<p>界面上方的两个框内分别是两个主题的关键字，下方分别为表示与相应主题最相关的十句话。文中，蓝色单词表示出现在两个主题中的词汇，橙色或紫色表示只出现在橙色主题或紫色主题中的词汇。每个关键词上方有五个圆点表示该关键词与主题的相关性。中间对称的柱状图中，每一个柱子表示一篇文档，长度表示该文档的长度。同时属于两个主题的文档用绿色表示，只属于单个主题的文档用该主题的颜色表示（橙色或紫色）。通过展开中间的语料库柱状图可以将其展开，进入参数分布分析界面，研究语料库的结构以及文档的特征和参数分布。</p>
+<h3 id="检查语料库特征分布"><a href="#检查语料库特征分布" class="headerlink" title="检查语料库特征分布"></a>检查语料库特征分布</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/%E5%8F%AF%E8%A7%86%E5%8C%963.png" alt="img"></p>
+<p>上图显示了整个语料库在各个特征上的分布。每一列用一个小提琴图表示一个特征（词类）。每一个小提琴图中，背景灰色的柱状图表示该文档中，该词类在该文档中出现的频率。小提琴形状（两边）表示两个主题中该词类的参数分布（某词类在某文档中的权重）。</p>
+<h3 id="文档相关反馈"><a href="#文档相关反馈" class="headerlink" title="文档相关反馈"></a>文档相关反馈</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/%E5%8F%AF%E8%A7%86%E5%8C%964.png" alt="img"></p>
+<p>此视图中，用户可以通过在下方的柱状图中选择某一篇文档，对该篇文档的两个主题进项反馈，通过在C区域选择左边或右边的主题，以及上方的确定性分数，将更适合这个文本的主题反馈给系统。</p>
+<h2 id="话题收敛过程"><a href="#话题收敛过程" class="headerlink" title="话题收敛过程"></a>话题收敛过程</h2><p>话题收敛过程作用于参数空间和文档关键词向量，系统通过决策滑动条决定关键词的重要性变化。被用户认为好的模型将不会在收敛过程中受到改动，不好的模型会用新的根据决策滑动条确定的参数空间与文档关键词向量代替旧的参数，重新进行计算。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>阶段一：模型改进</p>
+<ol>
+<li>任务：在2小时内通过可视化界面改进主题模型</li>
+<li>数据：2012Romney与Obama总统竞选辩论</li>
+<li>实验控制：2个LDA模型，各自产生9个主题</li>
+<li>被试：2语言学家、2政治科学家、2计算机科学家</li>
+</ol>
+<p>阶段二：模型评估</p>
+<ol>
+<li>任务：对给出的主题模型结果打分评估</li>
+<li>数据：2012Romney与Obama总统竞选辩论</li>
+<li>被试：3语言学家（不参与阶段一实验）</li>
+</ol>
+<p>实验结果：主题的改进率与模型的不确定性在整个学习改进过程中逐步降低，语言学专家纷纷认为本文的工作非常有用。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

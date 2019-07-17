@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        数据挖掘中的时序数据分析方法 (According to Eamonn Keogh’s Time Series Tutorial) - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#相似性的使用（The-Utility-of-Similarity-Measurements）"><span class="toc-text">相似性的使用（The Utility of Similarity Measurements）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时序表达（Time-Series-Representations）"><span class="toc-text">时序表达（Time Series Representations）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时序数据挖掘（Data-Mining）"><span class="toc-text">时序数据挖掘（Data Mining）</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        数据挖掘中的时序数据分析方法 (According to Eamonn Keogh’s Time Series Tutorial)
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2013-10-18 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2013-10-18</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#吴斐然"
+                title="吴斐然">吴斐然</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#主题报告" title="主题报告">主题报告</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>本文基于 Eamonn Keogh 在 VLDB06 上做的 Tutorial：<a href="ftp://10.76.0.157/Incoming/Seminar/GroupMeeting/2013/10/2013-10-16/Time Series Tutorial 2006/Keogh_Time_Series_Tutorial.ppt" target="_blank" rel="noopener">A Decade of Progress in Indexing and Mining Time Series Data</a></p>
+<p>一直以来，时序数据分析就是可视化的一大研究热点，那么作为数据分析的另一大手段数据挖掘在分析时序数据方面又有着怎样的思路呢</p>
+<h2 id="相似性的使用（The-Utility-of-Similarity-Measurements）"><a href="#相似性的使用（The-Utility-of-Similarity-Measurements）" class="headerlink" title="相似性的使用（The Utility of Similarity Measurements）"></a>相似性的使用（The Utility of Similarity Measurements）</h2><p>数据挖掘在时序数据分析中的任务有聚类、分类、重复模式发掘、规则发掘、时序检索、异常发现等，归根结底，这些都能归为相似匹配的问题。</p>
+<p>在时序数据上存在微观形状上和宏观结构上的相似性，对于这两种相似性使用方法各不相同（图一）。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/two-kinds-of-similarity.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/two-kinds-of-similarity.jpg" alt="two kinds of similarity"></a></p>
+<p>图一</p>
+<p>先来看 the level of shape，计算两时序数据微观层次上的相似性往往需要先进行数据的预处理，以减少数据偏置、幅值缩放、线性趋势以及噪声对接下来计算造成的影响。</p>
+<p>预处理之后需要定义一个距离尺度，如欧式距离（80%已发表的数据挖掘工作皆用欧氏距离），在两条时序数据相对应的数据点之间累计欧式距离从而定义出两条时序数据之间的相似性。</p>
+<p>但是计算固定对位数据点之间的欧氏距离效果往往不好，因此需要引入动态时间规整（Dynamic Time Warping，DTW）的方法，动态调整对位的点，从而找到一条累计距离最小的路径，提高相似性计算的精度（图二）。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/Euclidean-DTW.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/Euclidean-DTW.jpg" alt="Euclidean &amp; DTW"></a></p>
+<p>图二</p>
+<p>虽然 DTW 计算的相似性较固定对位数据点的欧氏距离较为优越，但是在计算效率上 DTW 需要花费的时间要多很多。</p>
+<p>提高 DTW 计算效率的方式有很多，比如降采样，设定全局限制或者设定 lower bound 等等，都能够大幅或者细微地对计算效率有所改善。</p>
+<p>Uniform Scaling 是另一个在计算相似度上的重要工具，如图三所示，调整缩放因子(scaling factor，sf)后，相似性计算可以更加精确。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/Uniform-Scaling.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/Uniform-Scaling.jpg" alt="Uniform Scaling"></a></p>
+<p>图三</p>
+<p>除了对位的欧氏距离，以及 DTW 还有很多其他用以计算相似度的方法，但是最有用的还是前两者。</p>
+<p>再看 structural level，最基本的思路是抽取时序的全局特征，如最大值，过零率，构建特征向量进行比对。也有利用模型如 ARMA，马尔可夫等对时序进行建模，最后比对模型的参数。</p>
+<h2 id="时序表达（Time-Series-Representations）"><a href="#时序表达（Time-Series-Representations）" class="headerlink" title="时序表达（Time Series Representations）"></a>时序表达（Time Series Representations）</h2><p>一般的数据挖掘过程会创建元数据的估计，以减少数据量从而更有效地在主存中进行计算。鉴于此，如何创建有效的时序重表达非常重要。</p>
+<p>如图四，重表达的创建需要满足某些条件，即重表达后两时序之间的距离小于未做处理的距离。重表达的方法非常丰富，图五列出了其中的一部分。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/Lower-Bounding-of-Representation.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/Lower-Bounding-of-Representation.jpg" alt="Lower Bounding of Representation"></a></p>
+<p>图四</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/Representation.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/Representation.jpg" alt="Representation"></a></p>
+<p>图五</p>
+<h2 id="时序数据挖掘（Data-Mining）"><a href="#时序数据挖掘（Data-Mining）" class="headerlink" title="时序数据挖掘（Data Mining）"></a>时序数据挖掘（Data Mining）</h2><p>时序数据王珏关注的问题有：异常/兴趣数据检测（Anomaly/Interestingness detection），以及重复模式发现（Motif (repeated pattern) discovery）。</p>
+<p>对于前者，有非常简单的设置阈值上下限，检测过界的方法；也有类似文本挖掘的方法，利用训练数据建模，从而判断实际数据是否是异常。异常检测这个问题实际上也是相当开放的，仍然可以研究的问题包括：如何对大规模，有人为交互干预，带注释的时序数据进行检测。</p>
+<p>在重复模式发现方面，比较热门的方式有借鉴自生物信息学，随机投影等，具体可参考原作者 ppt 中的描述。</p>
+<p>此外，借助可视化的方法，我们也能完成时序数据重复模式发现以及多条时序的相似性聚类等等任务，如作者的两个工作：VizTree 和 Time Series Bitmaps。</p>
+<p><strong>时序数据挖掘仍然值得探究的问题</strong></p>
+<p>尽管作者认为时序数据挖掘中的相似性搜索已经做无可做，但是这个领域依然有许多悬而未决的问题：</p>
+<ol>
+<li>摆脱参数设这去发现时序中的重复模式</li>
+<li>对不断更新的流数据进行聚类</li>
+<li>和具体问题相关的时序相似段落匹配</li>
+<li>理解并解释时序分类和聚类的深层含义</li>
+<li>时序数据可视化</li>
+<li>研究比线性的 DTW 更有效的方法</li>
+<li>加权的时序数据重表达</li>
+<li>检索并解释突发事件</li>
+<li>有关时序数据挖掘的应用程序</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

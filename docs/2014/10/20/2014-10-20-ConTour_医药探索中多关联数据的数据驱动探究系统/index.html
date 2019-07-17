@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        ConTour: 医药探索中多关联数据的数据驱动探究系统 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#总结："><span class="toc-text">总结：</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        ConTour: 医药探索中多关联数据的数据驱动探究系统
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2014-10-20 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2014-10-20</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#肇昕"
+                title="肇昕">肇昕</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：ConTour: Data-Driven Exploration of Multi-Relational Datasets for Drug Discovery</p>
+<p>作者：Christian Partl, Alexander Lex, Marc Streit, Hendrik Strobelt, Anne-Mai Wassermann, Hanspeter Pfister and Dieter Schmalstieg</p>
+<p>发表会议：VAST 2014</p>
+<p>在现有的医药、化学领域探究多种关联性信息的研究中，由于数据尺度、关联性复杂等问题，快速探究多关联性很有难度，本文设计了名为 ConTour 的针对探索复杂、多关联性数据的交互性可视分析技术。用于探究在药物探索中，对药物潜在有效性和安全性的研究工作。</p>
+<p>系统在功能上是对个体项目进行一系列属性关系的重排序；利用列嵌套、筛选等交互在表现具有父子关系的关联信息的交互，通过关系视图表达列与列之间的关联性的强弱、数据丰富的属性；通过细节视图同时表达多个数据集之间的多个个体的关联关系。</p>
+<p>本文的相关工作分为三个部分：</p>
+<ol>
+<li><p>Graph Exploration：Jigsaw、GraphTail</p>
+</li>
+<li><p>Faceted Browsing：InfoZoom、FOCUS</p>
+</li>
+<li><p>Pharmacology visualization: 相关的医药研究领域的可视化工具</p>
+</li>
+</ol>
+<p>本文的系统设计基于医学上的 Biological Fingerprints（基因指纹）的概念，用来记录能够作用在细胞或者有机体上的分子和反应过程。设计的目标需求由相关专业领域的专家们提出：</p>
+<ol>
+<li>系统可以表现药物的反应机制；</li>
+<li>系统可以表现药物机制的生物反应流程；</li>
+<li>系统能够观察到在特定的治疗方案中新药品的潜在效用。</li>
+</ol>
+<p>系统的数据是医药公司提供的大规模尺度的 Pathways 数据，从中我们可以提炼出相关的 Gene,Compunds,Fingerprints,Therapeutic Groups 数据集，用于探究其中的关联信息。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8714.png" alt="img"></p>
+<p>系统提出了 6 种分析任务：</p>
+<ol>
+<li><p>鉴别个体之间的关联性；</p>
+</li>
+<li><p>表现个体集合之间的全部相关关系；</p>
+</li>
+<li><p>分析丰富的网络结构；</p>
+</li>
+<li><p>对个体进行排序；</p>
+</li>
+<li><p>筛选项目的个体；</p>
+</li>
+<li><p>观察每个个体的细节信息。</p>
+</li>
+</ol>
+<p>针对以上的 6 种分析任务，系统在关系视图中设计了几种操作方法：</p>
+<ol>
+<li><p>选择、高亮项目：设计了 Hover 和 Click 的交互方法，click 的操作附带置顶的功能设计</p>
+</li>
+<li><p>筛选选择项：设计了交集和并集两种选择模式</p>
+</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8722.png" alt="img"></p>
+<ol>
+<li>嵌套操作：分为简单的嵌套设计，压缩空间；循环嵌套表示多层次的关系</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8732.png" alt="img"></p>
+<ol>
+<li>排序、排列操作：可以根据首字母、数值属性进行排序排列</li>
+<li>列筛选：可以进行全局筛选或者局部的列筛选</li>
+</ol>
+<p>在细节视图上，有关系视图触发生成，有效得显示一种或几种条目的可视化结果，包括平行坐标视图，化合物分子式视图。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8742.png" alt="img"></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8752.png" alt="img"></p>
+<p>在关系视图中：D 视图利用柱状图表示基因指纹的数值属性，其中灰色的背景色表示数值的有效性；B 视图表示选中的项目的两个参数，对作用的有机物的影响效果（促进、抑制还是绑定），以及化合物的 AC50 指数大小；在嵌套的关系视图中，F 视图表示具有的相关性的 Items 的数量信息；E 视图表示聚类中的基因指纹的中位数的线图。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8742.png" alt="img"></p>
+<p>在细节视图中，显示了路径视图，分子化合物的分子式视图，平行坐标视图等，来表示 Pathway 的流程和涉及到的反应物。</p>
+<p>除此之外，还设计了历史视图和筛选视图作为系统的辅助视图，方便交互和使用。</p>
+<p>文章定义了加强指数的概念，用来直观的反应药物或者化合物的作用的效果比重。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8762.png" alt="img"></p>
+<p>Case Study：</p>
+<p>本文设计了三个 Case Study，通过专家的使用和反馈信息来评估系统的有效性和正确性，以及评估系统是否具有能够快速分析相关关系的属性的实用性。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8771.png" alt="img"></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%8781.png" alt="img"></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%879.png" alt="img"></p>
+<ol>
+<li><p>观察四种对磷酸二酯酶有抑制作用的化合物中找出聚类中其他的化合物，通过这样的交互和流程，可以得到用于类似症状治疗的其他的化合物，便于观察不同药物之间治疗效果的相似性</p>
+</li>
+<li><p>探究在相同的治疗方案中化合物的有效性的比重，用来探究药物之间的化学相似性和生物相似性</p>
+</li>
+<li><p>通过反应过程的可视化结果来解释聚类中的组成成分的相似性和作用关系。</p>
+</li>
+</ol>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>本文设计的 ConTour 系统，是一个具有友好交互性、面相大规模尺度的医学相关性探究数据的可视分析系统，在今后的发展中，还可能拓展到其他领域的多关联信息的大数据的探究和分析；并且在大屏可视化中也有一定的使用价值。文章对交互和功能的描写非常相信严谨，各个章节都有相关领域的专家进行评价和反馈。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

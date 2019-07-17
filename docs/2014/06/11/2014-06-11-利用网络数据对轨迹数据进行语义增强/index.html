@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        利用网络数据对轨迹数据进行语义增强 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据"><span class="toc-text">数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据预处理-1-首先提取出所有轨迹中的目的地，然后使用-DBScan-对所有的目的地进行聚类。相对于-k-means-方法，DBScan-不需要指定类别数-k，同时具有良好的抗噪性。下图中红色的点表示聚类的结果，白色的点被认为是噪声抛弃。"><span class="toc-text">数据预处理\1. 首先提取出所有轨迹中的目的地，然后使用 DBScan 对所有的目的地进行聚类。相对于 k-means 方法，DBScan 不需要指定类别数 k，同时具有良好的抗噪性。下图中红色的点表示聚类的结果，白色的点被认为是噪声抛弃。</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">#</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基于空间的分析"><span class="toc-text">基于空间的分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于时间的分析"><span class="toc-text">基于时间的分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        利用网络数据对轨迹数据进行语义增强
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2014-06-11 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2014-06-11</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱标"
+                title="朱标">朱标</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#学术会议" title="学术会议">学术会议</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Visual Analysis of Movement Behavior using Web Data for Context Enrichment<br>作者：Robert Krueger, Dennis Thom, Thomas Ertl<br>发表会议：Pacific VIS 2014</p>
+<p>随着 GPS 设备的日益普及，由 GPS 设备生成的轨迹数据也越来越丰富。然而凭借单一的位置信息，我们可以做的分析很有限，我们更希望知道 人们（GPS 设备）为什么移动、他们的目的地是什么地方（对目的地的具体描述，而不单单是经纬度信息）。想要回答以上问题，我们就需要对地理位置赋以更为丰富的语义信息，比如明确某个位置的功能是学校还是商场。</p>
+<p>本文从一个以地理位置 POI 为核心的社交平台 Foursquare 中抓取 POI 的信息，用以丰富电动车（electric scooters）的轨迹数据。然后从空间、时间两个方面，分别设计了两个视图来分析人们使用电动车的具体行为、目的。中间还穿插了不确定性的可视化。原型的界面如下图所示：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/overview.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/overview.png" alt="img"></a></p>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>500 个带 GPS 的电动车（electric scooters）用户的轨迹数据，没 30 秒采集一次数据，一共采集了 2 年，产生了 150,000 条轨迹（trips），总共 8,200,000 条 GPS 记录.</p>
+<h2 id="数据预处理-1-首先提取出所有轨迹中的目的地，然后使用-DBScan-对所有的目的地进行聚类。相对于-k-means-方法，DBScan-不需要指定类别数-k，同时具有良好的抗噪性。下图中红色的点表示聚类的结果，白色的点被认为是噪声抛弃。"><a href="#数据预处理-1-首先提取出所有轨迹中的目的地，然后使用-DBScan-对所有的目的地进行聚类。相对于-k-means-方法，DBScan-不需要指定类别数-k，同时具有良好的抗噪性。下图中红色的点表示聚类的结果，白色的点被认为是噪声抛弃。" class="headerlink" title="数据预处理\1. 首先提取出所有轨迹中的目的地，然后使用 DBScan 对所有的目的地进行聚类。相对于 k-means 方法，DBScan 不需要指定类别数 k，同时具有良好的抗噪性。下图中红色的点表示聚类的结果，白色的点被认为是噪声抛弃。"></a><strong>数据预处理</strong>\1. 首先提取出所有轨迹中的目的地，然后使用 DBScan 对所有的目的地进行聚类。相对于 k-means 方法，DBScan 不需要指定类别数 k，同时具有良好的抗噪性。下图中红色的点表示聚类的结果，白色的点被认为是噪声抛弃。</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/cluster.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/cluster.png" alt="img"></a></p>
+<ol>
+<li>聚完类之后，本文为每个类赋以一定的语义，语义可以分成三类：</li>
+</ol>
+<ul>
+<li>充电站：直接与充电站位置的数据进行匹配，将距离充电站 50m 范围内的类表示为充电站</li>
+<li>家：将轨迹最常出现的地方定义为电动车使用者的家</li>
+<li>POI：从 Foursquare 抓取 POI 的信息赋给相应的类</li>
+</ul>
+<p>其中，很多类会对应于多种类型（多个 POI），那么怎么来确定这些类的类型呢？本文提出了一种简单的不确定性可视化方法：某种类型的确定性按它在所有类型中所占的比例来计算，确定性最高的类型被认为是该类所对应的类型，背景色的深浅表示类型判断的不确定性（颜色越浅，不确定性越高）</p>
+<p>类型自动标记的结果如下图所示，本文还针对遮挡问题进行了简单的合并处理。当然，为了修正自动标记步骤的错误，用户可以根据自己的经验手动修改类别。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/label.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/label.png" alt="img"></a></p>
+<h1 id><a href="#" class="headerlink" title="#"></a>#</h1><h2 id="基于空间的分析"><a href="#基于空间的分析" class="headerlink" title="基于空间的分析"></a>基于空间的分析</h2><p>在基于空间的分析中，主要提供了两种交互方式：一种是全选一个范围内的 Home，对家在这个范围内的电动车轨迹进行分析；另一种是选中单个 Home，对单个电动车的轨迹进行分析。效果如下所示，轨迹有透明度，可以看到哪些道路的经过比例较高，通过结果还可以看到用户常去哪些地方。从而用户可以进一步分析，这些电动车的用户是怎么使用这些电动车的，这些电动车是否真正对用户的出行、日常使用有帮助。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/spacial.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/spacial.png" alt="img"></a></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/spacial2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/spacial2.png" alt="img"></a></p>
+<h2 id="基于时间的分析"><a href="#基于时间的分析" class="headerlink" title="基于时间的分析"></a>基于时间的分析</h2><p>在时间视图上，用户可以看到用户在一天、周、年的统计行为。下图中展示的是用户一天 24 小时的移动情况，每个小时的数据都是对用户在两年时间内每天在这个小时内数据的统计结果。可以看到家总是出现频率最高的，说明用户不是每天使用电动车。在白天，用户会出现在学习、购物、餐馆等各种场所，说明电动车确实对于用户的日常生活是很有帮助的，用户愿意驾驶电动车去各种场所。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/tmporal.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/06/tmporal.png" alt="img"></a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li><p>分析电动车用户行为的目标明确，且整个工作完整，可以从时空两个方面对轨迹数据进行有效分析。</p>
+</li>
+<li><p>无论是可视编码还是 case study，都没有出彩的地方。</p>
+</li>
+<li><p>将来工作：</p>
+<ol>
+<li>融入更多的 context data</li>
+<li>用真实的数据去验证地点自动表示的准确性</li>
+<li>拓展到更多的应用领域，比如动物迁徙、汽车轨迹数据</li>
+</ol>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

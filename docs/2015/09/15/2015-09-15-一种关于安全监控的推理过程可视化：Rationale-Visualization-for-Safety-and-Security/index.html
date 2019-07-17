@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        一种关于安全监控的推理过程可视化：Rationale Visualization for Safety and Security - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本文方法"><span class="toc-text">本文方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可视设计"><span class="toc-text">可视设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#推理过程图展示部分："><span class="toc-text">推理过程图展示部分：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证据矩阵部分"><span class="toc-text">证据矩阵部分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主要贡献"><span class="toc-text">主要贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        一种关于安全监控的推理过程可视化：Rationale Visualization for Safety and Security
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2015-09-15 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2015-09-15</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#黄兆嵩"
+                title="黄兆嵩">黄兆嵩</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Rationale Visualization for Safety and Security**</p>
+<p>作者：Roeland Scheepens, Steffen Michels, Huub van de Wetering and JarkeJ.vanWijk</p>
+<p>发表：Eurographics Conference on Visualization (EuroVis) 2015</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>随着轮船运输，人的迁移，和类似的运输等的发展，对于这些对象的监测数据量和数据种类也越来越大。这就需要一种安全监测的模型帮助安检人员进行决策。传统的安全检测的自动推理模型是，给定一个对象在各个数据源中的数据作为输入，输出这个对象对于某一个假设的可能性。例如对于输入一艘轮船的数据，推理模型输出这艘轮船可能有违法行为的可能性。</p>
+<p>而这种方法并不能使决策者理解是什么原因得出的这个结论，从而影响决策者进行决策。</p>
+<p>所以本文想要解决的主要问题有：</p>
+<ol>
+<li>用户需要在得到对于该对象主要假设可能性的同时，能知道是什么原因的出了这个可能性的结论。</li>
+<li>对于与主要结论无关的数据不进行展示</li>
+<li>当用户在对某些原因进行交互的时候，能够具体的向用户展示支持该原因的证据（例如在不同数据源中id不同可以证明该对象想要隐藏身份）</li>
+<li><p>在展示证据的时候能够让用户快速的在数据中找到支持选定原因的数据矛盾点或者数据吻合点。</p>
+<h2 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h2></li>
+</ol>
+<p>为了解决上述问题。本文展示了一种对于常规自动推理模型的推理过程的可视化（图1）。通过对于推理过程的DAG图的展示，使得用户明白是哪些原因导致了该推理的结论。（例如该船有可能有犯罪的行为，是因为它想要隐藏自己的身份，而它想隐藏身份是因为它不同数据源中id不同）</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ图片20150915093200.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ%E5%9B%BE%E7%89%8720150915093200.png" alt="img"></a></p>
+<p>（图1）</p>
+<h3 id="可视设计"><a href="#可视设计" class="headerlink" title="可视设计"></a>可视设计</h3><p>本文的可视化界面主要由两部分组成：</p>
+<h4 id="推理过程图展示部分："><a href="#推理过程图展示部分：" class="headerlink" title="推理过程图展示部分："></a>推理过程图展示部分：</h4><p>整体采用DAG图和Sugiyama layout的方法展示推理过程。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ图片20150915093358.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ%E5%9B%BE%E7%89%8720150915093358.png" alt="img"></a></p>
+<p>对于对象的一种假设Hypotheses用一个矩形节点表示。作者设计了一种对于节点假设可能性的方法，分级展示可能性。红色表示有可能，蓝色表示没有可能。横条数目表示可能性的数值大小（图2）</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ图片20150915093444.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ%E5%9B%BE%E7%89%8720150915093444.png" alt="img"></a></p>
+<p>（图2）</p>
+<p>而推理过程用节点之间的曲线表示，例如隐藏ID到犯罪行为的连线表示该对象隐藏ID可以推出该对象有可能犯罪行为。模型采用一阶概率分布，对于子节点到父节点的边赋予权值，用于加权计算父节点的可能性。权值可正（表示可以推出某行为）可负（可以推出没有某行为），正值用红色表示，负值用蓝色表示。权值大小用边的粗细表示。</p>
+<h4 id="证据矩阵部分"><a href="#证据矩阵部分" class="headerlink" title="证据矩阵部分"></a>证据矩阵部分</h4><p>对于选定的一个假设节点，展示支持该节点的证据矩阵，其中一列表示一种数据源（例如AIS），一行表示该对象的一个属性（例如id，是否成年，是否有犯罪记录）。为了使用户发现数据矛盾点和吻合点，本文用不同颜色染色来标出了某一属性在不同数据源中的不同记录（例如上图蓝色和黄色表示了该属性在不同书数据源中的两种数据记录信息。），用户鼠标悬停时可以查看具体信息。对于数据源的可信度展示，系统不仅预置了一种矩形条图的展示方法，还提供了一个时间轴，用户可以在时间轴上查看数据源记录的时间，从而做出决策。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ图片20150915093421.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ%E5%9B%BE%E7%89%8720150915093421.png" alt="img"></a></p>
+<h2 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h2><p>综上所述本文的主要贡献有：</p>
+<ol>
+<li>对于原始的自动推理模型的推理过程进行了可视化，使得决策者更容易理解数据从而做出决策；</li>
+<li>设计了对于多源异构数据的可视化，使得用户能够迅速的找到异构数据中对于同一对象同一属性的矛盾点或者吻合点。</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总体来说，本文设计了一种对于安全监测领域的自动推理监测模型的推理过程的可视化方法。该方法对于安全领域的决策者来说能够提供更好的直观理解数据的渠道，从而快速的做出决策。就文章表述上来说，本文对推理模型、推理过程设计和可视化界面三个方面介绍的也非常细致，得到了该领域专家的认可。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

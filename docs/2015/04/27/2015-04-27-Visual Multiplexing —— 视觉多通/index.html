@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Visual Multiplexing —— 视觉多通 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Visual Multiplexing —— 视觉多通
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2015-04-27 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2015-04-27</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#夏菁"
+                title="夏菁">夏菁</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>Visual Multiplexing</p>
+<p>M. Chen, S. Walton, K. Berger, J. Thiyagalingam, B. Duffy, H. Fang, C. Holloway, and A. E. Trefethen</p>
+<p>Eurovis 2014</p>
+<p>论文中对<strong>视觉多通</strong>的理解为可正确解码的多可视信息的堆叠方式(“overlaying multiple pieces of visual information while allowing users to recover occluded information”)，也就是说把不同视觉通道（颜色、大小、形状等）通过合理的组合方式编码在一起，使得用户能够正确的解码出可视元素所蕴含的信息。这篇论文提出了视觉多通的理论框架并把组合方式分为 10 类。</p>
+<p>下图是视觉多通的流程图，左边将某个数据点需要可视表达的的多个信息量记为<_x1, x2, …, xk_>，该数据点通过<em>k</em>个可视映射方法被映射到显示空间的位置<em>p</em>的空间邻域<em>D</em>和时间邻域<em>T</em>，映射结果为<_c1, c2, …, ck_>（MUX 视觉多路复用过程），用户眼睛观察形成的映射结果，解码信息（视觉多路分离过程）。需要注意的是一个数据点不一定被映射到显示空间中的一个点，它有可能是由位置<em>p</em>周围几个视觉元素组成（空间邻域<em>D</em>）或是一个动态过程组成（时间邻域<em>T</em>）。另外，这个视觉多通的流程对应了信息可视化基本流程中从数据–&gt;可视映射–&gt;用户感知的过程。</_c1,></_x1,></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/04/vmp.png" alt="img"></p>
+<p>下图为视觉多通的 10 个类型，分别为：</p>
+<p>在显示空间上的分割：由空间邻域<em>D</em>的不同可视编码构成的视觉多通</p>
+<p>在时间上的分割：即动画，在时间邻域<em>T</em>的不同可视编码构成的视觉多通</p>
+<p>部分遮挡：由不透明色块的堆叠构成的视觉多通，有可能因为遮挡造成信息缺失</p>
+<p>空心：由空心形状的堆叠构成的视觉多通，空心形状之间的距离可以编码速度等信息</p>
+<p>半透明遮挡：由半透明色块的堆叠构成的视觉多通，有可能因为半透明造成的色差引起信息误解</p>
+<p>多视觉通道整合：由多个视觉通道的组合（颜色与形状、颜色与大小等）构成的视觉多通</p>
+<p>连续场：由向量场、等值线、高度场等连续场构成的视觉多通，结合周围的视觉元素可以判断方向、大小等信息</p>
+<p>视觉元素的位移：位置 p 的编码可以位移到<em>p</em>的附近，根据格式塔原则的相近原则依然可以正确解码</p>
+<p>周期性动画：由多帧的周期性动画构成的视觉多通</p>
+<p>利用先验知识：领域专家可以正确解码的视觉多通方式</p>
+<p>利用学习的知识：不需要领域专家，一般用户经过一定训练可以正确解码的视觉多通方式</p>
+<p>视觉语言：一般用户经过视觉编码规则的学习可以正确解码的视觉多通方式</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/04/vmt1.jpg" alt="img"></p>
+<p>作者为整个理论框架的建立提供了四方面的理论依据：类比通信领域的多路复用理论、视觉的（伪）并行处理能力、人的三种记忆形态对视觉感知的影响，以及格式塔原则在分类中的应用。同时，作者列举了可视化领域的多篇论文论证了这 10 类视觉多通方式的应用。</p>
+<p>这篇论文提出了视觉多通的理论框架，但视觉多通的分类标准是通过大量应用实例的归纳得到，并没有坚实的的理论依据和量化依据，这是文中提出的未来工作之一。另外，整个理论框架对可视化实践者来说可以作为很好的设计指导，</p>
+<p>作为题外话，小编总结了可视化理论的发展过程如下图：可视化早期是方法（布局、交互、绘制等）和应用（地理、文本、医学等）的论文居多，然后有了针对方法中的某个点的 user study 和总结方法或应用的综述，在 user study 和综述之上又产生了方法论，方法论之上产生了更加系统的理论框架（如本文的视觉多通框架等），而理论框架又需要更多的量化指标去评价。目前的可视化进入了方法论和理论框架井喷的阶段，但量化指标尚未成熟。但是事无绝对，可视化早期也不乏经典理论框架如可视化过程和可视分析过程，但是目前还没有量化指标去衡量某个可视化作品的可视化完备性（其实也没有可视化完备性的定义）。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/04/theory.png" alt="img"></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

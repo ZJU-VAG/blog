@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        D-Map: Visual Analysis of Ego-centric Information  Diffusion Patterns in Social Media - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、简介"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、核心可视化设计"><span class="toc-text">二、核心可视化设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、主要算法"><span class="toc-text">三、主要算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-社团检测"><span class="toc-text">1. 社团检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-信息扩散地图构造"><span class="toc-text">2.信息扩散地图构造</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、总结"><span class="toc-text">四、总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        D-Map: Visual Analysis of Ego-centric Information  Diffusion Patterns in Social Media
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-11-15 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-11-15</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#张天野"
+                title="张天野">张天野</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：D-Map: Visual Analysis of Ego-centric Information  Diffusion Patterns in Social Media</p>
+<p>作者：Siming Chen, Shuai Chen, Zhenhuang Wang, Jie Liang, Xiaoru Yuan, Nan Cao, Yadong Wu</p>
+<p>发表：2016 VAST Conference track</p>
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>本文研究微博上的社交媒体数据，研究目标为：挖掘信息扩散的模式以及重要社交媒体用户在信息扩散的过程中发挥的作用。这样的研究通常面临三个主要挑战：异构社交媒体数据、难以定义的用户影响力和复杂的可视设计。为了解决上述问题，本文提出了一种使用地图作隐喻的可视化设计——信息扩散地图，在该图上展示信息传播的历史过程以及用户行为变化过程。</p>
+<h2 id="二、核心可视化设计"><a href="#二、核心可视化设计" class="headerlink" title="二、核心可视化设计"></a>二、核心可视化设计</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/dmap.png" alt="img"></p>
+<p>信息扩散地图（上图）为本文最重要可视化设计。其中，地图被分为不同颜色片区，每个片区表示一个联系紧密社团，该社团的颜色用最能代表该社团数据特征的数据属性所属色系表示。用户或用户群体被抽象为六边形节点，六边形中深灰色的小六边形大小表示该节点表示的用户或用户群体微博转发数量的多少，由于单个用户转发数量少，因此在表示单个用户的节点内不绘制小多边形。表示中心用户的多边形用橙色边框标记，表示核心用户的多边形用黑色边框标记，表示在社团内部具有高影响力的核心用户用灰色框标记。为了减少视觉上的遮挡，地图默认只展示社团之间的微博转发情况，用节点之间带箭头的弧线表示；个体之间的微博转发情况可以通过交互展示。</p>
+<h2 id="三、主要算法"><a href="#三、主要算法" class="headerlink" title="三、主要算法"></a>三、主要算法</h2><h3 id="1-社团检测"><a href="#1-社团检测" class="headerlink" title="1. 社团检测"></a>1. 社团检测</h3><p>采用对数相似函数计算包含n个节点的无向图G的K个社团：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/log.png" alt="img"></p>
+<p>其中m_rs表示社团r和s之间的连接数，k_r和k_s分别表示社团k和社团s内部节点的度数和。我们首先将图随机的分为K个社团，之后通过调整节点所属社团，计算改变后的L值，计算得到最大L值时确定社团分布。</p>
+<h3 id="2-信息扩散地图构造"><a href="#2-信息扩散地图构造" class="headerlink" title="2.信息扩散地图构造"></a>2.信息扩散地图构造</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/build.png" alt></p>
+<p>（a）:将布局转化为力引导图布局</p>
+<p>（b）：合并相邻的节点</p>
+<p>（c）：将合并后的节点区块沿选定方向向中心节点的位置处移动靠拢，以紧凑布局</p>
+<p>（d）：调整布局，填满布局中的空缺区域</p>
+<p>（e）：根据转发时间先后在社团内部由内到外重新排列节点位置</p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>本文的工作是一种研究中心用户社交网络的可视化方法，主要贡献即设计的可视化方法和可视化系统。</p>
+<p>其中的核心设计设计感强烈，设计理念鲜明，但仍有不足之处，比如用同样大小的六边形分别表示单个用户或用户群体；此外，本文设计的可视化系统过于复杂，且文章没有阐释部分视图出现的作用以及必要性，这些视图与整个系统的联系相对较弱。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

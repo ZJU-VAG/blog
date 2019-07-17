@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        DecisionFlow：高维时序事件数据的可视分析 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#本文方法介绍："><span class="toc-text">本文方法介绍：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#User-Study"><span class="toc-text">User Study</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        DecisionFlow：高维时序事件数据的可视分析
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2014-10-10 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2014-10-10</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱标"
+                title="朱标">朱标</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：DecisionFlow: Visual Analytics for High-Dimensional Temporal Event Sequence Data<br>作者：David Gotz and Harry Stavropoulos<br>发表会议：vast 2014</p>
+<p>本文使用的数据是由一个美国医疗机构提供的，该数据记录了从客户被接收开始的所有事件，一共有 32000 个客户，8000 种事件类型。每个事件都由三个要素组成，即事件类型、发生事件和发生主体（event type，time，entity），由一系列此类事件组成的数据就是题目中提到的时序事件数据（ Temporal Event Sequence Data），而高维（High-Dimensional ）指的是事件类型非常多。</p>
+<p>本文主要的动机是由于之前的方法都不能处理维度（事件类型）超过 20 的此类数据，主要由于高维数据在可视表达上容易产生混乱，不便于用户观察、交互。因此，本文主要着眼于解决高维的问题，能对之前提到的医疗数据进行交互、有效的可视分析。</p>
+<p>传统上，领域专家对此类医疗数据分析的目的是为了分析某个病症与哪些因素有关。他们的分析过程分为两步：首先，定义一些选择条件对病人进行筛选；然后，使用统计分析软件（SAS）对筛选结果进行分析。本文方法也遵循了这个流程，但是可视编码和交互的定义使得用户无需编程即可快速、高效地进行分析。</p>
+<h4 id="本文方法介绍："><a href="#本文方法介绍：" class="headerlink" title="本文方法介绍："></a>本文方法介绍：</h4><ol>
+<li>首先，需要用户对时序事件数据进行 query。一个 query 由 Preconditions、Episode 和 Outcome 三个部分组成：Episode 部分对应用户希望得到并用于后续分析的数据；Preconditions 在这个数据里面相当于客户的病史，作为一个检索条件，但是对应的数据并不参与后续分析；Outcome 则可以理解为用户需要分析的病症。下图(a-c)定义的 query 解释如下：用户想要分析的是在发生心绞痛之后 18 个月内进行过心脏瓣膜置换术的用户在这段时间内以及心绞痛发生前 1 年的数据，先决条件是这些用户要有至少 3 次的血脂异常病史，并且最后得了主动脉上的某种疾病。<br>下图(e)是对搜索结果的一个表意性图解，如果满足(a)(b)条件的，就用颜色进行高亮编码，对于(c)，如果有这种病症的客户，就用一个红点表示，反之留白。</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%873.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%873.png" alt></a></p>
+<ol>
+<li>在查询操作后，对于上图中高亮的数据，本文采用了一种基于 milestone 的 DecisionFlow Graph 的形式进行表示，如下图所示。图中的三个蓝色图元（顶点）就是 milestone，它们对应了用户在查询阶段定义的事件（矩形表示心绞痛往前一年的时间点，后两个圆圈分别表示心绞痛和心脏手术两个事件）。在这个图中，每个用户的数据被心绞痛的这个事件分割成两部分，即心绞痛发生之前的数据和发生之后的数据，这两部分数据被分别存储在两条边上面。</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%874.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%874.png" alt></a></p>
+<ol>
+<li>以上都是传统的对时序事件数据的处理方案，即查询 + 聚合表达。本文在此基础上，还定义了一些 operator，支持 milestone 的添加、删除和过滤。下图是一个添加 milestone 的过程，本文称之为 promotion，顾名思义，是将原先不是 milestone 的事件“提升”为一个 milestone。经过 promotion 的操作，原先的一条边一般会增加到三条边，如图中(c)(d)(e)所示，边(e)代表了不包含新 milestone 的用户数据，(c)(d)则是包含新 milestone 的用户数据被分割成的两部分。milestone 的删除操作和添加操作相反，一般三条边会降到一条边。milestone 过滤操作更好理解，比如只选择经过（或不经过）某一 milestone 的数据。这样一来，本文方法可以让用户对数据从粗略到精细进行自由探索。本文也是通过种方式来支持“高维”数据的可视化与交互，同时又保证“高维”数据可视化的结果不至于太混乱。</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%875.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%875.png" alt></a></p>
+<ol>
+<li>下图是本文对 DecisionFlow Graph 的可视编码方案。每个 milestone 用一个灰色的条表示，d0-2 编码了各自对应边的统计信息，高度表示包含数据数目的相对大小，宽度包含了数据平均的持续时间（及每条数据在两个 milestone 之间时间的平均），颜色编码了数据中符合 Outcome 条件的比例。介于 d0-2 和 milestone 之间的矩形只用于保持 milestone 和边之间视觉上的连接关系，不用作编码任何信息。</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/6.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/6.png" alt></a></p>
+<ol>
+<li>此外，本文还在 DecisionFlow Graph 的基础上，定义了一些交互，如下图所示。当用户选中一条边，相应的客户数据在其余边上的分布情况也会相应地进行高亮。当鼠标悬浮到边上，会显示精确的统计信息。</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%876.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%876.png" alt></a></p>
+<ol>
+<li>此外，还有另外两个联动视图分别展示所选中边的统计信息和系数（odds ratio 和 correlation）</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/7.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/7.png" alt></a></p>
+<h4 id="User-Study"><a href="#User-Study" class="headerlink" title="User Study"></a>User Study</h4><p>本文数据和领域密切相关，但是并未请领域专家合作做 case study，只是设计了一系列简单任务，让 12 个用户去完成，在准确率和用时上都表明了本文方法的有效性。之后对用户的问卷调查也普遍对系统的易用性表示肯定。唯一不足的是 DecisionFlow Graph 中的 link edge 会让用户产生疑惑，总误认为编码了什么信息在里面。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li><p>提出了一个用于分析高维时序事件数据的可视分析系统，user study 表明系统易用</p>
+</li>
+<li><p>当前方法只针对点事件，不支持分析持续一段时间的事件</p>
+</li>
+<li><p>缺少领域专家的 evaluation</p>
+</li>
+<li><p>没有做 case study，只是通过 user study 对系统的局部进行易用性的证明，系统用于分析真实数据的有效性说明不够充分。</p>
+</li>
+<li><p>没有加入 mining 算法，对用户的操作（promotion/demotion）不能进行提示、引导。</p>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        利用嵌套平行坐标图进行多分辨率气象数据集合的参数分析 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、气象预测数据集及相关问题简介"><span class="toc-text">一、气象预测数据集及相关问题简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、系统概览"><span class="toc-text">二、系统概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、可视设计"><span class="toc-text">三、可视设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、案例与专家评价"><span class="toc-text">四、案例与专家评价</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#专家评价如下-比较常规性的评价"><span class="toc-text">专家评价如下(比较常规性的评价)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#局限性"><span class="toc-text">局限性:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、个人想法"><span class="toc-text">五、个人想法</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        利用嵌套平行坐标图进行多分辨率气象数据集合的参数分析
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-05-01 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-05-01</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陆俊华"
+                title="陆俊华">陆俊华</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文: Multi-Resolution Climate Ensemble Parameter Analysis with Nested PCPs</p>
+<p>作者: Junpeng Wang, Xiaotong Liu, Han-Wei Shen and Guang Lin</p>
+<p>发表会议: VAST2016/ Session Machine Learning</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/systemoverview.png" alt></p>
+<h2 id="一、气象预测数据集及相关问题简介"><a href="#一、气象预测数据集及相关问题简介" class="headerlink" title="一、气象预测数据集及相关问题简介"></a>一、气象预测数据集及相关问题简介</h2><p>气象学中, 对流是降雨形成原因。 给定一个大气状态和大气移动参数的值（对流参数），根据已有信息迭代地运行模拟来得到<strong>下一个时间段</strong>的状态。 一般将感兴趣的空间区域<strong>离散化</strong>划分成一块块网格，在这些网格上迭代计算，计算下个时间段的状态，网格大小即是分辨率。为了提升准确率，会采用不同参数调节机制，这样就导致了多组参数；另在不同的分辨率下模拟可捕捉不同尺度下的特征，导致了 多分辨率时空气象ensembles这样的数据集。</p>
+<p>在相关领域研究中，这样的预测模型有一定的局限性：模型对于参数设定与分辨率都很敏感，高分辨率模型不一定总比低分辨率的好、而且计算开销不同，分辨率越精细开销越大。为此，领域专家需要分析一些问题，来应对这样的局限性。比如：不同参数之间的关联（correlation）；这样的关联在不同分辨率下是否可转移（transferable）；对流参数和时空模拟ensemble数据（输出）间的关系。</p>
+<p>为了方便叙述，我们做一些概念的正式定义：</p>
+<p><strong>Ensemble集（Ensemble Set）</strong> ： </p>
+<ol>
+<li><p>一次模拟的运行输出包含了多天的预测结果，单天的结果称为ensemble item; </p>
+</li>
+<li><p>多天的构成一次运行的输出结果称为ensemble member; </p>
+</li>
+<li><p>多个ensemble members构成ensemble set（简称ensemble），会有不同分辨率。</p>
+</li>
+</ol>
+<p><strong>参数集（Parameter Set）</strong> :</p>
+<ol>
+<li><p>一次模型运行中，由不同对流参数的值组成的一组值称为参数设定; </p>
+</li>
+<li><p>一个ensemble中采用的一批参数设定被称为一个参数集。</p>
+</li>
+</ol>
+<p><strong>观测集（observation set）</strong> :<br>卫星观测到的特定区域的在一段时间上的天气，每天是一个观测项（observation item）。同样可以有不同分辨率。在此基础上我们定义更具体的分析任务，其中R1~3针对于参数可视化、而R4~6针对于Ensemble的可视化。<br>   R1 集内参数关联（intra-set parameter correlation）<br>   R2 集间参数关联（inter-set parameter correlation ）<br>   R3 高维参数范围查询<br>   R4  Ensemble item和ensemble member的质量评估<br>   R5  Ensemble member的比较<br>   R6 展现ensemble的时空方面的特性</p>
+<h2 id="二、系统概览"><a href="#二、系统概览" class="headerlink" title="二、系统概览"></a>二、系统概览</h2><p>系统结构清楚，各视图分工明确，其中有三个主要视图：嵌套平行坐标、概览视图、地理信息视图。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%871.png" alt></p>
+<h2 id="三、可视设计"><a href="#三、可视设计" class="headerlink" title="三、可视设计"></a>三、可视设计</h2><p>文章首先将一些常见平行坐标图列举，针对本文分析问题，陈述各自优缺点(他们用的是同一种人造数据)，如下图：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E4%BC%98%E7%BC%BA%E7%82%B9.png" alt></p>
+<p>本文提出的嵌套式平行坐标 (NPCP), 则结合了他们的优点, 避免了他们的缺点. 其设计上也比较细致, 比如颜色、透明的自定义、实时范围查询的支持 交互上也做的很周到.</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/NPCP.png" alt></p>
+<p>对于概览图，分为两块：Heatmap展示天气预测的质量评价、 dendrogram展示ensemble之间的关系。</p>
+<p>其中质量评价是与观测集比较的，每个ensemble item有一个准确度的值，每个ensemble member是一个准确度向量。而在dendrogram中，首先有了准确度向量结合Dynamic Time Warping计算ensemble member之间的关系，这样计算出一个对称的距离矩阵，对于这个用自底向上的层次聚类。这些视图都是可以互相联动的，并且与NPCP也是互相关联的。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/gailantu.png" alt></p>
+<p>最后还有一些地理信息视图，从ensemble item和ensemble member的层面来展示上面预测结果与地图结合的可视化结果。</p>
+<h2 id="四、案例与专家评价"><a href="#四、案例与专家评价" class="headerlink" title="四、案例与专家评价"></a>四、案例与专家评价</h2><p>文章用了2007年6月某地30天的数据 (如下)，其中专家感兴趣的有5个。结合这些数据，有一些比较浅显的case，这里不再 复述。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/case.png" alt></p>
+<h5 id="专家评价如下-比较常规性的评价"><a href="#专家评价如下-比较常规性的评价" class="headerlink" title="专家评价如下(比较常规性的评价)"></a>专家评价如下(比较常规性的评价)</h5><ul>
+<li>NPCP / heatmap + dendrogram都获得好评</li>
+<li>两者间互动构建了参数和ensemble之间的关联</li>
+<li>可以泛化至其他类似应用场景</li>
+</ul>
+<h5 id="局限性"><a href="#局限性" class="headerlink" title="局限性:"></a>局限性:</h5><ul>
+<li>在某些条件下可视化结果会显得复杂</li>
+<li>学习曲线略陡</li>
+<li>数据量太大时仍有视觉混乱</li>
+</ul>
+<h2 id="五、个人想法"><a href="#五、个人想法" class="headerlink" title="五、个人想法"></a>五、个人想法</h2><p>解决的问题看似不难(其实也算是个老问题)，但其实文章抽象概括的很好，并把可视化很好的套上去；提出的分析任务也是很完备。设计上尽管有些细节可能略奇怪，但总的来说还是十分细致，并且交互简洁而实用。文章的语言描述也很完备。在系统评估方面，篇幅比较少、也未给人耳目一新的感觉。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

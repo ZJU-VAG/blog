@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        booc.io:一种层次数据的非线性浏览顺序的概念图可视化方法 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据介绍"><span class="toc-text">数据介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#界面介绍"><span class="toc-text">界面介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-text">参考文献</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        booc.io:一种层次数据的非线性浏览顺序的概念图可视化方法
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-04-25 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-04-25</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#黄兆嵩"
+                title="黄兆嵩">黄兆嵩</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文: booc. io: An education system with hierarchical concept maps and dynamic non-linear learning plans</p>
+<p>主要论文: booc.io: An Education System with Hierarchical Concept Maps and Dynamic Non-linear Learning Plans</p>
+<p>作者: Michail Schwab ; Hendrik Strobelt ; James Tompkin</p>
+<p>发表期刊: TVCG 2017</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>网络教学的方法越来越流行，教育通过网络的传播可以更好地利用优秀的教学资源，使得更多的人得到高水平的教育。一方面学生通过网络课程学习到某一门知识时，往往需要提供学习计划，学习材料和课后的讨论论坛。另一方面，教师希望通过网站能够自由的上传不同类型的学习资料（书本，论文，视频，图片等），并希望能够有效直观的为学生提供学习的指导和学习计划，帮助学生提高知识水平。</p>
+<p>本文提供了一种能够对教育数据这种层次数据进行可视化的方法，提供概念图的方法，帮助学生理解学习计划，并提供了各种不同的数据接口，实现对不同资料的学习。教师可以通过系统制定学习计划，创建学习内容，达到教学目的。该系统可以通过网址<a href="https://booc.io/进行访问。" target="_blank" rel="noopener">https://booc.io/进行访问。</a></p>
+<h2 id="数据介绍"><a href="#数据介绍" class="headerlink" title="数据介绍"></a>数据介绍</h2><p>知识的前后关联使得教育数据形成了有一定顺序的层次结构数据，例如对于数据结构的学习，我们需要学习相应的数学知识，然后学习算法的复杂度分析，然后学习基本的数据结构，进一步对复杂的排序算法，图论算法等进行学习。而这些知识模块又包含各自的下级模块，例如基础的数据结构有堆，栈，树，而树又包含二叉树，B树等等，形成了一个有顺序的层次结构。学习的过程可以是顺序的，也可以是跳跃的，学习后面指定的章节时，提前只需要学习他所依赖的几个章节而不必把他之前的内容全部看过，例如我们学习堆排序，就不需要学习和B树有关的知识。所以高效的知识的学习需要有效直观的学习计划。</p>
+<p>以往类似的层次数据可视化关注于表现层次数据的整体结构图1(a)，通过放缩平移等方法展示层次数据之间的依赖关系和层次数据的包含关系图1(b，c，d)。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/04/1.png" alt></p>
+<p>然而随着数据量的增加，传统的布局方法难以满足复杂的层次数据展示，难以直观的展示他们的依赖关系。对于教育数据来说，也就不能提供直观的学习计划，同时难以清晰地展现层次数据的具体内容，不能提供用来完成学习以及教学的目的的简单的交互。</p>
+<p>本工作把教育数据分成了四个不同的概念，资源（例如视频，书籍），模块资源（例如书的10-25页，视频的前10分钟），课程和知识模块。其中知识模块可以包含不同的子模块，也可以对应对该概念进行解释的模块资源。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/04/2.png" alt></p>
+<h2 id="界面介绍"><a href="#界面介绍" class="headerlink" title="界面介绍"></a>界面介绍</h2><p>Booc.io的工作主要针对学生和用户两个主要群体。主界面如图3所示。左边是普通的树结构的概念图，用于展示所有的学习计划，课程内容，并提供了查询输入框来对指定的知识概念进行查询。右边是层次数据的概念图，他对层次数据的内容，相互的线性和非线性的依赖关系进行了可视化，并提供了点击，放缩平移等简单的操作，使得用户能够探索层次数据的结构和内容。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/04/3.png" alt></p>
+<p>层次数据的概念视图，总体是从12点钟方向按照顺时针的方向进行布局， 直观的展示了层次数据的线性关系。每一个模块用圆表示，模块中的子模块同样按照顺时针方向布局，从而最大限度的利用了空间。非线性的依赖关系利用高亮的线表示，当鼠标悬停在某一概念上时，它所依赖的节点将被线连接起来，形成学习的计划。</p>
+<p>概念视图还有一些拓展的内容，例如利用颜色编码课程章节的热度从而形成章节评价的热力图。同时概念图可以在不同的课程中复用，课程展示在概念图的中间，他所需要学习的知识一一对应不同的分支并展示他们在概念图中的依赖关系（图4）。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/04/4.png" alt></p>
+<p>同时系统的树列表支持折叠，折叠后的列表用图标显示了层次关系，给数据探索提供导航。教师可以通过树列表和概念图创建新的知识模块，并添加新的教学资源。同时教师还可以指定新的教学计划，指定依赖关系，从而对学生的学习进行指导。系统支持各种不同的教学资料，为学生提供多样的教学资源（图5）。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/04/51.png" alt></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文的可视化工作对层次数据及其依赖关系进行了直观的可视化。交互方便，界面简洁，配色完美，很好的迎合了学生及老师对于教育系统的各种不同要求。作者提出他们的下一步工作是要增加更多的互动环节，使得老师，学生之间有更多的交流途径，从而更好地完成网络教学和课程讨论。</p>
+<p>笔者认为该系统的工作对于层次数据的可视化有很好的启发效果，简单的视觉编码往往能够达到超出预期的可视化效果，可视化的首要目的就是直观，方便，易于交互。本文的工作契合了用户的需求，值得深究。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><p>Schwab M, Strobelt H, Tompkin J, et al. booc.io: An Education System with Hierarchical Concept Maps and Dynamic Non-linear Learning Plans[J]. 2017:1-1.</p>
+</li>
+<li><p>T. A. Moore. A General Relativity Workbook. University Science Books, 2012.</p>
+</li>
+<li><p>Khan Academy Knowledge Map. <a href="https://www.khanacademy.org/exercisedashboard" target="_blank" rel="noopener">https://www.khanacademy.org/exercisedashboard</a>. Last accessed 28th March 2016.</p>
+</li>
+<li><p>R. Grosse and C. Reed. Metacademy Deep Belief Networks Concept Map. <a href="https://www.metacademy.org/graphs/concepts/deep_belief_networks#mode=explore" target="_blank" rel="noopener">https://www.metacademy.org/graphs/concepts/deep_belief_networks#mode=explore</a>. Last accessed 28th March 2016.</p>
+</li>
+<li><p>MIT Teaching and Learning Lab: Vinculum. <a href="http://vinculum.mit.edu/" target="_blank" rel="noopener">http://vinculum.mit.edu/</a>. Last accessed 28th March 2016.</p>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

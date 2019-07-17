@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Visual Progression Analysis of Event Sequence Data - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景介绍"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统流程"><span class="toc-text">系统流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件表征"><span class="toc-text">事件表征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对齐"><span class="toc-text">事件对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件分割"><span class="toc-text">事件分割</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#界面概览"><span class="toc-text">界面概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Case-Study"><span class="toc-text">Case Study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#讨论"><span class="toc-text">讨论</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Visual Progression Analysis of Event Sequence Data
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-06-21 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-06-21</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#孟林昊"
+                title="孟林昊">孟林昊</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Visual Progression Analysis of Event Sequence Data</p>
+<p>作者：Shunan Guo, Zhuochen Jin, David Gotz, Fan Du, Hongyuan Zha, and Nan Cao</p>
+<p>发表：IEEE VAST 2018</p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>Event data是指带有离散的时间信息的事件数据，这些事件数据由特定属性聚集排列成事件序列（event sequence）。以一个人的学术生涯为例，单个实体（entity）的事件序列由本科毕业 -&gt; 做研究 -&gt; 发表论文 -&gt; 博士毕业 -&gt; 成为教授这一系列事件组成。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/图片-12.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/%E5%9B%BE%E7%89%87-12.png" alt="图片 1"></a></p>
+<p>这些事件序列数据揭示了实体在不同阶段的演变过程，对事件序列数据的模式分析可以帮助发现不同人群疾病的发展过程，或是疾病的发展规律，对于不同人群使用不同的诊疗方案可能会有不同的结果，也需要进行比较。由于不同的individual sequence，其序列长度不同，发展速率不同，这就给使用基于时间或是顺序的大规模事件序列数据的总结摘要来进行模式分析带来了挑战。</p>
+<p>本文将事件序列数据划分为不同阶段（stage），从而揭示不同群体的行为模式。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/stage.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/stage.png" alt="stage"></a></p>
+<p>本文贡献在于以下三个方面。</p>
+<ol>
+<li><p>提出了一种针对事件序列数据的无监督阶段分析算法。其将事件序列数据进行对齐和划分。提取出不同持续时间的阶段来更好地反映发展模式。</p>
+</li>
+<li><p>设计了对以上阶段分析算法结果的可视化系统ET2</p>
+</li>
+<li><p>利用三种评估手段（case study, interview, performance evaluation）验证了系统的有效性。</p>
+</li>
+</ol>
+<h2 id="系统流程"><a href="#系统流程" class="headerlink" title="系统流程"></a>系统流程</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/2.png" alt="2"></a></p>
+<p>本文提出的阶段分析算法有以下三个步骤组成。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/process.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/process.png" alt="process"></a></p>
+<h3 id="事件表征"><a href="#事件表征" class="headerlink" title="事件表征"></a>事件表征</h3><p>使用了类似于word embedding的方法，将每个event sequence看成sentence,每个event看成word,利用skip-gram model进行训练来得到embedding结果。但不同于自然语言处理方法中训练样本通过滑动窗口生成，几个连续的单词形成上下文语境，对于事件序列，不光要考虑事件排列顺序，还要考虑事件发生的时间间隔。因此，对event embedding训练的损失函数中利用权重wij来调节周围事件出现在中心事件附近概率的权重，时间间隔越小，权重wij越大，损失函数表示如下：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/loss.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/loss.png" alt="loss"></a></p>
+<h3 id="事件对齐"><a href="#事件对齐" class="headerlink" title="事件对齐"></a>事件对齐</h3><p>使用了一种叫做动态时间规整(Dynamic Time Warping)的算法。它是一种衡量两个时间序列之间的相似度的方法，主要应用在语音识别领域来识别两段语音是否表示同一个单词。如图所示，上下两条实线代表两个时间序列，时间序列之间的虚线代表两个时间序列之间的相似的点。DTW使用所有这些相似点之间的距离的和，称之为归整路径距离(Warp Path Distance)，用来衡量两个时间序列之间的相似性。动态时间规整算法就是要找到这些对应的时间线上的点来最小化两个序列的相似性。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/dtw.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/dtw.png" alt="dtw"></a></p>
+<p>事件序列对齐算法中，先利用最长事件序列初始化一个中间序列，再使用DTW算法找到要比较的事件序列和中间序列的对应关系，事件之间的距离用事件向量的欧式距离进行度量，每次迭代都会对中间序列的向量进行平均化更新，直到所有事件序列都和中间序列找到对应关系，对于一个序列中一个事件对应中间序列多个事件的情况，我们只选取和该事件最相似的中间序列事件。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/align.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/align.png" alt="align"></a></p>
+<h3 id="事件分割"><a href="#事件分割" class="headerlink" title="事件分割"></a>事件分割</h3><p>成阶段使用了一种叫做Content Vector Segmentation(CVS)的方法，它是一种将文档划分成为一些连贯的段落的方法。将中间序列类比为文档，中间序列每个向量看成单词，我们认为相同阶段的事件有着相似的语义，分割算法的目标在于最大化每个segment的coherence(内部语义的相干性)。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/coherence.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/coherence.png" alt="coherence"></a></p>
+<p>我们进一步利用中间序列的分割结果就可以得到每个序列的分段结果，并进一步将序列分段结果导入可视化模块进行可视分析。</p>
+<h2 id="界面概览"><a href="#界面概览" class="headerlink" title="界面概览"></a>界面概览</h2><p>下图是整个用户界面概览。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/interface.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/interface.png" alt="interface"></a></p>
+<p>Sequence view使用滚动列表的形式展示了每个individual sequence的分段结果；Cluster view将每个阶段的分段聚集成簇，并展示了不同阶段间簇的发展模式；Stage transition view将同一阶段的簇聚集在一起，展示了不同阶段的事件分布和演变模式。</p>
+<h2 id="Case-Study"><a href="#Case-Study" class="headerlink" title="Case Study"></a>Case Study</h2><p>本文的Case study共有两个，一个是使用公开的重症监护数据集MIMIC来分析临床进展，邀请来一位心脏病学家和他的一名博士进行分析；一个是利用包含39位大学教授23年间的学术生涯里程碑事件的数据集分析学术发展路径，邀请一名高年级博士利用系统进行分析。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/case.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/06/case.png" alt="case"></a></p>
+<p>专家访谈总结了case中三位专家对ET2给出的反馈。包括一下三个方面：</p>
+<ol>
+<li><p>自动阶段分析：方便有效</p>
+</li>
+<li><p>可视化设计：cluster view highly effective</p>
+</li>
+<li><p>系统：简单易用，查询机制十分关键，建议应用到特定领域（特定疾病或是特定领域的学术路径）；视图太多，图太多字太少，event overview建议去掉</p>
+</li>
+</ol>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><ol>
+<li><p>过程分析算法适用于任何事件序列数据，算法本身和可视方法对序列长度、种类以及事件间隔都没有任何限制。</p>
+</li>
+<li><p>阶段过程分析缺乏ground truth来度量算法准确性，本文通过用户反馈来验证，未来作者计划收集带有已知ground truth的基准数据集得到更为定量的准确率度量。</p>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

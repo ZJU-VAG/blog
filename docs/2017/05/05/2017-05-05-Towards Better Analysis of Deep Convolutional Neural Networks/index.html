@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Towards Better Analysis of Deep Convolutional Neural Networks - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作："><span class="toc-text">相关工作：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统概览"><span class="toc-text">系统概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例分析"><span class="toc-text">案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#案例一"><span class="toc-text">案例一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例二"><span class="toc-text">案例二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Towards Better Analysis of Deep Convolutional Neural Networks
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-05-05 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-05-05</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#李宗壮"
+                title="李宗壮">李宗壮</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>首先介绍一下CNN（卷积神经网络）。CNN是一种特殊的神经网络，一个标准的CNN由一系列的层组成，包括卷积层，pooling层，全连接层等。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/12.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/12.png" alt="img"></a></p>
+<p>深度卷积神经网络已经在很多领域都有了突破性的表现。然而高质量深度模型的开发伴随着大量的尝试和错误，也并不能清楚的理解深度模型工作的原理。因为它难以理解的函数和并不清晰的工作机制，深度卷积神经网络一直被视作是黑盒模型。</p>
+<p>因此，本文提出用可视化的方法帮助研究者更好的理解、判断和调整深度卷积神经网络。</p>
+<p>而目前有两个主要的难题阻碍着研究者去理解和分析深度CNN</p>
+<ol>
+<li><p>一个CNN可能包含十几乃至100多层（深度），每层又会有成千上万的神经元（广度）</p>
+</li>
+<li><p>CNN包含许多组件，它们的值和作用难以很好的理解</p>
+</li>
+</ol>
+<h2 id="相关工作："><a href="#相关工作：" class="headerlink" title="相关工作："></a>相关工作：</h2><p>已有的方法可以分为两个大类，code inversion和activation maximization</p>
+<p>Code inversion 是从一个特定层的激活向量合成出一张照片</p>
+<p>Activation maximization 旨在找出是的给定的神经元最大激活的图像。</p>
+<p>总体来说，需要设计一个工具来满足以下三个需求</p>
+<ul>
+<li>Understanding： 学习网络结构的影响</li>
+<li>Diagnosis：诊断一个未能收敛的训练过程</li>
+<li>Refinement：发现提升模型的潜在方向</li>
+</ul>
+<h2 id="系统概览"><a href="#系统概览" class="headerlink" title="系统概览"></a>系统概览</h2><p>根据上面的需求，促使开发一个可视化系统系统包含如下几块</p>
+<ul>
+<li>一个DAG的结构，把一个卷积神经网络转换为有向无环图以及把神经元和层进行聚类来进行概览</li>
+<li>一个神经元聚合可视化模块用来揭示每个神经元的多个方面</li>
+<li>一个双向聚合边绑定技术来减少连接数量众多引起的杂乱</li>
+<li>一个交互模块提供一系列的交互，例如交互式聚合结果修改和显示调试信息的需求</li>
+</ul>
+<p>先来看一下系统的总览</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/2.png" alt="img"></a></p>
+<p>接下来是几个模块：</p>
+<p><strong>DAG模块</strong></p>
+<p>为了更有效的展示一个大的CNN，首先把相邻的层聚合起来</p>
+<p>接下来把内层作用相似的点聚合起来。假定有相似激活的点有相似的作用。</p>
+<p>两种聚类方法：K-Means和MeanShift</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/3.png" alt="img"></a></p>
+<p>对神经元聚类的可视化效果如下。其中应用了自定义的一种矩阵包装算法和矩阵列重排序算法。神经元之间的联系经过双向边聚类变成了类之间带有权重的边，并进行了绑定。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/41.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/41.png" alt="img"></a></p>
+<h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><p>选取了两个经典案例。</p>
+<h3 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a><strong>案例一</strong></h3><p>经过对一系列深度广度各不相同的卷积神经网络的可视化，对卷积神经网络的结构的影响进行了研究。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/5.png" alt="img"></a></p>
+<h3 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h3><p>对一个失败的收敛过程进行了分析。从可视化系统中发现问题，层层排查最终确定问题，修改网络，实现收敛，得到了不错的结果。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/6.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/6.png" alt="img"></a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>作者的两个心得：在专家们使用到原型之前，有时他们也并不清楚他们具体想要的是什么效果；使用专家感兴趣的数据对于深入研究是至关重要的。</p>
+<p>局限性：首先，CNNVis并不能可视化那些不能转换为有向无环图形式的深度模型；其次，激活矩阵的可扩展性有限；第三，这个系统有一个学习曲线，需要专家花一到两小时来彻底熟悉它的可视化编码和交互</p>
+<p>本文的创新性在于以可视化方法帮助理解分析深度模型，对于专业人员是很好的辅助工具，有很好的参考价值。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

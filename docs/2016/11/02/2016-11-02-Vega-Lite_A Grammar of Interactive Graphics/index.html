@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Vega-Lite: A Grammar of Interactive Graphics - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-Vega-Lite？"><span class="toc-text">什么是 Vega-Lite？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要提出-Vega-Lite"><span class="toc-text">为什么要提出 Vega-Lite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vega-Lite-的具体语法"><span class="toc-text">Vega-Lite 的具体语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vega-Lite-的具体语法——图形方面"><span class="toc-text">Vega-Lite 的具体语法——图形方面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#View-视图"><span class="toc-text">View 视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Operators-操作"><span class="toc-text">Operators 操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Layer"><span class="toc-text">Layer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Concatenation"><span class="toc-text">Concatenation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Facet"><span class="toc-text">Facet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Repeat"><span class="toc-text">Repeat</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vega-Lite-的具体语法——交互方面"><span class="toc-text">Vega-Lite 的具体语法——交互方面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Project"><span class="toc-text">Project</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Toggle"><span class="toc-text">Toggle</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Translate"><span class="toc-text">Translate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Zoom-和-Nearest"><span class="toc-text">Zoom 和 Nearest</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他交互"><span class="toc-text">其他交互</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if-then-else"><span class="toc-text">if-then-else</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#把选择的数据作为另一个-view-的输入"><span class="toc-text">把选择的数据作为另一个 view 的输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根据选择的数据设置的比例尺"><span class="toc-text">根据选择的数据设置的比例尺</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多视图交互中的歧义"><span class="toc-text">多视图交互中的歧义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vega-Lite-编译器"><span class="toc-text">Vega-Lite 编译器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#两个难点"><span class="toc-text">两个难点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四个步骤"><span class="toc-text">四个步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vega-Lite-局限性"><span class="toc-text">Vega-Lite 局限性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Vega-Lite: A Grammar of Interactive Graphics
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-11-02 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-11-02</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#高翔"
+                title="高翔">高翔</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文: Vega-Lite: A Grammar of Interactive Graphics</p>
+<p>作者: Arvind Satyanarayan, Dominik Moritz, KanitWongsuphasawat, and Jeffrey Heer</p>
+<p>发表会议: InfoVis 2016</p>
+<p>在 InfoVis 2016 上，<a href="http://idl.cs.washington.edu/" target="_blank" rel="noopener">UW 交互数据实验室</a> 提出了一种新的交互数据可视化语法——Vega-Lite，获得了今年的 best paper，本文将根据其论文从多个角度介绍 Vega-Lite。<a href="http://idl.cs.washington.edu/papers/vega-lite/" target="_blank" rel="noopener">论文地址</a></p>
+<h2 id="什么是-Vega-Lite？"><a href="#什么是-Vega-Lite？" class="headerlink" title="什么是 Vega-Lite？"></a>什么是 Vega-Lite？</h2><p>简而言之，<a href="https://vega.github.io/vega-lite/" target="_blank" rel="noopener">Vega-Lite</a> 是一种数据可视化的高级语法，能够快速定义一些基本的交互式数据可视化。</p>
+<p>如果你听说过 <a href="https://vega.github.io/vega/" target="_blank" rel="noopener">Vega</a>，那么光看 Vega-Lite 的名字就不难想到它们的关系。Vega-Lite 就是编译成 Vega 的更高级图形语法。</p>
+<p>如下图所示，只要右边寥寥数行代码，就能定义一个散点图：</p>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/sctterplot1.png" alt="img"></p>
+<h2 id="为什么要提出-Vega-Lite"><a href="#为什么要提出-Vega-Lite" class="headerlink" title="为什么要提出 Vega-Lite"></a>为什么要提出 Vega-Lite</h2><p>首先，Vega-Lite 的目标是：</p>
+<ul>
+<li><p>通过一种规范来快速的表达你的可视化设计。</p>
+</li>
+<li><p>提供了简洁的语法和图元便于你快速切换设计。</p>
+</li>
+</ul>
+<p>以前的东西做不到吗？其实也不是做不到，只是在有些方面还有很大的提升空间，Vega-Lite 就是在这个方向上很大的一步棋：</p>
+<ul>
+<li><p>低等级的可视化语法有更高的自由度，但往往高等级的可视化语言更受偏爱，主要因为其简洁，能快速做出东西，而且能生成低等级的语法供二次开发（Vega-Lite 可以编译成 Vega，而且所有代码都是 JSON 格式）。</p>
+</li>
+<li><p>低等级的可视化语言没法提供现成的可视化方案（得你自己设计），而高等级的可以直接搜索或推断出适合你的可视化方案，支持在线查看效果（比如用 vega-lite 配套的 Voyager）。</p>
+</li>
+<li><p>从交互方面来说，现有的高级语法在交互方面比较局限，而低等级语法可能为了定制化还得自己去处理事件回调（例如 D3），这对非专家很不友好且很容易出错。而 Vega-Lite 直接提供更简洁更具表现力的交互（一两行代码就能定义一个交互操作）。</p>
+</li>
+</ul>
+<p>为了实现以上的这些愿景，Vega-Lite 主要通过以下方式做出努力：</p>
+<ul>
+<li><p><strong>Algebra</strong> 用于将单个 view 合成多 view</p>
+</li>
+<li><p><strong>Selection</strong> 用于交互选择判定</p>
+</li>
+<li><p><strong>Transform</strong> 对数据、交互操作转换</p>
+</li>
+<li><p><strong>Compiler</strong> 编译成 vega 语言，可供二次开发</p>
+</li>
+</ul>
+<p>接下来说说它怎么具体实现上面这四个概念的。</p>
+<h2 id="Vega-Lite-的具体语法"><a href="#Vega-Lite-的具体语法" class="headerlink" title="Vega-Lite 的具体语法"></a>Vega-Lite 的具体语法</h2><p>可以从两个方面分开介绍，分别是图形方面和交互方面。</p>
+<h3 id="Vega-Lite-的具体语法——图形方面"><a href="#Vega-Lite-的具体语法——图形方面" class="headerlink" title="Vega-Lite 的具体语法——图形方面"></a>Vega-Lite 的具体语法——图形方面</h3><h4 id="View-视图"><a href="#View-视图" class="headerlink" title="View 视图"></a>View 视图</h4><p>首先，Vega-Lite 定义一个图形为一个 Unit，所以 Unit 是 Vega-Lite 里图形的最小单位。Unit 的定义是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unit := (data, transforms, mark-type, encodings)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>data 用来说明数据的来源，支持JSON格式和CSV格式</p>
+</li>
+<li><p>transform 定义了如何对原始输入数据进行处理</p>
+</li>
+<li><p>mark 指定了可视化图形</p>
+</li>
+<li><p>encoding 定义数据到可视化图形的映射规则</p>
+</li>
+</ul>
+<p>可视化中视觉通道的设计非常重要，所以其中，encoding 是比较重要的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">encoding := (channel, field, data-type, value, functions, scale, guide)</span><br></pre></td></tr></table></figure>
+<p>每个 Unit 可以通过一些 operators 变成 View，而 View 又可以通过一些 operators 变成复合的 View。</p>
+<p>所以可以这么理解，你每个 operator 的单位是一个视图（可以是 Unit，也可以是 View），而一个 operator 的输出又可以作为下一个 operator 的输入，进而可以形成一个嵌套视图。</p>
+<h4 id="Operators-操作"><a href="#Operators-操作" class="headerlink" title="Operators 操作"></a>Operators 操作</h4><p>刚才提到了 operators，你可以把一个 operator 理解成<strong>该以何种方式来整合视图</strong>。Vega-Lite 一共提供了四种 operators，分别是 Layer、Concatenation、Facet、Repeat。</p>
+<h4 id="Layer"><a href="#Layer" class="headerlink" title="Layer"></a>Layer</h4><p>Layer 很好理解，就是字面意思，将每个 View 重叠；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layer([unit1, unit2, ...], resolve)</span><br></pre></td></tr></table></figure>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/layer.png" alt="img"></p>
+<h4 id="Concatenation"><a href="#Concatenation" class="headerlink" title="Concatenation"></a>Concatenation</h4><p>Concatenation是将多个单视图水平放置或垂直放置；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hconcat([view1, view2, ...], resolve) vconcat([view1, view2, ...], resolve)</span><br></pre></td></tr></table></figure>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/concatenation.png" alt="img"></p>
+<h4 id="Facet"><a href="#Facet" class="headerlink" title="Facet"></a>Facet</h4><p>Facet 是将多个单视图根据数据中的某个 field 进行排布；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">facet(channel, data, field, view, scale, axis, resolve)</span><br></pre></td></tr></table></figure>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/facet.png" alt="img"></p>
+<h4 id="Repeat"><a href="#Repeat" class="headerlink" title="Repeat"></a>Repeat</h4><p>Repeat 也很好理解，重复放置视图。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repeat(channel, values, scale, axis, view, resolve)</span><br></pre></td></tr></table></figure>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/repeat.png" alt="img"></p>
+<h3 id="Vega-Lite-的具体语法——交互方面"><a href="#Vega-Lite-的具体语法——交互方面" class="headerlink" title="Vega-Lite 的具体语法——交互方面"></a>Vega-Lite 的具体语法——交互方面</h3><p>任何交互中，<strong>选择</strong>一直是最重要的一个概念，所以 Vega-Lite 的所有交互也都围绕一个概念 —— Selection。首先看 Selection 的定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selection := (name, type, predicate, domain|range, event, init, transforms, resolve)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>name: 属性名</p>
+</li>
+<li><p>type: point, list, intervel</p>
+</li>
+<li><p>predicate: 决定符合条件的最小集合（判定哪些东西被选进来）</p>
+</li>
+<li><p>event: 事件如何定义</p>
+</li>
+<li><p>transform: 操作已选择的元素</p>
+</li>
+</ul>
+<p>其中 transform 又最为重要，它定义了已选择之后的操作。这些操作可以进行随机的组合，且用户不需要定义操作之间的先后顺序，因为具体的顺序由编译器定义。</p>
+<p>Vega-Lite 目前提供的交互操作一共有 5 种，分别是：project(fields, channels)、toggle(event)、translate(events, by)、zoom(event, factor)、nearest()。</p>
+<h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><p>Project 用来重定义判定函数 predicate。</p>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/project.png" alt="img"></p>
+<h4 id="Toggle"><a href="#Toggle" class="headerlink" title="Toggle"></a>Toggle</h4><p>Toggle 表示按下shift键，可以在之前交互结果上，继续进行交互。</p>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/toggle.png" alt="img"></p>
+<h4 id="Translate"><a href="#Translate" class="headerlink" title="Translate"></a>Translate</h4><p>Translate 用于改变交互事件的判断</p>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/translate.png" alt="img"></p>
+<h4 id="Zoom-和-Nearest"><a href="#Zoom-和-Nearest" class="headerlink" title="Zoom 和 Nearest"></a>Zoom 和 Nearest</h4><ul>
+<li><p>Zoom操作主要用户视图的缩放</p>
+</li>
+<li><p>Nearest操作，会将整个视图根据元素的位置分割成Voronoi图，然后将距当前交互的元素最近的元素选择出来</p>
+</li>
+</ul>
+<h3 id="其他交互"><a href="#其他交互" class="headerlink" title="其他交互"></a>其他交互</h3><h4 id="if-then-else"><a href="#if-then-else" class="headerlink" title="if-then-else"></a>if-then-else</h4><p>简单的条件判断逻辑。</p>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/select.png" alt="img"></p>
+<h4 id="把选择的数据作为另一个-view-的输入"><a href="#把选择的数据作为另一个-view-的输入" class="headerlink" title="把选择的数据作为另一个 view 的输入"></a>把选择的数据作为另一个 view 的输入</h4><p>上文也说到过，可以理解成视图的嵌套，也可以用作多视图协作。</p>
+<h4 id="根据选择的数据设置的比例尺"><a href="#根据选择的数据设置的比例尺" class="headerlink" title="根据选择的数据设置的比例尺"></a>根据选择的数据设置的比例尺</h4><p>结合上一点，就可以把一个视图作为另一个视图的拓展。例如下图的 Overview + Detail 模式。</p>
+<p><img src="https://geekpluxblog.oss-cn-hongkong.aliyuncs.com/vega-lite/detail.png" alt="img"></p>
+<p><strong>以上三个交互情形都支持与或非逻辑</strong></p>
+<h4 id="多视图交互中的歧义"><a href="#多视图交互中的歧义" class="headerlink" title="多视图交互中的歧义"></a>多视图交互中的歧义</h4><p>单视图中的交互，很可能在多视图中引发歧义。例如，在散点图矩阵中，如果在一个矩阵中进行 brush，其他的矩阵怎么配合协作？于是 Vega-Lite 又定义了四种交互协作模式，分别是 single、independent、union、intersect。</p>
+<ul>
+<li><p>默认是 single，用户在某个视图中进行交互，其他视图不会做出响应。</p>
+</li>
+<li><p>其次是 independent，每个视图中的交互互不影响。</p>
+</li>
+<li><p>union 求并集，是指只要在多视图中任意一个子视图选中的部分，就被算作选中。</p>
+</li>
+<li><p>intersect 求交集，是指只有在多视图中都选中的部分，才被算作选中。</p>
+</li>
+</ul>
+<h3 id="Vega-Lite-编译器"><a href="#Vega-Lite-编译器" class="headerlink" title="Vega-Lite 编译器"></a>Vega-Lite 编译器</h3><p>Vega-Lite 虽然也是用 JSON 写，但它可以编译成更低级的 Vega。其中它的编译器面临两个难点：</p>
+<h4 id="两个难点"><a href="#两个难点" class="headerlink" title="两个难点"></a>两个难点</h4><ul>
+<li><p>数据结构不对应</p>
+</li>
+<li><p>由于vega-lite省略了很多细节设定，所以得编译器自己计算</p>
+</li>
+</ul>
+<h4 id="四个步骤"><a href="#四个步骤" class="headerlink" title="四个步骤"></a>四个步骤</h4><p>编译器用四个步骤解决了以上两个难点。</p>
+<ul>
+<li><p>语法分析，消除歧义</p>
+</li>
+<li><p>建立 vega-lite 和 vega 数据结构间的联系</p>
+</li>
+<li><p>组合、优化数据结构，去除冗余</p>
+</li>
+<li><p>汇编所有的元素</p>
+</li>
+</ul>
+<h2 id="Vega-Lite-局限性"><a href="#Vega-Lite-局限性" class="headerlink" title="Vega-Lite 局限性"></a>Vega-Lite 局限性</h2><p>Vega-Lite 目前虽然已经发布，但依旧在紧锣密鼓的开发，主要是因其现在还没有达到其理想的效果，在以下两方面还有局限性：</p>
+<ul>
+<li><p>生成的可视化结果依赖于当前 Vega-Lite 的实现（未来可能会通过解释器层面解决，而不是编译器）</p>
+</li>
+<li><p>本身固有的模式（通过 predicate function 抽象来解决）</p>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>可视化在时下越来越重要，越来越多的行业需要对数据进行展示，而可视化的专家又少之又少，所以很需要一款像 Vega-Lite 一样，简单，智能的系统快速地实现可视化。这可能是可视化工具未来发展的方向 —— 快速实现，快速替换可视化方案，快速展示，接下来再进行二次开发，进而多次迭代。</p>
+<p>由此可见 Vega-Lite 前景很大，不过可能还需要再沉淀、开发一段时间，我们拭目以待吧。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

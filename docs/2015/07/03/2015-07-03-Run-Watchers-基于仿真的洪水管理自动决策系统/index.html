@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Run Watchers: 基于仿真的洪水管理自动决策系统 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主要贡献"><span class="toc-text">主要贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本文方法"><span class="toc-text">本文方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Run Watchers: 基于仿真的洪水管理自动决策系统
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2015-07-03 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2015-07-03</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#吴斐然"
+                title="吴斐然">吴斐然</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Run Watchers: Automatic Simulation-Based Decision Support in Flood Management**</p>
+<p>作者：Artem Konev, Jürgen Waser, Bernhard Sadransky, Daniel Cornel, Rui A.P. Perdigão,Zsolt Horváth, and M. Eduard Gröller</p>
+<p>发表：VAST 2014</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>自然灾害由于其不可预知性及对基础设施的破坏，威胁着人类生存。其中洪水防治是灾害防治中重要的一环。面对突发的洪水灾害，政府机构需要迅速反应制定防治方案，以最大限度地降低危害。这之中的需求有二：一是怎样构建防线保住重要的基础设施以及尽可能多的区域；二是如果不能构建起防线，必须要做出对象保护的方案。</p>
+<p>具体来说，洪水防治专家希望解决的问题为：<br>Q1：给定一个溃坝事故，能够及时搭建的第二道防线是否存在？若有多种搭建选择，何为最佳？搭建方案的细节为何？<br>Q2：若这样的防线不存在，是否能够有针对对象保护的方案？搭建方案的细节为何？<br>Q3：某些特定方案的原理是什么？为何某些建筑不能保全。<br>本文致力于提供给用户自动的决策支持工具，省时省力制定洪水防治方案，解决上述的问题。</p>
+<h2 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h2><ol>
+<li>基于规则的自动仿真，在参数空间内高效遍历；</li>
+<li>基于决策聚类的可扩展多重仿真；</li>
+<li>自动生成的故事面板，用以理解应急预案以及解释决策的生成过程；</li>
+<li>加速了整个洪水防治方案寻找和确定的流程。</li>
+</ol>
+<h2 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h2><p>Run Watcher的仿真模式有二，分别为正常模式和贪心模式。正常模式下，从某个时间点新开的仿真不会中断原仿真，而贪心模式则相反。<br>每个新开的仿真都会遵循如下步骤：</p>
+<ol>
+<li>初始周界设定。通过用户设置参数（反应时间、事件持续时间、重要建筑集合、重要建筑防御半径）自动生成，单次仿真无屏障溃坝事件。<br>用户设置事件持续时间，首次波及面（在保证反应时间之后的），最终波及面（持续时间之后的），重要建筑之后，假设首次波及区域内的建筑不可保护，最终波面以外的区域不用保护，重要建筑需要特别保护。<br>这样根据防御半径参数就可以建立凸包和作用区域，最终采用特定算法得到防线的位置。</li>
+<li>屏障放置。系统在之前得到的防线位置上尝试采用不同的屏障（表一），主要参数有：屏障的防御能力、最大吃水深度、屏障设置的最大地形坡度、屏障建造时间、加载时间、卸载时间、装配时间、单位货运数量。<br>可以从吃水浅的屏障开始尝试，若洪水漫过则可以尝试下一个，若建造时间不足也可判定屏障无效。<div align="center">表一  各种屏障及其特性参数</div>
+
+</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/07/table1.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/07/table1.jpg" alt="表一"></a></p>
+<p>三、周界收缩。当所有的屏障都不合适，则调整周界（即防线），可以删除周界片段，然后重复之前的算法得到新的周界。<br>图一描述了上述决策生成的过程。</p>
+<div align="center">图一  仿真执行流程</div>
+
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/07/fig1.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/07/fig1.jpg" alt="图一"></a></p>
+<p>为了更好地可视化上述的仿真流程，Run Watcher设置了防治方案3D视图，浓缩决策聚类视图以及故事面板，全面帮助用户审视仿真过程和结果。<br>3D视图主要采用了3D的视角直接地显示防线以及屏障设置等等信息，这在作者以前的工作中也有运用。<br>浓缩决策聚类视图是本文在可视化上的创新之一，其不是如传统方式将所有的仿真过程依次排列下来（图二 a），而是将仿真过程分成周界设置、屏障设置、周界片段调整三部分，用颜色高亮仿真的进程，帮助用户追踪整个仿真，最后对结果进行排序（图二 b）。</p>
+<div align="center">图二  浓缩决策聚类视图</div>
+
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/07/fig2.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/07/fig2.jpg" alt="图二"></a></p>
+<p>故事面板将决策和结果联系起来，并运用不同的布局方式或者体现决策和结果之间的联系，或者从不同的角度解释一个应急预案，比如为何某建筑难以保护等等。<br>如图三上所示，用户可以通过故事面板直观地理解如之前所述仿真的各个步骤，或者直观查看每次屏障设置产生的结果（图三下）。</p>
+<div align="center"> 图三 故事面板视图 </div>
+
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/07/fig3.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/07/fig3.jpg" alt="图三"></a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总体来说，Run Watcher是一个有效的洪水仿真模拟评测，决策生成工具，其需求出自真实环境，要求解决的问题也非常具体，而且从行文表述上来说，对各个问题的解决也比较到位，因而能够得到领域专家的认可。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

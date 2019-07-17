@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Web可视化工具D3 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么需要-D3"><span class="toc-text">为什么需要 D3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D3-是什么"><span class="toc-text">D3 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D3-的设计"><span class="toc-text">D3 的设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D3-与-Processing-的比较"><span class="toc-text">D3 与 Processing 的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Web可视化工具D3
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2013-05-30 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2013-05-30</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#汪飞"
+                title="汪飞">汪飞</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p><strong><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/05/d31.png" alt="d3"></strong></p>
+<h2 id="为什么需要-D3"><a href="#为什么需要-D3" class="headerlink" title="为什么需要 D3"></a>为什么需要 D3</h2><p>硬件产品和交互设备的多样化使得可视化设计工具面临新的技术难题。理想情况下，可视化工具需要支持从桌面应用到 web 应用以及多触点移动设备，同时还需要紧随硬件发展的趋势，如多核计算以及特殊的图形硬件。Protovis 提供了 JavaScript 和 Java 的实现版本支持异构平台，D3 是 Protovis 的后续产品同样具备跨平台的特性。D3 与 Protovis 最大的差异在于用户能够更直接地使用 SVG，比 Protovis 更灵活。同时 D3 的性能要胜于 Protovis，特别是在动画方面，主要原因在于 D3 只有变化的属性才被更新而不是重新绘制整个场景。目前 Protovis 已停止开发，全面转向 D3。</p>
+<h2 id="D3-是什么"><a href="#D3-是什么" class="headerlink" title="D3 是什么"></a>D3 是什么</h2><p>Web 上的交互式可视化通常需要同时使用多项技术，HTML 用于显示页面内容，CSS 用于设计样式，JavaScript 用于交互，SVG 用于绘制。值得高兴的是，DOM 以层次结构展现页面内容，使得这些技术能够相互协作。然而目前的可视化工具对 DOM 进行了过多自主形式的封装，导致这些工具在可访问性（accessibility, 学习）及表现多样性（expressiveness, 可视化呈现的多样性）都存在不足。D3 在综合考虑表现多样性、效率和可访问性的基础上提出的。</p>
+<p>D3 并没有引入新的图形化语法，而只是解决了另一个不同的更小得问题：有效地操作基于数据的文档。D3 核心的共献在与设计了一个可视化的“内核”，类似于 jQuery、CSS 及 XSLT 这样的文档转换器(Document Transformer)。低层次上，D3 的文档模型直接操作图形原语，这一点类似于 Processing 和 Raphäel。而在高层抽象上，D3 包含了一系列内核之上的辅助模块，这些模块受之前的可视化系统影响而产生。</p>
+<p>D3 使用了 selection 这一概念：用谓词标识一个元素的集合，然后赋予一系列的操作来改变被选的元素的值。这一概念起源于 CSS，而 jQuery 提供了更灵活的控制接口。然而，在数据可视化时，通常需要添加或删除一些元素(Element)，然而 jQuery 缺乏这种动态改变的机制。基于 XML 的 XSLT 虽然能够允许用户按照定义好的模板填充数据并生成 HTML，但是没有高级的可视化抽象，无法灵活地处理繁杂的数学可视化任务。</p>
+<p>Protovis 和 D3 都是基于宿主语言（JavaScript），采用声明式语言（DSL）描述式可视化设计。开发者告诉 DSL 需要什么样的计算结果，而不需要知道结果是如何计算的。HTML/CSS 以及 SQL 都是 DSL 的典型代表。用于可视化的声明式语言也有很多，如 Grammar of Graphics, ggplot2, HiVE, ViaQL 以及 Ploaris。这些语言都提供了高级抽象以及快速分析，但是并不提供细粒度的图形及交互式控制。</p>
+<h2 id="D3-的设计"><a href="#D3-的设计" class="headerlink" title="D3 的设计"></a>D3 的设计</h2><p>D3 的原子操作是 selection：从当前文档中提取元素（Element）集合。操作符（Operator）作用于 selection 之上，用于修改元素内容。数据联合（Data Joins）将输入数据绑定到元素，使得操作符能够操纵相关的数据。这一过程产生了进入（enter）及退出（exit）两个子选择，分别用于创建和销毁元素与数据之间的对应关系。动画式的转换（transitions）可以对属性及样式进行插值处理，让它们变化更平滑。事件处理器（Event handlers）则用于对用户的输入产生响应并可以交互。大量的辅助模块（Modules），如布局、缩放简化了一些常用的可视化操作。</p>
+<h2 id="D3-与-Processing-的比较"><a href="#D3-与-Processing-的比较" class="headerlink" title="D3 与 Processing 的比较"></a>D3 与 Processing 的比较</h2><p>源于 Mike Bostock 对两者作出评述。</p>
+<ol>
+<li>Pixel vs. Vector</li>
+</ol>
+<p>Processing 像 HTML5 Canvas 一样，是基于像素的图形库；D3 使用 SVG，是基于矢量的。一些的图形化的效果如 motion bur and glow，如果用基于像素的库实现起来比较容易（可以组合多帧或者做卷积）。SVG 用 filter 也可以实现，但是不如 pixel-based 库那么灵活。而基于矢量的库则在缩放上有自身的优势。</p>
+<ol>
+<li>Immediate vs. Retained</li>
+</ol>
+<p>Processing 由于是在 pixel buffer 中绘制，最终所有绘制的内容都变成 pixel buffer 中的元素。而 retained-mode 系统则维护一个可见元素的场景图（scenegraph）。它的好处在于你可以控制场景，改变了场景中的元素，场景跟着改变，而无须像 pixel buffer 那样管理 dirty region 然后再 redraw。基于这一点，后者能获得比较好的性能。但是对于很复杂的场景，维护场景自身也会带来一定的开销。</p>
+<p>另外，对于动画，往场景中添加交互操作更容易。用 HTML5 Canvas，需要用 pointInPath 手工做 hit testing，用 SVG 只需要向 HTML 语句添加 event listener 即可。甚至可以用 CSS（hover, anchor tags, etc）做简单的交互。</p>
+<ol>
+<li>Proprietary vs. Standard</li>
+</ol>
+<p>Processing 虽然具有一个非常好用的 API，但是远不如 HTML 流行。D3 建立在标准 HTML 之上，因此可以与其他技术进行整合，例如使用外部的 stylesheets 做样式，甚至可以使用 CSS3 作动画。也可以在服务器上生成 HTML，然后使用 D3 做数据变换在客户端上显示。或者与其他的 JavaScript 工具一起使用，如 jQuery。而 Processing 则是一个相对封闭的系统。</p>
+<ol>
+<li>Imperative vs. Declarative</li>
+</ol>
+<p>Processing 本质上是一种 C/C++风格的编程语言，使用函数和 for 循环等等，通常被称为“Imperative”编程。D3 是声明式的，虽然不像 CSS 那样纯粹的声明式语法，但已经去除了大部分的控制语句。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>D3 在 web 可视化上确实下了很多功夫，尤其是动画上编程简单效果非常棒，而且 D3 的例子中实现了常见的可视化方法，很多可以直接拿来使用。但是受浏览器本身的限制，D3 仍然存在一些不足，特别是处理数据的规模还很小，尽管 Jeff Heer 还开发了与之相配合的 JS 数据库来支持 D3 处理更大的数据，但是效果并不佳。在交互上，D3 也还仍有很多工作需要继续。希望 D3 的发展越来越好，成为 web 可视化的标准库。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

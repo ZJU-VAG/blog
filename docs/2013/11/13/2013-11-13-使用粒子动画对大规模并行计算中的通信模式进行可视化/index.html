@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        使用粒子动画对大规模并行计算中的通信模式进行可视化 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#可视设计"><span class="toc-text">可视设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式提取及分析"><span class="toc-text">模式提取及分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#细节设计"><span class="toc-text">细节设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将来工作"><span class="toc-text">将来工作</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        使用粒子动画对大规模并行计算中的通信模式进行可视化
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2013-11-13 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2013-11-13</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱标"
+                title="朱标">朱标</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Visualizing Large-scale Parallel Communication Traces Using a Particle Animation Technique</p>
+<p>作者：Carmen Sigovan, Chris W. Muelder, and Kwan-Liu Ma</p>
+<p>会议：EuroVis 2013</p>
+<p>并行计算在提升计算速度的同时，也会由于参与并行的各个节点之间的通信而带来额外的开销。这种开销通常会随着并行规模的增大而增加，而且它对于并行性能的影响也难以测量。此外，随着一些并行库（比如 ScaLAPACK）的广泛应用，底层的 MPI 细节被隐藏，使得对于并行计算中通信行为的分析更为困难。</p>
+<p>本文提出了一种基于粒子动画的技术，用于分析并行计算中的通信行为。目的在于帮助用户看分析这些通信行为的模式，从而使用户可以发现影响并行性能的问题并加以优化。本文提出的方法可以支持多达 16,000 个处理单元的并行规模。</p>
+<h2 id="可视设计"><a href="#可视设计" class="headerlink" title="可视设计"></a>可视设计</h2><p>下图是本文可视化的主视图，即粒子动画部分。横轴对应了处理单元（processor），按 rank 从小到大一次排列，并进行分组，组的边界上标明了处理单元的编号。纵轴是时间，由于在 MPI 的通信时间的时间跨度很大，所以采用了对数的形式。每个粒子则对应了一个 MPI 消息事件，不同类型的事件用不同的颜色进行编码。每当一个事件出现，就会在对应的处理单元的位置出现一个点，然后随着时间的推移，这个点会往上运动，这样一来就形成了动画。当事件结束的时候，对应的点就会停在最终的位置，然后慢慢淡出。当然，本文并没有将淡出的点直接舍弃，而是以一定的透明度叠加成了一张背景纹理，作为对历史事件的概览。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/particleAnimation.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/particleAnimation.png" alt="img"></a></p>
+<h2 id="模式提取及分析"><a href="#模式提取及分析" class="headerlink" title="模式提取及分析"></a>模式提取及分析</h2><p>针对粒子动画的一些结果，作者抽象了如下 5 种模式：</p>
+<ol>
+<li>水平线—-表示并行程序是负载平衡的，是一种理想的情况</li>
+<li>不规律的—-没有特定的解释，可能由于网络拓扑、负载倾斜、任务依赖等原因</li>
+<li>斜线—-文中给的例子中斜率很小，解释为受网络影响</li>
+<li>对数曲线—-rank 大的处理单元中，事件会滞后，可能由局部串行的算法造成</li>
+<li>部分 Processor Group 和其他的行为模式有明显差别—-由于它们被分配的计算任务差异</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/patterns.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/patterns.png" alt="img"></a></p>
+<p>然后通过对一些并行算法的实验来解释这些模式出现的原因。比如说，作者发现 ScaLAPACK 中的 Cholesky decomposition 的通信行为呈现一种(d)对数曲线的模式，进一步分析发现这是由于该实现采用了一种 right-looking 的算法，每当完成一列的计算，需要对该列右边的列进行更新，所以 rank 比较大的处理单元的事件会出现一定的滞后。</p>
+<h2 id="细节设计"><a href="#细节设计" class="headerlink" title="细节设计"></a>细节设计</h2><p>本文给笔者的一个印象深刻的地方是对可视化的细节非常重视，举三个例子：</p>
+<ol>
+<li>颜色编码：考虑到人可以区分的颜色种类有限，所以作者将具有类似功能的 MPI 函数用色调相近的颜色去编码，使得在最终的动画中，用户可以很快地分辨出当前正在进行的通信类型。</li>
+<li>纵轴 Label：可以看到在动画的纵轴上，标有一些时间刻度，作者在选择这些刻度的时候除了考虑对数增长外，还考虑到了 label 之间不能重叠，也就是说两个刻度之间的空间要足够放置一个 label。这样在保证纵轴信息丰富的同时不至造成视觉遮挡。</li>
+<li>背景的透明度设定：由于通信行为十分复杂，使得有些位置的事件密度特别大，而有些位置可能只有个别事件，如果对每个事件使用统一的透明度，那么要么密度大的地方都变得不透明，要么密度小的地方由于透明度太大几乎看不见。所以作者设计了一种对数变化的透明度策略，公式如下图所示，只有当密度达到最大 Dmax 时，才变得不透明，而即便某个位置只有一个事件，它的透明度也不低于预设的最小值 Omin。</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/transparency.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/transparency.png" alt="img"></a></p>
+<p>所以放开可视化的功能不谈，单单可视化效果也对这个工作有不少加分，下面是一些漂亮的结果：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/result1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/result1.png" alt="img"></a><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/result2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/result2.png" alt="img"></a></p>
+<h2 id="将来工作"><a href="#将来工作" class="headerlink" title="将来工作"></a>将来工作</h2><p>本文方法虽然可以较清晰地看出一些并行计算中的通信模式，且支持超大的规模（16,000 核），但是由于是 per-event 的可视化，当事件过多地时候，还是会有视觉混乱，所以之后可以做一些 aggregation、zooming、filtering 的工作，已减轻视觉混乱。此外，short-event 和 long-event 的行为模式、对性能的影响差别比较大，可以考虑将两者分开分析，而不是通过对数坐标轴将两者统一可视化。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

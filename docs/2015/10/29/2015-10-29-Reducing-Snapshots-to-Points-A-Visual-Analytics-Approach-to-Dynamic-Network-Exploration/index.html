@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本文方法"><span class="toc-text">本文方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Case"><span class="toc-text">Case</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2015-10-29 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2015-10-29</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱标"
+                title="朱标">朱标</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration<br>作者：Stef van den Elzen, Danny Holten, Jorik Blaas, Jarke J. van Wijk<br>发表：VAST 2015</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>动态网络的可视化方法可以分为Animation (time-to-time) 和 Small-multiple (time-to-space) 两类。对于前者，用户每一时刻只能看到一帧，前后内容需要用户去记忆、理解，往往需要来回观看很多遍才能粗略理解动态网络的变化过程，给用户带来了很大的认知负担；对于后者，将不同时刻的网络进行并排罗列，由于屏幕空间有限，很多时候并不能将所有时刻的网络同时进行展示，且难以进行网络动态变化模式的发现。本文提出了一种对动态网络进行二维投影的方法，可以将每个动态网络表示成一张静态的node-link图，每个node代表某个时刻的网络，link连接了相邻时刻的node，可以有效地帮助用户发现稳定状态(stable state)、重现状态(recurring state)、异常拓扑(outlier topologies)及分析网络状态间的转移过程。</p>
+<h2 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h2><p>下图是本文方法的工作流程：</p>
+<ol>
+<li><p>离散化：原始数据由一系列时序的事件组成，每个事件均发生在某两个个体之间。方法的第一步是将原始数据进行离散化，生成一些离散的snapshots。具体做法是生成一些连续的时间窗（为了最后投影结果的连续性，时间窗口可以有部分重合），将每个时间窗内的所有事件转换成一个等价的网络，网络里的节点和边分别是这个时间窗内出现过的节点和边，并将每条边在这个时间窗内出现的次数当做该边的权重。</p>
+</li>
+<li><p>向量化：为了进行投影，需要进行向量化将每个snapshot转换成一个高维的向量。具体做法是先将snapshot表示成邻接矩阵，然后将邻接矩阵转化成一个高维向量，当然这里还可以往该向量里加入一些额外的属性，比如该网络中节点平均的度（degree）等。</p>
+</li>
+<li><p>投影：经过前面两个步骤，我们已经得到了一些列时序的高维向量，只需要对其进行二维投影即可。</p>
+</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_workflow.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_workflow.png" alt="img"></a></p>
+<p>本文方法本身比较简单，都是一些已有的方法的组合，但本文针对方法的每个步骤，都进行了全面、细致的讨论，讨论涉及的内容有：</p>
+<ol>
+<li><p>离散化：讨论了时间间隔、窗口大小的选择对最终投影结果的影响</p>
+</li>
+<li><p>向量化：讨论了多种归一化方法（binarization，Min-max和Z-normalization）对投影结果的影响</p>
+</li>
+<li><p>投影：讨论了不同的投影方法（PCA，MDS和t-SNE），不同的距离度量（DDQC，KS）。并讨论了在PCA投影时，将其中一个轴替换成时间轴，可以更清晰地展示网络随时间的变化。</p>
+</li>
+<li><p>可视化：讨论了多种节点颜色编码方案，snapshots间的动画切换效果等</p>
+</li>
+</ol>
+<h2 id="Case"><a href="#Case" class="headerlink" title="Case"></a>Case</h2><p>Case 1：</p>
+<p>这是一个作者生成的动态网络数据，从左图中，我们可以看到有四个稳定态，颜色由浅到深编码了时间的推移，其中左下方的是反复出现的稳定态，可以看到它包含了多种不同颜色的节点。(a)是将时间作为横轴的PCA投影，可以明显看到4个不同的稳定态，并且最下方的稳定态重复出现了三次。(b)是将左图中PCA投影方法替换成非线性投影的效果，可以看到不同的稳定态被很好地区分，但是稳定态之间的转移过程消失了。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_case11.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_case11.png" alt="img"></a></p>
+<p>Case 2：</p>
+<p>这是一个真实的数据集，记录了一个学校里180名学生在7个工作日内面对面接触的数据，一共有45,047条记录。最终生成的动态网络里面有180个节点、10,104条边，作者取的时间窗是60分钟，前后时间窗的重叠部分达到了54分钟，最终生成了2015个snapshots。</p>
+<p>下图左边是PCA投影的结果，其中左边没有进行向量的归一化，而右边进行了 Z-normalization 的归一化。从左图中，我们可以看到作者标出的对应每一个工作日的折线。中心有一个稠密的投影区，也就是文中说的稳定态，作者通过进一步查看发现那对应了夜晚的时段，即学生们放学后相互之间见面就很少了，网络结构也就变得稀疏、相似了。从右图中我们看到一些离群点变得更明显了，离中心区域近的点的网络结构都比较稀疏，比较接近夜晚时段的状态。而离中心远的离群点则网络结构相对稠密，对应学生间碰面较多的时段。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_case2_1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_case2_1.png" alt="img"></a></p>
+<p>下图是使用非线性投影方法投影的结果，相比于PCA投影的结果，每个工作日的投影结构更为明显。左图和右图的区别在于颜色编码不同，左图编码的是从19日到27日，右图编码的是每天的早6点到晚6点，可以更清楚地分析每天的活动规律。可以看到每个工作日基本上是连续的一条轨迹，其中每一天的轨迹都会在几个基本固定的时刻断开，作者分析是由于上课、午休等导致的。另外，在右图中可以看到，周二和周三下午有异常，点的分布和当天的轨迹不连续，作者发现这是由于周二下午只有一节课，而周三下午有一场考试导致的。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_case2_2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_case2_2.png" alt="img"></a></p>
+<p>下图左边是将横轴替换成时间轴的PCA投影，可以看到规律的七个工作日的网络变化，早上开始逐渐变活跃，中午的活跃状态会降低，下午又会重新变活跃，直到晚上恢复完全的平静。而双休日由于没有数据，都处于平静的状态。右图是z-normalization归一化后进行非线性投影的结果，可以看到白天的活动都被分成了基本等长的一些小段，作者表示这是由于学校每次课都持续一个小时左右。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_case2_3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/10/rstp_case2_3.png" alt="img"></a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章是VAST 2015的Best Paper，而文章的idea及文中用的方法并不复杂，我认为它获得这一荣誉的原因有：</p>
+<ol>
+<li><p>选题好，动态网络的分析是当前较为热门的问题，本文方法虽然简单，但是确实较为有效地解决了状态发现、状态转移分析等问题。</p>
+</li>
+<li><p>虽然方法简单，但方法所涉及到的方方面面均进行了细致的讨论，整个工作做得相当完整。</p>
+</li>
+<li><p>虚拟数据和实际数据相结合。虚拟数据的结果更为漂亮，比较能吸引人，也更容易让人理解方法本身。真实数据的分析进一步证明了方法的实用性。</p>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

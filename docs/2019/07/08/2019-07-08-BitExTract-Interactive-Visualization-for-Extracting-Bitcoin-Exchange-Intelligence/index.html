@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        BitExTract: Interactive Visualization for Extracting Bitcoin Exchange Intelligence - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#系统概览"><span class="toc-text">系统概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务分析"><span class="toc-text">任务分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面临挑战"><span class="toc-text">面临挑战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本文贡献"><span class="toc-text">本文贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据"><span class="toc-text">数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始数据"><span class="toc-text">初始数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据加工"><span class="toc-text">数据加工</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视化面板介绍"><span class="toc-text">可视化面板介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单个视图介绍"><span class="toc-text">单个视图介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户评估"><span class="toc-text">用户评估</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结-未来工作"><span class="toc-text">总结-未来工作</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        BitExTract: Interactive Visualization for Extracting Bitcoin Exchange Intelligence
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-07-08 23:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-07-08</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#王毅超"
+                title="王毅超">王毅超</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>发表：IEEE TVCG 2018</p>
+<p>作者：Xuanwu Yue, Xinhuan Shu, Xinyu Zhu, Xinnan Du, Zheqing Yu, Dimitrios Papadopoulos, and Siyuan Liu（第一作者：岳轩武，香港科技大学在读博士；通讯作者：Siyuan Liu，宾夕法尼亚州立大学 smeal 商学院助理教授)</p>
+<p>简介：这篇 paper 介绍了一个分析比特币交易的可视化系统：BitExTract</p>
+<h2 id="系统概览"><a href="#系统概览" class="headerlink" title="系统概览"></a>系统概览</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps1.png" alt="img"></p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>现有工作主要分为三个层面，如下图所示：</p>
+<p>​ <img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps2.jpg" alt="img"></p>
+<p>​ 整体上，作者借鉴已有部分研究成果的，并且针对文中提出的缺少和不足做了对应的设计。最终融合，做出了一个分析比特币交易演化的可视化系统 BitExtract。</p>
+<h2 id="任务分析"><a href="#任务分析" class="headerlink" title="任务分析"></a>任务分析</h2><p>​ 在项目的进行过程中，作者与 4 位专家，2 位比特币金融专家、2 位高级交易专家，有长达 6 个月的合作。在 6 个月的合作中，他们针对该系统不断的讨论、设计、修改、迭代。并提出了基于三个层面的，6 个核心问题。其中有两个关键词：第一，时间，随时间演化情况。第二，其次特定事件的影响情况。<img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps3.jpg" alt="img"></p>
+<h2 id="面临挑战"><a href="#面临挑战" class="headerlink" title="面临挑战"></a>面临挑战</h2><ol>
+<li><p>交易数据量大，10GB+</p>
+</li>
+<li><p>交易网络复杂，要考虑交易的数量大小、频次、地理位置</p>
+</li>
+<li><p>可视化设计既要全面、又要易于被理解</p>
+</li>
+</ol>
+<h2 id="本文贡献"><a href="#本文贡献" class="headerlink" title="本文贡献"></a>本文贡献</h2><ol>
+<li><p>第一个允许用户通过交互去分析、比较不同比特币交易平台演化的可视化系统</p>
+</li>
+<li><p>块状平行坐标图同时显示出多个交易平台随着时间的演化</p>
+</li>
+<li><p>将系统整合进专家和实践者的分析中，发现更深层次和更有价值的背后信息</p>
+</li>
+</ol>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="初始数据"><a href="#初始数据" class="headerlink" title="初始数据"></a>初始数据</h3><p>​ 该项目的数据可以描述为分布在 5 个大洲的 65 个交易平台，在 7 年间，超过 6000 万次交易，在结合一些新闻事件信息和公司信息。形成最初的数据</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps4.png" alt="img"></p>
+<h3 id="数据加工"><a href="#数据加工" class="headerlink" title="数据加工"></a>数据加工</h3><p>​ 比特币的数据交易时基于 NxN 的交易，但是这种交易数据难以被理解和可视化，该项目将其按比例拆解成 1 对 1 的交易。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps5.jpg" alt="img"></p>
+<p>并在最初的数据中提取出三个参数：Market Share /Network Standing /Business Proximity。具体解释如下图：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps6.jpg" alt="img"></p>
+<h2 id="可视化面板介绍"><a href="#可视化面板介绍" class="headerlink" title="可视化面板介绍"></a>可视化面板介绍</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps7.png" alt="img"></p>
+<p><strong>概览介绍</strong></p>
+<p>​ <strong>comparison View</strong>整体用来表达整体市场和交易平台随时间交易的变化情况</p>
+<p>​ <strong>Massive Sequence View</strong> 主要反映整体市场和交易平台的买和卖的情况随时间的变化情况</p>
+<p>​ <strong>Connection View</strong> 主要用来表达交易平台之间的关系以及单个情况</p>
+<p>​ <strong>Exchange List Panel</strong> 可以概览每个交易平台的情况，以及作为一个选择的面板，用来选择一个或多个交易平台。</p>
+<h3 id="单个视图介绍"><a href="#单个视图介绍" class="headerlink" title="单个视图介绍"></a>单个视图介绍</h3><ol>
+<li><strong>Comparison View</strong></li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps8.jpg" alt="img"></p>
+<p>​ 如上图，Comparison View 建立在平行坐标的基础之上，平行坐标是用来表达高维信息的。而这里的高维，指的则是不同的时间段。</p>
+<p>​ 一个竖状的大矩形记录了一个月的交易历史。它的宽度代表该月总计客户数量。矩形中的每一行代表某个交易公司。那么行与行的排序是什么方式呢？有三种（network standing，买卖差额，或者交易数量的多少）</p>
+<p>​ 还有两种数据填充方式（一个是买卖差额，一个是交易数量的大小）营业额指的是：收到的数量减去发送出去的数量，有点像平常商家最终的利润收入（是收入减去支出）。红色表示最终是正的，蓝色表示是负的。</p>
+<p>之间的连线连接的是同一种公司，或者说是同一公司。如上面的黄线突出显示某一公司。</p>
+<p>​ 该视图回答了任务分析中的两个核心问题：T5 单个平台的表现随时间如何变化？T6 单个平台的有什么重要的特殊时期？</p>
+<ol>
+<li><strong>Exchange List Panel</strong></li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps9.jpg" alt="img"></p>
+<p>​ Exchange List Panel 面板主要是用来：让用户快速选择一个确定的交易平台，在 USD 中查看它的历史交易数量。每一个小的柱状图显示的是某一个国家，随着时间交易数量的变化。用户可以选择两种排序方式：一种是按首次进行交易的时间先后排序。时间早的排下面，时间晚的排上面，一种是按大洲排序，即亚洲的放一块，欧洲的放一块，类似的。每个颜色是一个大洲。</p>
+<ol>
+<li><strong>Massive Sequence View </strong></li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps10.jpg" alt="img"></p>
+<p>​ Massive Sequence View 提供了一个易被理解的全局买卖概览图。颜色填充依据买卖差额。红色的代表卖出的多于买入的，蓝色代表买入的多余卖出的。根据一个一个单位来绘制。</p>
+<p>​ 下部分的图表，横坐标是时间，纵坐标是比特币不同时间的价格。上下两张图共享时间轴。</p>
+<p>​ 上部分的图表：每行是一个交易所，右侧写着交易所的名字，行与行之间的排序是按照参与交易的年龄大小进行的。新出现的在上面，年老的在下面。水平向的长条填充反映出：买卖差额。在某个时间点是卖出大于买入呢？还是买入大于卖出？</p>
+<p>​ 2013 年到 2015 年斜边比较明显，表明：有大量交易所出现，开始交易。16 年之后有多出空白，表示有部分交易所倒闭、停业。</p>
+<p>​ 整体而言基于这个视图可以回答 T1/T2/T3 三个问题</p>
+<p>​ T1 整体市场网络的模式随着时间如何演化？</p>
+<p>​ T2 特定的事件对整体市场会有什么影响？</p>
+<p>​ T3 平台之间的联系随着时间如何变化？</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps11.jpg" alt="img"></p>
+<p>​ 在两种交互下 Massive Sequence View 会有不同的显示方式：</p>
+<p>交互 1：</p>
+<p>​ 如果选定某一个交易平台，右上角，就会显示和该交易平台相关的所有交易。而整体面板的也会做相应的联动变化。</p>
+<p>交互 2：</p>
+<p>​ 选择一定的时间区间，新闻面板就会显示相应时间段内，所发生的的相关事件。时间段的选择也会影响 Comparison View 视图和 Connection View 视图的时间段变量。</p>
+<ol>
+<li><strong>Connection View</strong></li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps12.jpg" alt="img"></p>
+<p>​ Connection View 主要目标是可视化具体交易行为，并辅以地理层级信息，如大洲、国家、个体。主要回应前面的 T3/T6 问题：T3 平台之间的联系随着时间如何变化？T6 单个平台的有什么重要的特殊时期？</p>
+<p>​ Connection View 是一个比较综合的视图，由两个部分组成：外侧、内侧部分。一个大洲是一种颜色，同一个大洲内，不同国家用不同的颜色透明度来表示。外圈的弧长由这个大洲的交易数量在市场的份额比例决定。也可以选择某一个弧，由“世界视图”进入“大洲内部”的交易视图。中心一圈节点连线，代表两者之间的 Business Proximity,具体计算公式如图。 Vt 代表 a 和 b 之间的交易数量。而 Ft 代表 a,b 之间的交易频率。a 和 β 在这里大小相同，因为他们认为两个因素对 Business Proximity 同样重要。也可以将任一节点拖至中间，变成个体视图，只显示和该平台相关的交易份额和交易平台</p>
+<p>个体视图：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps13.jpg" alt="img"></p>
+<p>​ 个体视图，中心节点和周围节点的连线的粗细代表交易的数量大小，从中心节点向外代表一段时间，上面的每一个点代表一个时间点。在该线上，箭头越大越密，代表此刻交易额越大。红色代表发出比特币，蓝色代表收入收入比特币。</p>
+<h2 id="用户评估"><a href="#用户评估" class="headerlink" title="用户评估"></a>用户评估</h2><p>参与人员：领域专家、比特币交易者和研究者</p>
+<p>三个案例研究：</p>
+<ol>
+<li><strong>市场繁荣原因的探索</strong></li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps14.jpg" alt="img"></p>
+<p>​ 通过 Comparison View 可以观察到从 2015 年 7 月到 2015 年 12 月，矩形的宽度在变宽，这也意味着这个市场逐渐繁荣。为了探究繁荣背后的原因，查看该时间段的 Connection View 发现基于中国的交易平台占据了市场分额的主要部分。在 Exchange List Panel 里面选择了中国的交易平台后，观察发现中国的交易平台的份额都在逐渐上升。所以确定该时间的比特币市场繁荣是因为中国市场的大量交易导致。</p>
+<ol>
+<li><strong>分析政策事件的影响</strong>（中国禁止比特币交易）</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps15.jpg" alt="img"></p>
+<p>​ 中国禁止比特币交易，具体是体现在 2017 年的 2 月中国人民银行对中国最大的比特币交易平台“火币”进行监管服务，之后该平台中国区提取比特币的业务暂停。随着监管开始，该平台的亚洲市场份额，有大幅度下降，该平台和中国其他比特币交易平台间的联系也大幅度减弱，该平台的北美市场份额有所增加。随着 2017 年 6 月该平台重启比特币提取业务，该平台恢复了部分和中国其他平台的联系。但是中国的市场份额并没有恢复。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps16.jpg" alt="img"></p>
+<p>​ 查看 Comparison View 发现该平台的市场份额，随着监管开始，市场份额下降，随着监管结束，市场份额有一定的恢复，但是亚洲的市场份额没有恢复。</p>
+<ol>
+<li><strong>两家交易平台在使用 BitGo 后的，可靠性的对比探索</strong></li>
+</ol>
+<p>BitGo 服务，可以理解为一个监管钱包，或者一个中间人。发出的比特币要经由该钱包，才能发出。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps17.jpg" alt="img"></p>
+<p>Bitfinex 和 Kraken 是两家表面看似相同的交易平台，也都使用了 BitGo 服务。但是到底谁更可靠呢？</p>
+<p>从上面的 A/B 两图可以看出两交易平台在使用该服务后，买卖情况表现基本相同</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/wps18.jpg" alt="img"></p>
+<p>​ 分析上图 Comparison View,发现两者 Inverse Volatility 有很大的差别。由指标含义可以推测：两平台在使用 BitGo 服务后，可靠性方面 Kraken 大于 Bitfinex。分析细节得知是由于：Bitfinex 将绝大部分比特币都交给了 BitGo 监管服务。自己钱包只留了非常少的一部分。而 Kraken 只在 BitGo 放了必要数量的比特币，自己保留了绝大多数比特币。因此 Kraken 的 Inverse volatility 几乎没有受影响，这也保证了其平台的稳健性。之后 2016 年 8 月，BitGo 服务被黑客攻击，导致价值 7000 万美元的比特币被盗，Bitfinex 也因此终止了所有与其交易伙伴的关系。</p>
+<h2 id="总结-未来工作"><a href="#总结-未来工作" class="headerlink" title="总结-未来工作"></a>总结-未来工作</h2><p>​ 该系统通过从各个层面对市场进行解读，也回答了一开始提出的 6 个核心问题。从而更好的帮助研究者和交易者去分析和决策。作者有意向在未来将该系统拓展成实时系统、增加应对短期冲击分析、能够分析其它数字货币。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

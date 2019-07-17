@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        基于语义的大规模出租车轨迹交互分析方法(SemanticTraj) - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题导向"><span class="toc-text">问题导向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#界面设计"><span class="toc-text">界面设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据处理方法"><span class="toc-text">数据处理方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析及案例"><span class="toc-text">分析及案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        基于语义的大规模出租车轨迹交互分析方法(SemanticTraj)
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-11-24 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-11-24</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#黄兆嵩"
+                title="黄兆嵩">黄兆嵩</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文: SemanticTraj: A New Approach to Interacting with Massive Taxi Trajectories</p>
+<p>作者: Al-Dohuki S, Kamw F, Zhao Y, et al.</p>
+<p>发表期刊: TVCG2016</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在城市规划、城市运输及城市交通管理等领域，对于车辆轨迹的信息挖掘和知识提取越来越重要。大规模的城市出租车轨迹数据，能够帮助各个领域的专家分析城市交通和城市人群的移动规律。现有的工作大都围绕对地理位置的框选或刷选来完成数据的过滤。</p>
+<p>本文介绍了一种基于语义信息对大规模出租车轨迹数据进行交互式的检索、分析的可视化方法。领域专家或者使用者可以通过输入带有语义的查询条件对轨迹数据进行查询检索，并通过系统的可视化界面对轨迹数据进行探索，从而得到有用的信息。系统通过在轨迹数据上建立了两种文本语义索引文件来加速语义查询速率，并设计了多视图的可视化界面来帮助用户分析轨迹数据。最后通过用户的实验验证了系统的可行性。</p>
+<h2 id="问题导向"><a href="#问题导向" class="headerlink" title="问题导向"></a>问题导向</h2><p>大规模的出租车数据对城市交通城市规划等领域提供了很多有用的信息。为了挖掘出这些信息，现有的大量工作研究了轨迹信息的可视分析，轨迹信息的存储和轨迹语义的标注。然而这些工作大都是基于对地理位置的刷选来完成对数据的过滤。对于特定的任务，例如一家商场的管理者，希望知道在城市的什么地点放置摆渡车辆，能够帮助人们来商场购物? 交通警察希望知道哪些路段是经常堵车的路段，那些路段交通状况很好? 如果使用原有的系统来回答类似上述的问题，操作就会十分繁琐。而如果可以直接通过语义来查询满足条件的出租车轨迹信息，那么分析的时间就会大大下降了。</p>
+<h2 id="界面设计"><a href="#界面设计" class="headerlink" title="界面设计"></a>界面设计</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/1.png" alt="img"></a></p>
+<p>系统的主界面如上图所示：</p>
+<ol>
+<li>查询输入框，允许用户进行文本的输入条件，同时也可以打开查询条件的选择器（如下图）。查询支持布尔查询，模糊查询，渐变查询和范围查询。</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/2.png" alt="img"></a></p>
+<ol>
+<li><p>绘制选项，系统提供了绘制选项使得用户可以自定义轨迹绘制的透明度，颜色宽度等属性，完成自定义的可视化效果。</p>
+<p>3.4.5. 轨迹的各种分析视图，包括反应道路交通流向关系的桑基图，轨迹数据各个维度的平行坐标图，数据的详细列表，和反应轨迹数据速度的环形热力图。并用文本的方式总结了轨迹的基本特点，包括轨迹的速度，车辆数目，上下客的最多的5条道路等信息。帮助用户完成轨迹的多角度分析任务。</p>
+</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/3.png" alt="img"></a></p>
+<ol>
+<li>地图面板，用于在地图上直观的绘制轨迹，并添加文本的标签帮助用户理解轨迹的语义信息。</li>
+</ol>
+<h2 id="数据处理方法"><a href="#数据处理方法" class="headerlink" title="数据处理方法"></a>数据处理方法</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/4.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/4.png" alt="img"></a></p>
+<p>出租车的轨迹数据如上图所示，记录了某城市一个月的8120辆出租车的轨迹信息。基本的数据处理流程如下图。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/5.png" alt="img"></a></p>
+<p>系统通过文本语义的转换工具，把原始的出租车轨迹数据转换成两种不同类型的数据索引文件，包括出租车轨迹索引文件和行程索引文件。前者记录某出租车的轨迹语义索引，后者通过上下客信息记录某一段乘客的行程语义信息。并通过行驶距离计算出行驶的花费。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/11.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/11.png" alt="img"></a></p>
+<p>转换过程中，每一条数据的街道名称通过距离数据经纬度最近的街道来获取，而速度信息也通过赋予速度数值语义的方式转化为用户更能理解的数据格式，方便用户进行语义查询。</p>
+<h2 id="分析及案例"><a href="#分析及案例" class="headerlink" title="分析及案例"></a>分析及案例</h2><p>系统通过了交通专家，犯罪学家及15名计算机学生的实验，通过该实验，结果表明轨迹数据的语义信息有利于更快速有效的理解数据。系统展示的各种统计图表和查询效率非常有利于交通问题的分析。系统中总结的文本信息有利于对数据信息的挖掘。证明了系统的有效性。</p>
+<p>查询速率方面，作者提出了三个问题：</p>
+<ul>
+<li><p>Q1：查询经过上塘路的所有出租车轨迹</p>
+</li>
+<li><p>Q1：查询经过上塘路和中河高架的所有出租车轨迹</p>
+</li>
+<li><p>Q1：查询经过上塘路或中河高架的所有出租车轨迹</p>
+</li>
+</ul>
+<p>验证系统的查询速率。结果表明所有的查询都能控制在交互级别的时间。证明了语义索引文件的有效性。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/8.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/8.png" alt="img"></a></p>
+<p>最后通过案例分析，验证了系统在解决实际问题方面的有效性（举1例）：<br>浙江博物馆的管理人员想要选择接送游客的班车地点。他们通过输入浙江博物馆作为上下客地点为条件，过滤出的出租车图例如下。绿色(红色) 点表示出租车的上客(下客)地点。用户通过总结的文本信息和绿色点的位置分布，很容易的找到来博物馆的人最多的街道名称和地点，从而能够建立游客接送点。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/9.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/9.png" alt="img"></a></p>
+<p>然后管理人员通过平行坐标图，发现，下午3点到5点的车辆明显比其他白天的车辆少很多，从而能够得出在下午3点和5点可以适当的减少车辆来节约成本的结论。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/10.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/10.png" alt="img"></a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>语义信息和地理信息的结合将愈演愈热，就像计算机与人，缺一不可。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

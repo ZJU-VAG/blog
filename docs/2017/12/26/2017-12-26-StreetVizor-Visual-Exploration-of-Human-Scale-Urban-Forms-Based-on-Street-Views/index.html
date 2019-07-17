@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        StreetVizor: Visual Exploration of Human-Scale Urban Forms Based on Street Views - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析任务"><span class="toc-text">分析任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统框架"><span class="toc-text">系统框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视化设计"><span class="toc-text">可视化设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ranking-Explorer"><span class="toc-text">Ranking Explorer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AOI-Explorer"><span class="toc-text">AOI Explorer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Street-Explorer"><span class="toc-text">Street Explorer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例分析"><span class="toc-text">案例分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        StreetVizor: Visual Exploration of Human-Scale Urban Forms Based on Street Views
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-12-26 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-12-26</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱闽峰"
+                title="朱闽峰">朱闽峰</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：StreetVizor: Visual Exploration of Human-Scale Urban Forms Based on Street Views</p>
+<p>作者：Qiaomu Shen, Wei Zeng, Yu Ye, Stefan Müller Arisona, Simon Schubiger,  Remo Burkhard, Huamin Qu</p>
+<p>发表：IEEE SciVis 2017</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>城市的形态和人群在城市中的生活息息相关。当我们描述一个城市的时候，可以从宏观和微观两个角度。宏观的城市形态主要包括面积和人口等描述大范围的指标。而微观的城市形态是基于人的感知的，如视觉、触觉、听觉和在城市中的体验。微观的城市形态和人的生活更加密切，因此理解城市形态对于设计搞质量的城市空间非常重要。 经典的城市理论研究只是基于小范围人群的调研，不能提供更加广泛并且深入的指导性意见。而谷歌街景图忠实得记录了道路上多个地理位置的全景视角，这类似于人类的眼睛，提供了从视觉角度研究微观城市形态的方法。我们可以从街景图中查看绿化、天空和建筑等信息在城市不同区域的分布。</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ol>
+<li><p>量化城市形态的多个属性：绿化、天空、车辆</p>
+</li>
+<li><p>多个层次上探索城市形式：城市、区域、街道</p>
+</li>
+<li><p>比较不同区域的城市形式</p>
+</li>
+</ol>
+<h2 id="分析任务"><a href="#分析任务" class="headerlink" title="分析任务"></a>分析任务</h2><p>T1：多尺度的探索</p>
+<ul>
+<li><p>城市形态可以组织城市层次、区域层次、街道层次</p>
+</li>
+<li><p>overview到detail</p>
+</li>
+</ul>
+<p>T2：定量测定</p>
+<ul>
+<li><p>特征：绿化、天空、建筑、道路、车辆</p>
+</li>
+<li><p>城市形态的特征统计、特征分布、特征方差</p>
+</li>
+</ul>
+<p>T3：排序和比较</p>
+<ul>
+<li><p>方便浏览和探索，特征需要被排序</p>
+</li>
+<li><p>选择两个区域进行比较特征</p>
+</li>
+</ul>
+<h2 id="系统框架"><a href="#系统框架" class="headerlink" title="系统框架"></a>系统框架</h2><ol>
+<li>数据采集：Google Street View</li>
+</ol>
+<p>文章手机了170万张谷歌街景图片，包括新加坡、香港、伦敦和纽约等四个城市。首先从OpenStreetMap中获取路网信息，每隔50米采集一张谷歌街景图，只去街景采集车辆行进过程中向前向后的照片，因为这边照片包含了道路上的信息。</p>
+<ol>
+<li>数据处理：SegNet</li>
+</ol>
+<p>基于深度学习方法SegNet，所有图片的像素点被分为12个类，包括绿化、天空等。作者对12个类做了聚合，分为绿化、天空、建筑、道路、车辆和其他共6个类。每张图片按照6个类的像素点比例构成6维向量。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture1.png" alt="img"></p>
+<ol>
+<li>可视分析流程</li>
+</ol>
+<p>整个可视化分析的流程包括两个步骤，首先在Ranking Explorer视图中选取两个要比较的街道或者区域，然后在对应的AOI Explorer或者Street Explorer比较不同层次的城市形态。</p>
+<p>Ranking Explorer：选择两个街道/区域</p>
+<p>AOI Explorer：城市、区域层次的比较</p>
+<p>Street Explorer：街道层次的比较</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture2.png" alt="img"></p>
+<h2 id="可视化设计"><a href="#可视化设计" class="headerlink" title="可视化设计"></a>可视化设计</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture12.png" alt="img"></p>
+<p>可视化系统主要包含3个视图，分别是Ranking Explorer（左）、AOI Explorer（中）和Street Explorer（右）。</p>
+<h3 id="Ranking-Explorer"><a href="#Ranking-Explorer" class="headerlink" title="Ranking Explorer"></a>Ranking Explorer</h3><p>本视图用于总览不同区域或者街道的特征分布，帮助用户选择感兴趣的对象。</p>
+<p>布局：每一行代表城市、区域或者街道，每一列代表6个特征维度，每个单元格展示了特征的平均值。</p>
+<h3 id="AOI-Explorer"><a href="#AOI-Explorer" class="headerlink" title="AOI Explorer"></a>AOI Explorer</h3><p>此视图包含两个模块，地图模块（b）和统计模块（c）。</p>
+<p>地图模块展示了要比较的两个区域的地理位置，其中使用点密度图展示了街景图的位置。点的颜色是街景图中最大值的特征颜色。</p>
+<p>统计视图是为了展示不同特征维度间的相关关系。由于街景图太多，绘制效率比较低，所以作者先采用了聚类的方法，将多张街景图做聚合。然后，特征之间的相关关系分一下几个方面来展现：</p>
+<p>Feature Correlation（a）：散点图的形式展现两两维度之间的关系。</p>
+<p>Feature Histogram（b）：每个维度的数量统计</p>
+<p>Feature Diversity（c）：x轴为类均值，y轴为标准差</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture21.png" alt="img"></p>
+<h3 id="Street-Explorer"><a href="#Street-Explorer" class="headerlink" title="Street Explorer"></a>Street Explorer</h3><p>街道视图也包含两个模块，分别是地图模块和统计模块。</p>
+<p>统计模块中主要是结合了路网的平行坐标轴，它的绘制方法分以下几个步骤：</p>
+<ol>
+<li><p>找到以起始点为边的最小长方形</p>
+</li>
+<li><p>旋转至起始点到上下绘制边界</p>
+</li>
+<li><p>主题河流：道路上的每一个采样点都有对应的六个维度的数值，数值作为河流的宽度</p>
+</li>
+<li><p>平行坐标轴显示属性值的分布</p>
+</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture3.png" alt="img"></p>
+<h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><p>City-scale Comparison</p>
+<p>我们首先对比分析新加坡（左）和伦敦（右）的城市形态。我们可以看到新加坡形成了很多区域，黄色建筑和绿色植物参杂在一起。而在伦敦，市中心黄色建筑比较多，在城市边缘绿色逐渐增多。这是由于伦敦的城市发展过程中是不断扩张的，而新加坡由于岛屿的原因，无法扩张。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture5.png" alt="img"></p>
+<p>Region-scale Exploration</p>
+<p>在这里我们比较了新加坡的东陵（红）和伦敦的中央公园（蓝），这两个地方都是公园性质的区域，具有类似的功能。从A1中可以看到，这两个区域都有非常高的绿化属性，而中央公园绿化更高一些。A2中说明新加坡的东陵有更高的建筑比例，这是由于新加坡希望最大化土地利用率。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture6.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture6.png" alt="img"></a></p>
+<p>Street-scale Comparison</p>
+<p>最后我们对纽约布鲁克林（左）和香港九龙（右）的街道进行比较。首先我们从地图和对应的街景图中就可以看到，纽约布鲁克林拥有更高的绿化程度。平行坐标轴也是验证了这一个发现，布鲁克林的街道主要由绿化、天空、建筑、道路构成，而香港九龙的街景图主要由建筑和道路构成。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture7.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture7.png" alt="img"></a><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture8.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture8.png" alt="img"></a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>文章提出了一个探索和比较城市形态的可视分析系统，StreetVizor。未来工作将从街景图中抽取更多的语义信息，比如布告板和POI信息等，这样可以接入更多种类的数据，从多个角度分析城市形态。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

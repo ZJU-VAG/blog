@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        浙江大学CAD&amp;CG计算机图形学与大规模数据分析研讨班手记 – 第五天：VAG报告 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#彭帝超：可视化论文之特色"><span class="toc-text">彭帝超：可视化论文之特色</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#思路-寻找隐喻"><span class="toc-text">思路 - 寻找隐喻</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构-Teaser当先"><span class="toc-text">结构 - Teaser当先</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#展示-配色协调"><span class="toc-text">展示 - 配色协调</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#评价-设计严密"><span class="toc-text">评价 - 设计严密</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#刘真：当前可视化方向的热点与挑战"><span class="toc-text">刘真：当前可视化方向的热点与挑战</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关键词分布-visualization-vs-analysis"><span class="toc-text">关键词分布 - visualization vs. analysis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#研究热点-百家争鸣"><span class="toc-text">研究热点 - 百家争鸣</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用需求-迎接大数据"><span class="toc-text">应用需求 - 迎接大数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#研究挑战-更深、更广、更复杂"><span class="toc-text">研究挑战 - 更深、更广、更复杂</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#博士生"><span class="toc-text">博士生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#夏菁-可视建模"><span class="toc-text">夏菁 - 可视建模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#吴斐然-可视化与人的关系"><span class="toc-text">吴斐然 - 可视化与人的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#马昱欣-KDD-Cup与VAST-Challenge"><span class="toc-text">马昱欣 - KDD Cup与VAST Challenge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自由讨论：科学还是艺术？"><span class="toc-text">自由讨论：科学还是艺术？</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        浙江大学CAD&amp;CG计算机图形学与大规模数据分析研讨班手记 – 第五天：VAG报告
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2012-07-25 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2012-07-25</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#马昱欣"
+                title="马昱欣">马昱欣</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#学术会议" title="学术会议">学术会议</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#学术交流" title="学术交流">学术交流</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#随感" title="随感">随感</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>7月6日是“浙江大学CAD&amp;CG计算机图形学与大规模数据分析研讨班”的第五天。下午2时，浙江大学可视分析小组5名成员在浙江大学紫金港校区国际会议中心139报告厅进行了一场有关“可视化与可视分析”的展示报告。小组成员各自以个人研究兴趣为出发点，通过不同视角为讨论班学员展示了一个个色彩纷呈的可视化世界。</p>
+<hr>
+<h3 id="彭帝超：可视化论文之特色"><a href="#彭帝超：可视化论文之特色" class="headerlink" title="彭帝超：可视化论文之特色"></a>彭帝超：可视化论文之特色</h3><p>作为组内信息可视化方向的领军人物之一，彭博士带来了他在可视化研究过程中的经验分享——在学术论文写作上，信息可视化与其他研究方向之间区别如何？在论文写作风格上有什么特色？针对这些问题，彭博士从思路、结构、展示和评价四个方面进行了阐释。</p>
+<h4 id="思路-寻找隐喻"><a href="#思路-寻找隐喻" class="headerlink" title="思路 - 寻找隐喻"></a>思路 - 寻找隐喻</h4><p>科学发现离不开对自然界的观察。在可视化论文中，一个可视化效果往往来源于人们在自然界中的发现和自身真实体验的融合。在忠实表达数据信息的同时，给予人以自然之美。这种可视化与真实体验相结合的过程被称作隐喻（metaphor）。2011年InfoVis论文《TextFlow: Towards Better Understanding of Evolving Topics in Text》就以河流隐喻时间流，表现出同源文本在一段时期内的话题流变。</p>
+<h4 id="结构-Teaser当先"><a href="#结构-Teaser当先" class="headerlink" title="结构 - Teaser当先"></a>结构 - Teaser当先</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/Screen-Shot-2012-07-25-at-3.30.22-PM.png" alt="img"></p>
+<p>对于大多数可视化方面的论文来说，扉页的Teaser（效果图）是可视化论文的标志之一。Teaser作为能够让读者“眼前一亮”的点睛之笔，是用来呈现论文中可视化效果的精髓，同时也是论文观点的浓缩体现。通常Teaser以单幅图来展示文中的创新点，或是以新旧方法对比的方式呈现本文方法的优势；对于拥有Demo展示的可视化论文来说，经常以Demo整体界面充当文章Teaser。</p>
+<h4 id="展示-配色协调"><a href="#展示-配色协调" class="headerlink" title="展示 - 配色协调"></a>展示 - 配色协调</h4><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/Screen-Shot-2012-07-25-at-3.30.44-PM.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/Screen-Shot-2012-07-25-at-3.30.44-PM.png" alt="img"></a></p>
+<p>注重可视化方法的同时，结果展示的美观性也是影响论文质量的因素之一。彭博士特别强调了结果展示中的配色协调问题。可视化也是一种艺术创作，在色彩搭配上需要从美学标准出发并进行思考。因此对于信息可视化工作者来说，手边常备一套配色方案工具十分必要。</p>
+<h4 id="评价-设计严密"><a href="#评价-设计严密" class="headerlink" title="评价 - 设计严密"></a>评价 - 设计严密</h4><p>从方法评价角度讲，可视化论文不同于其他研究方向的论文，带有非常浓厚的主观色彩。对于写作者来说，如何设计一个好的User/Case Study是论文写作中最需要思考的部分之一。针对可视化论文的主观评价特性，彭博士向我们分享了自己在论文写作时的一套思路，即：可视化方法的潜在用户是谁-&gt;是否有用户参与设计-&gt;用户/领域专家如何评价结果-&gt;有什么需要改进的地方。对于User Study来说，用户结果统计是展现调查结果的有力方式，而Case Study则需要对方法呈现出的结果进行深入分析。</p>
+<h3 id="刘真：当前可视化方向的热点与挑战"><a href="#刘真：当前可视化方向的热点与挑战" class="headerlink" title="刘真：当前可视化方向的热点与挑战"></a>刘真：当前可视化方向的热点与挑战</h3><p>刘真老师在随后进行的展示中就当前科学可视化、信息可视化和可视分析三个方向上的热点问题和挑战展开了讨论：</p>
+<h4 id="关键词分布-visualization-vs-analysis"><a href="#关键词分布-visualization-vs-analysis" class="headerlink" title="关键词分布 - visualization vs. analysis"></a>关键词分布 - visualization vs. analysis</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/vis_wordle.png" alt="img"></p>
+<p>上图是Vis、InfoVis和VAST三个领域内顶级会议的关键词分布wordle。对于Vis和InfoVis来说，vIsualization这个关键词必然是最醒目的，然而在VAST会议中，visualization被排到了一个比较次要的位置，取而代之的是data、analytics、interface等更偏重于数据分析的关键词。从统计数据上可以明显看出，VAST会议与Vis、InfoVis有着本质上的差别。</p>
+<h4 id="研究热点-百家争鸣"><a href="#研究热点-百家争鸣" class="headerlink" title="研究热点 - 百家争鸣"></a>研究热点 - 百家争鸣</h4><p>针对科学可视化，刘老师提出了三维体、医疗以及流场等体数据的可视化、信息可视化向科学可视化的引入，以及高性能可视化三个方面的热点。随着数据量以及数据的复杂度不断增长，多维数据、图、树和地理信息可视化将成为今后研究的热点问题。区别于科学可视化与信息可视化，可视分析方向的研究热点则集中于对分析过程的研究，包括可视分析过程基础理论，针对树图结构、语义架构和时空数据的交互可视分析方法，以及协作可视分析。</p>
+<h4 id="应用需求-迎接大数据"><a href="#应用需求-迎接大数据" class="headerlink" title="应用需求 - 迎接大数据"></a>应用需求 - 迎接大数据</h4><p>在当下“数据为先”的时代，很多领域都需要一种能够针对大数据、复杂结构数据来进行分析的方法，其中包括科研领域（超级计算、地质勘探、地球物理等）、国家战略及公共服务领域（国防、安全等），以及商业领域（社交媒体、企业业务数据等）等。这些领域中的需求正是可视化及可视分析在大数据时代所拥有的机遇。</p>
+<h4 id="研究挑战-更深、更广、更复杂"><a href="#研究挑战-更深、更广、更复杂" class="headerlink" title="研究挑战 - 更深、更广、更复杂"></a>研究挑战 - 更深、更广、更复杂</h4><p>可视分析作为一个新兴学科，其理论根基尚显薄弱。随着当前可视分析应用蓬勃发展，研究者需要逐渐深入应用，寻找可视分析基础方法理论，建立学科基础。面对大数据时代的发展机遇，面向大规模、复杂结构数据的处理性能、可视化表达方面的研究也将成为可视化及可视分析的重点问题之一，例如基于云计算的云端可视化方案，面向实时数据、高维数据、社交网络数据、文本数据等的可视化方法等。</p>
+<hr>
+<h3 id="博士生"><a href="#博士生" class="headerlink" title="博士生"></a>博士生</h3><p>除了组内两位老师外，VAG的3名博士生也各自分享了一些自己感兴趣的话题：</p>
+<h3 id="夏菁-可视建模"><a href="#夏菁-可视建模" class="headerlink" title="夏菁 - 可视建模"></a>夏菁 - 可视建模</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/vismodel.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/vismodel.png" alt="img"></a></p>
+<p>对可视化过程进行合理建模是可视化应用的关键。从数据处理、视觉映射、布局及交互，可视建模的每个阶段都决定着数据信息是否能忠实、有效地进行表达。在视觉映射阶段，我们通常需要做的是建立从数据到图形的形状、大小、颜色、位置的映射，使用图形的不同特征表达数据中的特征。在布局阶段，要将这些图形元素按照一定规律进行排列，以达到展现数据内涵的目的。对交互建模来说，经典的“Overview first, zoom and filter, then details-on-demand”已经成为交互设计的基本原则之一。基于这样的原则，如何快速找到POI（point-of-interest）成为交互建模中一个重点研究问题。</p>
+<h3 id="吴斐然-可视化与人的关系"><a href="#吴斐然-可视化与人的关系" class="headerlink" title="吴斐然 - 可视化与人的关系"></a>吴斐然 - 可视化与人的关系</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/interact.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/interact.png" alt="img"></a></p>
+<p>随着计算能力的不断增加，人们处理数据的能力也在不断增强。然而，仅仅依赖于计算方法以及计算智能来进行数据分析远远无法满足当前复杂分析的需要。验证码识别就是一个很好的例子：人类强大的模式识别能力在识别验证码上远胜过计算机，而计算机擅长重复计算及数据存储的能力在这里无法得到应有的发挥。因此，可视分析基于这样的出发点，试图形成一套人与机器进行协作式数据探索的方法。在人机协作方面，可视编码和交互式输入成为连接用户和计算机的有力纽带。可视编码通常使用标记（点、线、面）和通道（位置、大小、形状、方向、颜色等）两个维度来表达数据特征（如类别、关系、顺序、数量等）。在交互设备上，我们已经开始从传统的显示器走向大型显示屏、增强现实眼睛等新型交互手段。</p>
+<h3 id="马昱欣-KDD-Cup与VAST-Challenge"><a href="#马昱欣-KDD-Cup与VAST-Challenge" class="headerlink" title="马昱欣 - KDD Cup与VAST Challenge"></a>马昱欣 - KDD Cup与VAST Challenge</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/Screen-Shot-2012-07-25-at-3.47.21-PM.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/07/Screen-Shot-2012-07-25-at-3.47.21-PM.png" alt="img"></a></p>
+<p>作为数据探索和知识发现的两个不同方向，KDD和VAST都拥有属于各自方向的研究竞赛——ACM KDD Cup和IEEE VAST Chanllenge——来促进学科发展和发现更好的数据探索方法。KDD Cup开始于1997年，其比赛内容涵盖生物、医药、商业、网络安全以及社交网络等多种方向的数据，并针对数据内容提出相应的探索目标。VAST Chanllenge自2006年开始创办，比赛数据类型广泛涉及文本、计算机网络、社交关系等。从任务目标上看，KDD Cup多为较明确的数据挖掘规则，并且通常针对一套数据仅提出一项任务，同场比赛的数据之间没有关联，而VAST Challenge通常有Mini Challenge和Grand Challenge两个组别，Mini Challenge针对单一数据，Grand Challenge则涵盖比赛中的数据。因此在解题方法上,KDD Cup通常使用算法/机器学习式的数据挖掘方法， VAST Chanllenge中竞赛者则需要完成一套交互式可视分析方案，并使用该方案分析回答竞赛问题。在结果评定方面，KDD Cup以预测准确度为客观评价标准，但在VAST Chanllenge中评审者会对参赛作品进行各个方面的评价。</p>
+<hr>
+<h3 id="自由讨论：科学还是艺术？"><a href="#自由讨论：科学还是艺术？" class="headerlink" title="自由讨论：科学还是艺术？"></a>自由讨论：科学还是艺术？</h3><p>在展示报告过程中，讨论班学院们就报告主题和其他可视化相关问题进行了热烈的讨论。其中热门话题之一便是：可视化到底更偏向于科学，还是更偏向于艺术？</p>
+<ul>
+<li>科学 – 忠实反映信息</li>
+</ul>
+<p>​    从可视化的目的上讲，反映数据内部的信息和内涵是可视化的根本目的之一。可视化方法作为一种科学方法，需要对一类数据具有一定的普遍适用性，并且当前可视化技术均依赖于计算机的实现，因此将可视化称作科学理所应当。</p>
+<ul>
+<li>艺术 – 提高作品层次</li>
+</ul>
+<p>​    作为一种视觉展示手段，可视化除了需要忠实反映数据内部信息以外，它同时需要拥有良好的视觉设计，和自然、适合于数据本身的视觉映射方法，以提供给人更好的交互体验，这部分便是可视化的艺术性所在。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

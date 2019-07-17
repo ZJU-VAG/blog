@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        基于划分的回归模型构建验证框架 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        基于划分的回归模型构建验证框架
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2013-11-27 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2013-11-27</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#马昱欣"
+                title="马昱欣">马昱欣</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文： A Partition-Based Framework for Building and Validating Regression Models</p>
+<p>会议：VAST 2013</p>
+<p>作者：Thomas Muhlbacher, Harald Piringer （VRVis Research Center）</p>
+<p>回归问题是统计分析领域的永恒话题之一。统计学习领域有相当多的研究成果用于对回归模型进行拓展和改进，然而当前纯自动算法仍然存在以下问题尚待解决：</p>
+<ul>
+<li>特征子集选择：如何选择具有特征的维度，以及维度个数与模型可解释性、模型复杂度之间的权衡；</li>
+<li>将 Domain Knowledge 融入特征子集选择过程中：用户通常在维度选择上有一些先验知识，这些知识怎样输入到模型训练中；</li>
+<li>特征尺度变换：如何选择合适的变换尺度</li>
+</ul>
+<p>本文通过构建一个可视分析框架，很好地弥补了上述问题。本文贡献如下：</p>
+<ul>
+<li>基于特征辅助模型预测程度的排序方法</li>
+<li>用于展示单一维度/维度对上数据局部结构的可视化视图</li>
+<li>验证和比较模型的工作流框架</li>
+<li>长时间的用户测试</li>
+</ul>
+<p>有不少论文从可视分析角度探讨了特征选择和模型构建问题，较新的论文包括 Explainer[1]、Dimensional Projection Tree/Matrix[2]、HyperMoVal[3] 等。</p>
+<p>下图是系统界面概览，其中左侧部分用于单一维度的探索，中间部分用于探索维度对之间的数据特性，右侧展示了特征排序和选择等功能。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/Screen-Shot-2013-11-27-at-10.23.36-AM.png" alt="img"></p>
+<p>本文提出了一种两阶段的框架，其中第一个阶段为特征选择，第二个阶段为模型验证和比较，训练出来的好的模型结果可以又作为特征选择所使用的模型。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/Screen-Shot-2013-11-27-at-2.33.21-PM.png" alt="img"></p>
+<p>整篇文章分成三个主要部分：</p>
+<ol>
+<li>基于划分的可视化设计：</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/Screen-Shot-2013-11-27-at-2.39.46-PM.png" alt="img"></p>
+<p>为了生成最终的可视化视图，首先目标维度（对）要做一次 partition 操作，将维度划分为区间（矩形区域），之后再将每个区间区域 layout 到矩形的可视区域上。 Partition 和 Layout 的策略分别有：</p>
+<ul>
+<li>Domain-uniform partitioning：按维度均匀划分数据区域；</li>
+<li>Frequency-uniform partitioning：按数据密度划分数据区域，保证每个区域的数据密度相等。这种划分方法使用类似 K-d Tree 的策略对数据空间做出划分，但划分标准与 K-d Tree 不同；</li>
+<li>Domain-preserving Layout：布局每个数据区域时，每个矩形的边长也按照维度均匀计算；</li>
+<li>Frequency-preserving Layout：布局时，每个矩形的面积大小代表该数据区域内的数据密度高低。</li>
+</ul>
+<p>下面两张图展示了不同的数据划分方法和布局方法在对维度（对）上数据的可视化效果展示，其中图片左上角代表数据的原始 scatterplot 。可以看出，当划分和布局策略都为 domain-uniform 时，最终的可视化结果实际上就是原始 scatter-plot 的马赛克效果。每个矩形块上还使用了类似盒须图的方式（1D）或颜色（2D）来表达该 partition 内的数据统计量。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/Screen-Shot-2013-11-27-at-11.23.23-AM.png" alt="img"></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/Screen-Shot-2013-11-27-at-11.23.31-AM.png" alt="img"></p>
+<ol>
+<li>维度排名策略 </li>
+</ol>
+<p>本文使用的系统使用了 feature selection 中的 wrapper 方法，通过构建另一个 Regression Tree 来计算每个维度上的 goodness-of-fit （此处使用 R^2 作为度量标准），并以此对维度进行排序。下图是系统中用于展示排序关系的视图。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/Screen-Shot-2013-11-27-at-11.41.47-AM.png" alt="img"></p>
+<ol>
+<li>模型验证与比较：本阶段用于展示模型预测结果和一些相关指标，包括：</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/Screen-Shot-2013-11-27-at-8.58.42-PM.png" alt="img"></p>
+<p>下图自左至右分别展示了模型的预测偏移、模型之间的结果比较和预测不确定性的结果：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/11/Screen-Shot-2013-11-27-at-11.54.16-AM.png" alt="img"></p>
+<p>[1] M. Gleicher, “Explainers: Expert Explorations with Crafted Projections,” <em>IEEE Transactions on Visualization and Computer Graphics</em>, vol. 19, no. 12, pp. 2042–2051, 2013.</p>
+<p>[2] X. Yuan, D. Ren, Z. Wang, and C. Guo, “Dimension Projection Matrix/Tree: Interactive Subspace Visual Exploration and Analysis of High Dimensional Data,” <em>IEEE Transactions on Visualization and Computer Graphics</em>, vol. 19, no. 12, pp. 2625–2633, 2013.</p>
+<p>[3] H. Piringer, W. Berger, and J. Krasser, “HyperMoVal: Interactive Visual Validation of Regression Models for Real-Time Simulation,” <em>Computer Graphics Forum</em>, vol. 29, no. 3, pp. 983–992, Aug. 2010.</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

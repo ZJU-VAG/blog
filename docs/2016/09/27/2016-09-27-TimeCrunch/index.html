@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        TimeCrunch: Interpretable Dynamic Graph Summarization - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        TimeCrunch: Interpretable Dynamic Graph Summarization
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-09-27 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-09-27</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#李宗壮"
+                title="李宗壮">李宗壮</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：TimeCrunch: Interpretable Dynamic Graph Summarization</p>
+<p>作者：Neil Shah, Danai Koutra, Tianmin Zou, Brian Gallagher, Christos Faloutsos</p>
+<p>发表：ACM SIGKDD 2015</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>怎样描述一个很大的动态图，或者说我们怎么去找出现实中动态图的一些模式，我们怎么评估它们的重要性。这就是这篇文章要解决的问题。纵然有许多的图算法适用于各种情况，但是传统聚类和社团搜索的目标并不是我们现在要追求的。何况它们也不能给出输出的特性的描述。</p>
+<p>基于此，本文提出了TIMECRUNCH的算法，把动态图按照有时序标志的静态图的组合，找出成本最小的表示，并从中找出想要找的模式和特殊结构。而且最终，作者应用TIMECRUNCH分析大的动态网络，找到了多种模式和异常状态，这些表明了现实图确实展现了时序结构。</p>
+<p>与之前的一些常用方法相比较。TIMECRUNCH可处理多种形式的图。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/11.png" alt></p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>与之相关的工作，包括，静态图的挖掘，动态图的挖掘，以及图的压缩和摘要。</p>
+<p>首先是本文的第一个要点，问题的公式化。作者首先把动态图的的摘要定义为了一个压缩的问题，用MDL方法。Minimum Description Length（MDL）的原理是成为柯氏复杂性即最小描述长度。把模型用M表示，也就是找出对于观测到的数据 <em>D</em>最优的模型M ，使得L(M)+L(<em>D</em>|M）最小，其中L(M)是描述M的编码长度， L(<em>D</em>|M）是用M描述<em>D</em>的编码长度。</p>
+<p>对于一个时间步长为 t 的动态网络G，我们把它视作每个时间点的静态图的集合。</p>
+<p>考虑时序组成 Φ=Δ×Ω，其中Δ代表了时间签名的集合，  Ω代表静态结构标志的集合， × 代表了笛卡尔集乘法。作者选取了5种时间签名和6种常见的结构。因此  就是一个5×6的集合。</p>
+<p>之后就是对于模型M的编码方法。把编码分为两个部分，模型的编码和误差的编码。模型的编码也分为两个部分的编码，一是连通性的编码，二是时序表示的编码。联通性的编码成本是对每个时间步上的子图的连通性的表示成本。时序表示的编码是对时序标志的集合  的五种标志的进行表示的成本。</p>
+<p>同样的，误差也分为了两部分，一是连通性编码表示带来的误差，二是时序编码表示带来的误差。其中时序编码的误差是由编码重建的时序步与原始的时间步的差异造成的。</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>接下来，就是作者提出的TIMECRUNCH的算法。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/12.png" alt></p>
+<p>其中， Gi表示第i个时间步上的静态图。x表示  Ω中的一个标记，p是 Φ中的一个元素，是结构标记和时间签名的一个组合。</p>
+<p>正如图中所示，该算法大致分为四个步骤</p>
+<p>首先，是图的输入，它把每个静态的图用传统的静态图分解方式划分为一个个更小的子图。接下来根据之前的结构标志的分类对每个子图打上标签，并使它的表示成本最小。</p>
+<p>之后，把各个时间步上静态图结合起来，并且选择适合的时序标志使得组成连贯连接的图，并加入到候选集中。最后，用不同的启发式方法，VANILLA, TOP-10, TOP-100和 STEPWISE比较不同的模型M，选择使得总的编码成本最小的模型M。</p>
+<p>为了展示这一算法优秀，作者提供了几个不同的动态图的例子，如下</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/21.png" alt></p>
+<p>五种图有着不同的结构。</p>
+<p>我们直接来看结果：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/22.png" alt></p>
+<p>ORIGINAL代表表示原始图所用的比特，后面的四列分别代表不同的压缩规模。括号里的数字代表了找出的特殊结构。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/23.png" alt></p>
+<p>上图是对于找出的一些特殊模式的展示。时间上，以DBLB为例，其运行时间随便的数目的增长近乎线性增加。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结一下，本文所提出的这种方法，对于图的压缩存放是有一定的作用的，当然更重要的是它还可以发现一些特殊的模式，而且对于各种结构的动态的适用性也不错。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Visually Comparing Weather Features in Forecasts - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多维气象数据可视化方案"><span class="toc-text">多维气象数据可视化方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统实现"><span class="toc-text">系统实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结与展望"><span class="toc-text">总结与展望</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Visually Comparing Weather Features in Forecasts
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-09-25 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-09-25</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#林立文"
+                title="林立文">林立文</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Visually Comparing Weather Features in Forecasts</p>
+<p>作者：P. Samuel Quinan, Miriah Meyer</p>
+<p>发表：TVCG 2016</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>气象学家通过可视化结果来考察天气特征中的信息，对天气预报提供帮助。文章作者与气象学者合作，指出天气可视化中遇到的两个主要挑战：1)各种可视化方案之间不一致；2)对于一组预报结果中特征的关联缺少直接的可视化支持。在这项工作中，作者考察了若干个气象数据，对于不同的问题类型，提出了一组有效的可视化方案，在一个开源工具WeaVER中体现了这些可视化方法；并思考在使用气象数据中遇到的挑战。</p>
+<h2 id="多维气象数据可视化方案"><a href="#多维气象数据可视化方案" class="headerlink" title="多维气象数据可视化方案"></a><strong>多维气象数据可视化方案</strong></h2><p>作者从不同来源搜集了具有代表性的一系列气象数据可视化结果。考察这些图像之后，肯定了其中一些符合可视化原则的有效方法、并对其它一些情况给出了改进的方案，以提高气象研究者的效率。</p>
+<p>1)对于相互独立的场（即解读其中一个场的信息不需要对另一个场的知识），建议在底层颜色图、一组轮廓线、一组纹理或符号这三种视觉编码中组合，以对应于2个标量场以及1个标量或向量场。下图是其中一个例子：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/1.png" alt></p>
+<p>2)对于通过一组数据推导得出的均值与变化值（如标准差），建议以底层颜色图显示变化值的矩阵、并使用轮廓线显示均值。下图是一个例子：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/2.png" alt></p>
+<p>3)对于某条件的概率值，建议在重点关注的数值区间用颜色图表示，对于其他数值区间则使用轮廓线表示。下图是一个例子：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/3.png" alt></p>
+<p>4)对于底层的视觉编码，作者也给出了一些建议。如一些常用的变量的颜色表，如下图所示：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/4.png" alt></p>
+<p>（上图各组颜色表对应的变量分别为：温度、风速、降水量、相对湿度、标准差、概率、Haines指数）</p>
+<p>在这个颜色表中，体现了一些原则。除最右端的Haines指数以外，其余各项都尽可能使得亮度均匀变化；设计颜色表时，不涵盖全部亮度范围，为轮廓线与符号等留下空间；颜色表大多数所映射的数值范围都是跨度较大固定值，以便统一观察多组可视化结果（标准差除外，因为标准差的数值含义会随具体情况变化）。</p>
+<p>5)对于同时显示一组数据(组内每个数据来源也含有若干特征)的情况，作者将spaghetti plots与contour boxplots改进为interactive(交互式) spaghetti plots与interactive(交互式) contour boxplots，用于同时呈现若干个来源的数据，并支持用户高亮显示所选的组成员。下图分别为两种可视化方法的例子：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/5.png" alt></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/6.png" alt></p>
+<p>（其中后者是为了避免组的成员过多造成视觉上的不便）</p>
+<h2 id="系统实现"><a href="#系统实现" class="headerlink" title="系统实现"></a><strong>系统实现</strong></h2><p>作者将这些可视化方法加入到WeaVER中，对此提供了五个视图，下图为系统运行的一个截图：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/8.png" alt></p>
+<p>同时，对这个系统，作者协同一些研究者进行了实例的验证。如对于Diego山火事件的预测，首先使用 deterministic与stat视图了解大气整体情况、然后使用direct ensemble视图进行多个模型的比较、最后使用probability视图判断各个地点发生山火的可能性。下图为最后一个视图的情况：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/09/7.png" alt></p>
+<p>（其中概率条件被设置为了：表面温度大于60°F、表面风速大于20mph、Haines指数大于等于5）</p>
+<h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a><strong>总结与展望</strong></h2><p>作者对与天气预报中的一些问题与数据进行考察，提出了一个可视化方案并加入到系统中，并得到了气象研究者的肯定。</p>
+<p>对于新加入的两个改进视图(interactive spaghetti plots, interactive contour boxplots)，仍然需要正式的评估。对于非轮廓线的情况，目前还没有直接进行一组数据的可视化或者比较。这些都是未来可以关注的方向。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

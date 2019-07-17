@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        SOMFlow: Guided Exploratory Cluster Analysis with Self-Organizing Maps and Analytic Provenance - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SOM算法"><span class="toc-text">SOM算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统介绍"><span class="toc-text">系统介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#界面设计"><span class="toc-text">界面设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text"> </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#功能概述"><span class="toc-text">功能概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析SOM结果"><span class="toc-text">分析SOM结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-text"> </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调整底层计算"><span class="toc-text">调整底层计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据拆分"><span class="toc-text">数据拆分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用流程图进行反思"><span class="toc-text">使用流程图进行反思</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引导方法"><span class="toc-text">引导方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例分析"><span class="toc-text">案例分析</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        SOMFlow: Guided Exploratory Cluster Analysis with Self-Organizing Maps and Analytic Provenance
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-10-18 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-10-18</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#顾宇辉"
+                title="顾宇辉">顾宇辉</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：SOMFlow: Guided Exploratory Cluster Analysis with Self-Organizing Maps and Analytic Provenance</p>
+<p>作者：Domink Sacha , Matthias Kraus , Jürgen Bernard</p>
+<p>简介：本文提出了一个引导式探索性聚类分析工具SOMFlow，使用SOM算法分析时变数据。</p>
+<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>聚类方法可用于分析大型未知的时序数据集，但存在一些问题：1.分析的问题不明确；2.有趣的模式往往隐藏在特定子集中；3.难以从一堆聚类结果中发现联系；4.揭示目标结构需要适时调整底层计算。因此聚类分析中需要交互式的数据探索，来形成和提炼假设，调整底层计算。 </p>
+<h2 id="SOM算法"><a href="#SOM算法" class="headerlink" title="SOM算法"></a>SOM算法</h2><p>自组织神经网络（Self-Organizing Maps）是一种基于神经网络的聚类算法，它可以对数据进行无监督学习聚类。它的思想很简单，本质上是一种只有输入层–竞争层的神经网络。竞争层中的一个节点代表一个需要聚成的类。训练时采用“竞争学习”的方式，每个输入的样例在竞争层中找到一个和它最匹配的节点，称为它的激活节点。 紧接着用随机梯度下降法更新激活节点的参数。同时，和激活节点临近的点也根据它们距离激活节点的远近而适当地更新参数。竞争层是有拓扑关系的，因此SOM可以把任意维度的输入离散化到一维或者二维的离散空间上。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/som.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/som.png" alt="img"></a></p>
+<p>SOM算法具有聚类，矢量化，降维以及可用于集群可视化的特性。本文的思想就是利用SOM算法的特性，对数据进行聚类并生成对数据的Overview，并添加一系列可视化技术来支持用户对数据迭代地进行聚类分析。</p>
+<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><h3 id="界面设计"><a href="#界面设计" class="headerlink" title="界面设计"></a>界面设计</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/overview.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/overview.png" alt="img"></a></p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><h3 id="功能概述"><a href="#功能概述" class="headerlink" title="功能概述"></a>功能概述</h3><p>​              <a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/design.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/design.png" alt="img"></a></p>
+<p>系统支持四种探索任务：1.分析当前SOM结果；2.调整数据拆分模型和参数设置；3.拆分数据生成新的SOM；4.通过流程图反思整个分析过程。</p>
+<h3 id="分析SOM结果"><a href="#分析SOM结果" class="headerlink" title="分析SOM结果"></a>分析SOM结果</h3><p>系统使用了多种可视化技术对SOM算法的以网格为基础的聚类结果进行可视化，为分析者提供多种手段分析聚类结果。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/analyze.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/analyze.png" alt="img"></a></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h3><h3 id="调整底层计算"><a href="#调整底层计算" class="headerlink" title="调整底层计算"></a>调整底层计算</h3><ol>
+<li>对网格单元添加标签，作为附加的元数据;</li>
+<li>清洗和预处理数据，使数据标准化;</li>
+<li>调整时序特征向量的相似性度量方法（默认是欧式距离），并能调整不同时间区间的权重;</li>
+<li>设置SOM算法的参数，包括迭代次数，学习半径等，以及生成网格的尺寸。</li>
+</ol>
+<h3 id="数据拆分"><a href="#数据拆分" class="headerlink" title="数据拆分"></a>数据拆分</h3><p>分析者可以对当前SOM结果中的数据进行拆分，获得需要的数据子集进行进一步的探索。数据拆分操作分为三种形式：1.选择网格单元进行数据拆分；2.选择相似单元（单元集群）进行数据拆分；3.基于元数据对数据拆分。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/partition.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/partition.png" alt="img"></a></p>
+<h3 id="使用流程图进行反思"><a href="#使用流程图进行反思" class="headerlink" title="使用流程图进行反思"></a>使用流程图进行反思</h3><p>​    <a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/reflect.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/reflect.png" alt="img"></a></p>
+<ol>
+<li><p>每个SOM都作为整个流程图中的一个节点，箭头表示了节点之间的父子关系（过滤，分离等），箭头大小表示对应的数据数量大小。</p>
+</li>
+<li><p>支持的交互有：</p>
+<p>1.选择某个SOM中的某个单元，所有的SOM中包含了相同数据的单元会高亮，程度与共同的数据数量有关；</p>
+<p>2.将所有SOM单元根据数据内容的相似性进行着色，颜色相似代表数据相似；</p>
+<p>3.选择元数据中特定属性对所有SOM单元对应的数据进行着色。</p>
+</li>
+<li><p>所有节点都可以进行放缩、注释，调整尺寸等。</p>
+</li>
+</ol>
+<h3 id="引导方法"><a href="#引导方法" class="headerlink" title="引导方法"></a>引导方法</h3><p>除了支持的四种任务，系统还提供了一系列引导方法来辅助用户进行探索分析：</p>
+<p>1.在SOM左侧按照当前SOM对元数据属性的兴趣度高低排列各个属性对应的 interestingness缩略图；</p>
+<p>2.用户选择某一感兴趣的单元后，将相似性大于设定值的单元用虚线显示；</p>
+<p>3.在SOM右侧显示拆分线索，点击触发相应的数据拆分操作。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/guide.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/guide.png" alt="img"></a></p>
+<h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><p>研究是否为母语对一门语言的发声影响。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/case.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/case.png" alt="img"></a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

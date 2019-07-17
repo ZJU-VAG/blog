@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Neurolines: 用地铁图隐喻可视化纳米级的神经连接信息 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、简介"><span class="toc-text">一、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-工作起源——在神经元重建的细节分析过程中，没有有效的可视化方法来辅助分析。这个过程重视：morphology-structure-connectivity"><span class="toc-text">1. 工作起源——在神经元重建的细节分析过程中，没有有效的可视化方法来辅助分析。这个过程重视：morphology, structure, connectivity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-前人工作主要着眼于："><span class="toc-text">2. 前人工作主要着眼于：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-本文工作：基于解刨学上的树状结构，提出了一个-multi-scale（多尺度）可视化方法，用二维的可视化方法去表达三维空间内的数据信息。"><span class="toc-text">3. 本文工作：基于解刨学上的树状结构，提出了一个 multi-scale（多尺度）可视化方法，用二维的可视化方法去表达三维空间内的数据信息。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、本文贡献"><span class="toc-text">二、本文贡献</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-将神经突结构抽象到没有视觉重叠的二维空间，同时保留其拓扑结构和连接信息。"><span class="toc-text">1. 将神经突结构抽象到没有视觉重叠的二维空间，同时保留其拓扑结构和连接信息。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-multi-scale-的可视化和导航模式，可以很好地同时可视化数千个神经元。用户能够通过-zoom-交互定位到某一个-level-去观察，能保存神经元的-contextual-overview"><span class="toc-text">2. multi-scale 的可视化和导航模式，可以很好地同时可视化数千个神经元。用户能够通过 zoom 交互定位到某一个 level 去观察，能保存神经元的 contextual overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-开发-NeuroLines-Application（作为-ConnectomeExplorer-插件）"><span class="toc-text">3. 开发 NeuroLines Application（作为 ConnectomeExplorer 插件）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-专家利用该系统对真实世界数据完成的-Case-Studies"><span class="toc-text">4. 专家利用该系统对真实世界数据完成的 Case Studies</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、生物学背景——神经科学的工作流"><span class="toc-text">三、生物学背景——神经科学的工作流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、任务分析"><span class="toc-text">五、任务分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-定义主要目标："><span class="toc-text">1. 定义主要目标：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-定义主要任务："><span class="toc-text">2. 定义主要任务：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、Scalability-Challenges"><span class="toc-text">六、Scalability Challenges</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原因：专家需求-–-hierarchical-navigate-through-a-large-set-of-neurites"><span class="toc-text">原因：专家需求 – hierarchical navigate through a large set of neurites</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、可视元素设计"><span class="toc-text">七、可视元素设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-系统概览-3-tier-focus-and-context-mainview"><span class="toc-text">1. 系统概览- 3-tier focus-and-context mainview:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-视图：Navigation-Bar"><span class="toc-text">2. 视图：Navigation Bar</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-视图：Neurite-Overvire"><span class="toc-text">3. 视图：Neurite Overvire</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-视图：Workspace-View"><span class="toc-text">4. 视图：Workspace View</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-视图：On-Demand-Electron-Microscopy-Views"><span class="toc-text">5. 视图：On-Demand Electron Microscopy Views</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、抽象计算"><span class="toc-text">八、抽象计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-神经突的抽象计算"><span class="toc-text">1. 神经突的抽象计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-树枝的抽象计算"><span class="toc-text">2. 树枝的抽象计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-突触的抽象计算"><span class="toc-text">3. 突触的抽象计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-突触连接的抽象计算"><span class="toc-text">4. 突触连接的抽象计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、抽象计算"><span class="toc-text">九、抽象计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-排序和筛选"><span class="toc-text">1. 排序和筛选</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-工作区交互"><span class="toc-text">2. 工作区交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-连接性探索"><span class="toc-text">3. 连接性探索</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十、抽象计算"><span class="toc-text">十、抽象计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-应用"><span class="toc-text">1. 应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-评估："><span class="toc-text">2. 评估：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十一、案例分析"><span class="toc-text">十一、案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Relating-Variations-in-Synapse-Structure-to-Neuron-Connectivity"><span class="toc-text">1. Relating Variations in Synapse Structure to Neuron Connectivity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Relating-Variance-in-Synapse-Structure-to-the-Branching-Structure-of-Excitatory-Dendrites"><span class="toc-text">2. Relating Variance in Synapse Structure to the Branching Structure of Excitatory Dendrites</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Neurolines: 用地铁图隐喻可视化纳米级的神经连接信息
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2014-11-17 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2014-11-17</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#侯雨濛"
+                title="侯雨濛">侯雨濛</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Neurolines: A subway map metaphor for visualizing nanoscale neuronal connectivity</p>
+<p>作者：Ali K.Al‑Awami, Johanna Beyer, Hendrik Strobelt, Narayanan Kasthuri, Jeff W. Lichtman, Hanspeter Pfister, Markus Hadwiger</p>
+<p>发表会议：Infovis 2014</p>
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h4 id="1-工作起源——在神经元重建的细节分析过程中，没有有效的可视化方法来辅助分析。这个过程重视：morphology-structure-connectivity"><a href="#1-工作起源——在神经元重建的细节分析过程中，没有有效的可视化方法来辅助分析。这个过程重视：morphology-structure-connectivity" class="headerlink" title="1. 工作起源——在神经元重建的细节分析过程中，没有有效的可视化方法来辅助分析。这个过程重视：morphology, structure, connectivity"></a>1. 工作起源——在神经元重建的细节分析过程中，没有有效的可视化方法来辅助分析。这个过程重视：morphology, structure, connectivity</h4><h4 id="2-前人工作主要着眼于："><a href="#2-前人工作主要着眼于：" class="headerlink" title="2. 前人工作主要着眼于："></a>2. 前人工作主要着眼于：</h4><ol>
+<li>可视化完全抽象的连接图——弊端：舍弃了 morphology 和 structure 信息</li>
+<li>渲染原始 EM（电子显微镜）数据——弊端：会产生 visual clutter</li>
+</ol>
+<h4 id="3-本文工作：基于解刨学上的树状结构，提出了一个-multi-scale（多尺度）可视化方法，用二维的可视化方法去表达三维空间内的数据信息。"><a href="#3-本文工作：基于解刨学上的树状结构，提出了一个-multi-scale（多尺度）可视化方法，用二维的可视化方法去表达三维空间内的数据信息。" class="headerlink" title="3. 本文工作：基于解刨学上的树状结构，提出了一个 multi-scale（多尺度）可视化方法，用二维的可视化方法去表达三维空间内的数据信息。"></a>3. 本文工作：基于解刨学上的树状结构，提出了一个 multi-scale（多尺度）可视化方法，用二维的可视化方法去表达三维空间内的数据信息。</h4><h2 id="二、本文贡献"><a href="#二、本文贡献" class="headerlink" title="二、本文贡献"></a>二、本文贡献</h2><h4 id="1-将神经突结构抽象到没有视觉重叠的二维空间，同时保留其拓扑结构和连接信息。"><a href="#1-将神经突结构抽象到没有视觉重叠的二维空间，同时保留其拓扑结构和连接信息。" class="headerlink" title="1. 将神经突结构抽象到没有视觉重叠的二维空间，同时保留其拓扑结构和连接信息。"></a>1. 将神经突结构抽象到没有视觉重叠的二维空间，同时保留其拓扑结构和连接信息。</h4><h4 id="2-multi-scale-的可视化和导航模式，可以很好地同时可视化数千个神经元。用户能够通过-zoom-交互定位到某一个-level-去观察，能保存神经元的-contextual-overview"><a href="#2-multi-scale-的可视化和导航模式，可以很好地同时可视化数千个神经元。用户能够通过-zoom-交互定位到某一个-level-去观察，能保存神经元的-contextual-overview" class="headerlink" title="2. multi-scale 的可视化和导航模式，可以很好地同时可视化数千个神经元。用户能够通过 zoom 交互定位到某一个 level 去观察，能保存神经元的 contextual overview"></a>2. multi-scale 的可视化和导航模式，可以很好地同时可视化数千个神经元。用户能够通过 zoom 交互定位到某一个 level 去观察，能保存神经元的 contextual overview</h4><h4 id="3-开发-NeuroLines-Application（作为-ConnectomeExplorer-插件）"><a href="#3-开发-NeuroLines-Application（作为-ConnectomeExplorer-插件）" class="headerlink" title="3. 开发 NeuroLines Application（作为 ConnectomeExplorer 插件）"></a>3. 开发 NeuroLines Application（作为 ConnectomeExplorer 插件）</h4><h4 id="4-专家利用该系统对真实世界数据完成的-Case-Studies"><a href="#4-专家利用该系统对真实世界数据完成的-Case-Studies" class="headerlink" title="4. 专家利用该系统对真实世界数据完成的 Case Studies"></a>4. 专家利用该系统对真实世界数据完成的 Case Studies</h4><h2 id="三、生物学背景——神经科学的工作流"><a href="#三、生物学背景——神经科学的工作流" class="headerlink" title="三、生物学背景——神经科学的工作流"></a>三、生物学背景——神经科学的工作流</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/13.png" alt="img"></p>
+<center>图1：神经科学的工作流</center>
+## 四、NeuroLines的设计
+
+#### 1. 主要思想：将三维空间中神经突复杂的枝干和连接模式，抽象成简化的二维表达。二维表达的设计思路受启发于地铁图，这样的方案可以在保留枝干和突触相对位置的同时，减少视觉重叠。
+
+#### 2. 设计考虑：尊重专家的需求和意见
+
+![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/22.png)
+
+<center>图2：NeuroLines设计原型<br>
+a) 圆柱形区域切分数据的三维体渲染; b) 直接呈现神经突骨骼结构的三维可视化方案; c) 表达连接信息的抽象二维可视化，忽略空间信息; d) 第一个三维地铁图原型（在三维体渲染的基础上展示连接信息）
+</center>
+
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/31.png" alt="img"></p>
+<p><center>图3：NeuroLines的最终设计：二维地铁图隐喻</center></p>
+<h2 id="五、任务分析"><a href="#五、任务分析" class="headerlink" title="五、任务分析"></a>五、任务分析</h2><h4 id="1-定义主要目标："><a href="#1-定义主要目标：" class="headerlink" title="1. 定义主要目标："></a>1. 定义主要目标：</h4><ol>
+<li>Explore &amp; Identify patterns in synaptic connections</li>
+<li>Explore &amp; Identify patterns in branching structures</li>
+<li>Explore synaptic pathways</li>
+</ol>
+<h4 id="2-定义主要任务："><a href="#2-定义主要任务：" class="headerlink" title="2. 定义主要任务："></a>2. 定义主要任务：</h4><ol>
+<li>Selecting a subset</li>
+<li>Single-neurite analysis</li>
+<li>Multi-neurite analysis</li>
+<li>Synapse analysis</li>
+<li>Connectivity analysis</li>
+</ol>
+<h2 id="六、Scalability-Challenges"><a href="#六、Scalability-Challenges" class="headerlink" title="六、Scalability Challenges"></a>六、Scalability Challenges</h2><h4 id="原因：专家需求-–-hierarchical-navigate-through-a-large-set-of-neurites"><a href="#原因：专家需求-–-hierarchical-navigate-through-a-large-set-of-neurites" class="headerlink" title="原因：专家需求 – hierarchical navigate through a large set of neurites"></a>原因：专家需求 – hierarchical navigate through a large set of neurites</h4><p>为了测试，构建了 5 种参数化的仿真器：</p>
+<p>​ S1-多个神经元</p>
+<p>​ S2-多个神经突</p>
+<p>​ S3-多个枝干</p>
+<p>​ S4-多个突触</p>
+<p>​ S5-多个神经突间的连接</p>
+<h2 id="七、可视元素设计"><a href="#七、可视元素设计" class="headerlink" title="七、可视元素设计"></a>七、可视元素设计</h2><h4 id="1-系统概览-3-tier-focus-and-context-mainview"><a href="#1-系统概览-3-tier-focus-and-context-mainview" class="headerlink" title="1. 系统概览- 3-tier focus-and-context mainview:"></a>1. 系统概览- 3-tier focus-and-context mainview:</h4><ol>
+<li>Working set</li>
+<li>Subset</li>
+<li>Individual neurites</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/41.png" alt="img"></p>
+<p><center>图4：系统概览</center><br>好处:</p>
+<p>​ a. 同时性 &amp; 多层级，从概览到细节</p>
+<p>​ b. 完善的探索性交互：zoom（缩放）, slide（滑动）, drilling down into the data（探索）</p>
+<p>​ c. 引用 Working set 的概念，可以通过检索定位到感兴趣的数据集</p>
+<h4 id="2-视图：Navigation-Bar"><a href="#2-视图：Navigation-Bar" class="headerlink" title="2. 视图：Navigation Bar"></a>2. 视图：Navigation Bar</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/51.png" alt="img"></p>
+<p><center>图5：Navigation Bar</center><br>神经突的视觉编码：垂直排布的平行线；平行线的色彩编码：根据所选属性、所选标准排序的编码</p>
+<h4 id="3-视图：Neurite-Overvire"><a href="#3-视图：Neurite-Overvire" class="headerlink" title="3. 视图：Neurite Overvire"></a>3. 视图：Neurite Overvire</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/61.png" alt="img"></p>
+<p><center>图6：Neurite Overvire<br>一块子数据集信息的概览级可视化</center></p>
+<h4 id="4-视图：Workspace-View"><a href="#4-视图：Workspace-View" class="headerlink" title="4. 视图：Workspace View"></a>4. 视图：Workspace View</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/71.png" alt="img"></p>
+<p><center>图7：Neurite Overvire<br>某一条神经突数据的细节级可视化</center></p>
+<h4 id="5-视图：On-Demand-Electron-Microscopy-Views"><a href="#5-视图：On-Demand-Electron-Microscopy-Views" class="headerlink" title="5. 视图：On-Demand Electron Microscopy Views"></a>5. 视图：On-Demand Electron Microscopy Views</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/81.png" alt="img"></p>
+<p><center>图8：On-Demand Electron Microscopy Views<br>根据需求，辅助性地提供电子显微镜扫描结果图</center></p>
+<h2 id="八、抽象计算"><a href="#八、抽象计算" class="headerlink" title="八、抽象计算"></a>八、抽象计算</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/91.jpg" alt="img"></p>
+<p><center>图9：抽象计算示意图</center></p>
+<h4 id="1-神经突的抽象计算"><a href="#1-神经突的抽象计算" class="headerlink" title="1. 神经突的抽象计算"></a>1. 神经突的抽象计算</h4><ol>
+<li>保留相对距离</li>
+<li>拉直树枝</li>
+<li>位移树枝到正确的角度</li>
+<li>使用相对尺度</li>
+</ol>
+<h4 id="2-树枝的抽象计算"><a href="#2-树枝的抽象计算" class="headerlink" title="2. 树枝的抽象计算"></a>2. 树枝的抽象计算</h4><ol>
+<li>贪婪的算法 – 先画树干，然后迭代地从右往左加树枝；每次添加都改变竖直方向，避免视觉交叉。</li>
+<li>如果树枝的高度超过当前 level 的高度范围，collapse it</li>
+</ol>
+<h4 id="3-突触的抽象计算"><a href="#3-突触的抽象计算" class="headerlink" title="3. 突触的抽象计算"></a>3. 突触的抽象计算</h4><ol>
+<li>突触原本不在神经突的切分结构上，所以要根据原始的 3D 结构将突触位置投影到神经突上，用 Circle Node 去表示</li>
+<li>Mean-shift cluster – 对于一组投影位置重叠的突触，每条树枝单独计算</li>
+</ol>
+<h4 id="4-突触连接的抽象计算"><a href="#4-突触连接的抽象计算" class="headerlink" title="4. 突触连接的抽象计算"></a>4. 突触连接的抽象计算</h4><p>解决突触连接 clutter 的方法：</p>
+<ol>
+<li>只在需要时画</li>
+<li>用 stubs（桩）代替 lines</li>
+<li>Highlight 不同结构中的相同突触</li>
+</ol>
+<h2 id="九、抽象计算"><a href="#九、抽象计算" class="headerlink" title="九、抽象计算"></a>九、抽象计算</h2><h4 id="1-排序和筛选"><a href="#1-排序和筛选" class="headerlink" title="1. 排序和筛选"></a>1. 排序和筛选</h4><p>filtering – 在 working set 中检所，支持动态检索</p>
+<p>Multi-criteria sorting – 根据多个类别/数值型数据排序</p>
+<h4 id="2-工作区交互"><a href="#2-工作区交互" class="headerlink" title="2. 工作区交互"></a>2. 工作区交互</h4><p>Pinning – 保持标记状态</p>
+<p>Pivoting – 基于选定 pivot 对全局其他对象进行排序和缩放，使易于找到 neighbors</p>
+<h4 id="3-连接性探索"><a href="#3-连接性探索" class="headerlink" title="3. 连接性探索"></a>3. 连接性探索</h4><p>支持选取、多关联发现和高亮等交互，但分析过程依然依靠人工</p>
+<h2 id="十、抽象计算"><a href="#十、抽象计算" class="headerlink" title="十、抽象计算"></a>十、抽象计算</h2><h4 id="1-应用"><a href="#1-应用" class="headerlink" title="1. 应用"></a>1. 应用</h4><p>应用方式：ConnectomeExporer 插件</p>
+<p>语言和框架：C++ &amp; OpenGL,</p>
+<p>​ GUI: QT</p>
+<p>​ Synthesizing Data: Python</p>
+<p>所用数据：</p>
+<p>领域真实世界数据 – 3D Volumn</p>
+<p>合成数据 – Scalability Analysis</p>
+<ol>
+<li>Neurons &amp; Neuron Connectivity</li>
+<li>Neurites &amp; Braches Patterns</li>
+<li>Connectivity: Synapse Generation</li>
+</ol>
+<h4 id="2-评估："><a href="#2-评估：" class="headerlink" title="2. 评估："></a>2. 评估：</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/101.png" alt="img"></p>
+<p><center>图10：系统表现和尺度性评估</center><br>渲染效率：几千个神经突的渲染需要几秒，能保持交互性</p>
+<p>Branching Scalability: 能很好的工作到 10 级子树枝，否则子树枝会被不适当地 collapse</p>
+<h2 id="十一、案例分析"><a href="#十一、案例分析" class="headerlink" title="十一、案例分析"></a>十一、案例分析</h2><h4 id="1-Relating-Variations-in-Synapse-Structure-to-Neuron-Connectivity"><a href="#1-Relating-Variations-in-Synapse-Structure-to-Neuron-Connectivity" class="headerlink" title="1. Relating Variations in Synapse Structure to Neuron Connectivity"></a>1. Relating Variations in Synapse Structure to Neuron Connectivity</h4><p>​ “How much of the variance in the structure of synapses can be explained by the connectivity of neurons? ”</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/111.png" alt="img"></p>
+<p><center>图11：第一个案例分析</center></p>
+<h4 id="2-Relating-Variance-in-Synapse-Structure-to-the-Branching-Structure-of-Excitatory-Dendrites"><a href="#2-Relating-Variance-in-Synapse-Structure-to-the-Branching-Structure-of-Excitatory-Dendrites" class="headerlink" title="2. Relating Variance in Synapse Structure to the Branching Structure of Excitatory Dendrites"></a>2. Relating Variance in Synapse Structure to the Branching Structure of Excitatory Dendrites</h4><p>​ How the branching structure influences the attributes of synapses along the neurite.</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

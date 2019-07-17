@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        MobilityGraphs: Visual Analysis of Mass Mobility Dynamics via Spatio-Temporal Graphs and Clustering - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        MobilityGraphs: Visual Analysis of Mass Mobility Dynamics via Spatio-Temporal Graphs and Clustering
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2015-11-29 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2015-11-29</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#张天野"
+                title="张天野">张天野</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：MobilityGraphs: Visual Analysis of Mass Mobility Dynamics via Spatio-Temporal Graphs and Clustering</p>
+<p>作者：Tatiana von Landesberger, Felix Brodkorb, Philipp Roskosch, Natalia Andrienko, Gennady Andrienko, and Andreas Kerren</p>
+<p>发表会议：TVCG2015</p>
+<p>了解人类移动的规律对于政策制定和城市规划有着至关重要的作用。移动数据集纪录了人们在不同时刻出现的位置以及人们在不同地点之间的移动流。分析移动数据的困难点在于比较不同时刻的空间位置（spatial situations）以及了解空间位置随时间的变化。传统的流可视化方法会造成大量的杂乱现象，同时现代的方法不支持长时间段下的分析复杂的移动数据。因此，作者提出了一种结合基于时间和空间的简化和可视分析的方法解决了以上问题。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/Picture1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/Picture1.png" alt="img"></a></p>
+<p>首先，作者对于轨迹数据中出现的所有地点进行聚类，根据聚类的中心对当前轨迹范围（以伦敦为例）进行空间剖分[1]。从轨迹数据中抽取出基于有向图的时变流（time-varying flow）数据，其中节点是空间剖分得到的结果，边是节点之间流的统计。伦敦 twitter 数据在经过处理后得到 7d*24h 个时间步下的有向图，包含 606 个节点，21727 条边。</p>
+<p>正是因为过多的节点和边，造成流视觉上的混乱，过多的时间步导致无法进行比较长时间的比较。作者提出了基于时间和空间的简化方法，进一步抽取更为简单的图结构。通过空间聚类，减少布局上的杂乱现象；通过时间聚类，将具有相似空间位置的时间步聚成一类，进而比较时间步的长度。</p>
+<p>如果先进行时间聚类，抽取某个时刻的时变流（有向图）特征向量将会达到 2 万维，对于聚类稳定性和时间是一个巨大考验，所以先有必要先进行空间聚类。空间聚类是把超图（supergraph，所有时间步的平均） ⟨P,L,T, W(P,T),M(L,T)⟩中的空间小区域聚类成大区域。空间聚类算法基于 DBScan，将相距较近并且相互间具有较强人流量的区域聚成一个类。</p>
+<p>时间聚类是把刚才简化后的时变流抽取出特征向量。此时的时变流结构已经只有 42 个区域，394 条边，相对于 2 万维下降到原来的 1.8%，可以提高 kmeans 的聚类速度。</p>
+<p>整个系统如下图所示，（a）日历视图，每一行表示一天的各个小时 颜色和下面的聚类对应（b）参数设置（c）kmeans 聚类中心的流图。节点大小编码区域集合内人数的平均或总和；边宽度编码区域集合间的平均流量；从暗到亮，处于右边（顺时针）的边表示从节点中出去。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/Picture2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/Picture2.png" alt="img"></a></p>
+<p>同时用户可以对两个图进行比较。如下图所示，T3（左）和 T7（右）进行比较。其中节点大小由左边的网络决定，颜色是相对于左边的相对流量比，由蓝到白到红，分别是降低、不变和增加。从时刻表可以发现 T3（黄色）的时间是在凌晨，T7（淡绿色）是在工作时间，可以明显看出，几乎所有的节点和边都是偏红色的，说明工作时间的人流量比凌晨有所增加，这也符合人的正常规律。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/Picture3.png" alt="img"></p>
+<p>与伦敦不同的是，阿比让城是一个多中心的城市，这主要是因为城市被水域所分割。简化后的流图类似于一只蝴蝶，中间一个较大的节点和西边和东边的节点有着强烈的连接。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/Screen-Shot-2015-11-29-at-10.28.37-PM.png" alt="img"></p>
+<p>这个工作提出流一种概览轨迹数据的方法，同时考虑了时间和空间简化，所以我们可以实时调节参数。但也正是因为如此，丢失了个人的轨迹数据，只能从宏观上看出整个城市的移动图，不能从微观层面进行观察。</p>
+<p>[1] Natalia Adrienko and Gennady Adrienko. Spatial generalization and aggregation of massive movement data. Visualization and Computer Graphics, IEEE Transactions on, 17(2):205–219, 2011.</p>
+<p>[2] Tatiana von Landesberger, Felix Brodkorb, and Philipp Roskosch. Mobilitygraphs: Visual analysis of mass mobility dynamics via spatia-temporal graphs and clustering. 2016.</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

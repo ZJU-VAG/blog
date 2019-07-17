@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        解析可视化中的对比分析任务 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#识别参与对比的对象"><span class="toc-text">识别参与对比的对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#明确对比分析的挑战"><span class="toc-text">明确对比分析的挑战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#筹划分析策略"><span class="toc-text">筹划分析策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#制定具体设计方案"><span class="toc-text">制定具体设计方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        解析可视化中的对比分析任务
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-12-22 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-12-22</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#马昱欣"
+                title="马昱欣">马昱欣</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Considerations in Visualizing Comparison</p>
+<p>作者：Michael Gleicher</p>
+<p>发表：InfoVis 2017</p>
+<p>“比较”或“对比”（comparison）是数据分析中最主要的任务之一，例如比较两张CT扫描结果，在不同车辆的行车轨迹中寻找差异，或是对比多次天气预报模型的预测结果等。当我们进行比较InfoVis 2017的这篇《Considerations  in Visualizing Comparison》主要从视觉设计和交互角度出发，总结可视化中出现的对比分析形式和手段，来指导可视化系统的设计者如何设计面向比较任务的视图和交互。</p>
+<p>这篇文章主要从以下四个层次来帮助读者理解可视化中的对比任务：</p>
+<ol>
+<li>识别参与对比的对象（Identify the Comparative Elements）</li>
+<li>明确对比分析的挑战（Identify the Comparative Challenges）</li>
+<li>筹划分析策略（Identify a Comparative Strategy）</li>
+<li>制定具体设计方案（Identify a Comparative Design）</li>
+</ol>
+<p>上述层次划分可以与可视化领域著名学者Tamara Munzner提出的“What-Why-How”可视化层次模型对应起来，如下图所示。其中“识别对象”和“明确挑战”两个层次，对应模型中的“What”和“Why”两部分；“筹划策略”和“制定设计方案”则对应模型中的“How”。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/tamara.png" alt="img"></p>
+<p>接下来，我们将分别介绍上述四个层次和对应的应用场景。</p>
+<h2 id="识别参与对比的对象"><a href="#识别参与对比的对象" class="headerlink" title="识别参与对比的对象"></a>识别参与对比的对象</h2><p>参与比较的“对象”主要包含两个方面：</p>
+<ul>
+<li>比较目标，即对“谁”或“什么物体”来做比较。比较目标可细分为显式目标和隐式目标两类。显式目标比较好理解，比如下面的散点图中，分析者需要比较的就是这两根折线在不同横坐标位置上值的大小。隐式目标则是隐藏在显式目标背后的、非直接的比较。</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/new-image-cqjyp.jpg" alt="img"></p>
+<ul>
+<li>比较行为，即在比较时，分析者希望进行的比较操作，其核心在于分析者希望认清对象之间哪一方面的关系，例如识别对象间有怎样的对比关系，对象之间某个值上差距有多大、怎样量化，当对象放在不同背景中时对象间的差距是否会发生变化，以及怎样合理地展示对象见的不同、怎样与他人交流和沟通等。</li>
+</ul>
+<h2 id="明确对比分析的挑战"><a href="#明确对比分析的挑战" class="headerlink" title="明确对比分析的挑战"></a>明确对比分析的挑战</h2><p>可视化的原始限制主要包括三方面：计算机数据处理能力的限制，显示区域的限制，和人类认知能力的限制。而在比较的语境下，其三方面的限制体现为参与比较的目标数量过大，单个目标的尺寸或复杂度过大，以及目标间关系的尺寸和复杂度过大。并且在解决这三个方面限制的“头疼程度”上，以上三点头疼程度成递增趋势。因此在确定对比分析的挑战时，可以分别从这三个方面考虑。</p>
+<ul>
+<li>参与比较的目标数量：对象之间需要两两比较，还是需要进行多目标比较？通常来说，两两比较是非常直观和简单的，因此多目标比较场景下，我们可以思考这样的多目标比较是否有必要，或是可以简化为两两比较。</li>
+<li>目标的复杂程度：参与比较的对象在视觉表达上的复杂度，会直接影响比较任务的复杂程度。以下面三幅图为例，第一幅图中对比两个折线的变化趋势可以认为是非常简单的任务，然而第二幅图中对比热力图的分布就会耗费更多的人类认知资源。对于第三幅图这种复杂的视觉设计，分析者需要耗费更大的认知资源来找出左右两个对象之间的差异（我才不会告诉你第三幅图里两个对象一模一样呢）。</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/compare.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/compare.png" alt="img"></a></p>
+<ul>
+<li>目标之间关系的数量和复杂程度：我们可以把参与比较的目标对象之间的关系描述为一个图结构，其中节点代表对象本身，边代表对象间的关系。在图结构中一个很重要的问题就是组合爆炸，即边的数量随着节点数目的增长而暴增。并且这些边本身可能带有各种属性，代表不同的关系类型。</li>
+</ul>
+<p>总结一下，上述三个方面的限制可以组成一个三维的特征空间，其中每个可视化系统都可以在这个特征空间中找到属于自己的位置。对于可视化设计者来说，明确对比任务面临的挑战，即是在这个特征空间中找到可视化系统所处的位置。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/3d.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/3d.png" alt="img"></a></p>
+<h2 id="筹划分析策略"><a href="#筹划分析策略" class="headerlink" title="筹划分析策略"></a>筹划分析策略</h2><p>既然知道了需要解决什么样的问题，那么我们就可以设计相应的方法来解决它们。“分析策略”可以认为在是较高抽象层次上把握解决问题的方向，主要包含三个种类：</p>
+<ul>
+<li>顺序扫描——最累人的方式，也是最直接的方式，基本上算是穷举所有需要比较的对象。比如在折线图的折线比较任务中，我们从左到右地遍历每一个点对。</li>
+<li>选取子集——使用采样方法，从所有需要比较的对象中选取一部分进行顺序扫描。该策略的重点在于如何选择合适的采样方法，以及采样出的对象是否具有足够的代表性。</li>
+<li>总结重点——略去细节，展现对比中的主要部分。问题在于细节无法直接展示。</li>
+</ul>
+<p>如果把这三个分析策略整合到上面的挑战三维空间中，那么策略相当于降低三方面挑战复杂度的原力，将你的系统拉回原点。</p>
+<h2 id="制定具体设计方案"><a href="#制定具体设计方案" class="headerlink" title="制定具体设计方案"></a>制定具体设计方案</h2><p>本文作者将可视化中具体的对比技术分为三大类：</p>
+<ul>
+<li>并排：将参与比较的对象并排放置，分析者可以来回查看需要对比的区域，如下图（a）所示。</li>
+<li>交叠：对象重叠放置，通常放在同一坐标系下，如下图（b）所示。</li>
+<li>显式编码：使用视觉编码直接展示参与比较对象之间的差异，如下图（c）和（d）所示。</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/4type.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/4type.png" alt="img"></a></p>
+<p>通常来说，可视化中对比分析的视觉设计包含在这三种类别中，或是融合多种类别的技术。在选择适合的视觉设计和交互时，一定要围绕“任务导向”这一基本思想进行展开。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>对比是可视化中最基本的分析任务之一，本文展示了设计可视化对比分析时需要考虑的四个层次，并详细展开了每个层次中的要点。可视化设计者在设计视图时，可以将这种思维方式作为参考使用。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

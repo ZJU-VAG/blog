@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Visual Abstraction and Exploration of Multi-class Scatterplots - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#结语：本文提出了一种新的多类散点图简化方法。该方法在规避散点覆叠问题的同时还保持了不同数据类之间的相对密度特征，是一种有效的定量分析方法。该方法的一个不足在于其亦忽略密度较低区域中数据的结构和特征。"><span class="toc-text">结语：本文提出了一种新的多类散点图简化方法。该方法在规避散点覆叠问题的同时还保持了不同数据类之间的相对密度特征，是一种有效的定量分析方法。该方法的一个不足在于其亦忽略密度较低区域中数据的结构和特征。</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Visual Abstraction and Exploration of Multi-class Scatterplots
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2014-11-19 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2014-11-19</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陈海东"
+                title="陈海东">陈海东</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p><strong>中文题目：</strong>多类散点图的可视简化与探索</p>
+<p><strong>作者：</strong>陈海东，陈为，梅鸿辉，刘致奇，周昆，陈伟锋，顾文涛，马匡六</p>
+<p><strong>发表会议：</strong>VAST2014</p>
+<p>散点图（scatterplot）是一种使用非常广泛的可视化技术，常用于聚类分析、离群点分析、相关性分析等。多类散点图（multi-class scatterplot）作为散点图的一种扩展，其常用于比较分析应用。然而，随着数据规模的增大，有限的屏幕空间所造成的散点覆叠（overdraw）问题极大地限制了用户对可视化结果的正确感知。此外，不同的散点绘制顺序也会造成可视化结果的不一致性。如图 1 所示，不同的散点绘制顺序致使同一散点数据呈现出不同的可视化结果。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%871.png" alt="img"></p>
+<p><center><strong>图1</strong> 不同散点绘制顺序对可视化结果的影响</center><br>为了克服散点覆叠问题，可视化研究者们提出了一系列方法。改变散点的可视属性（如大小、透明度）是一种非常直观和简单的做法。然而，当散点的可视属性编码了其它信息时，该类方法易造成错误的理解。密度估计（density estimation）是另外一种可用于解决大规模散点数据的可视化方法。该方法易忽略低密度区域中的数据点。当应用到多类散点数据时，该方法还涉及多变量数据场的混合。这本身就是一大可视化难点。另外一类解决散点覆叠的方法称之为空间重分布（spatial redistribution）。其核心思想是将相互覆盖的点移至空白屏幕区域。这类方法本质上改变了数据的内在分布，可视化结果必然存在偏差。交互技术，如缩放（zooming）、焦点上下文（focus+context）亦可用于规避覆叠散点数据的探索。<br>本文提出了一种基于多类蓝噪声采样的方法实现多类散点数据的可视简化。为了增强简化结果的感知，本文还提出了一个散点颜色优化模型和一些散点形状设计方案。<br>可视简化的基本目标是减少显示数据点的数目同时保持不同数据类之间的相对密度特征。为了达到这一基本目标，本文采用了魏立一等人最新提出的多类蓝噪声采样算法。该方法是单类蓝噪声采样算法的扩展。其采用了一个矩阵约束不同数据类采样点之间的最小距离。如图2 所示，该矩阵的对角线元素约束了同类采样点之间的最小距离，非对角线元素约束了不同类采样点之间的最小距离。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%872.png" alt="img"></p>
+<p><center><strong>图2</strong> 多类蓝噪声采样约束矩阵示意图</center><br>试验中发现，直接采样重构的连续密度场容易生成一些实际数据中不存在的数据点，如图3中图里红色矩形区域所示。为了避免该缺陷，本文选择在由输入多类散点数据组成的离散空间内进行采样。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%873.png" alt="img"></p>
+<p><center><strong>图3</strong> 不同采样空间对比。<strong>左：</strong>输入多类散点图；<strong>中：</strong>连续采样；<strong>右：</strong>离散采样。</center><br>视图缩放操作中采样结果的一致性是另一个需要重点考虑的因素。每当视图进行缩放时便执行采样将不可避免的造成不同缩放比例下采样结果的不一致性问题。如图4所示，粗略层次的采样结果（如，红色区域中的洋红色数据点）并不是精细层次采样结果的子集。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%874.png" alt="img"></p>
+<p><center><strong>图4</strong>采样不一致性示例</center><br>为了保证在视图缩放过程中采样结果的一致性，本文提出了一种层次化采样模式。其核心思想是在采样过程中将所有粗略层次的采样结果作为当前精细缩放层次采样时的约束。可视化时只需将当前缩放层次之前的所有采样结果绘制到视图中即可。通过这种处理方式，当视图放大时新的点将逐步加入到当前视图中，当视图缩小时新增的点将逐步地被移除当前视图。这种层次式地采样模式保证了采样结果在不同视图缩放层次之间的视觉一致性。如图5所示。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%875.png" alt="img"></p>
+<p><center><strong>图5</strong>层次采样模式</center><br>颜色是区分不同数据类的一个重要可视变量。未经优化的颜色设计将导致可视化结果中的重要特征无法被用户正确感知。本文通过求解以下优化问题在CIELab颜色空间中找到一组颜色集以保证不同数据类之间具有足够区分度。</p>
+<p>​ 其中，是颜色度区分度目标函数，约束了任意两个颜色在 CIELab 颜色空间中的最小感知距离。</p>
+<p>​ 除基本的圆点表示外，本文还提供了两种散点形状设计以编码数据局部趋势信息，如图 6 所示。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%876.png" alt="img"></p>
+<p><center><strong>图6</strong> 两种散点形状设计</center><br>为了验证本文方法的有效性，本文对四种多类散点图可视化模式进行了对比分析，并进行了一项简单的用户研究。图7展示了这四种方法应用在一个数据集的结果。从结果中可以清晰的看出，传统方法产生了严重的散点覆叠问题。Mayorga等人提出的Splatterplot方法则会合成新的颜色，影响用户感知，如本例中所选区域所呈现的棕色。采用噪声扰动的方法可一定程度上避免该缺陷，增强用户对高密度重叠区域的区分度。本文的方法（如图7d所示）不仅规避了散点覆叠问题，还保持了局部区域的相对密度特征。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%877.png" alt="img"></p>
+<p><center><strong>图7<strong> 不同多类散点图可视化方法比较。(a) 传统多类散点图；(b) Splatterplots；(c) 采用噪声增强的Splatterplots；(d) 我们的方法。</strong></strong></center><br>本文还将该方法应用到了两个实际数据中，图8展示了应用本文方法对NBA球队投篮数据进行简化的结果。从本文方法的结果中，用户可清晰的观察到，迈阿密热火更偏好于两侧底角三分，而孟菲斯灰熊队则更喜欢攻击篮下。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%878.png" alt="img"></p>
+<p><center><strong>图8</strong> NBA球队投篮数据可视化结果。<strong>左：</strong>传统多类散点图可视化方法；<strong>右：</strong>应用本文方法对数据进行可视简化的结果。</center><br>图9展示了本文方法应用于38万手机用户某月消费数据的可视化结果。从图9的右图可以清晰地看出不同套餐类型用户的消费行为特征。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/11/%E5%9B%BE%E7%89%879.png" alt="img"></p>
+<p><center><strong>图9</strong> 38万手机用户某月通话时长与话费可视化结果。<strong>左：</strong>传统多类散点图可视化方法；<strong>右：</strong>应用本文方法对数据进行可视简化的结果。</center></p>
+<h4 id="结语：本文提出了一种新的多类散点图简化方法。该方法在规避散点覆叠问题的同时还保持了不同数据类之间的相对密度特征，是一种有效的定量分析方法。该方法的一个不足在于其亦忽略密度较低区域中数据的结构和特征。"><a href="#结语：本文提出了一种新的多类散点图简化方法。该方法在规避散点覆叠问题的同时还保持了不同数据类之间的相对密度特征，是一种有效的定量分析方法。该方法的一个不足在于其亦忽略密度较低区域中数据的结构和特征。" class="headerlink" title="结语：本文提出了一种新的多类散点图简化方法。该方法在规避散点覆叠问题的同时还保持了不同数据类之间的相对密度特征，是一种有效的定量分析方法。该方法的一个不足在于其亦忽略密度较低区域中数据的结构和特征。"></a><strong>结语：</strong>本文提出了一种新的多类散点图简化方法。该方法在规避散点覆叠问题的同时还保持了不同数据类之间的相对密度特征，是一种有效的定量分析方法。该方法的一个不足在于其亦忽略密度较低区域中数据的结构和特征。</h4>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

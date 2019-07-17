@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        DropoutSeer: Visualizing Learning Patterns in Massive Open Online Courses for Dropout Reasoning and Prediction - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-数据说明"><span class="toc-text">2 数据说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-系统设计"><span class="toc-text">3 系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-任务分析"><span class="toc-text">3.1 任务分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-预测模型"><span class="toc-text">3.2 预测模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-聚类方法"><span class="toc-text">3.3 聚类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-视觉编码"><span class="toc-text">3.4 视觉编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1-聚类视图"><span class="toc-text">3.4.1 聚类视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-时间轴视图"><span class="toc-text">3.4.2 时间轴视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3-流视图"><span class="toc-text">3.4.3 流视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-4-仪表盘视图"><span class="toc-text">3.4.4 仪表盘视图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-交互设计"><span class="toc-text">3.5 交互设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-案例分析"><span class="toc-text">4 案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-模型预测的准确性"><span class="toc-text">4.1 模型预测的准确性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-学生退学行为很大程度上取决于课程本身"><span class="toc-text">4.2 学生退学行为很大程度上取决于课程本身</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-预测模型的特征重要性"><span class="toc-text">4.3 预测模型的特征重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-异常学生子组"><span class="toc-text">4.4 异常学生子组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-总结"><span class="toc-text">5 总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        DropoutSeer: Visualizing Learning Patterns in Massive Open Online Courses for Dropout Reasoning and Prediction
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-11-29 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-11-29</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#关会华"
+                title="关会华">关会华</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文: DropoutSeer: Visualizing Learning Patterns in Massive Open Online Courses for Dropout Reasoning and Prediction</p>
+<p>作者: Yuanzhe Chen, Qing Chen, Mingqiao Zhao, Sebastien Boyer, Kalyan Veeramachaneni, Huamin Qu</p>
+<p>发表期刊: 2016 VAST Conference track</p>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h2><p>MOOCs全称Massive Open Online Courses，即大型网络公开课。MOOCs自2012年出现起迅速发展。然而，在迅猛发展背后，MOOCs也存在着许多问题，其中最主要的问题就是高居不下的退学率。本文提出了一种可视化分析系统——DropoutSeer，该系统不仅能够帮助MOOCs的讲师和教育人员了解学生退学行为和原因，还可以帮助机器学习的研究人员确定退学行为预测模型中特征，进一步提高模型的表现。</p>
+<h2 id="2-数据说明"><a href="#2-数据说明" class="headerlink" title="2 数据说明"></a>2 数据说明</h2><p>本文中所用到的数据来源于Coursera和edX提供的JAVA和NCH课程数据（数据内容见图1）。其中点击事件数据中记录了用户的播放、暂停和搜索等行为；作业提交数据记录用户提交作业的情况以及得分；论坛发帖数据则记录了用户在课程论坛上的发帖情况。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/%E5%9B%BE%E7%89%871_compressed1.jpg" alt></p>
+<h2 id="3-系统设计"><a href="#3-系统设计" class="headerlink" title="3 系统设计"></a>3 系统设计</h2><h3 id="3-1-任务分析"><a href="#3-1-任务分析" class="headerlink" title="3.1 任务分析"></a>3.1 任务分析</h3><p>本文作者在和用户进行了三轮访谈之后，总结出了以下系统需要完成的任务：</p>
+<ul>
+<li><p>T1. 退学行为的大致分布如何？</p>
+</li>
+<li><p>T2. 对于退学的同学，是否能被分组？是什么因素影响了分组原因？</p>
+</li>
+<li><p>T3. 不同的学生分组能够证明什么样的学习模式？</p>
+</li>
+<li><p>T4. 选择的学生组和论坛帖子之间有没有关联？</p>
+</li>
+<li><p>T5. 特定的学生的学习模式是什么样的？</p>
+</li>
+</ul>
+<h3 id="3-2-预测模型"><a href="#3-2-预测模型" class="headerlink" title="3.2 预测模型"></a>3.2 预测模型</h3><p>在执行预测模型前，作者首先对“退学”做出了明确定义，即如果某同学在w周没有留下任何数据，则说明该同学在w周退学了。<br>作者从数据中抽取出特征向量（见图2）后，分别采用了以下三种分类模型对数据进行测试，他们分别是：</p>
+<ul>
+<li>逻辑斯特回归模型（Logistics Regression）；</li>
+<li>随机森林模型（Random Forest）；</li>
+<li>最邻近模型（Nearest-neighbors）；</li>
+</ul>
+<p>随后，通过交叉验证优化模型，根据交叉验证选择表现最好的模型进行似然估计。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/%E5%9B%BE%E7%89%871.2_compressed.jpg" alt></p>
+<h3 id="3-3-聚类方法"><a href="#3-3-聚类方法" class="headerlink" title="3.3 聚类方法"></a>3.3 聚类方法</h3><p>本文采用了一种基于密度的聚类方法，在经过预测的学生分组内进行聚类，分别形成了不同的子组，具体步骤如下：</p>
+<ul>
+<li><p>选取特征向量</p>
+<p> 这里选取的特征向量与预测模型中的特征向量相同（见图2）；</p>
+</li>
+<li><p>MDS降维</p>
+<p> 将高维向量降维到二维，用散点图的进行表示。其中，因为Cosine距离对极端值更为敏感，所以在测量向量之间的距离时，采用了这种测量方法；</p>
+</li>
+<li><p>DBSCAN聚类</p>
+<p> DBSCAN算法时间消耗小，因此更适合本文系统对聚类结果进行实时更新。</p>
+</li>
+</ul>
+<h3 id="3-4-视觉编码"><a href="#3-4-视觉编码" class="headerlink" title="3.4 视觉编码"></a>3.4 视觉编码</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/%E5%9B%BE%E7%89%872_compressed.jpg" alt></p>
+<h4 id="3-4-1-聚类视图"><a href="#3-4-1-聚类视图" class="headerlink" title="3.4.1 聚类视图"></a>3.4.1 聚类视图</h4><p>聚类视图反映的是预测和聚类的结果（见图3 A区域）。预测模型将学生分为了四组，他们分别是：</p>
+<ul>
+<li>active students – predicted  本身是主动的学生，并且被正确的预测；</li>
+<li>active students – missed  本身是主动的学生，但是被错误预测；</li>
+<li>drop students – predicted  本身是退学的学生，并且被正确的预测；</li>
+<li>drop students – missed  本身是退学的学生，但是被错误的预测. </li>
+</ul>
+<h4 id="3-4-2-时间轴视图"><a href="#3-4-2-时间轴视图" class="headerlink" title="3.4.2 时间轴视图"></a>3.4.2 时间轴视图</h4><p>时间轴视图是对学生点击事件和作业提交数据的可视化（见图3 B区域）。其中，时间轴根据所属的学生大组分为了四个部分，而对于每个部分，每一条时间轴代表了聚类得到的子组信息。时间轴上每个节点代表了每一周的数据，而右侧的柱状图则编码了每个子组的人数分布。</p>
+<p>时间轴上每一个节点的详细编码见图4(a)，内圆环的外半径表示该子组同学在该周下观看视频的平均个数，内半径编码的则是观看视频个数的标准差，内圆环上利用不同颜色的扇形编码了该子组学生在该周所观看的视频时的点击行为所占比。外圆环则编码了该子组同学在该周的作业情况，圆环的弧长编码了作业的得分情况，越长越接近满分；外圆环上的黑色圆点编码了该子组同学该周平均得分百分比，两端的线段则编码了得分的标准差，之所以采用百分比的形式是因为每周作业的总分不同。</p>
+<p>视频点击事件在扇形图上不好做直接比较，因此，作者在系统又设计了另外一个glyph（见图4(b)），用户可以在这两种glyph直接进行切换。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/%E5%9B%BE%E7%89%873_compressed.jpg" alt></p>
+<h4 id="3-4-3-流视图"><a href="#3-4-3-流视图" class="headerlink" title="3.4.3 流视图"></a>3.4.3 流视图</h4><p>流视图主要编码了子组学生在课程期间的发帖情况（见图3 C区域）。</p>
+<h4 id="3-4-4-仪表盘视图"><a href="#3-4-4-仪表盘视图" class="headerlink" title="3.4.4 仪表盘视图"></a>3.4.4 仪表盘视图</h4><p>仪表盘视图（见图3 D区域）由三部分组成，顶部的柱状图编码了预测结果的分布情况，中部是一个属性过滤器，方便用户进行过滤，重新计算聚类；最下面是和流视图相关的帖子的详细情况。</p>
+<h3 id="3-5-交互设计"><a href="#3-5-交互设计" class="headerlink" title="3.5 交互设计"></a>3.5 交互设计</h3><p>系统中设计了一系列交互帮助用户更好的分析和探索，这些交互有：</p>
+<p><strong>过滤</strong> 用户可以通过仪表盘中部的过滤器调整用以聚类的属性，从而得到新的分析对象；</p>
+<p><strong>高亮</strong> 高亮能够更快更好地帮助用户定位到相关信息；</p>
+<p><strong>细节展示</strong> 当用户选择流视图中时间轴上某个时间节点时，该时间节点上的详细帖子将在仪表盘视图的下部展示；</p>
+<p><strong>重配</strong> 对于时间轴视图中的子组时间轴，用户可以对他们进行合并或者拆分；</p>
+<h2 id="4-案例分析"><a href="#4-案例分析" class="headerlink" title="4 案例分析"></a>4 案例分析</h2><p>在案例研究中，作者对课程数据中前一个月的数据进行了训练，从而用来预测第五周的退学率，此外作者分别对JAVA和NCH课程的两个数据集都进行了可视化，并从得到了一些发现。</p>
+<h3 id="4-1-模型预测的准确性"><a href="#4-1-模型预测的准确性" class="headerlink" title="4.1 模型预测的准确性"></a>4.1 模型预测的准确性</h3><p>通过可视化预测结果，可以发现，预测模型能够很好的预测学生的退学行为，预测的准确率能够达到90%，然而，对于主动学习的学生而言，模型似乎不太给力，预测准确率只能达到50%。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/%E5%9B%BE%E7%89%874_compressed.jpg" alt></p>
+<h3 id="4-2-学生退学行为很大程度上取决于课程本身"><a href="#4-2-学生退学行为很大程度上取决于课程本身" class="headerlink" title="4.2 学生退学行为很大程度上取决于课程本身"></a>4.2 学生退学行为很大程度上取决于课程本身</h3><p>作者对JAVA和NCH的课程分别做了可视分析（见图6）后发现，JAVA课程中，第五周放弃课程的同学，在第六周之后又陆陆续续的回来了；然而NCH课程中，第五周放弃课程的同学，在第六周之后就再也没有回来了。通过分析，作者发现，Java课程在第五周之后又陆陆续续的在每周放出新视频激励学生学习；而NCH课程在第五周时，基本把所有的教学视频都发布了，剩下的几周用来复习和考试，所以流失了好多学生；所以说，学生在沉寂一周之后会不会再回到课堂，很大程度上取决于课程本身，或者说和课程发布的时间有很大关系。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/%E5%9B%BE%E7%89%875_compressed.jpg" alt></p>
+<p>为了验证这一猜想，用户选择NCH课程中，第二周没有视频点击行为的学生，发现他们也在第三周新的课程材料发布后返回了课堂（见图7）。这证明了，教学视频发布的频率是很重要的。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/%E5%9B%BE%E7%89%876_compressed.jpg" alt></p>
+<h3 id="4-3-预测模型的特征重要性"><a href="#4-3-预测模型的特征重要性" class="headerlink" title="4.3 预测模型的特征重要性"></a>4.3 预测模型的特征重要性</h3><p>用户在交互分析的时候，发现作业的表现对学生的退学行为有着非常大的影响，当用户通过属性过滤器过滤掉作业成绩低于某阈值的学生时发现，留下来的学生比较主动的学生；此外当用户通过属性过滤器过滤得到第四周作业成绩在2/3以上的学生时发现，这些学生均留到了课程结束。这两个发现能够说明，作业的表现很大程度上和退学有关，系统能够通过这种方式，在机器学习的研究人员在优化模型中的特征时给出一定的建议</p>
+<h3 id="4-4-异常学生子组"><a href="#4-4-异常学生子组" class="headerlink" title="4.4 异常学生子组"></a>4.4 异常学生子组</h3><p>用户过滤出前四周跳看次数在20次以上的学生，得到图8中(b)(c)两个视图，通过这两个视图我们可以发现，这些学生大部分都是属于主动学习的一类，并且他们的成绩一般比较优秀。</p>
+<p>对于这个现象，讲师和教育人员给出了一定的原因，他们认为这类学生对课程有一定的基础，或者是已经不止一次的看过该视频，所以导致了这种情况发生。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/%E5%9B%BE%E7%89%877_compressed.jpg" alt></p>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5 总结"></a>5 总结</h2><p>本文构建了一个针对MOOC退学行为研究的可视化分析系统，该系统不仅能够帮助机器学习研究人员更好的识别预测模型中的重要特征，还可以帮助讲师和教育人员理解学生退学行为背后的原因，并对课程作出一定的调整。系统易用，可视化射击简洁易懂，系统交互流畅，但是不足之处在于该系统不能够适配非“周更”的MOOCs课程，同时也不支持实时的退学预测。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        TrajGraph: A Graph-Based Approach to Studying Urban Network Centralities Using Taxi Trajectory Data - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造图"><span class="toc-text">构造图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算图的中心性"><span class="toc-text">计算图的中心性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视化设计"><span class="toc-text">可视化设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例分析"><span class="toc-text">案例分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        TrajGraph: A Graph-Based Approach to Studying Urban Network Centralities Using Taxi Trajectory Data
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-05-27 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-05-27</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱闽峰"
+                title="朱闽峰">朱闽峰</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：TrajGraph: A Graph-Based Approach to Studying Urban Network Centralities Using Taxi Trajectory Data</p>
+<p>作者：Xiaoke Huang, Ye Zhao, Jing Yang, Chong Zhang, Chao Ma, Xinyue Ye</p>
+<p>发表：VAST 2015</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>出租车轨迹在一定程度上反应了整个城市道路的动态交通信息，我们可以从出租车轨迹观察到真实的交通流以及城市级别的交通模式。为了反应道路结构，过去的研究往往采用图模型的方法，但是他们只考虑的静态的路网数据，没有使用真实的交通数据，进几年来的工作也不能反应城市范围的路网并且支持交互式分析。为此，作者提出了TrajGraph。TrajGraph同时结合了路网结构和真实的出租车数据。为了支持交互式分析，TrajGraph做了空间简化，使用了图分割算法，把街道级别的图模型转换为区域级别的图模型。同时，为了研究分析城市中不同区域在交通中的重要程度，作者基于TrajGraph计算了图的中心性，包括Pagerank和betweenness。这些中心性由三个联动的视图：结点连接图、地图和时间信息图可视化展示出来，用户可以交互式地分析探索城市交通的模式。</p>
+<h2 id="构造图"><a href="#构造图" class="headerlink" title="构造图"></a>构造图</h2><p>首先，基于路网和出租车轨迹信息，我们可以构造一个图模型。如下图，我们把每一个街道转换为一个结点，在街道间的转换就是一条边。比如，有一辆出租车从道路D行驶到道路F，那么在对应的图模型中就会生成结点D和F以及边DF。这是考虑了一些道路上的约束，比如不能从道路C行驶到道路A，这样的约束很容易在这样的图模型中表示出来。边的权重统一设为1，结点的权重可以有四种，路段长度、出租车数量、平均通行时间和平均速度。前一个反应了道路结构，后三个都是反应了交通信息。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/05/13.png" alt="img"></p>
+<p>这样产生的图模型会有37634个顶点和1512691条边，虽然这个数据量对计算机来说不大，但是计算图的中心性需要耗费大量的时间，用户无法进行实时交互，并且过多的元素无法进行有效地可视化分析。因此需要做一些空间简化，使用了图分割算法METIS，把原图分割成K个块，在保证每个块的权重近似的情况下，最小化块之间的连接边的数量，把街道级别的图模型转换为区域级别的图模型。</p>
+<h2 id="计算图的中心性"><a href="#计算图的中心性" class="headerlink" title="计算图的中心性"></a>计算图的中心性</h2><p>为了研究分析城市中不同区域在交通中的重要程度，作者计算了两种中心性，基于出租车数量权重计算Pagerank和基于平均通行时间计算betweenness。如此计算得到的含义是：越高的Pagerank值表明，这块区域是出租车采用的到其他地方的中心，比如市中心；越高的betweenness代表是最快路径上的主干道，比如隧道、大桥等。</p>
+<h2 id="可视化设计"><a href="#可视化设计" class="headerlink" title="可视化设计"></a>可视化设计</h2><p>为了展示以上的中心性，如下图，整个系统包括一下三个联动视图：结点连接图、地图和时间信息图。结点连接图中结点处于街道区域的地理中心，整个图反映了路网结构。数字代表了一个编号， 颜色代表了归一化得中心性或者权重的数值，因为我们对高中心性和低中心性的区域更感兴趣吗，所以使用了两种颜色，红色代表数值高，蓝色代表数值低。用户点击结点，可以看到在地图上对应的区域，颜色也对应于某一种中心性或者权重，rose chart 展示数值在一天中的变化。在时间信息图中，我们可以查看这些数值在时序上的变化，可以同时比较多个区域的数值变化。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/05/23.png" alt="img"></p>
+<h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><p>图（2）展示了一天中betweenness数值在路网中的分布，我们看到95号结点的颜色比较深，所以点击95把它的信息展现在地图上来研究。图（4）中，我们发现95号结点是在一座山的背面，这座山对城市交通研究很重要，因此我们想探索他与周围道路的关系。然后我们查找他周围的区域，比如山南面的区域36号结点，95号结点代表的区域和36号的区域由一条隧道连接起来。通过图（3）我们看到这两块区域的betweenness的值得变化是一致的，说明他们是连接深圳南北两部分很重要的部分。但是他们的Pagerank值就有很大不同（图（5）），在6点左右结点36的Pagerank值比较高而95的值比较低。我们把地图上的颜色编码改为通行时间，我们可以看到95处通行时间都比较高，可能是有交通拥堵，因此出租车司机会避免进入这块区域，所以这里不是一个中心，pagerank值比较低。相反，我们看到36处通行比较流畅，所以出租车司机会把这里作为通行的枢纽，Pagerank值比较高。通过这个案例，我们认为区域95需要在城市规划交通控制上找一些对策。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个工作提出的TrajGraph结合了路网信息和轨迹信息，并且使用了图上的一些概念比如中心性来反应局部区域在整个交通网络中的作用。用图的形式来研究轨迹是一个很好的思路，作者提出未来的工作可以考虑更多地基于图的算法，比如最小生成树或者社团分析等。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

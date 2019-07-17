@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        机器学习基础概念和统计机器学习基本算法 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类"><span class="toc-text">分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#梯度下降算法"><span class="toc-text">梯度下降算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习率与过拟合"><span class="toc-text">学习率与过拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#统计机器学习基础方法：K近邻法"><span class="toc-text">统计机器学习基础方法：K近邻法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#统计机器学习基础方法：支撑向量机SVM"><span class="toc-text">统计机器学习基础方法：支撑向量机SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#统计机器学习基础方法：决策树"><span class="toc-text">统计机器学习基础方法：决策树</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        机器学习基础概念和统计机器学习基本算法
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-11-12 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2018-11-12</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#侯宇轩"
+                title="侯宇轩">侯宇轩</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#主题报告" title="主题报告">主题报告</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>主题：机器学习基础概念和统计机器学习基本算法</p>
+<p>整理：侯宇轩</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>机器学习（machine learning）形象的来说，就是使用机器（计算机）利用数据，自行对数据特征进行学习（与手工编写程序直接解决问题区分），来解决现实生活中的问题（如手写数字识别、实例分割等等）。</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/01.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/01.png" alt="01"></a></p>
+<ul>
+<li>机器学习算法已经对人们对数据的利用方式造成了重大改变。例如医院开始将诊疗数据保存下来，包括病人的基本信息、医生的诊断结果、CT图像等等。使用学习型算法对这些数据进行分析，就可以得到一段时间内的病例发展趋势，或者尝试利用CT数据对病人的病灶进行自动检测等等。</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/03.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/03.png" alt="03"></a></p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<li><p>机器学习可以简单的认为是基于数据的学习。依据学习时是否有数据标签，分为监督学习、无监督学习和半监督学习</p>
+</li>
+<li><p>监督学习指不仅把训练数据丢给计算机，而且还把分类的结果（数据具有的标签）也一并丢给计算机分析。 计算机进行学习之后，再丢给它新的未知的数据，它也能计算出该数据导致各种结果的概率，给你一个最接近正确的结果。 由于计算机在学习的过程中不仅有训练数据，而且有训练结果（标签），因此训练的效果通常不错。监督学习的结果可分为两类：分类或回归。</p>
+</li>
+<li><p>非监督学习指的是只给计算机训练数据，不给结果（标签），因此计算机无法准确地知道哪些数据具有哪些标签，只能通过发现数据内部的一些相似特征，把数据划分为若干类。非监督学习一般表示为聚类算法。</p>
+</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/04.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/04.jpg" alt="04"></a></p>
+<ul>
+<li><p>对于半监督学习，其训练数据的一部分是有标签的，另一部分没有标签，而没标签数据的数量常常远远大于有标签数据数量（这也是符合现实情况的）。 隐藏在半监督学习下的基本规律在于：数据的分布必然不是完全随机的，通过一些有标签数据的局部特征，以及更多没标签数据的整体分布，就可以得到可以接受甚至是非常好的分类结果。</p>
+</li>
+<li><p>半监督学习分为很多种不同的情况。这里举一个例子：对下图，我们使用了先聚类再标注的手段。虽然有标签的数据很少，但是能够取得比较好的效果。</p>
+</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/05.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/05.png" alt="05"></a></p>
+<h2 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h2><ul>
+<li><p>如何评判机器学习算法效果的好坏？一般会依据学习目标定义损失函数(loss function) J。例如，在分类问题中，损失函数定义为预测向量与标准向量之间的相似度。找到函数J的全局最优值，也就找到了机器学习算法最合适的参数。</p>
+</li>
+<li><p>梯度下降算法：在每一次训练的迭代中，计算损失函数的梯度，并且在参数空间中向梯度方向移动一定步长。</p>
+</li>
+<li><p>梯度下降算法的公式：</p>
+</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation1.png" alt="equation1"></a></p>
+<h2 id="学习率与过拟合"><a href="#学习率与过拟合" class="headerlink" title="学习率与过拟合"></a>学习率与过拟合</h2><ul>
+<li><p>学习率(Learning rate)作为机器学习中重要的超参，其决定着目标函数能否收敛到局部最小值以及何时收敛到最小值。合适的学习率能够使目标函数在合适的时间内收敛到局部最小值。梯度下降公式中α即为学习率，决定参数空间中的步长。</p>
+</li>
+<li><p>当学习率设置的<strong>过小</strong>时，收敛过程十分缓慢，且容易陷入局部极小值中。</p>
+</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/06.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/06.png" alt="06"></a></p>
+<ul>
+<li>当学习率设置的<strong>过大</strong>时，算法可能在参数空间的最小值附近来回震荡，无法收敛。</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/07.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/07.png" alt="07"></a>    泛化能力（generalization ability）是指机器学习算法对新鲜样本的适应能力。学习的目的是学到隐含在数据对背后的规律，对具有同一规律的学习集以外的数据，经过训练的模型也能给出合适的输出，该能力称为泛化能力。</p>
+<ul>
+<li><p>欠拟合：精度不足，泛化能力好。</p>
+</li>
+<li><p>过拟合：过于追求精度导致泛化能力不足。</p>
+</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/08.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/08.png" alt="08"></a></p>
+<ul>
+<li><p>如何防止过拟合？</p>
+<ul>
+<li><p>最好的方法：增大训练样本。足够大的训练样本可以解决大多数问题。</p>
+</li>
+<li><p>正则化：在损失函数J中加入正则项，一般与参数的某个范数有关。</p>
+</li>
+<li><p>比如在最小二乘回归当中，函数的各个高阶（最高n阶）项之前的系数可以使用正则化进行限制。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/09.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/09.png" alt="09"></a></p>
+<h2 id="统计机器学习基础方法：K近邻法"><a href="#统计机器学习基础方法：K近邻法" class="headerlink" title="统计机器学习基础方法：K近邻法"></a>统计机器学习基础方法：K近邻法</h2><ul>
+<li><p>K近邻法(K-nearest-neighbors)主要用于分类问题。</p>
+</li>
+<li><p>对于新加入的点，寻找距离该点最近的k个已经进行分类的点。这k个点中数量最多的一类作为新点的类标签。</p>
+</li>
+<li><p>特点：分类器不需要使用训练集进行训练，训练时间复杂度为0。</p>
+</li>
+<li><p>重要的超参数：K。如下图，K=3与K=5会造成新点被分为不同的类。</p>
+</li>
+<li><p>改进算法：增加权重的knn。这个权重可以是距离权重（距离近的权重大），也可以是类别权重（更重视的一类权重大）</p>
+</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/10.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/10.png" alt="10"></a></p>
+<h2 id="统计机器学习基础方法：支撑向量机SVM"><a href="#统计机器学习基础方法：支撑向量机SVM" class="headerlink" title="统计机器学习基础方法：支撑向量机SVM"></a>统计机器学习基础方法：支撑向量机SVM</h2><p>支撑向量机（Support Vector Machine）主要用于分类问题。</p>
+<p>它是一种二分类模型，它的目的是寻找一个超平面来对样本进行分割，分割的原则是间隔最大化，最终转化为一个凸二次规划问题来求解。根据数据的分布特点，SVM分为线性可分SVM、线性不可分SVM、非线性SVM三种，这里我们介绍第一种。</p>
+<p>如果一个线性函数能够将样本分开，称这些数据样本是线性可分的。什么是线性函数呢？其实很简单，在二维空间中就是一条直线，在三维空间中就是一个平面，以此类推，如果不考虑空间维数，这样的线性函数统称为超平面。我们看一个简单的二维空间的例子，O代表正类，X代表负类，样本是线性可分的，但是很显然不只有这一条直线可以将样本分开，而是有无数条，我们所说的线性可分支持向量机就对应着能将数据正确划分并且间隔最大的直线。 我们所说的线性可分支持向量机就对应着能将数据正确划分并且<strong>间隔最大</strong>的直线。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/11.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/11.png" alt="11"></a></p>
+<p>为什么要间隔最大呢？一般来说，一个点距离分离超平面的远近可以表示分类预测的确信度，如图中的A B两个样本点，B点被预测为正类的确信度要大于A点，所以SVM的目标是寻找一个超平面，使得离超平面较近的异类点之间能有更大的间隔，即不必考虑所有样本点，只需让求得的超平面使得离它近的点间隔最大。</p>
+<p>如何计算间隔？</p>
+<p>在样本空间中，划分超平面可通过如下线性方程来描述：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation2.png" alt="equation2"></a></p>
+<p>其中w为法向量。假设超平面能将训练样本正确的分类，即对于训练样本(xi,yi )，满足</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation3.png" alt="equation3"></a></p>
+<p>yi=+1代表正样本，yi=-1代表负样本（二分类）。这里的公式成为最大间隔假设。实际上，大于、小于号后面的+1、-1只是为了计算方便，理论上无论是多少，都可以通过变换w、b使其变为+1、-1。</p>
+<p>将上式左右乘以yi，得到</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation4.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation4.png" alt="equation4"></a></p>
+<p>实际上等于</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation5.png" alt="equation5"></a></p>
+<p>训练中所有的样本都应满足上式。</p>
+<p>如图，距离超平面最近的这几个点满足刚才的最大间隔假设，这几个点即称作支撑向量。虚线称为边界，虚线之间的距离称为间隔。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/12.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/12.png" alt="12"></a></p>
+<p>计算即可发现，间隔</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation6.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation6.png" alt="equation6"></a></p>
+<p>补充证明：  设x+ 、x- 为两个异类支撑向量，那么间隔实际上即为两个异类支撑向量的差在W上的投影。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation7.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/equation7.png" alt="equation7"></a></p>
+<p>在得到间隔之后，要确定我们的计算目标：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/13.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/13.png" alt="13"></a></p>
+<p>此时，SVM的求解已经化为一个二次规划(QPLC)问题，可以使用各种求解器进行求解。有兴趣的读者可以了解一下对偶方法，可以将该问题进一步化为LPQC问题，此处不再赘述。</p>
+<h2 id="统计机器学习基础方法：决策树"><a href="#统计机器学习基础方法：决策树" class="headerlink" title="统计机器学习基础方法：决策树"></a>统计机器学习基础方法：决策树</h2><p>决策树(decision tree）主要用于分类问题。</p>
+<p>决策树由节点和（有向）边组成，将整个数据集划分为树状。内部节点表示一个特征或者属性，叶节点表示一个类，每个分叉处代表选择了一个特征。</p>
+<p>测试时（建树完成后），将新节点依据决策树的分叉向下查找，直到到达叶节点确定最后分类。如下图是一棵简单的决策树，可以根据是否拥有房产、是否已婚、年收入是否大于等于80单位来将人分为能够偿还贷款和无法偿还贷款的两类。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/14.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/14.png" alt="14"></a></p>
+<p>目标：训练出一个与训练数据矛盾较小的决策树，同时需要保证泛化能力。</p>
+<p>损失函数J：通常是正则化的极大似然函数。</p>
+<p>通常算法：递归的选择最优特征。首先在根节点选择一个最优特征，使得各个子集在当前条件下有最好的分类。如果这些子集已经基本正确分类，那么停止分叉，构建叶节点；否则，需要对子集依照上面的原则重新分割。</p>
+<p>以上方法可能会出现过拟合的现象。我们需要对生成的树进行剪枝，去掉过于细分的节点。可以看出，决策树学习算法包含特征选择、决策树生成、剪枝三部分。</p>
+<p>特征选择原理：选取分类能力更强的特征。通常选取的准则是信息增益。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/15.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/15.png" alt="15"></a></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/16.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/16.png" alt="16"></a></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/17.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/17.png" alt="17"></a></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/18.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/18.png" alt="18"></a></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/19.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/19.png" alt="19"></a></p>
+<p>除了以上的后剪枝之外，使用的更多的方法是预剪枝。方法包括：</p>
+<p>1.指定每一个结点所包含的最小样本数目，例如10，则该结点总样本数小于10时，则不再分；</p>
+<p>2.指定树的高度或者深度，例如树的最大深度为4；</p>
+<p>3.指定结点的熵若小于某个值则不再划分。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

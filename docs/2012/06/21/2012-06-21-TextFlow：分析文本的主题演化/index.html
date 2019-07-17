@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        TextFlow：分析文本的主题演化 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        TextFlow：分析文本的主题演化
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2012-06-21 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2012-06-21</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#黄芯芯"
+                title="黄芯芯">黄芯芯</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>​了解文本数据中的主题演化是非常有用的，它可以帮助人们快速知道海量文本中的关键主题，了解相关领域的最新信息以及这些信息的变化情况，也可以帮助人们分析这些变化的原因。因此，文本挖掘领域以及可视化领域的研究人员都在主题演化方面做了很多工作，但是这些工作基本上都是围绕着单个主题的演化，很少有研究多个主题之间的合并与一个主题分裂成多个主题的情况。因此这篇发表在InfoVis 2011的文章“TextFlow: Towards Better Understanding of Evolving Topics in Text”就提出了这样一种能够分析多个主题演化关系的文本分析工具。</p>
+<p>​TextFlow系统的输入是一些带有时间标签的文本集，比如说从2001年到2011年在VisWeek上发表的所有文章，或者某段时间的全部新闻，这些文本集经过TextFlow内部的文本处理和挖掘之后，以可视化的方式呈现出这些文本的主题在这段时间的演化，包括某个主题的产生、结束，不同主题的合并，以及一个主题分裂成不同的主题等等这些情况。</p>
+<p>​首先看一下TextFlow的主要可视化界面：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/06/1.bmp" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2012/06/1.bmp" alt="1"></a></p>
+<p>​TextFlow用了一种流图的展现方法，每个流代表了一个主题，流的宽度表示在这个时间点上与该主题相关的文本的数量，数量越多，宽度越宽；关键事件包括一个主题的产生、终结、分裂以及合并，分别用以下四种符号表示；同时，textflow也能将主题内关键词的联系展示出来，每个流中的线表示某个关键字。用户可以根据这三个方面分析和推断主题的变化，以及变化的原因。</p>
+<p>​下图是将TextFlow应用到一个实际数据集的结果。该数据集是从2001年到2010年，分别发表在Vis和infovis上的933篇学术文章，系统处理了这些文章的概要、题目以及一些作者名字和关键词，一共9020个单词，从中得出来15个主题。这些主题主要可以分为两部分，上面的ABCD是和Vis相关，下面的EFG是和InfoVis相关的。从图中可以看出，和Vis相关的主题在近十年来有逐渐减少的趋势，并且，在06年之前，这些Vis的主题之间还会有一些Merge和split的pattern，但是从06年之后，这些主题就基本上是独立发展了。而InfoVis的发展情况和Vis恰恰相反，InfoVis的总体情况是不断发展的，文章的数量越来越多。从图中可以看出，InfoVis这些主题之间的Merge和Split非常多，这表明了InfoVis领域经历着非常大的变化，不同主题之间的相互影响非常多。如果我们看得仔细一点，可以看到主题F：Exploratino/Analystics这个流，从这流分离出去的比和合并进来的支流数量要大得多，这表明F这个主题对于其他主题来说是个比较活跃的因子。</p>
+<p>​接下来，我们可以更深入地探索一下F这个主题流，也就是第一张图片中的“Exploration/Analytics”流。从这个图中，我们能找到一些有趣的pattern，比如说，在2006年这里，有个很特别的关键事件，这是一个主题产生事件，点击这个符号，系统给出和这个关键事件相关的一些paper，发现这些paper绝大部分都是和analytics相关的，这并不是个巧合，因为06年正是Vast会议第一次举行，在那时候，Analytics还没有形成一个独立的主题，而是和Exploration结合到一起了。从这也可以看出，和Analytics相关的研究给老的InfoVis带了很大的变化。</p>
+<p>有兴趣的读者可以看一下这篇论文的演示视频：</p>
+<p><a href="http://research.microsoft.com/en-us/um/people/shliu/TextFlowVideo.avi" target="_blank" rel="noopener">TextFlow论文演示视频</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

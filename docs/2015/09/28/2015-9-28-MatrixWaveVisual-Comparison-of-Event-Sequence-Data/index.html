@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        MatrixWave:Visual Comparison of Event Sequence Data - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文章简介"><span class="toc-text">文章简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MatrixWave结构"><span class="toc-text">MatrixWave结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用于比较的可视化编码"><span class="toc-text">用于比较的可视化编码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用户调研"><span class="toc-text">用户调研</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        MatrixWave:Visual Comparison of Event Sequence Data
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2015-09-28 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2015-09-28</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱闽峰"
+                title="朱闽峰">朱闽峰</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="文章简介"><a href="#文章简介" class="headerlink" title="文章简介"></a>文章简介</h2><p>事件序列是由一系列包含时间属性的事件组成，每一条事件序列包含了按时间排序的多个事件。网站的点击流数据也是一种事件序列数据。当用户访问网站时，他们在多个页面之间跳转的过程，可以作为分析人员分析这个网站浏览情况的一种数据。一直以来，桑基图（Sankey Diagram）是可视化这类数据的常用可视化方法。但是随着变量增多，跳转关系变复杂，桑基图就开始出现视觉遮挡。为了解决这个问题，作者提出了MatrixWave的可视化方法，用矩阵来代替节点之间的关系，使之能够可视化更大更密集的事件序列数据。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/mw.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/mw.jpg" alt="img"></a></p>
+<h1 id="MatrixWave结构"><a href="#MatrixWave结构" class="headerlink" title="MatrixWave结构"></a>MatrixWave结构</h1><p>网站分析者通常比较关心用户在页面间的跳转关系，所以这篇文章忽略了事件的时间属性，只保留了时间上的先后逻辑关系。图a 是提炼出来的网站点击流数据，第一行的用户从网页A跳转到网页D再跳转到网页B，最后浏览完了网页B后关闭了整个网页。整一个流程可以由桑基图b展示。矩形结点表示特定网页，两个结点之间的连接表示网页之间的跳转。结点的大小表示该网页的流量，连接的大小表示从一个网页到另一个网页的跳转流量。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/matrixwave.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/matrixwave.jpg" alt="img"></a></p>
+<p>当数据量比较大并且转移关系比较密集的时候，桑基图酒会出现视觉遮挡。为了克服这个问题，MatrixWave把结点间转移的关系用矩阵来表示，矩阵中的每个单元表示了结点间的转移流量。图c 展示了Step1到Step2的跳转。同样，结点的大小表示网页的流量，矩阵中方形的大小表示网页间跳转的流量。为了展示用户关闭网页的动作 （对于分析用户行为有所帮助），增加了一个离开结点，由阴影表示。由此，相邻的步骤之间就可以用矩阵代替，构成了图d 。为了展示用户浏览整个网站的路径，我们用之字形的走法把矩阵按照先后顺序连接起来，我们就可以在图e 中观察用户的浏览过程。</p>
+<h1 id="用于比较的可视化编码"><a href="#用于比较的可视化编码" class="headerlink" title="用于比较的可视化编码"></a>用于比较的可视化编码</h1><p>常用的可视化比较方法有四种：并列（juxtaposition）、重叠（superposition）、显示编码（explicit encoding）和动画（animation）。如图所示，X和Y是两个数据，（a）（b）（c）依次是并列、重叠和显示编码方法。并列方法要求用户在两个数据之间不断比较，这里就要求用户记住另一个的数据位置，对用户来说不够方便。重叠是把两个数据放在一起，让用户比较，相比于并列方法更加简单，但是在元素比较多的情况下，图像就会比较混乱。显示编码直接显示了两个数据的差别，更为直观。动画方法需要把动画一遍一遍不断播放，同样不是很方便。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/compare.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/compare.jpg" alt="img"></a></p>
+<p>文章中，作者主要采取了显式编码这种视觉比较方法。在这里，我们需要编码两个信息，一是两个数据集的绝对流量，二是两个数据集比较的流量，这里称之为相对流量。如下图，对于结点，我们用大小表示两个数据集的绝对流量（同一个网页在两个数据集中流量的平均值），同时，用颜色编码相对流量，当网页在数据集1中的流量比较大时用紫色表示，当在数据集2中流量比较大时用橙色表示。类似的，对于矩阵单元，其内部方形的大小表示两个数据集中相应两个节点之间的平均转移流量，颜色采用了与结点一样的颜色方案来表示转移流量在两个数据中的差异。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/encoding1.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/encoding1.jpg" alt="img"></a></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/matrixwave2.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/matrixwave2.jpg" alt="img"></a></p>
+<h1 id="用户调研"><a href="#用户调研" class="headerlink" title="用户调研"></a>用户调研</h1><p>为了评估MatrixWave的有效性，作者还开展了一个用户调研来比较MatrixWave和桑基图这两种表示形式。结果显示，相比于辛基图，使用MatrixWave可以获得更高的准确度（95\% VS 79\%）和更少的完成时间（34.0s VS 38.2s）。MatrixWave相比于传统的桑基图能够有效地展示大且密集的事件序列数据集，桑基图则可以用来展示数据量比较小的数据，因为桑基图更容易被用户接受。然而由于MatrixWave的布局是之字形的，把矩阵旋转过45度之后不利于用户的观察分析。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

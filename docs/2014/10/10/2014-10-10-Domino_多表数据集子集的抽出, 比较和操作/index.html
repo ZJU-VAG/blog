@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Domino:多表数据集子集的抽出, 比较和操作 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#导引"><span class="toc-text">导引:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#详解"><span class="toc-text">详解:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#讨论分析总结"><span class="toc-text">讨论分析总结:</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Domino:多表数据集子集的抽出, 比较和操作
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2014-10-10 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2014-10-10</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陆俊华"
+                title="陆俊华">陆俊华</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文: Domino-Extracting,Comparing,and Manipulating Subsets across Multiple Tabular Datasets</p>
+<p>作者: Samuel Gratzl, Nils Gehlenborg, Alexander Lex, Hanspeter Pfister and Marc Streit</p>
+<p>发表会议:VAST2014 INFOVIS</p>
+<h2 id="导引"><a href="#导引" class="headerlink" title="导引:"></a>导引:</h2><p>介绍一种名为 Domino 的表数据的多形式可视化技术, 用于表示数据集的子集以及子集间的关系. 该技术给使用者提供了一套对子集进行排列组合和抽出的综合工具, 可以让用户实现常见的普通可视化形式以及针对特殊案例的高级可视化形式.</p>
+<p>Domino 最核心的两个组成部分是块(blocks)和块关系(block relationship).</p>
+<h2 id="详解"><a href="#详解" class="headerlink" title="详解:"></a>详解:</h2><ol>
+<li><p>块有如下三种分类型, 数值型, 矩阵型. 分类型诸如性别分类:男 女两种. 数值型如 不同歌手唱片数量, 一个小矩形代表一个歌手. 矩阵型中, 两个 item type 可以一样可以不一样: 如果两个都是同样的城市名称, 那么就可以用此来表示距离矩阵; 不一样可以表示如不同病人的癌症基因表达. 排序: 数值型中是根据数据的值; 分类型中是根据不同 group 分类被赋予的值,group 内部无序的; 是根据两个维度 items 均值来, 按亮度顺序表示排序的高低.</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/fig2.png" alt="img"></p>
+<p> 块可以组合:</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/fig4.png" alt="img"></p>
+</li>
+<li><p>块关系:</p>
+<p> 如果子集包含相同种类的 items 则认为这些 blocks 是互相关联的.关系的度有四种 none, weak, medium, strong. 划分依据为下图中三个要素:是否共享项种类, 共享划分方式和共享排序方式. 对于 strong 的关系不需要显式的表示之, 故主要讨论 medium 和 weak 型关系的相关度.</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%871.png" alt="块关系"></p>
+<p> 块关系的表示方法: 两个方向, 三种粒度.</p>
+<p> 两个方向: 平行与正交/ 三种粒度(粗到细): block, group 和 item 关系. 图中所示都符合一般可视化技术规范.</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/fig5.png" alt="关系的表示"></p>
+</li>
+<li><p>Domino 对子集的抽出和操纵的特点给人十分方便的体验. 它不仅可以在事先已经定义的集合上操作还可以即时</p>
+<p> 用逻辑操作符(并、交、差)对现有子集进行组合, 或者基于选中的 items、groups 粒度从子集中抽出部分内容.</p>
+</li>
+<li><p>Domino 支持许多种不同的可视化技术(可以说常见的都被其包含进去了)</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/%E5%9B%BE%E7%89%872.png" alt="支持的技术"></p>
+</li>
+<li><p>在其交互设计中有比较优秀的功能叫做实时预览 live preview 和占位符 placeholder. 操作模式也是有两个层次一个在块上, 一个在关系上, 还可以随意调节大小以及比例尺. 可以参看下面链接的视频. <a href="http://caleydo.org/projects/domino/(需要穿墙" target="_blank" rel="noopener">http://caleydo.org/projects/domino/(需要穿墙</a>)</p>
+<p> <strong>案例:</strong></p>
+<ol>
+<li><p>第一个是音乐榜. 如下图, 得出来不少结论其实还是比较简单的不一定用这种技术才能看到的. 可能 live preview 对此有一定的帮助.</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/musiccharts.png" alt="musiccharts"></p>
+</li>
+<li><p>第二个案例是胶质瘤癌症亚型分析. 依据癌症基因组图谱计划(TCGA)生成的恶性胶质瘤数据集(GBM), 利用 Domino 概括最近的 TCGA 对 GBM 研究成果. 在这个案例中, 利用强大的功能, 将多种表用不同的可视化技术结合起来, 通过简单的读图以及 live preview 功能发现其中各种潜在的关系. 其中有一种亚型有着特别不同的特性, 在抽出后又对改亚型的 mRNA 序列图进行进一步抽出特征, 进行比较得出可能的结论.</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2014/10/cancer-subtype-analysis.png" alt="cancer subtype analysis"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="讨论分析总结"><a href="#讨论分析总结" class="headerlink" title="讨论分析总结:"></a>讨论分析总结:</h2><ol>
+<li><p>做的比较完备的, 融合了各种技术, 并且可以支持扩展. 由于这么一个完备的库在那, 可以定义为表数据可视化的一个 grammar.</p>
+</li>
+<li><p>在图形方面, 由于会做到基因序列一块, 对存储要求还是有点高的, 560×24000 这样的阵还是可以出色表现.</p>
+</li>
+<li><p>对于一些关系需要线和带(band)[也就是 weak 和 medium 关系], 会产生交叉. 需要用户自己去避免.</p>
+</li>
+<li><p>作者后面还会在以后的工作中还会强化 placeholder 的功能, 能及时为用户提供更精彩的潜在的有趣的关系来选择.</p>
+</li>
+<li><p>我个人看法的话, 作者这样算属于“集成创新”, 不能算彻底的创新但也不错.它将各种可能的形式都用进去, 可以从不同角度从很宽广的视角去看待联系发现联系.</p>
+</li>
+<li><p>文中给的两个案例第一个我觉得不能很好说明他的那种特性. 只能说明这种可视化技术的运用, 有些结论其实用别的技术也是很明显看的出来的, 就可能是关系的广度没有这么大; 第二个案例有比较专业的医学方面的术语有些难懂, 但是用这个 Domino 还是能看出一些端倪的, 具体怎样还需以后见解.</p>
+</li>
+<li><p>文中没有给出专家的评估以及其他用户感受的调研.</p>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

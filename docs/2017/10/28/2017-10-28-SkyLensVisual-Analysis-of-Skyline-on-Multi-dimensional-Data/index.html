@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        SkyLens:Visual Analysis of Skyline on Multi-dimensional Data - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#挑战"><span class="toc-text">挑战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析任务"><span class="toc-text">分析任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视化设计"><span class="toc-text">可视化设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Projection-View"><span class="toc-text">Projection View</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tabular-View"><span class="toc-text">Tabular View</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Comparison-View"><span class="toc-text">Comparison View</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例分析"><span class="toc-text">案例分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        SkyLens:Visual Analysis of Skyline on Multi-dimensional Data
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-10-28 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-10-28</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱闽峰"
+                title="朱闽峰">朱闽峰</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：SkyLens: Visual Analysis of Skyline on Multi-dimensional Data</p>
+<p>作者：Xun Zhao, Yanhong Wu, Weiwei Cui, Xinnan Du, Yuan Chen, Yong Wang, Dik Lun Lee, and Huamin Qu</p>
+<p>发表：IEEE VAST 2017</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>日常生活中，我们总是要在一个多维数据集中比较多个候选者，然后最终做出决定选择一个。例如，旅游的时候我们想要选择一个目的地，我们往往会考虑花费、气候、安全性等。当数据量比较大时，做选择就要进行多次对比，非常耗时。因此，一般会采用<img src="http://www.cad.zju.edu.cn/home/vagblog/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif" alt="img">skyline查询，自动的抽取出一系列优质的skyline point作为候选，这些候选不会影响最终结果。然而，Skyline查询减少了需要考虑的数据，但是1）用户还得在skyline points中查找自身喜好的数据，2）skyline points数量可能仍然比较多。因此，我们需要一个比较skyline的工具。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture1.png" alt="img"></a></p>
+<h2 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h2><p>比较skyline主要分两方面：首先是解释skyline查询的结果，一个skyline point的构成原因不一定是他在某个维度是最好的，也有可能多个维度的综合评判。然后是要比较多个skyline point，我们需要从不同的维度，skyline point的不同属性分析比较skyline points之间的优劣。</p>
+<h2 id="分析任务"><a href="#分析任务" class="headerlink" title="分析任务"></a>分析任务</h2><p>分析任务包括以下7个方面：</p>
+<ol>
+<li>编码多维属性及其统计信息</li>
+<li>编码每个skyline point的支配子空间</li>
+<li>高亮多个skyline point的区别</li>
+<li>检测skyline point的聚类和离群点</li>
+<li>分析skyline point之间的支配关系</li>
+<li>帮助优化skyline查询</li>
+<li>支持过滤查询结果</li>
+</ol>
+<h2 id="可视化设计"><a href="#可视化设计" class="headerlink" title="可视化设计"></a>可视化设计</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture2.png" alt="img"></a></p>
+<h3 id="Projection-View"><a href="#Projection-View" class="headerlink" title="Projection View"></a>Projection View</h3><p>布局：基于距离的相似度矩阵，采用t-SNE降维方法进行布局。</p>
+<p>可视化设计编码：</p>
+<ul>
+<li>内圆颜色编码支配分数</li>
+<li>外圆扇形编码属性值大小</li>
+<li>扇形颜色编码与选定skyline point的属性差值</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture3.png" alt="img"></a></p>
+<h3 id="Tabular-View"><a href="#Tabular-View" class="headerlink" title="Tabular View"></a>Tabular View</h3><p>布局：列表示各个属性，行表示每一个skyline point</p>
+<p>可视化编码：</p>
+<ul>
+<li>所有数据点按照某属性进行排列，灰色线代表skyline point</li>
+<li>所有skyline point按照某属性进行排列，蓝色条高度代表其他skyline point与此数据属性的平均差值</li>
+<li>其他skyline point与此数据在各个属性上的差值</li>
+<li>决定子空间的数量</li>
+<li>显示当前skyline point排序和属性值</li>
+</ul>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture41.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture41.png" alt="img"></a></p>
+<h3 id="Comparison-View"><a href="#Comparison-View" class="headerlink" title="Comparison View"></a>Comparison View</h3><p>布局：环形布局，比较所有组合</p>
+<p>(a)Radar chart可视化编码:</p>
+<p>雷达图展示skyline point各个属性值</p>
+<p>每个轴上是属性分布</p>
+<p>轴上的圆代表相对排序</p>
+<p>蓝色虚线圆代表支配分数</p>
+<p>(c)Domination glyph可视化编码:</p>
+<p>内部饼图代表支配分数的分布</p>
+<p>饼图大小代表支配分数总量</p>
+<p>外圆弧代表被唯一支配的数据点的数量</p>
+<p>(d)中，显示skyline point和被支配的点的属性分布</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture51.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture51.png" alt="img"></a></p>
+<h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><p>Lorraine想要选择一个适宜的地方享受一个月的假期。这个案例介绍了如何使用SkyLens找到一个适宜旅游的城市。案例中使用的数据库是Numbeo quality-of-life （<a href="https://www.numbeo.com/quality-of-life/），数据库包括了176个城市和8个属性。整个操作流程分为以下几步：" target="_blank" rel="noopener">https://www.numbeo.com/quality-of-life/），数据库包括了176个城市和8个属性。整个操作流程分为以下几步：</a></p>
+<ol>
+<li><p>优化skyline查询结果。由于Lorraine只是想去度假，所以去除购买力和房屋支付能力两个属性在skyline查询中的影响。</p>
+</li>
+<li><p>过滤skyline查询结果。Lorraine想要体验亚洲以外的文化，通过洲属性过滤亚洲。</p>
+</li>
+<li><p>重新计算skyline query得到62个候选城市。Lorraine在skyline查询的结果中中发现了去年夏天去的维多利亚，想要了解成为维多利亚skyline的原因。</p>
+</li>
+<li><p>在Tabular View中观察维多利亚气候排序。Lorraine发现维多利亚的气候排名只是在众多skyline结果的中间位置，所以气候不是维多利亚成为skyline的原因。</p>
+</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture6.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture6.png" alt="img"></a></p>
+<ol>
+<li><p>在Tabular View中观察维多利亚的其他排序。维多利亚在交通和环境方面排序较高，Lorraine猜测是交通和环境使得维多利亚成为skyline point。但是Lorraine看到维多利亚的决定子空间只有花费和环境，这说明在交通上面维多利亚不是最优的。</p>
+</li>
+<li><p>查找优于维多利亚的城市。Lorraine在系统中看到，在环境方面和交通有两个城市（惠灵顿和雷克雅维克）优于维多利亚，而维多利亚在花费上面优于两个城市。</p>
+</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture71.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture71.png" alt="img"></a></p>
+<p>在分析过程中，坚定了对交通和环境两个属性的需求，然而找不到花费优于维多利亚并且交通和环境不差于维多利亚的城市。</p>
+<ol>
+<li>高亮在（花费、交通、环境）子空间内的skyline。于是Lorraine决定只关注于（花费、交通、环境）这三个因素比较优异的城市。</li>
+</ol>
+<p>​    于是Lorraine决定只关注于（花费、交通、环境）这三个因素比较优异的城市。</p>
+<ol>
+<li>在Projection View中找到各个属性都不差的格丹斯克Gdansk 和克卢日-纳波卡。</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture8.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/Picture8.png" alt="img"></a></p>
+<ol>
+<li>经过对比，格丹斯克在气候、交通和环境方面都优于克卢日-纳波卡，最终选择格丹斯克。</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>文章提出了一个探索和比较skyline的可视分析系统，SkyLens。SkyLens可以进一步抽象为对于多维数据的比较，比如优化算法中的最优点，可以简单得拓展到其他算法中。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

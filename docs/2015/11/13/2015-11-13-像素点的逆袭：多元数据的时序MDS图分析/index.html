@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        像素点的逆袭：多元数据的时序MDS图分析 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        像素点的逆袭：多元数据的时序MDS图分析
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2015-11-13 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2015-11-13</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#admin"
+                title="admin">admin</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Temporal MDS Plots for Analysis of Multivariate Data<br>作者：Dominik Jäckle, Fabian Fischer, Tobias Schreck, Daniel A. Keim<br>发表会议：TVCG 2015</p>
+<p>在网络信息安全领域，潜在的威胁多种多样。描述这类行为的网络流数据具有多元和时序特征，而传统的监督学习方法中需要人们输入一组已知类别的样本，这对于网络流数据是不合适的。本文采用可视化的技术手段，利用多元尺度法(Multi-dimensional Scaling)对网络流数据进行1维投影映射到屏幕纵坐标，同时将时间维度映射到屏幕横坐标，进而得到2维时序MDS图。MDS方法尽可能地保留了投影点在原来高维空间的相似性，利用人眼在模式识别上的优势，用户可以很快地识别出一个个“异常”模式。进一步，用户可以对“异常”模式背后的原始网络流数据进行分析，得出相应结论。</p>
+<p>下图是本文提到的TMDS系统操作界面：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/1.png" alt="1"></a></p>
+<ol>
+<li><p>主界面：主界面是TMDS投影结果呈现界面，为上图中黑色区域，每一个点代表一个投影结果，在同一水平线上的点代表着一个“异常”模式，不同的异常模式被不同的颜色编码并表示出来；</p>
+</li>
+<li><p>副界面：副界面既主界面下方的热力图区域，副界面左端有颜色图例，从浅到深代表着相应数值从小到大。热力图每一行代表原始网络流数据的一个维度，每一列对应主界面的横坐标时间轴；</p>
+</li>
+<li><p>设置界面：图中白色区域都属于系统参数设置界面，主界面的上方有两个参数设置框，分别设置移动窗格的大小和重叠区域，主界面右端包含若干个系统运行所需参数的设置以及最终被颜色标记的异常模式是否可见的设置（眼睛按钮）。</p>
+</li>
+</ol>
+<p>文中所运用的方法可以概括为下列的“三步走”策略：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/2.png" alt="2"></a></p>
+<p>文中呈现了两个案例，第一个使用前文提到的真实数据，识别出四个“异常”模式，并根据分析人员的进一步推断，将四个异常模式进行了具体解读。第二个案例使用VAST Challenge 2013提供的模拟数据，并将实验结果与真实结果进行了比对，发现符合率高达84%</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/3.png" alt="3"></a></p>
+<ol>
+<li><p>网络流数据：本文使用的原始数据是一条条网络流记录，每一条记录对应于某一具体时刻，每一条记录包含共计16个维度的信息，比如：来源端口、目的端口、IP地址、协议类别等。文中真实数据由Apache Spark抓取，模拟数据由VAST Challenge 2013提供。</p>
+</li>
+<li><p>移动窗格法：直接将MDS方法运用于全部数据存在两个问题：一是信息损失过多导致模式不明显，二是海量数据计算致使时间开销太大。因此，本文采用移动窗格法，人为控制窗格大小，每次只对窗格范围类的数据进行MDS降维，相邻窗格间存在交叠。</p>
+</li>
+<li><p>MDS降维：对于每一个移动窗格内的数据，文中采用MDS方法进行降维，每一个数据都得到一个1维MDS值，这个值依赖于原来高维空间中距离函数的选取，文中选取的距离函数使得1维MDS投影值落在了区间[-0.5, 0.5]上。同一个窗格内的数据投影点在同一竖直线上表示出来，此时，时间轴表示移动窗格的先后次序，蕴含时间升序关系，不具有真实时间意义。</p>
+</li>
+<li><p>窗格翻转：这是本文的亮点思想，相邻两个移动窗格内的数据分别进行MDS投影后，交叠部分的数据两次投影结果（[-0.5, 0.5]）可能不一致，甚至出现正负号倒置情况。作者观察，当交叠部分数据全部投影结果正负号倒置情况过半时，后一个窗格内所有MDS值全部乘以-1，几何直观上表现为窗格翻转。经过此步骤处理，系统界面最终呈现的投影点可以显示出非常明显的肉眼可识别的模式特征。</p>
+</li>
+</ol>
+<p>最后谈几点个人看法，网络攻击具有持续性的特点，使用MDS方法在损失信息有限的情况下可以将高维空间的持续性特征映射为1维坐标轴的水平相似性特征，从而使得肉眼能够快速识别某些“异常”模式。文中还提到了模式的自动搜寻算法，当用户识别出某一模式时，系统能够自动将属于这一模式的投影点用颜色标识出来。这使得TMDS方法对于模式识别具有很高的效率。但是模式识别后的具体分析仍然需要分析人员花费大量精力，这部分工作并没有采用更有效率的可视化手段，而只是纯粹地将被识别后的“异常”模式对应的原始数据导出，这部分工作也是本文所提方法的未来探索方向。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        复合流图 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#流图的生成过程"><span class="toc-text">流图的生成过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于语义的区域自动分割"><span class="toc-text">基于语义的区域自动分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区域连接图的空间映射"><span class="toc-text">区域连接图的空间映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验结果与评测"><span class="toc-text">实验结果与评测</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        复合流图
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-07-12 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2016-07-12</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#admin"
+                title="admin">admin</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Composite Flow Maps</p>
+<p>作者：Cornel, D., Konev, A., Sadransky, B., Horváth, Z., Brambilla, A., Viola, I., &amp; Waser, J</p>
+<p>发表：Computer Graphics Forum 2016</p>
+<p>流图（Flow maps）编码成带箭头的线段，线段之间顺序连接一些节点，线段的宽度表示流的度量。流图常用于运动对象在不同位置间的移动过程。例如，物流系统中货物的运输过程；紧急事故发生时，人群的逃生过程；洪水灾难发生时，潮流的变化过程等。为了有效地提供决策，在这些应用中通常需要同时观察多种流的特性，如不同的运动方向、不同的运输材料、从不同房间逃生的人群、可能的形势（“最坏”、“至少”、“期望”）等。在不同的应用场景中，决策者可能需要掌握流的总体趋势，或者需要了解流的局部详细特征。</p>
+<p>在这篇论文中，作者提出了一种从大量运动数据中自动生成流图的技术。该技术能够在一个可视化视图中同时呈现多种不同的流的属性，如不同的材质、方向、流的起点和终点。此项技术的基础是根据应用的语义和地理空间上下文把空间分割成多个区域。分割后，计算相邻区域之间的流属性数据。生成的流图可以在不同地图层级间变化，而且能够保留重要的细节特征，如图1（点击图片查看大图，下同）所示。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/07/1.png" alt></p>
+<h2 id="流图的生成过程"><a href="#流图的生成过程" class="headerlink" title="流图的生成过程"></a>流图的生成过程</h2><p>第一步首先对兴趣空间将其分割成一维（图2上部分）或二维（图2下部分）区域。随后计算所有相邻区域间的边界流（border flows）的各项参数（图2b）。边界流通过计算从一个区域到另一个区域的流量值的总和来获取。而判断两个区域是否相邻的方法是一维上两个区域是否共享同一个端点，二维上是否共享多边形的边。通过分割和计算，区域及其连接关系可以通过抽象的区域图来表示（图2c）。最后将抽象的空间关系图映射到地图上(图2d)。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/07/2.png" alt></p>
+<h2 id="基于语义的区域自动分割"><a href="#基于语义的区域自动分割" class="headerlink" title="基于语义的区域自动分割"></a>基于语义的区域自动分割</h2><p>论文并没有分析原始数据中材质的流动来分割区域，而是根据地理空间上下文来分割。作者解释道，随意的分割可能会掩盖用户需要的重要信息。自动分割算法在连接处分割，并且在连接处增加一个空间缓冲来表示连接关系，如街道连接处用直径9.9米的圆形缓冲区，在下水道连接处用直径2米的缓冲区。当且仅当相邻区域之间存在材质流动时，两个区域相互连接，相邻区域间的流量则根据单位时间内的材质流动来计算。</p>
+<h2 id="区域连接图的空间映射"><a href="#区域连接图的空间映射" class="headerlink" title="区域连接图的空间映射"></a>区域连接图的空间映射</h2><p>将抽象的区域连接图映射到地图上，取决于抽象区域的表示。如果抽象区域是街道则用连线表示，否则用点集表示(单个点表示小区域，多个点的组合表示大区域)。图3a为抽象区域图，图3b为抽象区域转换成街道或点集之后的表示。图3c是根据抽象区域图中连接关系连接之后的表示。连线根据应用的不同将重新采样（物流100米、水：10米、人群疏散：7米），重新采样的目的是为了让线中的顶点更均匀，并且方便后续的（图3d）。经过力引导算法，图中在给定半径r内的顶点合并成为新的顶点。力引导算法与Debiasi的论文“Supervised force directed algorithm for the generation of flow maps”相似，不同之处在于论文中的算法并不需要流是从根节点出发流向叶节点（图3e）。此外，论文中流具有双向特性。在交汇点处，为了避免出现线的重叠，论文设计了圆形图标（仅对三条以上线相交时使用），圆的半径则由连接线的宽度决定。通过在线条上编码颜色来标明流的状态特性，例如在图1的最右边视图中，颜色用来表示人群在该位置停留的时间。</p>
+<hr>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/07/3.png" alt></p>
+<p>Figure 3: Overview of spatial embedding. (a) Input zone graph with two flow components (red, grey). (b) Input zone representations. (c) Connection of relevant zone representations. (d) Resampling of lines and creation of geospatial graph. (e) Iterative vertex merging. (f) Layout of individual flow lines. (g) Removal of some connection circles. (h) Visual styles and rendering.</p>
+<hr>
+<h2 id="实验结果与评测"><a href="#实验结果与评测" class="headerlink" title="实验结果与评测"></a>实验结果与评测</h2><p>作者在三个应用中分别使用了该项自动流图生成技术。第一个应用是描述防止洪水筑建大坝的物资运输路线。为了对物资运输路线进行规划，专家需要了解多个时间相关的全局流视图。实际的运输路线由启发式算法生成。第二个应用是规划下水道的入口。下水道必须要保证在很大水流量时也足够让水流走，为此专家需要了解局部的流特性。第三个应用则与办公室的紧急疏导相关，多个办公室由走廊连接到紧急出口。办公室门的布置以及房间人数的规划需要考虑各种可能的疏散过程，人群要尽快离开而不能堵塞通道。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/07/4.png" alt="img"></th>
+<th><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/07/5.png" alt="img"></th>
+<th><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/07/6.png" alt="img"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Figure 4: Flow map composition according to different material origins. (a) Depots. (b) User-defined rooms (yellow) combined with all other rooms (blue). (c) Interactive decomposition according to rooms.</td>
+<td>Figure 5: Flow maps for storm water. (a) Overview. Circles indicate the sewer effects (red=outflow, green=inflow). (b) Glyphs show details about the sewer-surface coupling. (c) Increased local LoD nearby important buildings.</td>
+<td>Figure 6: Overlay visualization of important information. (a) Monitored traffic conditions aggregated over a time span. (b) Road inaccessibility due to water level. (c) Wave arrival</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

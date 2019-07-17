@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        iForest: Interpreting Random Forests via Visual Analytics - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征分析"><span class="toc-text">特征分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型简化"><span class="toc-text">模型简化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于案例分析"><span class="toc-text">基于案例分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计目标"><span class="toc-text">设计目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视设计"><span class="toc-text">可视设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评估"><span class="toc-text">评估</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        iForest: Interpreting Random Forests via Visual Analytics
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-12-09 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2018-12-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陈则衔"
+                title="陈则衔">陈则衔</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：iForest: Interpreting Random Forests via Visual Analytics</p>
+<p>作者：Xun Zhao, Yanhong Wu, Dik Lun Lee, and Weiwei Cui</p>
+<p>发表：IEEE VIS 2018</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>现已经有了很多对机器学习模型进行可视分析的方法，然而对于随机模型，其缺少有效的可视分析手段，使得该模型难以理解。在现有机器学习模型可视化以及人机交互相关的基础上，设计了一个名为iForest的可视化分析系统，可以有效地帮助人们理解随机森林模型。</p>
+<p>该系统的主要内容为：特征与预测结果之间的关系；揭露随机森林的工作机理即决策路径；可以提供完整的案例分析</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>随机森林模型是由多颗决策树产生，因此随机森林模型要比一颗决策树复杂的多，且会产生多个预测结果，因此决策树的可视分析手段在随机森林中并不完全适用。因此需要通过了解除了输入输出信息之外，其他的信息来帮助理解随机森林模型。经过总结，可以通过以下三个方面来增加对随机森林模型的理解：</p>
+<h3 id="特征分析"><a href="#特征分析" class="headerlink" title="特征分析"></a>特征分析</h3><p>即需要知道输入数据中某个特征对最后预测结果的影响和特征的重要程度。</p>
+<p>可以用MDI(Mean Decrease Impurity)来表示特征的重要程度。用PDP(Mean Decrease Impurity)来表示特征对最后预测结果的影响。</p>
+<h3 id="模型简化"><a href="#模型简化" class="headerlink" title="模型简化"></a>模型简化</h3><p>由于随机森林模型过于复杂而导致了理解的困难。因此，可以通过综合所有的决策路径并加以分析来达到揭露模型工作机理的目的。</p>
+<h3 id="基于案例分析"><a href="#基于案例分析" class="headerlink" title="基于案例分析"></a>基于案例分析</h3><p>相似的输入应该有着相似的输出，这有助于提供随机森林的整体图景，例如观察模型性能，检查模型倾向于错误预测的数据类型，或识别特征重要性和影响。</p>
+<h2 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h2><p>基于上文所讲增加理解模型的三个方面，可以对应提出三个设计目标，即：揭露特征和预测结果的关系，背后的工作机理以及提供案例分析</p>
+<p>本文基于此，构建了一个IForest可视分析系统，并且提出了2个具体的使用场景和一个定性的use study 来说明该系统的有效性。</p>
+<h2 id="可视设计"><a href="#可视设计" class="headerlink" title="可视设计"></a>可视设计</h2><p>系统整体界面如下所示，由A、B、C三个子界面构成。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-system.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-system.png" alt="img"></a></p>
+<p>分别为：数据投影视图、特征视图以及决策路径视图。</p>
+<p>数据投影视图主要如下所示：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-dataOverview.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-dataOverview.png" alt="img"></a>其用tsne投影将训练数据集投影到了二维平面，且数据集可以人为加载。投影图中，每个点代表着一个样本点，颜色编码为预测结果的大小，区间为[0-1]，由于所用的随机森林模型均为二分类器，因此在本文中，默认使用0.5为分割线。预测结果大于0.5为正样本，小于0.5为负样本。同时使用一个长条矩形代表混淆矩阵。可以选取混淆矩阵查看数据点的真实预测结果。</p>
+<p>通过选取特定的样本点，可以对样本点进行进一步的分析。</p>
+<p><strong>特征视图</strong></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-feature.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-feature.png" alt="img"></a></p>
+<p>按照每个特征的基尼系数来进行排序。</p>
+<p>例如，图中特征a的重要程度就大于特征b。</p>
+<p>每个图，可以分成上下两个部分。</p>
+<p>上部分为PDP和每个split point的分布</p>
+<p>其中，PDP代表该特征对最后结果的影响。</p>
+<p>PDP曲线中，值的计算公式为：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-pdp.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-pdp.png" alt="img"></a>比如，特征m,输入数据即将特征m的值设定为α，其他不变，改变α的值，看最后结果变化。</p>
+<p>下部分为特征值分布</p>
+<p><strong>决策路径视图</strong></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-decisionPath.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-decisionPath.png" alt="img"></a></p>
+<p>该视图同样由3部分组成，a为随机森林中所有决策路径的tsne投影视图，点的颜色同样编码了该路径的预测结果大小。投影图右上角长条编码了正负预测结果的占比。</p>
+<p>b为特征总结图。其由一个个特征细胞构成，每个特征细胞内为该特征值在决策路径中的分布情况。直方图的高度，代表该值在决策路径中出现的次数。其中，灰色的竖直线代表了当前数据点的真是值。</p>
+<p>c图为决策路径流。当在投影视图选取部分决策路径之后，被选中的决策路径会以决策路径流的方式呈现。每个流同样由一个个特征细胞构成。从左到右为从根节点到叶结点的过程。每一层之间的特征细胞由曲线相连，曲线的大小代表着当前流向中包含的决策路径的数量。当决策路径走到叶结点，最后以一个圆形来进行编码。圆形中的颜色和读书分别编码了对应的正负预测结果和占比。</p>
+<p>在对决策路径进行投影时，需要对决策路径之间的相似度进行度量，因此需要对路径之间的离给予定义，定义如下：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-dataDistance.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/12/iForest-dataDistance.png" alt="img"></a>   其中，θ(l)代表了一条决策路径中，涉及到特征fm split point的最小值，θ(u)代表了决策路径中，涉及到特征fm split point的最大值</p>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p>评估的过程包含了2个具体运用场景和一个定性的Use Study.</p>
+<p>2个具体的运用场景所用的数据集为：Titanic shipwreck Dataset以及German Credit Data</p>
+<p>以Titanic shipwreck Dataset为例进行说明。</p>
+<p>具体图示如最开始的系统图。</p>
+<p>加载数据之后，发现主要的特征为：Sex，Title，Fare，PClass，Age和Family Size.</p>
+<p>在图B中可以发现，Sex是对最后预测结果最相关的特征，当Sex=0(即女性)更容易被获救。</p>
+<p>除了类别特征，观察数值特征，如Fare和Age。对比图中b1和b2，可以发现，Fare特征，随机森林模型在x轴最开始的时候，split point比较密集，说明她在寻找一个比较小的阈值，该阈值对最后的预测结果有着比较大的影响。反之，Age上并没有该现象。</p>
+<p>进一步观察Fare和预测结果之间的关系，在图b3中我们可以看出，pdp曲线中在值为25左右处，有一个陡峭的跃升，这可以看成是随机森林模型所寻找的阈值。通过图中的交互信息(hover)可以发现，Fare&gt;25通常为头等舱乘客，他们往往比Fare&lt;25的次级舱乘客要容易获救。</p>
+<p>在A图中，聚类a2和a3的结果都为深红色，代表模型很有信心他们不会被获救。观察其具体值，发现这些点主要是来自三等舱的男性。除了a2聚类点，在聚类a1中，可以发现6个亮黄色的异常点。这些异常点同样是三等舱的男性但是其Fare为56.为了检测模型是否在这6个点上有着正确的结果，通过TN发现这6个点的结果为FN，即他们是被获救了。</p>
+<p>为了分析，模型判断错误的原因，可以选择其中一个点进行分析,例如选取(ID=664)的乘客。c2表明，除了大多数的红点给了负面结果之外，还有部分蓝点给了正面结果。我们可以各自选取部分点，进行对比分析，如c1、c2和c3所示。可以发现，给予负面结果的路径主要评估标准为Sex和Class而正面结果的决策路径的评估标准主要为Fare，而这些点有着很高的值。除此之外，可以发现大多数给予负面结果的路径用3作为Family Size的阈值，而给你正面结果的路径用1来作为Family Size的阈值，说明除了特征类型，两个不同组中的决策路径在相同的特这中，选取了不同的阈值。</p>
+<p><strong>定性Use Study</strong></p>
+<p>10 participants(7males, aged21-28)</p>
+<p>4:information visualization</p>
+<p>2:machine learning(no random forests)</p>
+<p>times: 45minutes</p>
+<p>Tutorial   :Titanic dataset</p>
+<p>Task : German Credit dataset with 10 tasks</p>
+<p>Feedback: 12 questions(7-point Likert scale)</p>
+<p>该系统得到的反馈为一致好评。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>该交互系统有着一定的泛化能力，比如可以用于boosting Tree、多分类结果的随机森林模型和其他类似的树形模型等等，但是不好用于模型调参。</li>
+<li>同时，该系统可以支持一定量的数据量，但当数据过大时会出现视觉混淆，屏幕尺寸受限的情况。</li>
+<li>最后，使用该系统的分析人员需要一定的学习时间才能比较好的掌握该系统的使用方法和其代表的具体意义。</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

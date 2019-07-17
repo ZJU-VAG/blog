@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Sequence Synopsis: Optimize Visual Summary of Temporal Event Data - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-动机"><span class="toc-text">2 动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-相关工作"><span class="toc-text">3 相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-可视化方法"><span class="toc-text">4 可视化方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Two-part-Representation"><span class="toc-text">Two-part Representation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-可视化设计"><span class="toc-text">5 可视化设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-系统界面"><span class="toc-text">1.系统界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Event-Filter"><span class="toc-text">2.Event Filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Summary-View"><span class="toc-text">3.Summary View</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Sequence-View"><span class="toc-text">4.Sequence View</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-总结"><span class="toc-text">6 总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Sequence Synopsis: Optimize Visual Summary of Temporal Event Data
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-10-17 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-10-17</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#刘良军"
+                title="刘良军">刘良军</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Sequence Synopsis: Optimize Visual Summary of Temporal Event Data</p>
+<p><strong>优化针对时序事件数据的可视化摘要</strong></p>
+<p>作者：Yuanzhe Chen, Panpan Xu and Liu Ren</p>
+<p>发表： TVCG2017</p>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h2><p>本文的主要内容是讲如何可视化时序事件数据，提出了一种对这类数据进行可视化的技术，该技术可以较好的提取出高维事件数据中的事件模型。并基于该技术实现 了用于分析高维时序事件数据的可视分析系统 。有两个和领域专家合作进行的case study。</p>
+<p>时序事件数据（Temporal Event Data）：每个事件由三个要素组成，即事件类型、发生时间和发生主体，由一系列此类事件组成的数据叫做时序事件数据。例如网站点击事件流以及软件的用户交互日志。</p>
+<h2 id="2-动机"><a href="#2-动机" class="headerlink" title="2 动机"></a>2 动机</h2><p>对时序事件数据的研究早在1996年就开始了，目前已经有许多针对事件数据的可视分析系统，但是这些系统对于这类数据的可视分析来说仍存在一些问题：</p>
+<p>1）如果数据维度过高的话，在这些可视分析系统中，数据容易产生混乱，可读性差，不便于用户观察，也不便于用户交互。</p>
+<p>2）无法得到一个好的数据摘要，难以让用户对数据形成一个直观全面的的认识。</p>
+<p>3）现有的可视分析系统中预处理数据时使用的方法无法有效地处理数据噪声。</p>
+<p>因此本文针对现阶段存在的问题提出了Two-part representation。将原始事件数据分解成pattern和corrections两个部分来表示。</p>
+<h2 id="3-相关工作"><a href="#3-相关工作" class="headerlink" title="3 相关工作"></a>3 相关工作</h2><p>LifeLines (1996)</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss01.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss01.png" alt="img"></a></p>
+<p>DecisionFlow（2014）</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss02.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss02.png" alt="img"></a></p>
+<h2 id="4-可视化方法"><a href="#4-可视化方法" class="headerlink" title="4 可视化方法"></a>4 可视化方法</h2><h3 id="Two-part-Representation"><a href="#Two-part-Representation" class="headerlink" title="Two-part Representation"></a><strong>Two-part Representation</strong></h3><p>本文不同于传统的可视化事件数据的方法，作者基于MDL原理（最小描述长度原理）原始数据分成两部分（Patterns + Corrections）来表示。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss03.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss03.png" alt="img"></a></p>
+<p>，然后通过可视化分解后的两个部分来达到可视化时序事件数据的目的。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss04.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss04.png" alt="img"></a></p>
+<p>在这种设计中，即能使得在数据量比较大的时候可视表达不太混乱，提升可读性。也能对原始数据形成一个直观全面的认识。</p>
+<p>每一个pattern表示一个事件序列集合，在一个pattern中，每一个矩形表示一个事件，从左到右按时序排列，颜色编码不同的事件。 corrections是用三角形和矩形的高度来编码的，三角形在的地方表示该集合中存在事件序列需要在这个位置插入事件才能对应上该pattern， 三角形的大小表示该pattrrn对应的事件序列集合中这种序列的个数。矩形的高度编码对应集合中包含该事件的序列个数。 通过这两个可视编码我们可以查看信息损失量。</p>
+<p>作者在文章详细讲述了如何类比MDL原理，来实现pattern的提取，还提供了一个算法用以加速提取过程。</p>
+<h2 id="5-可视化设计"><a href="#5-可视化设计" class="headerlink" title="5 可视化设计"></a>5 可视化设计</h2><h3 id="1-系统界面"><a href="#1-系统界面" class="headerlink" title="1.系统界面"></a><strong>1.系统界面</strong></h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss05.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss05.png" alt="img"></a></p>
+<h3 id="2-Event-Filter"><a href="#2-Event-Filter" class="headerlink" title="2.Event Filter"></a>2.Event Filter</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss06.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss06.png" alt="img"></a></p>
+<h3 id="3-Summary-View"><a href="#3-Summary-View" class="headerlink" title="3.Summary View"></a>3.Summary View</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss07.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss07.png" alt="img"></a></p>
+<h3 id="4-Sequence-View"><a href="#4-Sequence-View" class="headerlink" title="4.Sequence View"></a>4.Sequence View</h3><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss08.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/10/ss08.png" alt="img"></a></p>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h2><p>本文虽然解决了一些使用事件数据传统可视方法会遇到的问题，但是依然存在一定的局限性。</p>
+<p>1）难以应用于含有大量独立Pattern的时序事件数据</p>
+<p>2）在真实数据中一个事件序列可能含有多个pattern</p>
+<p>3）真实数据中的事件重要性可能并不相同</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        基于噪音的空间多变量数据场体可视化技术 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        基于噪音的空间多变量数据场体可视化技术
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2013-10-16 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2013-10-16</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#丁治宇"
+                title="丁治宇">丁治宇</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#其他" title="其他">其他</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>SCIVIS 2013 文章：Noise-based volume rendering for the visualization of multivariate volumetric data</p>
+<p>作者：Rostislav Khlebnikov, Bernhard Kainz, Markus Steinberger, Dieter Schmalstieg</p>
+<p>本文提出一种基于噪音的空间多变量数据场体可视化技术，首先使用可预见的过程化噪声，即 Random-phase Gabor noise，产生高频噪声并将之引入体数据场作为 opacity 重分布模式，然后构造不透明度映射函数，将噪声值映射为不透明度，重分配每一体素内的不透明度， 从而改进同一位置处的多变量可视化质量，使得用户可以更加容易的分辨同一位置处每一个数据属性的值。</p>
+<p>本文的工作是对传统的多变量三维空间数据可视化的一个创新和补充，传统的方法基本上可以分为两类：基于融合的方法以及基于信息通道的方法。作为相关工作的重要内容，以及本文工作的基础，作者特意提及了由他本人发表在 2012 年 EuroVis 上的论文：Procedural Texture Synthesis for Zoom-Independent Visualization of Multivariate Data，该论文主要针对二维的多变量数据，主要流程如图一</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/图片1.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/%E5%9B%BE%E7%89%871.jpg" alt="图片1"></a></p>
+<p>图一</p>
+<p>本文使用相同的算子产生噪声，方法的流程和框架也基本相似。但是本文方法并没有将原有数据属性编码进噪音纹理，二是在原有数据场中引入一个新的高频噪音。</p>
+<p>其主要目的是使用体绘制技术，观察、获取同一空间位置的多个变量的值。其主要思路如下，放大观察数据时，数据的一个体素会占有一片屏幕空间。</p>
+<p>传统体绘制方法对该体素上不同属性数据的处理，以及体绘制的 blending 特质使得从该一片屏幕空间无法获取和感知具体的数据值。</p>
+<p>本文方法通过引入高频噪声，改变该体素的 opacity 分布，使得部分屏幕空间更加不透明，而另一部分更透明，从而避开 color blending 提高体素内不同属性数据值的可读性，如图二所示</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/2.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/2.jpg" alt="图2"></a></p>
+<p>图二</p>
+<p>本文用于产生高频噪声的算子是 Phase-augmented Gabor kernel，其表达式如式一，</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/noise.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/noise.jpg" alt="noise"></a></p>
+<p>式一</p>
+<p>式中左侧 g 的四个参数分别代表任意位置，带宽，谐波的频率（噪音的频率），谐波的相位。</p>
+<p>改变该算子中各参数，会产生不同的噪音纹理，为方便读者理解，小编特地选了一张二维纹理的实例来展示对应的变化，如图三所示</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/example.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/example.png" alt="example"></a></p>
+<p>图三</p>
+<p>在了解该算子的大概之后，我们进一步来了解下使用该算子产生噪音场的过程，计算公式如式二所示，</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/value.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/value.jpg" alt="value"></a></p>
+<p>式二</p>
+<p>该计算过程是一个卷积过程。首先，由该算子的定义包含的指数项可知，在计算某点的噪音值时，可不必考虑离其较远的点，因此，对式一的计算可以做一个截断，作者在计算噪音场时，构造了一个虚拟的计算网格，网格的大小 G 即为</p>
+<p>截断半径的大小。对于当前计算点 X，只需要计算 X 所在的网格及其邻接网格内的脉冲即可。</p>
+<p>构建得到噪声场后，需要一个传输函数将噪音值转化为 opacity，这个传输函数需满足一个约束条件，如式三所示，</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/f3.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/f3.jpg" alt="f3"></a></p>
+<p>式三</p>
+<p>p(t) 为噪音强度值的概率密度分布，Mα(t)可以选择任意满足该约束的函数，本文作者选择了高斯映射函数，如式四所示，</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/f4.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/f4.jpg" alt="f4"></a></p>
+<p>对该约束的优化和计算推导过程，详见论文。</p>
+<p>由于直接引入一个高频噪声场，当 zoom level 在比较高的时候，屏幕空间的采样率相对于该高频噪音无法满足奈奎斯特采样定律的最小采样频率而产生走样。如图四所示，</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/4.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/4.jpg" alt="4"></a></p>
+<p>图四</p>
+<p>若是在屏幕空间直接进行上采样，增加采样光线，如 MSAA 反走样，则会大大降低性能。因此，作者提出了一种反走样方法。</p>
+<p>将屏幕空间的采样率增加转化到对于噪声函数最大频率的改变。公式如式五, 六, 七所示，示意图如图五所示，</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/88.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/88.jpg" alt="88"></a></p>
+<p>式五</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/89.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/89.jpg" alt="89"></a></p>
+<p>式六</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/810.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/810.jpg" alt="810"></a></p>
+<p>式七</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/5.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/5.jpg" alt="5"></a></p>
+<p>图五</p>
+<p>该反走样技术还包括对于 gabor 算子导数的部分优化，详见论文</p>
+<p>本文的主要方法和流程就介绍到这里。</p>
+<p>接下来是作者对于该方法的应用结果，讨论和 User Study 等内容。</p>
+<p>图六是该方法应用到气象数据（抽取并可视化其中两个变量）的结果，蓝-红，黄-绿分别编码两个属性。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/7-1.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/7-1.jpg" alt="7-1"></a></p>
+<p>图六</p>
+<p>当 zoom-level 在比较高的时候，本文方法和直接体绘制没有区别，当 zoom-in 到一定层次时，传统体绘制效果没有办法在体素级别上分辨出不同的数据属性值，而本文方法可以做到。除了气象数据的例子，另外一个实例可以参考论文。</p>
+<p>在 User Study 环节，作者选取了其他三种主流的空间多变量数据可视化技术，并选取了体数据中不同位置作为观察点，来进行对比实验。四种绘制技术如图七所示，分别是本文方法(noise based)，分别体可视化不同数据属性场然后进行切换对比(switch)，直接体可视化(mixture)，等值面可视化一个属性同时体可视化另一个属性(isosurfaces)。对比位置如图八所示，</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/9.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/9.jpg" alt="9"></a><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/11.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/11.jpg" alt="11"></a></p>
+<p>图七 图八</p>
+<p>User Study 的结果如图九所示，</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/12.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/10/12.jpg" alt="12"></a></p>
+<p>图九</p>
+<p>从图九可见，本文结果可以帮助用户更准确的分辨同一体素中不同的数据属性值(error)，虽然由于方法较新，用户不习惯，所以花费较多时间来得出结果(time)，但是用户均表示对于用该方法分辨不同数据属性的结果抱有很大信心(confidence)。</p>
+<p>最后，作者也提到了本文的一个很大的局限性，即引入的噪声场会不会干扰用户对原始数据场的观察呢？气象专家给出的意见也明确了这一局限。作者建议可使用勾边等技术改善这一局限。但，个人觉得这始终是个硬伤。</p>
+<p>另外，未来工作中，作者极有可能探索各项异性噪声对应的该方法的应用。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

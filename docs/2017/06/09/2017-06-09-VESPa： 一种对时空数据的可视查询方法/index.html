@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        VESPa： 一种对时空数据的可视查询方法 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        VESPa： 一种对时空数据的可视查询方法
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-06-09 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-06-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#黄兆嵩"
+                title="黄兆嵩">黄兆嵩</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/11.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/11.png" alt="img"></a></p>
+<p>轨迹数据在人群行为模式研究，城市规划，城市管理与监督等领域扮演了很重要的角色。应用其他类型的城市数据丰富轨迹数据，能够得到更有意义的分析结果。然而对于轨迹数据的查询和分析存在很多困难。本文针对轨迹数据，设计了一种查询输入的方法，允许用户输入查询序列，并对输入的条件进行直观的展示，从而对数据进行过滤，完成不同的分析目标。</p>
+<p>首先，轨迹数据的查询可能是相当复杂的。一方面，一个查询目标可能包含复杂的查询条件和限制，例如我们可能想要查询两个在家里相遇的人共同去往咖啡店，然后又分开的轨迹，如下图的橙色和蓝色线条。另一方面，一个的查询目标可能包含不同的时间段条件，地点条件，顺序条件和限制条件，造成了查询序列的多样化。<br><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/21.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/21.png" alt="img"></a></p>
+<p>其次，对于数据分析师来说，他们不仅仅需要理解复杂的数据属性，同时需要了解数据库技术，对数据的存储，查询目标到SQL语句的转换，编写和数据的维护都需要有一定的知识基础，这样一来，学习成本是很高的。而且对于转换后的SQL语句，由于难以理解语句的具体含义，没有办法进行有效的维护。<br><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/31.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/31.png" alt="img"></a></p>
+<p>本文设计了五种查询元素，人节点，事件节点，移动关系，比较关系，和节点的限制。用户通过组合这几种不同的元素能够实现复杂的查询序列。其中每一个人的节点代表一个查询目标，事件节点表示特定的时空位置，移动关系存在于两个事件节点中，表示轨迹的移动，而比较节点描述两个节点之间的关系。<br><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/4.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/4.png" alt="img"></a></p>
+<p>例如下图中的查询序列表示蓝色的人从一个地点到达了一个冰淇淋店，然后与粉红色的人在一个地点相遇后一起在15点之后到达另一个地点的查询输入。该表示方法清晰地展示了查询的输入，简单易操作，便于理解，并且能够直接的自动转换为SQL 语句进行数据的过滤。<br><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/5.png" alt="img"></a></p>
+<p>同时本文设计了轨迹的分析界面来达到轨迹分析的目的。下面通过一个案例来说明。</p>
+<p>该案例使用了VAST challenge2014的第二个小问题，该问题应用的数据有城市中一个公司的成员轨迹数据，城市的POI数据等。文章对该公司成员的日常规机进行了分析，首先分析了上班族的日常行为，定义查询目标为一日三餐和去公司上班（如下图）。时间轴上，每一条表示一个人的轨迹，而颜色表示一个功能的区域，例如蓝色表示住宅，红色表示公司，青色表示餐厅。通过时间轴的分析，大多数的成员符合了这个查询条件。<br><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/6.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/6.png" alt="img"></a><br><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/7.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/7.png" alt="img"></a></p>
+<p>然后分析不符合的人的轨迹，他们有的下午去购物了（第一条轨迹黄色部分），有的中午没有休息（第234条轨迹），有的中午回家或者没有按时上班（后面几条轨迹）。<br><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/8.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/8.png" alt="img"></a></p>
+<p>然后作者又分析了该公司CEO的行为，查询条件定义为没有在该公司的聚会行为。发现了该CEO与其他几人在高尔夫球场（绿色）和餐厅（青色）的私下交流行为。<br><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/9.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/06/9.png" alt="img"></a></p>
+<p>本文为了验证方法的有效性，又进行了用户实验，用户实验的问题主要针对查询输入框图的理解和给定查询目标，绘制查询框图两个方面。最终得出该查询定义方法简单直观，便于学习和理解，同时可以应用于例如网站访问分析，时间规划等其他领域。同时，该方法也有一些可以改进的地方，例如相同地点的暗示不够明确，同一个地点可能通过不同的事件节点表示，给用户的分析带来困惑。查询的时间暗示也并不是很明确，没有规定特定的时间，只能指定时间顺序条件。</p>
+<p>总的来说，本文的查询方法能直观的，低成本的输入并展示复杂的查询条件序列，完成数据的分析。文章行文流畅，重点突出，解决的问题明确，用户调研也很好的切合了题目，给查询的输入拓展了研究思路。</p>
+<p>Haag F, Krüger R, Ertl T. VESPa: A Pattern-based Visual Query Language for Event Sequences[C]// International Conference on Information Visualization Theory and Applications. 2016:48-59.</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        非歧义的边捆绑方法：调研用Confluent Drawings来构造网络可视化 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、主要贡献"><span class="toc-text">一、主要贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、相关工作（边捆绑）"><span class="toc-text">二、相关工作（边捆绑）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、CD方法"><span class="toc-text">三、CD方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、基于不同主题的评估"><span class="toc-text">四、基于不同主题的评估</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、用户调研"><span class="toc-text">五、用户调研</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、总结"><span class="toc-text">六、总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        非歧义的边捆绑方法：调研用Confluent Drawings来构造网络可视化
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-05-05 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-05-05</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#王叙萌"
+                title="王叙萌">王叙萌</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>Towards Unambiguous Edge Bundling:  Investigating Confluent Drawings for Network Visualization</p>
+<p>作者： Benjamin Bach, Nathalie Henry Riche, Christophe Hurter, Kim Marriott, Tim Dwyer</p>
+<p>会议：TVCG2017</p>
+<h2 id="一、主要贡献"><a href="#一、主要贡献" class="headerlink" title="一、主要贡献"></a>一、主要贡献</h2><ol>
+<li><p>提供了一个普适的CD算法</p>
+</li>
+<li><p>通过调研生物、社交关系等方面的关于网络的文献，总结了一些网络中的主题图案， 并基于这些主题图案进行评估</p>
+</li>
+<li><p>评估可读性的用户调研</p>
+</li>
+</ol>
+<h2 id="二、相关工作（边捆绑）"><a href="#二、相关工作（边捆绑）" class="headerlink" title="二、相关工作（边捆绑）"></a>二、相关工作（边捆绑）</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%8711.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%8711.png" alt="img"></a></p>
+<p>边捆绑是指在边密集的图中，为了节约空间，将空间上相近的边绑定到一起。这样做可以让图更加清晰，但是没有限制的边捆绑也会误导用户。比如说在图b)中，用户可能以为左侧第二个点和右侧全部点都有连接关系，但是对比图a)并不是这样。一种解决方式就是将捆绑放松（如图c)）。但是这样密集的边依然会让用户难以辨别。图d)中的地铁式捆绑将捆绑的地方拆分开平行绘制，相对来说更清晰一点。图e)的power graph （PG）是将有相同连接关系的点用圈合并为一个组，通过一条连接到圈上边代替原有的很多条边。在基于CD的边绑定中，两条边只有确保一端的每一个点都和另一端的每一个点相连才会绑定到一起。遗憾的是这种方法之前一直局限于层次图和哈斯图的构造。而本片文章在方法上的贡献就是基于PG方法将CD拓展到任何一种图的边绑定上。</p>
+<h2 id="三、CD方法"><a href="#三、CD方法" class="headerlink" title="三、CD方法"></a>三、CD方法</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%872.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%872.png" alt="img"></a></p>
+<ol>
+<li>找到PG和CD的对应关系，通过PG构造CD:</li>
+</ol>
+<ul>
+<li><p>有共同邻点的组→生成一个bundle的链接点(routing node)</p>
+</li>
+<li><p>组内节点→连到相应链接点上的点</p>
+</li>
+<li><p>组包含→子组内的点通过子组的链接点再连到父组链接点上</p>
+</li>
+<li><p>组间边→链接点之间的边</p>
+</li>
+</ul>
+<ol>
+<li>绘制</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%873.png" alt="img"></p>
+<ul>
+<li>点布局：将图中点（灰色）和基于PG生成的链接点（蓝色）通过力引导等方法定位</li>
+<li>边绘制：找到相连两点经过链接点连接的最短路径，作为控制点，用B样条方法绘制曲线</li>
+</ul>
+<ol>
+<li>优化</li>
+</ol>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%874.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%874.png" alt="img"></a></p>
+<p>作者发现，当一个链接点的出度和入度都大于1时，结果会产生交叉。为了解决这个问题，作者巧妙地将链接点差分为入节点和出节点，基于它们绘制的B样条曲线不会出现交叉问题，而且可以完美地绑定到一起。</p>
+<h2 id="四、基于不同主题的评估"><a href="#四、基于不同主题的评估" class="headerlink" title="四、基于不同主题的评估"></a>四、基于不同主题的评估</h2><p>作者总结了高度相连的节点组、完全子图、星、关键节点等等。</p>
+<p>其中，CD方法比较擅长突出n-partite components、星等图案。不过，在展现完全图的时候，由于PG算法的分组顺序不同，整张图看起来会有层次感，比较像大家认知中的树。</p>
+<p>除此之外，作者总结了三个CD图中特有的图案，如下：<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%875.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/%E5%9B%BE%E7%89%875.png" alt="img"></a></p>
+<p>第一个代表了一对节点的临节点一致，且相连的情况。第二种就是上文提到的完全图，在这里有点像树状结构。最后是一些会有急转弯的线。当生成很多链接点，且它们不是单纯的包含关系时，就会出现一些急转弯。</p>
+<h2 id="五、用户调研"><a href="#五、用户调研" class="headerlink" title="五、用户调研"></a>五、用户调研</h2><ol>
+<li><p>调研问题：初学者对低级任务的执行能力；和传统方法相比有什么优势；和原方法PG相比如何；用户有怎样的主观偏好。</p>
+</li>
+<li><p>对比技术：MG（地体图式绑定）、PG、EB（普通edge bundling）、CD。</p>
+</li>
+<li><p>任务：给出起点和终点找最短路径。</p>
+</li>
+<li><p>实验过程：15个初学者先对每个技术做12个练习，再分别对每个技术分别进行18个实验。</p>
+</li>
+<li><p>准确率分析：</p>
+</li>
+</ol>
+<p>通过Friedman非参数检验，整体结果是PG（86%）没有明显优于MB，但是有明显优于CD（77%）和EB（77%）。</p>
+<p>作者提到在CD中用户会被边的bundling的曲率误导，忽视一些更短的路径。如果将任务改为找路径，那么CD方法的错误率可以从23%下降到8%。</p>
+<ol>
+<li>用时分析：</li>
+</ol>
+<p>这里只对找到正确答案的数据进行分析。作者分别使用了RM-ANOVA和MLM方法分别对重复测量中的被试内因素和随机效应进行了避免，得出了相似的结果，即PG优于MG和CD方法，EB则是比较差。这是因为在使用EB的时候，用户需要花很长时间从绑定中辨别边的走向。</p>
+<ol>
+<li>主观评价：</li>
+</ol>
+<p>作者从信心、易学、清晰和整体四个方面对四种方法进行了likert五级问卷调研。</p>
+<p>PG方法虽然在之前的两项指标中都领先于别的方法，但是由于这个方法对于初学者来说是难以掌握的，大家对通过这个方法得出的结果信心不是很强。整体指标比较好的还是CD方法。</p>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>CD方法虽然解决了边绑定上的歧义，但是其构造方法比较复杂，随机分解可能导致一些误解，还有很大优化空间、</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

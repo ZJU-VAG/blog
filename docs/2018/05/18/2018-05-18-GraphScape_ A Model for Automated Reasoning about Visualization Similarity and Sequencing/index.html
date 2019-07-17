@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+         GraphScape: A Model for Automated Reasoning about Visualization Similarity and Sequencing - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#比较图表转化类型"><span class="toc-text">比较图表转化类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实证研究"><span class="toc-text">实证研究</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GraphScape"><span class="toc-text">GraphScape</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列评分实验"><span class="toc-text">序列评分实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用"><span class="toc-text">应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未来工作"><span class="toc-text">未来工作</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+         GraphScape: A Model for Automated Reasoning about Visualization Similarity and Sequencing
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-05-18 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2018-05-18</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#王叙萌"
+                title="王叙萌">王叙萌</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：GraphScape: A Model for Automated Reasoning about Visualization Similarity and Sequencing</p>
+<p>作者：Younghoon Kim, Kanit Wongsuphasawat, Jessica Hullman, Jeffrey Heer<br>发表：2017 CHI (Best paper honorable mention)</p>
+<p><strong>简介</strong> 在实际使用时，用户可能会有连续查看多个图表的需求，然而已有的推荐系统只关注单一图表。本文的作者考虑可视化之间的相似性和顺序，给出了GraphScape——一个可以结合顺序评估变换成本的有向图模型。</p>
+<h2 id="比较图表转化类型"><a href="#比较图表转化类型" class="headerlink" title="比较图表转化类型"></a>比较图表转化类型</h2><p>1、识别编辑操作：基于vega-lite范式，作者对所有原子操作（任意基于vega-lite的操作由一个或一组原子操作组成）进行总结。全部原子操作被分为三组，见下表。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ图片20180518135816.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ%E5%9B%BE%E7%89%8720180518135816.png" alt="vega-lite原子操作"></a></p>
+<p>2、对编辑操作排序：为了计算转换成本，作者基于转换时的理解难度对编辑操作构建不等关系。由于原子操作数量过多，一一评价难度过大，作者首先基于语义对三大类的难度进行了排序：</p>
+<ul>
+<li><p>标记类型：保留数据不变</p>
+</li>
+<li><p>数据转换：改变汇总级别或数据集合</p>
+</li>
+<li><p>可视编码：改变正在显示的内容</p>
+</li>
+</ul>
+<p>根据三者语义，理解成本是依次递增的。接下来，作者在每类类内执行了三元比较的自实验，比如考虑从一个柱状图变化为饼图好理解还是线图好理解等。最后，基于这份数据，做GNMDS (广义非度量多维缩放) 投影。投影距离即转化成本。</p>
+<p>3、导出编辑操作成本：从之前得到的初始差异模型中推导出整体的成本模型有如下挑战：</p>
+<ul>
+<li><p>类间转化距离是否需要缩放？</p>
+</li>
+<li><p>多次操作叠加的成本不是简单的累加</p>
+</li>
+<li><p>生成的距离是对称的，然而实际转化成本不是</p>
+</li>
+</ul>
+<p>针对这些挑战，作者提出的解决方法是：在保留类间有序性的基础上，将不等式转化为线性规划问题。</p>
+<h2 id="实证研究"><a href="#实证研究" class="headerlink" title="实证研究"></a>实证研究</h2><p>为了验证上述结论，也为了给出进一步研究的方向，作者招募了51个上可视化课程的学生进行了实验。在实验中，被试被要求想象自己需要以ppt的形式向别人介绍几组图表，为了让别人更好理解，需要对每组图表进行排序。作者分布针对七个主题进行了实验，结论如下：</p>
+<ul>
+<li><p>（维度）增加 vs. 移除，没有明显差异</p>
+</li>
+<li><p>标记类型变化 vs. 轴变换，后者有明显难度</p>
+</li>
+<li><p>过滤 vs. 颠倒，后者有明显难度</p>
+</li>
+<li><p>（过滤）增加 vs. 移除，没有明显差异</p>
+</li>
+<li><p>总结 vs. 挖掘？偏好逐步挖掘</p>
+</li>
+<li><p>是否偏好编辑最小化？是</p>
+</li>
+<li><p>是否偏好子序列并行？是</p>
+</li>
+</ul>
+<h2 id="GraphScape"><a href="#GraphScape" class="headerlink" title="GraphScape"></a>GraphScape</h2><p>GraphScape模型考虑三个要素：V：Vega-lite范式，E：编辑操作，有权，D：数据表</p>
+<p>1、转化成本：两个阶段间转移成本：最短路径上的权重和</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ图片20180518145717.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ%E5%9B%BE%E7%89%8720180518145717.png" alt="img"></a></p>
+<p>2、过滤顺序成本：过滤的谓词可以是等价，符合范围或者属于集合。这里只考虑等价，其他列入未来工作。相比于降序排序，升序排序更符合认知，公式中通过+0.1对升序进行奖励。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ图片20180518154909.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ%E5%9B%BE%E7%89%8720180518154909.png" alt="img"></a></p>
+<p>3、奖励子序列一致性：对子序列的出现和频次进行奖励。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ图片201805181556541.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ%E5%9B%BE%E7%89%87201805181556541.png" alt="img"></a></p>
+<p>4、总成本</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ图片20180518161102.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/QQ%E5%9B%BE%E7%89%8720180518161102.png" alt="img"></a></p>
+<h2 id="序列评分实验"><a href="#序列评分实验" class="headerlink" title="序列评分实验"></a>序列评分实验</h2><p>1、实验设计：比较用户偏好和GraphScape的评估模型。被试为从AMT上招募的55人，平均41分钟完成全部内容，获得$6.5报酬。具体任务为六组：对六个图表的五种排序打分（5分制）。例子如下图。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/图片1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/%E5%9B%BE%E7%89%871.png" alt="img"></a></p>
+<p>2、实验过程：</p>
+<ul>
+<li><p>先观察图表，回答三个和图表相关问题。若回答错误证明没有认真看图，数据作废。</p>
+</li>
+<li><p>思考什么排序最好，点确认。</p>
+</li>
+<li><p>看系统给出的五种排序并打分。</p>
+</li>
+<li><p>描述原因，登记信息。</p>
+</li>
+</ul>
+<p>3、结果分析</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/图片2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/05/%E5%9B%BE%E7%89%872.png" alt="img"></a></p>
+<p>多种分析结果显示：不同排序的得分有显著差异，和它们在任务中出现的位置没有显著关系。排名差异除了第四组以外都显著。GraphScape模型推荐结果和用户排名显著相关。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ul>
+<li><p>序列推荐：以目标函数的形式出现在优化问题中，结合用户交互推荐序列。</p>
+</li>
+<li><p>路径优化：定义动画分界点。</p>
+</li>
+<li><p>设计替代方案。</p>
+</li>
+</ul>
+<h2 id="未来工作"><a href="#未来工作" class="headerlink" title="未来工作"></a>未来工作</h2><ul>
+<li><p>拓展到更细致的范式</p>
+</li>
+<li><p>处理更复杂的谓词</p>
+</li>
+<li><p>学习用户决策语料库</p>
+</li>
+<li><p>考虑非线性模型</p>
+</li>
+<li><p>从可视化层面拓展到数据层面</p>
+</li>
+<li><p>在实验中考虑细微影响</p>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

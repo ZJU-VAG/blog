@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        E-Map: A Visual Analytics Approach for Exploring Significant Event Evolutions in Social Media - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#挑战与贡献"><span class="toc-text">挑战与贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据"><span class="toc-text">数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E-MAP设计"><span class="toc-text">E-MAP设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E-MAP构造方法"><span class="toc-text">E-MAP构造方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统界面与可视分析流程"><span class="toc-text">系统界面与可视分析流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例分析-Kim-Jong-nam之死"><span class="toc-text">案例分析-Kim Jong-nam之死</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#讨论"><span class="toc-text">讨论</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        E-Map: A Visual Analytics Approach for Exploring Significant Event Evolutions in Social Media
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-11-10 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2017-11-10</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#张天野"
+                title="张天野">张天野</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：E-Map: A Visual Analytics Approach for Exploring Significant Event Evolutions in Social Media</p>
+<p>作者：Siming Chen, Shuai Chen, Lijing Lin, Xiaoru Yuan, Jie Liang, Xiaolong Zhang</p>
+<p>发表：IEEE VAST 2017</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>社交媒体在信息与重要事件的传播与扩散中起了重要作用。当一个重要事件在社交媒体中出现时，会引发一系列的关注者转发、评论该问题，并产生新的意见。一个重要事件往往有上百万人牵涉其中。因此，社交媒体能很好的反应事件的演变过程、激发人们参与事件讨论的原因。关于某个重要事件，人们关注的问题包括：人们在社交媒体上讨论什么？信息是如何传播的？事件的演变是如何发生的？</p>
+<h2 id="挑战与贡献"><a href="#挑战与贡献" class="headerlink" title="挑战与贡献"></a>挑战与贡献</h2><p>然而，复杂的社交媒体数据对认知与了解重要事件及其发展带来的挑战。首先，某个社交媒体中的重要事件会涉及到庞大的人群，尤其是当被转发上百万次以后。其次，社交媒体上的消息具有多样性。发布的消息，被转发后会增加很多额外的内容，包括简单的评论和激烈的讨论，需要专门的工具来挖掘消息语义中的主题。最后，事件的演变无法被预知，一个事件往往会激起人们对更多事件的激烈讨论。</p>
+<p>本文的贡献主要分为三部分。一，提出了针对社交媒体数据中事件演变与传播的地图隐喻可视化方法。二，之前的用户行为分析都是将用户行为作为空间中的对象，而本文将研究核心用户对时间演变的影响。三，本文提供了两个基于真实数据的案例分析。</p>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>本文所使用的数据是从新浪微博上爬取的，每一条新浪微博消息都带有井号标注的主题与消息中的若干关键字，爬取得到的每一条数据包括：时间点、消息ID、转发消息ID、内容、用户。本文将要研究的事件，是指与一个井号标签或关键字有关的社会现象或故事，包括&lt;时间，人物，转发的消息，主题&gt;。主题在本文中是一个很泛的概念，包括某些语义、关键字、话题。本文对事件的定义抛弃了地理位置属性，因为不是所有的社交媒体都包含位置信息的。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/事件定义.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/%E4%BA%8B%E4%BB%B6%E5%AE%9A%E4%B9%89.png" alt="img"></a></p>
+<p>上图显示了包含了一个事件的所有感兴趣的特性。</p>
+<p>D1：新的话题参与者、观点、讨论会产生一系列的子事件，从而出现不同的阶段。</p>
+<p>D2：拥有重要影响力的核心用户与受害者都能引导事件的发展。</p>
+<p>D3：不断的转发将事件暴露给了公众，并导致信息扩散，过程中会产生新的意见与素材。</p>
+<p>D4：讨论的主题在整个发展过程的不同阶段中会合并、分裂、消失。</p>
+<h2 id="E-MAP设计"><a href="#E-MAP设计" class="headerlink" title="E-MAP设计"></a>E-MAP设计</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/EMAP.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/EMAP.png" alt="img"></a></p>
+<p>上图为E-MAP的设计，作者之所以选择地图隐喻是因为，1.地图能提供结构化的、具有语义的空间来组织信息。2.用户对地图这个图形表征非常熟悉。其中，时间信息通过上图右上角的颜色条映射，每一个地图上的元素分别对应以下事件中的特征。</p>
+<p>城市：关键字。每条消息一个。最具代表性。大小表示包含这个关键字的消息数量。城市间的距离表示关键字在转发关系中的距离。</p>
+<p>城镇：附属于一个城市的消息。与城市的距离表示距离第一条包含该关键字的消息发布的时间差。时间上相近的小时可以合并为城镇。</p>
+<p>区域：一个城市与其附属城镇的的领土。虚线表示，区域大小与形状由其中的城市、城镇数量决定。区域之间的距离表示，区域所代表关键字之间的转发关系远近。</p>
+<p>河流：存在很多的转发消息，同时包含河流流经区域的关键字。</p>
+<p>陆地&amp;岛屿：主题与关键字之间的分布。</p>
+<h2 id="E-MAP构造方法"><a href="#E-MAP构造方法" class="headerlink" title="E-MAP构造方法"></a>E-MAP构造方法</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/EMAP构造.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/EMAP%E6%9E%84%E9%80%A0.png" alt="img"></a></p>
+<p>上图展示了E-MAP的构造方法，共分为两个部分：图构造与地图构造。构造过程中，处理的图节点包含消息、关键字、虚拟时间节点三种，图中的边关系包含关键字-关键字、关键字-时间、关键字-消息三种。</p>
+<p>（a）计算初始图布局：分时间段计算关键字，在每个分段内计算TF-IDF，得到K,T节点及其关系。再找包含关键字的消息：一个包含关键字A的消息转发自一个包含关键字B的消息。根据找到的所有节点与关系，计算初始力引导布局。</p>
+<p>（b）优化图布局：在加上KM关系与M节点，重新优化布局。因为M节点太多，所以其实只加上最重要的K节点的相应M节点。</p>
+<p>（c）计算VORONOI分割：用4096个种子点计算VORONOI三角网格。根据图结构中计算的K,M位置将节点放到网格中，并用一个高斯核函数计算VORONOI网格点的密度。</p>
+<p>（d）计算区域边界：每个三角网格划分给离他最近的城市（K）。网格区域的边缘就构成了城市之间的分界线。在每个区域中，根据消息发生的时间，重新离城市由远到近排列。并将时间上相近的消息聚合。</p>
+<p>（e）构造河流：对于KK关系，从起始K节点开始，到终止K节点，链接中间所有经过的三角网格的中心。给定转发的消息的影响力，根据阈值筛选消息，保证筛选完大概5-10条河流。</p>
+<p>（f）合并陆地、产生岛屿：根据步骤（c）所算的网格节点上的密度分布，将密度大于0节点圈起来，密度为0的则不作任何处理，这样就形成了陆地跟岛屿。</p>
+<p>（g）最终布局优化：1.利用PD算法计算陆地腐蚀的形状。2.调整河流。根据每个三角网格的中心计算差值函数，让河流看起来更平滑。</p>
+<p>所有构造算法的复杂度均为O(n),数据预处理的时候树结构遍历跟排序算法复杂度O(nlogn)。</p>
+<h2 id="系统界面与可视分析流程"><a href="#系统界面与可视分析流程" class="headerlink" title="系统界面与可视分析流程"></a>系统界面与可视分析流程</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/系统界面.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/%E7%B3%BB%E7%BB%9F%E7%95%8C%E9%9D%A2.png" alt="img"></a></p>
+<p>上图为系统界面。本文提出的可视分析流程共分为三个部分：</p>
+<ol>
+<li><p>时空总览：a、b图。其中，在b图中，纵轴上关键字按他们出现的时间排序，关键字的颜色表示该关键字出现的峰值时刻在哪里。横轴表示时间，每个block的高度及颜色都表示该时间段内出现该关键字的消息数量。最上面一行最宽的是每个时刻消息总和。</p>
+</li>
+<li><p>多层次的时空探索：涉及到a-g图及其中的所有交互。交互包括：时间轴上的刷选与导航、传统的地图交互（缩放、选择、导航）、地图上的多边形刷选生成文字云。其中，通过在地图上的交互，用户可以选择一个城市，高亮消息内容，并在关键词关系列表高亮。选择城镇后，在消息列表里展示包含这个城市关键字的所有消息内容，并看到消息发送的时间与用户。</p>
+</li>
+<li><p>事件演变分析。要探索的事件演变过程中的两项重要内容：用户轨迹与用户联系。其中，用户轨迹指发布众多消息的用户会在城镇之间移动。能体现消息与转发消息之间的主题变化。黑色的曲线表示。线的粗细表示。用户联系指人们发布的消息能被不同的人转发。这个行为如果影响力很大的话通过河流展示（因为有阈值筛选），如果不是的话用灰色的直线表示。系统中一共提供两种探索模式，单项模式与聚合模式。其中，单项模式指在城镇级别上展示每个单个链接。聚合模式则将所有隶属于某个城市的城镇消息聚合，通过城市之间的关系展示聚合后的链接。</p>
+</li>
+</ol>
+<h2 id="案例分析-Kim-Jong-nam之死"><a href="#案例分析-Kim-Jong-nam之死" class="headerlink" title="案例分析-Kim Jong-nam之死"></a>案例分析-Kim Jong-nam之死</h2><p>本案例中，搜索的主要关键字为Kim Jong-nam，韩国，马来西亚。包含222,678条消息、130,197个用户、涉及的时间区间为2017.02.14-2017.03.17。Kim Jong-nam 为朝鲜主席金正恩的哥哥，2.14在马来西亚死亡，并且有证据表明是毒死，因此成为微博上的重要热点事件。地图上可以看到，“Malaysia, North Korea, Kim Jeongnam, Kim Jeong-eun, Ambassador, Assassination都是重要关键字。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/案例.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/11/%E6%A1%88%E4%BE%8B.png" alt="img"></a></p>
+<p>可以看到，该事件的发展阶段主要分为四部分。</p>
+<ol>
+<li><p>2.14-2.24, 尚未官方宣布是谁死了，但是群众已经辨认出来是KIM JONG-NAN，并开始讨论。人讨论的内容包括：为什么刺杀发生在拥挤的马来西亚机场，以及警方官方宣布一些调查结果，是不是弟弟为了避免政权争夺杀了哥哥。</p>
+</li>
+<li><p>2.24号，一个关于KIM JONG NAM是被毒害的新故事被发布。新出现的关键字包括：VX 、神经、毒性、生化武器。可以看出公众对非法生化武器的恐慌。</p>
+</li>
+<li><p>2.28-3.7号，有新的话题在被讨论，例如，马来西亚在3.4号释放了一个朝鲜嫌疑犯，因为缺乏拘捕他的证据。马来西亚将韩国大使送出马来西亚。朝鲜决定停止对中国的稀土出口等等。</p>
+</li>
+<li><p>美国与韩国受到了波及。被讨论的对象包括THAAD。</p>
+</li>
+</ol>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>此外，本文提出的方法也包含了若干问题：</p>
+<ol>
+<li><p>地图上允许存在的最大城市或城镇数量为10^4，但是人为能感知到的对象数量为10^3</p>
+</li>
+<li><p>一条消息一个关键字</p>
+</li>
+<li><p>预处理比较慢</p>
+</li>
+</ol>
+<p>本文的优点包括：</p>
+<ol>
+<li><p>结合节点链接与空间填充方法的地图隐喻设计</p>
+</li>
+<li><p>抽象出的社交媒体事件特征与地图中对象的对应关系明确并且合理</p>
+</li>
+<li><p>对复杂时空数据分析的实现</p>
+</li>
+</ol>
+<p>本文的缺点包括：</p>
+<ol>
+<li><p>地图隐喻设计对理解社交关系网络的歧义</p>
+<p> 城市/城镇之间的距离度量不能准确表示节点之间的相似性</p>
+<p>地图中展示的也并不是标准的社交网络</p>
+</li>
+<li><p>文章中没有user study（包括之前那篇D-MAP）</p>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

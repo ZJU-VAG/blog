@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+         DQNViz: A Visual Analytics Approach to Understand Deep Q-Networks - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#本文的贡献在于："><span class="toc-text">本文的贡献在于：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计需求"><span class="toc-text">设计需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据获取"><span class="toc-text">数据获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据对象：训练打砖块游戏的DQN数据"><span class="toc-text">数据对象：训练打砖块游戏的DQN数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#训练DQN参数：共训练200轮，每轮训练25W步，测试2-5W步"><span class="toc-text">训练DQN参数：共训练200轮，每轮训练25W步，测试2.5W步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#收集数据（仅测试阶段的每步数据，包括以下内容）："><span class="toc-text">收集数据（仅测试阶段的每步数据，包括以下内容）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据的层次关系"><span class="toc-text">数据的层次关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视分析系统"><span class="toc-text">可视分析系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-text">案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#专家访谈"><span class="toc-text">专家访谈</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+         DQNViz: A Visual Analytics Approach to Understand Deep Q-Networks
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-11-12 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2018-11-12</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#张天野"
+                title="张天野">张天野</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：DQNViz: A Visual Analytics Approach to Understand Deep Q-Networks</p>
+<p>作者：Junpeng Wang, Liang Gou, Han-Wei Shen, and Hao Yang</p>
+<p>发表：VAST 2018 (honorable mention)</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Deep Q-Network (DQN)是Google DeepMind研发的用于解决强化学习问题的深度卷积神经网络，用于训练一个能自动玩Atari 2600游戏的代理。其目的让代理跟环境（游戏）进行交互，代理需要进行游戏内的操作，完成操作后，根据某种奖励机制，不同游戏状态会获得不同的奖励，DQN的最终目标是使整个训练过程的全部奖励之和达到最大。下图为不断循环的训练过程：<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/图片1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/%E5%9B%BE%E7%89%871.png" alt="img"></a></p>
+<p>训练结束后将得到一个事件序列，包括状态(r)、操作(a)、奖励(r)：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/微信截图_20181112151723.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181112151723.png" alt="img"></a></p>
+<p>DQN的最终目标则是使得整体奖励最大化：<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/微信截图_20181112151809.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181112151809.png" alt="img"></a></p>
+<p>然而，跟监督、非监督的机器学习使用固定的数据集训练不同，强化学习的训练数据是被训练的代理的经验，是在训练过程中逐渐生成的，需要对其进行动态总结来理解数据。同时，我们又如何解释代理进行某些操作的行为？如何调整训练过程中的随机操作的比例？目前仍然缺乏一个面向强化学习模型的可视分析工具。</p>
+<h3 id="本文的贡献在于："><a href="#本文的贡献在于：" class="headerlink" title="本文的贡献在于："></a>本文的贡献在于：</h3><ul>
+<li><p>系统-分四个层次表现DQN模型的细节</p>
+</li>
+<li><p>可视设计-从DQN模型生成的事件序列数据</p>
+</li>
+<li><p>知识-优化控制训练过程中的随机输入</p>
+</li>
+</ul>
+<h2 id="设计需求"><a href="#设计需求" class="headerlink" title="设计需求"></a>设计需求</h2><ul>
+<li><p>R1.提供模型在训练过程中的各种统计值</p>
+</li>
+<li><p>R2.揭示代理获得的经验中的行为模式 (behavior patterns)</p>
+</li>
+<li><p>R3.允许分段分析与对比</p>
+</li>
+</ul>
+<h2 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h2><h3 id="数据对象：训练打砖块游戏的DQN数据"><a href="#数据对象：训练打砖块游戏的DQN数据" class="headerlink" title="数据对象：训练打砖块游戏的DQN数据"></a>数据对象：训练打砖块游戏的DQN数据</h3><ul>
+<li><p>五条命：未接到球时失去一条命</p>
+</li>
+<li><p>四种操作：不操作(0)、弹球(1)、左(2)、右(3)</p>
+</li>
+<li><p>四种奖励：0, 1, 4, 7</p>
+</li>
+</ul>
+<h3 id="训练DQN参数：共训练200轮，每轮训练25W步，测试2-5W步"><a href="#训练DQN参数：共训练200轮，每轮训练25W步，测试2-5W步" class="headerlink" title="训练DQN参数：共训练200轮，每轮训练25W步，测试2.5W步"></a>训练DQN参数：共训练200轮，每轮训练25W步，测试2.5W步</h3><h3 id="收集数据（仅测试阶段的每步数据，包括以下内容）："><a href="#收集数据（仅测试阶段的每步数据，包括以下内容）：" class="headerlink" title="收集数据（仅测试阶段的每步数据，包括以下内容）："></a>收集数据（仅测试阶段的每步数据，包括以下内容）：</h3><p>a.操作  b.奖励   c.游戏屏幕（值域为[0,255]的84*84矩阵） d.生命  e.是否终止  f.是否随机 g.当前步的预测Q值  h.当前步的目标Q值</p>
+<h3 id="数据的层次关系"><a href="#数据的层次关系" class="headerlink" title="数据的层次关系"></a>数据的层次关系</h3><ul>
+<li><p>步 (Step)：包含八种数据的训练步</p>
+</li>
+<li><p>段 (Segment)：某个长度的一串连续的Step</p>
+</li>
+<li><p>集 (Episode)：游戏开始到结束的所有Step</p>
+</li>
+<li><p>轮 (Epoch)：一轮的所有训练步，共25,000步</p>
+</li>
+</ul>
+<h2 id="可视分析系统"><a href="#可视分析系统" class="headerlink" title="可视分析系统"></a>可视分析系统</h2><p>DQNvis的系统是一个自顶向下探索的系统，如图：</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/图片2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/%E5%9B%BE%E7%89%872.png" alt="img"></a></p>
+<p>系统共分为四个视图。</p>
+<ul>
+<li><p>Statistics View（左上）：用于展示训练过程中的统计值变化（上半部分）与不同的操作、奖励在各轮中占得比重（下半部分），每张图的横轴均表示轮数（epoch）。</p>
+</li>
+<li><p>Epoch View（右上）:在Statistics View中选中某一轮后，epoch view会显示该轮所有episode中的操作（上）与奖励（下）分布。</p>
+</li>
+<li><p>Trajectory View（下方）: 横轴为训练步数，纵轴轴从下往上表示游戏屏幕中从左到右的顺序，因此折线可以表示代理在游戏中的运动轨迹，不同的操作用不同颜色点叠加在折线上，背景的颜色填充表示DQN预测Q值或目标Q值的变化，折线上的矩形长条颜色高亮表示获得的奖励。</p>
+</li>
+</ul>
+<p>同时，在Trajectory View中，将每集 (Episode) 划分为长度100的段 (Segment)，使用DTW计算一轮内 (Epoch) 所有段之间的相似性，并用层次聚类找到相似的模式。此外，也可通过用正则表达式定义模式，在数据中进行搜索。</p>
+<ul>
+<li>Segment View（下图）：一个segment包含游戏屏幕的许多帧，每一帧屏幕是一个84*84的矩阵，每四个连续帧为一个状态。DQN共5层（三个卷积层，两个全连接层），整个网络中共160个filter。提取每个filter中被最大化激活的状态，并计算该状态屏幕中每个像素点的显著性（也有被激活的与没被激活的像素点之分）。左侧柱状图表示每个filter激活的像素点数目，中间PCA投影使用每个filter的被激活状态的显著性矩阵计算，点的大小表示激活的像素数目，右侧的四个屏幕选择某种聚合方式，将一个segment中所有状态的像素激活情况表示。</li>
+</ul>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>这里介绍一个通过使用DQNvis系统调整随机操作比例的案例。</p>
+<p>实验一：专家认为训练完200轮以后的代理应该比随机操作强，因此不需要随机操作。得到的测试结果分为三阶段。一阶段正常，但是二阶段中代理未学习到要发球的知识，因此一直拿球未发，导致游戏在三阶段因为长时间而崩溃，如图。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/图片3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/%E5%9B%BE%E7%89%873.png" alt="img"></a></p>
+<p>实验二：通过实验一，专家认识到训练过程中是需要随机操作的，尤其是在代理反复重复相同操作模式但无奖励时。因此缓存了20步的训练数据，并在缓存中使用正则表达式搜索重复3次及以上的操作模式，在搜索到的这种结果后增加随机操作。得到的训练结果如图，也是分为三阶段，一阶段正常，二阶段仍重复一个相同的模式，但是模式长度较长，完成一次需50步，因为在二阶段不断重复一个模式过长，游戏最终也在三阶段崩溃了。</p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/图片4.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/11/%E5%9B%BE%E7%89%874.png" alt="img"></a></p>
+<p>实验三：根据实验1与2，专家对算法进行优化，将缓存长度变为100，搜索的模式为重复2次及的模式，得到的最后结果中，随机操作实际占2%，小于预定的5%。</p>
+<h2 id="专家访谈"><a href="#专家访谈" class="headerlink" title="专家访谈"></a>专家访谈</h2><p>在访谈中，所有专家都认为系统非常好用，但也提出了一些建议：</p>
+<ul>
+<li><p>游戏屏幕上板的位置是横向的，而视图是纵向，不易于理解</p>
+</li>
+<li><p>需要展示神经网络结构与过滤器的位置</p>
+</li>
+<li>方法简单，不适用于操作空间大的游戏（AlphaGo）</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

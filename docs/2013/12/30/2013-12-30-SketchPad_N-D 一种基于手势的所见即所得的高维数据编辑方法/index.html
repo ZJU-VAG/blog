@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        SketchPad_N-D: 一种基于手势的所见即所得的高维数据编辑方法 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="https://zjuvag.github.io/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" />
+        </div>
+        <div class="name">
+            <i>ZJU VAG</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a
+                    href="https://zjuvag.github.io">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本文方法由两部分组成"><span class="toc-text">本文方法由两部分组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#case-study-1"><span class="toc-text">case study 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#case-study-2"><span class="toc-text">case study 2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#case-study-3"><span class="toc-text">case study 3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#user-study"><span class="toc-text">user study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未来工作"><span class="toc-text">未来工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评述"><span class="toc-text">评述</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        SketchPad_N-D: 一种基于手势的所见即所得的高维数据编辑方法
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2013-12-30 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2013-12-30</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#朱标"
+                title="朱标">朱标</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文: SketchPad_N-D:WYDIWYG Sculpting and Editing in HighDimensional Space<br>作者: Bing Wang, Puripant Ruchikachorn, and Klaus Mueller<br>发表会议: Vast 2013</p>
+<p>为了测试高维数据可视化软件，或者为了证明这些软件的有效性，人们往往需要具有特定已知特征的数据，而这些数据在实际中往往不容易得到。本文基于平行坐标和 N-D ploygon ，提出了一种基于 sketch 的、所画即所得 （WYDIWYG） 的高维数据生成、修改/清洗方法，可以有效地创建、修改出一些具有所需特征的高维数据。</p>
+<h2 id="本文方法由两部分组成"><a href="#本文方法由两部分组成" class="headerlink" title="本文方法由两部分组成"></a>本文方法由两部分组成</h2><ol>
+<li><p>第一部分是一个平行坐标的视图，作者在平行坐标轴上定义了两个操作</p>
+<ol>
+<li>通过在平行坐标轴上画一条代表概率密度函数的曲线来指定对应轴上数据分布情况，如下图所示。</li>
+</ol>
+</li>
+</ol>
+<pre><code>   ![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/12/%E5%9B%BE%E7%89%871.png)
+
+
+
+2. 通过画一个四边形或者蝴蝶结形，分别指定相邻两个维度之间的正相关和反相关特征，如下图所示（这两个形状通过 4 个顶点进行指定，图中的数字表示 4 个点指定的先后顺序），相关程度可以通过滚动条进行调节。
+
+
+
+   ![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/12/%E6%97%A0%E6%A0%87%E9%A2%98.png)
+</code></pre><ol>
+<li><p>第二部分是一个散点图的表示，分为轴向对齐、非轴向对其两种交互策略</p>
+<ol>
+<li><p>轴向对齐的交互: 实际上就是一个大家所熟悉的散点矩阵，横纵维度就是 N 维数据的 N 个正交基（这里以 N=4 为例），如下图所示。在任意投影平面上，用户通过指定一个分布的范围（下左黑线框部分）以及该分部的中心（下左红线部分）来生成数据点，这些数据点满足:</p>
+<pre><code>1. 在该投影平面上的投影符合用户的指定
+ 2. 在其他维度上均匀分部。
+</code></pre><p>然后用户可以通过本文提供的笔刷根据自己的需求在每个投影平面上擦除/添加上一些数据点，以得到一个满意的结果。这里需要指出的一点是，当用户在某个投影平面上擦去一些点的时候，其他投影平面上的点可能会相应减少，本文提供了自动、手动两种方式对受影响的数据进行修补，修补的前提是在用户进行过擦除操作的投影平面上，用户擦除过的区域上不会出现新的点。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/12/%E6%97%A0%E6%A0%87%E9%A2%982.png" alt="img"></p>
+<ol>
+<li>非轴向对齐的交互</li>
+</ol>
+<p>和1类似，只不过投影平面可以由用户通过本文提供的 N-D touchpad polygon 进行任意指定，然后在相应的投影平面上进行相应的操作。</p>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>   ![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/12/%E6%97%A0%E6%A0%87%E9%A2%983.png)
+</code></pre><h2 id="case-study-1"><a href="#case-study-1" class="headerlink" title="case study 1"></a>case study 1</h2><p>用户通过非轴向对齐的交互生成了如下图所示数据，在最后的两个投影平面上，数据分别呈现了不同方式排列的 “ND” 字母。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/12/%E6%97%A0%E6%A0%87%E9%A2%985.png" alt="img"></p>
+<h2 id="case-study-2"><a href="#case-study-2" class="headerlink" title="case study 2"></a>case study 2</h2><p>用户轴向对齐的交互指定了在 4 维空间中明显可以分为两类的一个数据，来验证 K-means 方法， (c) (d) (e) 三个图里面的红、黑分别表示 k-means 方法分出来的两个类，通过 (e) 可以清楚地看到， k-means 方法只在第 4 个维度上把两个数据分开了，而其余维度上都混在一起，没有很好分开。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/12/%E6%97%A0%E6%A0%87%E9%A2%984.png" alt="img"></p>
+<h2 id="case-study-3"><a href="#case-study-3" class="headerlink" title="case study 3"></a>case study 3</h2><p>用户通过非轴向对齐的交互，任意指定投影平面对数据进行观察，然后手动移除 outliers</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/12/%E6%97%A0%E6%A0%87%E9%A2%986.png" alt="img"></p>
+<h2 id="user-study"><a href="#user-study" class="headerlink" title="user study"></a>user study</h2><p>最后，本文请了 8 个从未使用过该系统的用户进行测试，让他们在平行坐标中交互出特定的 feature ，用户普遍对该系统给出了肯定的反馈，且都在较短的时间内做出了相应的 feature 。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2013/12/%E6%97%A0%E6%A0%87%E9%A2%987.png" alt="img"></p>
+<h2 id="未来工作"><a href="#未来工作" class="headerlink" title="未来工作"></a>未来工作</h2><ol>
+<li>为 sketch 加 curve-drawing 、 line-drawing 组件。</li>
+<li>对类别型数据的支持。</li>
+</ol>
+<h2 id="评述"><a href="#评述" class="headerlink" title="评述"></a>评述</h2><p>本文中使用的可视化技术都是现成的，但是 sketch + visualization 结合得很好，用户交互起来非常直观，学习成本低，这个从 user study 里面就可以看出来。但是对于散点图部分的交互，尤其是非轴向对齐的部分，各个投影平面之间会出现 overlap ，在同时制作多个投影方向特征的时候，用户很难交互出一个自己想要的结果，也有可能用户想要的结果根本不存在（但是本文的方法不能给用户以足够的提示、引导，用户很难意识到这个问题）。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
