@@ -1,11 +1,11 @@
 nav:
-    home: 博客
-    author: 作者
-    tags: 标签
-    archives: 存档
-    about: 关于
-    textbook: 教材
-    search: 搜索
+    home: 小组博客
+    author: 作者存档
+    tags: 博客标签
+    archives: 时间存档
+    about: 小组主页
+    textbook: 教材下载
+    search: 博客搜索
 
 post:
     postTime: 发布于

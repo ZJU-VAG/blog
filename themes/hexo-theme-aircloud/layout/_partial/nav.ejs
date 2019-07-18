@@ -1,14 +1,25 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar <% if(config.avatar_style && config.avatar_style.radius) {%>radius<% } %>">
-            <img src="<%= config['sidebar-avatar'] %>" />
+            <a href="<% if (config.about) { %><%= config.about %><% } else{%><%= config.root %><%- 'about/' %><% } %>"><img
+                    src="<%= config['sidebar-avatar'] %>" /></a>
         </div>
         <div class="name">
-            <i><%= config.author %></i>
+            <a href="<% if (config.about) { %><%= config.about %><% } else{%><%= config.root %><%- 'about/' %><% } %>">
+                <i><%= config.author %></i>
+            </a>
         </div>
     </div>
     <div class="contents" id="nav-content">
         <ul>
+            <li <% if(is_current('about')){ %> <%- "class=active" %> <% } %>>
+                <a
+                    href="<% if (config.about) { %><%= config.about %><% } else{%><%= config.root %><%- 'about/' %><% } %>">
+                    <!-- <a href="<%= config.root %><%- 'about/' %>"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span><%= __('nav.about') %></span>
+                </a>
+            </li>
             <li <% if(is_home()){ %> <%- "class=active" %> <% } %>>
                 <a href="<%= url_for(config.home_dir || '/') %>">
                     <i class="iconfont icon-shouye1"></i>
@@ -33,14 +44,7 @@
                     <span><%= __('nav.archives') %></span>
                 </a>
             </li>
-            <li <% if(is_current('about')){ %> <%- "class=active" %> <% } %>>
-                <a
-                    href="<% if (config.about) { %><%= config.about %><% } else{%><%= config.root %><%- 'about/' %><% } %>">
-                    <!-- <a href="<%= config.root %><%- 'about/' %>"> -->
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span><%= __('nav.about') %></span>
-                </a>
-            </li>
+
             <li <% if(is_current('textbook')){ %> <%- "class=active" %> <% } %>>
                 <a href="<%= url_for(config.textbook_dir) %>">
                     <i class="iconfont icon-biaoqian1"></i>

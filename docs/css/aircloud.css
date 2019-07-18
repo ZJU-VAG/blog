@@ -147,6 +147,14 @@ body {
   margin-bottom: 20px;
 }
 
+.nav .avatar-name .name a {
+  text-decoration: none;
+}
+
+.nav .avatar-name .name a:hover {
+  text-decoration: underline;
+}
+
 .nav .avatar-name .name i {
   font-size: 16px;
   font-family: "italic" !important;
