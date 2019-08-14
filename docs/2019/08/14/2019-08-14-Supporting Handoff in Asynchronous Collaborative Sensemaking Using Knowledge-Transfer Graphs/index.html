@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Supporting Handoff in Asynchronous Collaborative Sensemaking Using Knowledge-Transfer Graphs - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景介绍"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本文工作"><span class="toc-text">本文工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用示例"><span class="toc-text">应用示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计要素"><span class="toc-text">设计要素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统"><span class="toc-text">系统</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#主要技术"><span class="toc-text">主要技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#系统概览"><span class="toc-text">系统概览</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User-Study"><span class="toc-text">User Study</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#知识传递的性能"><span class="toc-text">知识传递的性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#目的"><span class="toc-text">目的</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实验"><span class="toc-text">实验</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测评指标"><span class="toc-text">测评指标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实验结果"><span class="toc-text">实验结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部化的多样性和偏好"><span class="toc-text">外部化的多样性和偏好</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#目的-1"><span class="toc-text">目的</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实验-1"><span class="toc-text">实验</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实验结果-1"><span class="toc-text">实验结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#知识传递策略的分析"><span class="toc-text">知识传递策略的分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#目的-2"><span class="toc-text">目的</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#知识传递策略"><span class="toc-text">知识传递策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实验结果-2"><span class="toc-text">实验结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结与未来工作"><span class="toc-text">总结与未来工作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#未来工作"><span class="toc-text">未来工作</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Supporting Handoff in Asynchronous Collaborative Sensemaking Using Knowledge-Transfer Graphs
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-08-14 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-08-14</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#徐卫霞"
+                title="徐卫霞">徐卫霞</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li>论文：Supporting Handoff in Asynchronous Collaborative Sensemaking Using Knowledge-Transfer Graphs</li>
+<li>作者：Jian Zhao, Michael Glueck,Petra Isenberg, Fanny Chevalier, Azam Khan</li>
+<li>发表：TVCG 2017( Best Paper Honorable Mention )</li>
+</ul>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>协同意义构建(Collaborative Sensemaking ) : 通过多人的沟通交流，弥补个人理解上的不足，得到对事件等更加全面的理解。</p>
+<p>因为时间、地点、隐私等原因，在日常的协作中会出现异步协作意义构建的情况。可以通过可视化的方法对协作人员的工作过程可视化展示并进行管理、综合等，使得后来的协作者可以很好地对之前协作者的工作过程进行分析，交互式的系统可以使得协同工作更加的方便。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/14/09857d7f7e2c0421cb8e7186ddf8ee21c42ef225.png" style="zoom:50%"></p>
+<p>由于无法直接沟通，协作者无法将自己的分析过程完全的传递给后面的协作者，使得异步协同意义构建时协作者间存在知识传递问题。本文解决的问题是在异步协作意义构建的场景下对知识的传递问题。</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>涉及到的外部化(Externalization)方法包括：基于图的可视化、时间轴、注释空间（commentspace）。</p>
+<p>可视化平台：CLIP 系统与本文系统相似，适用于协同意义构建的场景，但未解决在异地协同中存在的知识传递问题。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/14/24a7b2645f030e5ce4aa76f4b94e27cc486cc620.png"></p>
+<p>CLIP 系统的论文如下：N. Mahyar and M. Tory. Supporting communication and coordination in collaborative sensemaking. IEEE Transactions on Visualization and Computer Graphics, 20(12):1633–1642, Dec. 2014. doi: 10.1109/TVCG.2014.2346573。</p>
+<h2 id="本文工作"><a href="#本文工作" class="headerlink" title="本文工作"></a>本文工作</h2><p>提出了<strong>KTGraph</strong>—- 一种在异步协作意义建构中支持知识传递的可视化方法</p>
+<p>贡献：</p>
+<ol>
+<li>一种支持调查者间知识传递的新型协同可视化工具 KTGraph</li>
+<li>基于对协同研究和意义构建的研究，为支持知识传递提供了设计要素。</li>
+<li>两阶段的用户研究，以多方面评估我们的技术在文档分析场景中的应用情况</li>
+</ol>
+<h2 id="应用示例"><a href="#应用示例" class="headerlink" title="应用示例"></a>应用示例</h2><p>FBI 怀疑小镇 Alderwood 可能存在政治阴谋，需要从大量的新闻文章和其他信息中分析得到小镇中存在的异常情况(VAST 2006 challenge 的题目，对数据集有部分缩减)。其中本文中用到的数据集为新闻文档和图片等，具体格式如下图。需要通过异步协同的方式对小镇中存在的异常情况进行分析，保证调查者间充分的知识传递。<img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/14/fe19bb5c186e27e8308b5d35766eabb15ff4eebb.png" alt></p>
+<h2 id="设计要素"><a href="#设计要素" class="headerlink" title="设计要素"></a>设计要素</h2><p>基于之前对异步协作意义构建的研究，提出了以下四点设计要素：</p>
+<p>G1：支持交互式外化(externalization)</p>
+<p>G2：编码分析依据(Encode analytic provenance), 将得出的结论与对应的依据进行映射</p>
+<p>G3：促进共同理解(facilitate common understanding), 通过标签等组件显式的表达调查的进展和过程</p>
+<p>G4：提供交互和分析依据(Provide interaction and analytic provenance), 提供之前调查者的调查过程和进度</p>
+<h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><h5 id="主要技术"><a href="#主要技术" class="headerlink" title="主要技术"></a>主要技术</h5><ol>
+<li>通过引用、注释、标签等进行可视化，使得早前的意义构建更加的详细</li>
+<li>对所有元素都可以通过标签进行标记，表达调查者的一些原始猜测，显式的表达调查结果。</li>
+<li>通过添加时间轴等对整个调查过程进行可视化，并提供对调查历史的回放使得之后的调查人员可以了解之前的调查者如何对调查过程进行编码和可视化，是一种隐式的沟通。</li>
+</ol>
+<h5 id="系统概览"><a href="#系统概览" class="headerlink" title="系统概览"></a>系统概览</h5><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/14/fa4040d2050ed0c00dda079642e37aa321add291.png" alt="1565763517427"></p>
+<p>A: Graph panel , 调查人员通过引用、注释等组件对调查过程进行可视化(G1)，通过自定义标签对调查过程中发现的一些知识进行标记(G3)。</p>
+<p>B: Comments panel , 对 graph panel 中的一些节点或边添加注释，注释内容较为自由，包括解释原因、提出假设等(G3)。</p>
+<p>C: Dataset panel , 对数据集进行可视化，包括关键词检索(G1)、为 graph panel 中的假设与文档建立映射(G2)等。</p>
+<p>D: Timeline panel , 对调查过程进行可视化，提供对调查过程的回放等进行知识传递(G4)。</p>
+<h2 id="User-Study"><a href="#User-Study" class="headerlink" title="User Study"></a><strong>User Study</strong></h2><p>实验主要分为知识传递的性能、外部化的多样性和偏好两个阶段。创建 baseline 系统对 KTGraph 的实际性能进行对比测试，baseline 包括 graph、comment、dataset Panel 和用户交互。被试为具有计算机科学或工学背景、英语熟练、对上述案例陌生的大学毕业生和专业研究人员，每个被试只参与其中一个阶段的实验。</p>
+<h3 id="知识传递的性能"><a href="#知识传递的性能" class="headerlink" title="知识传递的性能"></a>知识传递的性能</h3><h5 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h5><p>测评 KTGraph 在异步协作意义构建中进行知识传递的性能</p>
+<h5 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h5><p>被试随机分到 KTGraph 和 baseline，由工作人员预先生成初始的知识传输图，被试通过初始图获取知识并结合原始数据集继续自己的调查。</p>
+<h5 id="测评指标"><a href="#测评指标" class="headerlink" title="测评指标"></a>测评指标</h5><ol>
+<li><p>handoff score ：对初始图研究后了解到的正确知识得数目</p>
+</li>
+<li><p>debriefing score：被试完成调查后得到的正确假设和观点的数目</p>
+</li>
+<li><p>key documents score ：对包含正确证据文档的正确引用的数目</p>
+</li>
+</ol>
+<h5 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h5><p>实验显示 KTGraph 的各个测评指标分数都比 baseline 更优秀，证明 KTGraph 在知识传递方面有更好的性能。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/14/4e4433c5264d851119e7536317ae492f36813a6a.png" alt="1565764581176"></p>
+<h3 id="外部化的多样性和偏好"><a href="#外部化的多样性和偏好" class="headerlink" title="外部化的多样性和偏好"></a>外部化的多样性和偏好</h3><h5 id="目的-1"><a href="#目的-1" class="headerlink" title="目的"></a>目的</h5><p>在调查的不同阶段去研究多样化的知识传输图和策略</p>
+<h5 id="实验-1"><a href="#实验-1" class="headerlink" title="实验"></a>实验</h5><p>将被试每三人一组进行异步协作，随机分配到 baseline 和 KTGraph 进行调查，调查结束后完成对界面组件可用性的调查问卷和一个针对调查过程的访谈</p>
+<ul>
+<li>在对纽约市的出租车的场景分析中，节点表示了一个区域，而节点的信号则对应这个区域的出租车接客数量，网络中的边则是两个区域之间的乘客上下，边权重则是接送的乘客数量。</li>
+<li>而在另一个场景分析中，作者将人转换成节点，节点信号则是一段时间内这个人的人际交往数量，也就是该节点的度数。</li>
+</ul>
+<h5 id="实验结果-1"><a href="#实验结果-1" class="headerlink" title="实验结果"></a>实验结果</h5><p>被试普遍认为 KTGraph 的时间轴对于知识传递更有效，调查的各个阶段形成的知识传输图多样化明显。</p>
+<h3 id="知识传递策略的分析"><a href="#知识传递策略的分析" class="headerlink" title="知识传递策略的分析"></a>知识传递策略的分析</h3><h5 id="目的-2"><a href="#目的-2" class="headerlink" title="目的"></a>目的</h5><p>基于前两个实验的调查结果，对被试采取的策略与得分之间的影响情况进行分析。</p>
+<h5 id="知识传递策略"><a href="#知识传递策略" class="headerlink" title="知识传递策略"></a>知识传递策略</h5><ol>
+<li>Starting over：忽略已存在的图，根据初始线索构建自己的图，后续将自己的图与已存在的图做合并，关注点在自己的图</li>
+<li>Random access：随机查看看起来有趣的元素，并尝试理解整个图。</li>
+<li>Naive browsing：自然的顺序对图进行查看,之后综合并排序决定研究的方向。</li>
+<li>Hubs and bridges：将复杂的模块连接形成更大的图</li>
+<li>Tracing from the origin：需要找到之前调查的开始点并通过图结构对之前分析人员的调查过程进行研究</li>
+</ol>
+<h5 id="实验结果-2"><a href="#实验结果-2" class="headerlink" title="实验结果"></a>实验结果</h5><p>结合之前实验中被试采取的策略以及他们的得分情况进行分析。结果显示，tracing from the origin 策略较为优秀，而且 KTGraph 很好地支持了包括 tracing from the origin 在内的较为优秀的策略。</p>
+<h3 id="总结与未来工作"><a href="#总结与未来工作" class="headerlink" title="总结与未来工作"></a>总结与未来工作</h3><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ol>
+<li><p>KTGraph 在 user study 中优秀的表现证明通过 KTGraph 可以很好的获取之前调查者的知识并利用它们更好的输出结果</p>
+</li>
+<li><p>定义了在知识传递中使用的一些策略并验证了 KTGraph 可以很好的支持其中较为优秀的策略。</p>
+</li>
+<li>局限：被试的数目限制了结论的有效性；被试间协作是按顺序进行的，无法并行工作，策略可能不全面</li>
+</ol>
+<h5 id="未来工作"><a href="#未来工作" class="headerlink" title="未来工作"></a>未来工作</h5><ol>
+<li><p>扩展 KTGraph 的分析能力</p>
+</li>
+<li><p>更多的用户研究去深入评价 KTGraph 在知识传递中的效果</p>
+</li>
+<li><p>提升工具的可扩展性和工作空间管理</p>
+</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

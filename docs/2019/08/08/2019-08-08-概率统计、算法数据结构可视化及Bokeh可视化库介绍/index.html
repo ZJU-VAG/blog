@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        概率统计、算法数据结构可视化及Bokeh可视化库介绍 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#看见理论——概率论和统计学的直观介绍"><span class="toc-text">看见理论——概率论和统计学的直观介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概率"><span class="toc-text">基本概率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复合概率（多事件概率）"><span class="toc-text">复合概率（多事件概率）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概率分布"><span class="toc-text">概率分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#频率论推理"><span class="toc-text">频率论推理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贝叶斯推理"><span class="toc-text">贝叶斯推理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回归分析"><span class="toc-text">回归分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献"><span class="toc-text">参考文献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充资料"><span class="toc-text">补充资料</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法及数据结构可视化介绍与对比"><span class="toc-text">算法及数据结构可视化介绍与对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VisuAlgo"><span class="toc-text">VisuAlgo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#主界面"><span class="toc-text">主界面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Algorithm-Visualizer"><span class="toc-text">Algorithm Visualizer</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#主界面-1"><span class="toc-text">主界面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Structure-Visualization"><span class="toc-text">Data Structure Visualization</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#主界面-2"><span class="toc-text">主界面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结-1"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献-1"><span class="toc-text">参考文献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他资料"><span class="toc-text">其他资料</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bokeh交互式可视化库"><span class="toc-text">Bokeh交互式可视化库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bokeh与D3的对比"><span class="toc-text">Bokeh与D3的对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充资料-1"><span class="toc-text">补充资料</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        概率统计、算法数据结构可视化及Bokeh可视化库介绍
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-08-08 21:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-08-08</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#周杰辉"
+                title="周杰辉">周杰辉</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#主题报告" title="主题报告">主题报告</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="看见理论——概率论和统计学的直观介绍"><a href="#看见理论——概率论和统计学的直观介绍" class="headerlink" title="看见理论——概率论和统计学的直观介绍"></a>看见理论——概率论和统计学的直观介绍</h2><p>网站地址：<a href="https://seeing-theory.brown.edu/" target="_blank" rel="noopener">https://seeing-theory.brown.edu/</a></p>
+<p>Github地址：<a href="https://github.com/seeingtheory/Seeing-Theory" target="_blank" rel="noopener">https://github.com/seeingtheory/Seeing-Theory</a></p>
+<p>开发团队：Daniel Kunin, Jingru Guo, Tyler Dae Devlin, Daniel Xiang</p>
+<p>Seeing Theory是由布朗大学的一位本科生提出，多人参与开发的一个网站项目，这个网站的目标是通过交互可视化使统计知识更容易被人所理解和接受。网站的设计使用了D3.js。</p>
+<p>这个网站包括六个章节：</p>
+<ul>
+<li>Basic Probability 基本概率</li>
+<li>Compound Probability 复合概率</li>
+<li>Probability Distributions 概率分布</li>
+<li>Frequentist Inference  频率论推理</li>
+<li>Bayesian Inference 贝叶斯推理</li>
+<li>Regression Analysis 回归分析</li>
+</ul>
+<h3 id="基本概率"><a href="#基本概率" class="headerlink" title="基本概率"></a>基本概率</h3><p>用户可以进行抛硬币、掷骰子和抽扑克牌的试验，并可以手动调整各个事件出现的概率，通过动态交互分析理论值和试验值，并进行可视化对比，发现随机事件中蕴含的规律性和稳定性——当重复试验的次数$n$逐渐增大时，频率$f_n(A)$呈现出稳定性，逐渐稳定于某个常数。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/2989599846113039abc4992ba2254b7d2a037240.png" alt="dice"></p>
+<p><center>图1  掷骰子试验</center></p>
+<h3 id="复合概率（多事件概率）"><a href="#复合概率（多事件概率）" class="headerlink" title="复合概率（多事件概率）"></a>复合概率（多事件概率）</h3><p>事件与集合论具有对应关系，用户可以输入需要的集合运算表达式，在对应的图中将会以黄色高亮该表达式所代表的区域，用户可以据此验证若干集合恒等式。</p>
+<p><center>表1 事件与集合论的对应关系表</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/c07e2ac3675731977e81a7c4aab4d3674c9f0e2d.png" alt="event_set"></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/d2e026d8b841b8af21d71aa59967fc0033fd634e.png" alt="venn"></p>
+<p><center>图2  交互式韦恩图</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/90cbb170797213aedb9ed8706b66f07987ba277b.png" alt="set_Identities"></p>
+<p><center>图3  集合恒等式</center><br>除此之外，本章还介绍了排列组合和条件概率的可视化。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/d1f21dffc835b86a028cbe0f356e4c12fcf6fc1a.png" alt="permutation_combination"></p>
+<p><center>图4  4个元素排列和组合的可视化表示</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/26979fdbb2cba611e77ae98f1c63c8ade84b4275.png" alt="conditional_probability"></p>
+<p><center>图5  条件概率可视化</center></p>
+<h3 id="概率分布"><a href="#概率分布" class="headerlink" title="概率分布"></a>概率分布</h3><p>本章通过新颖的可视化设计，展示了随机变量，蜂巢代表了整个样本空间，通过随机撒点，得到所落处的颜色的分布情况。</p>
+<p>在介绍离散和连续变量的概率质量(密度)函数和累积分布函数时，用户可以拖动滑动条，展示出不同分布的函数图像。</p>
+<p>最后，本章通过以雨滴形式落下的采样点验证了中心极限定理——大量的独立随机变量之和具有近似于正态的分布。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/d87856c0f499ccfbfb7ccddcfe6c6f6e938b9a3d.png" alt="Random_Variables"></p>
+<p><center>图6  随机变量可视化</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/96b7698e078b9a1e7c0e907ce5b1bf5a04974dec.png" alt="Discrete_Continuous"></p>
+<p><center>图7  连续性变量的概率密度函数与累积分布函数</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/047dc12f93626d836cd71e9a0daed11bce2638d8.png" alt="Central_Limit_Theorem"></p>
+<p><center>图8  中心极限定理可视化</center></p>
+<h3 id="频率论推理"><a href="#频率论推理" class="headerlink" title="频率论推理"></a>频率论推理</h3><p>统计学的一个主要目标就是估计未知参数，要求估计值无偏、有效、相合。</p>
+<p>用样本矩估计相应的总体矩，用样本矩的函数估计总体矩相应的函数，然后求出要估计的参数，称这种估计方法为矩估计法。</p>
+<p>对于给定的样本值，使似然函数达到最大值得参数值称为未知参数的最大似然估计值，这种估计法为最大似然估计法。</p>
+<p>这个网站中演示了用蒙特卡洛方法估计参数值。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/3482c2d39b33875e7ad438377f9e6251f1fa77b6.png" alt="monte_carto"></p>
+<p><center>图9  蒙特卡洛方法估计π值</center><br>关于置信区间和自助法，本章也做了相应的可视化演示。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/a087f19fa65242dbe7421b50486ee05b450c1cfc.png" alt="confidence_interval"></p>
+<p><center>图10  置信区间可视化</center><br>对于采样样本，可以确定置信上界和置信下界，反复抽样多次，根据伯努利大数定理，则包含真值的约占$100(1-\alpha)\%$，图中绿色代表包含真值，红色代表不含真值。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/39f249c5b9ce3a8cb96cf14dc4a094274baaee22.png" alt="bootstrap"></p>
+<p><center>图11  Boostrap方法可视化</center><br>常见的Boostrap有两种：</p>
+<ul>
+<li><p>非参数Bootstrap方法</p>
+<p>总体的分布F未知，但已经有一个容量为n的来自分布F的数据样本，自这一样本按放回抽样的方法抽取一个容量为n的样本，这种样本称为bootstrapy样本。相继地、独立地自原始样本中取得很多个bootstrap样本，利用这些样本对总体F进行统计推断。</p>
+</li>
+<li><p>参数Boostrap方法</p>
+<p>先利用样本求出未知参数的最大似然估计值 ，接着产生样本，对总体进行统计推断。</p>
+</li>
+</ul>
+<h3 id="贝叶斯推理"><a href="#贝叶斯推理" class="headerlink" title="贝叶斯推理"></a>贝叶斯推理</h3><p>贝叶斯定理：$P(A|B)=\dfrac{P(AB)}{P(B)}=\dfrac{P(B|A)P(A)}{P(B)}$</p>
+<p>贝叶斯分类器选择具有最大后验概率的类作为该对象所属的类。</p>
+<p>举个例子：一种疾病，一般人群中患病的比例是$0.5$。患病的人，白细胞的浓度服从均值2000，方差1000的正态分布。未患病的人，白细胞的浓度服从均值7000，方差3000的正态分布。一个人的白细胞浓度是3100，医生应该做出怎样的判断？</p>
+<p>形式化表达一下：</p>
+<p>设$\omega_1$表示患病，$\omega_2$表示未患病，$x$表示白细胞的浓度。</p>
+<p>已知$P(\omega_1)=0.5%$，$P(\omega_2)=99.5%$</p>
+<p>$P(X|\omega_1)\sim N(2000,1000)$，$P(X|\omega_2)\sim N(7000,3000)$</p>
+<p>若$x=3100$，则$x\in \omega_{?}$</p>
+<p>$P(\omega_1|3100)=\dfrac{P(3100|\omega_1)P(\omega_1)}{P(3100)}=\dfrac{P(3100|\omega_1)P(\omega_1)}{P(3100|\omega_1)P(\omega_1) + P(3100|\omega_2)P(\omega_2)}$</p>
+<p>$P(\omega_2|3100)=\dfrac{P(3100|\omega_2)P(\omega_2)}{P(3100)}=\dfrac{P(3100|\omega_2)P(\omega_2)}{P(3100|\omega_1)P(\omega_1) + P(3100|\omega_2)P(\omega_2)}$</p>
+<p>解得，$P(\omega_1|3100)=1.9\%$，$P(\omega_2|3100)=98.1\%$</p>
+<p>故正常。</p>
+<p>该网站中动态展示了上述过程。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/a7266578dd180c7e9d008fa30b9cd7ceef53ee0d.png" alt="Bayes_Theorem"></p>
+<p><center>图12  贝叶斯决策可视化</center><br>分类算法的比较研究发现，朴素贝叶斯分类法可以与决策树和经过挑选的神经网络分类器相媲美。用于大型数据库，贝叶斯分类法也已表现出高准确率和高速度。</p>
+<p>目前研究较多的贝叶斯分类器有Naive Bayes，TAN、BAN和GBN等。</p>
+<p>朴素贝叶斯分类器在估计类条件概率时假设属性之间条件独立。</p>
+<p>当训练样本不能覆盖较多的属性值时，需要使用m估计方法来估计条件概率。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/8bcc397459a35ddd59268781bb536394b29e148d.png" alt="naive_Bayes"></p>
+<p><center>图13  朴素贝叶斯示意图</center><br>但是，现实中各个特征属性间往往并不条件独立，而是具有较强的相关性。这时就需要用到贝叶斯网络。</p>
+<p>贝叶斯网络是一种有向无环图（DAG）模型（结构化概率模型或者图模型）。贝叶斯网络由网络结构和条件概率表两个部分组成。贝叶斯网络的结构学习也是一个重点研究问题。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/95649ae460cf98164f4c47030a4185652322d039.png" alt="bayes_network"></p>
+<p><center>图14  贝叶斯网络示意图</center><br>如图所示，$p(a,b,c,d,e)=p(a)p(b|a)p(c|a,b)p(d|b)p(e|c)$</p>
+<p>除此之外，本章还介绍似然函数和根据数据更新先验分布为后验分布的可视化。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/e577241d4785ab7095363fc3b67067b0b099ba0a.png" alt="likelihood_function"></p>
+<p><center>图15  似然函数可视化</center><br>对于离散型总体$X$，设其概率分布为$P(X=a_i)=p(a_i;\theta),i=1,2,\cdots$，称函数$L(\theta)=L(X_1,X_2,\cdots,X_n;\theta)=\prod\limits_{i=1}^n p(X_i;\theta)$</p>
+<p>为参数$\theta$的似然函数。</p>
+<p>对于连续型总体$X$，概率密度为$f(x;\theta)$，则称函数</p>
+<p>$L(\theta)=L(X_1,X_2,\cdots,X_n;\theta)=\prod\limits_{i=1}^nf(X_i;\theta)$</p>
+<p>为参数$\theta$的似然函数。</p>
+<p>对于给定的样本值$(x_1,x_2,\cdots,x_n)$，使似然函数$L(x_1,x_2,\cdots,x_n;\theta)$达到最大值的参数值$\hat{\theta}=\hat{\theta}(x_1,x_2,\cdots,x_n)$称为未知参数$\theta$的最大似然估计值，相应的使似然函数$L(X_1,X_2,\cdots,X_n;\theta)$达到最大值的参数值$\hat{\theta}=\hat{\theta}(X_1,X_2,\cdots,X_n)$称为$\theta$的最大似然估计量。一般统称为$\theta$的最大似然估计。称这种估计法为最大似然估计法。</p>
+<p>对数似然方程或对数似然方程组除了一些简单的情况外，往往没有有限函数形式的解，这就需要用数值方法求近似解，例如牛顿-拉弗森算法等。</p>
+<p>似然函数在Expectation Maximization(EM)算法有着重要应用。</p>
+<p>EM算法用于含有隐变量的概率模型参数的极大似然估计，分为E步（求期望）和M步（求极大）。</p>
+<p>含有隐变量的概率模型的数据表示为$P(Y,Z|\theta)$。这里，$Y$是观测变量的数据，$Z$是隐变量的数据，$\theta$是模型参数。</p>
+<p>E步：$Q(\theta,\theta^{(i)})=\Sigma_{Z}log\;P(Y,Z|\theta)P(Z|Y,\theta^{(i)})$，称为Q函数，$\theta^{(i)}$是参数的现估计值。</p>
+<p>M步：$\theta^{(i+1)}=arg\;\max\limits_{\theta}\;Q(\theta,\theta^{(i)})$，极大化Q函数得到参数的新估计值。</p>
+<p>第一步利用对隐藏变量的现有估计值，计算其最大似然估计值；第二步最大化似然值来计算参数的值。M步上找到的参数估计值被用于下一步E步计算中，这个过程不断交替进行。</p>
+<p>高斯混合模型（GMM）的参数估计是EM算法是一个重要应用，隐马尔可夫模型的非监督学习也用到了EM算法。</p>
+<p>“先验分布+实验数据=后验分布”的可视化如下图所示，这里使用了Beta分布，关于此部分的相关知识，可以参见：<a href="https://www.matongxue.com/madocs/910.html" target="_blank" rel="noopener">https://www.matongxue.com/madocs/910.html</a></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/4f9e184f37eed3cf88fd1d92e30a2132244d9cd7.png" alt="prior_posterior"></p>
+<p><center>图16  根据数据更新先验分布可视化</center></p>
+<h3 id="回归分析"><a href="#回归分析" class="headerlink" title="回归分析"></a>回归分析</h3><p>这一章节包含了最小二乘法、相关和方差分析的可视化。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/ac1a15c3068f03390268027371363fa3ac11d45f.png" alt="least_Squares"></p>
+<p><center>图17  普通最小二乘法可视化</center><br>回归分析是研究自变量为一般变量（非随机变量），因变量为随机变量时二者之间的相关关系的统计分析方法。对随机变量的观测值进行预测是回归方程最重要的应用。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/739080e9ce6bdf239f45e816bc2a0cf099b3c02c.png" alt="analysis_of_variance"></p>
+<p><center>图18  方差分析可视化</center><br>方差分析就是通过对试验数据进行分析，检验方差相同的多个正态总体的均值是否相等，用以判断各因素对试验指标的影响是否显著。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><center>表2  Seeing Theory网站优点和不足分析</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/b8dada9dd26441523227dcb89c01dedf433cff32.png" alt="seeing_theory_summary"></p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li>Machine Learning A Probabilistic Perspective - Kevin P. Murphy</li>
+<li>The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Second Edition - Trevor Hastie, Robert Tibshirani, Jerome Friedman</li>
+<li>统计学习方法 - 李航</li>
+</ul>
+<h3 id="补充资料"><a href="#补充资料" class="headerlink" title="补充资料"></a>补充资料</h3><p>线性代数可视化：<a href="http://immersivemath.com/ila/index.html" target="_blank" rel="noopener">http://immersivemath.com/ila/index.html</a></p>
+<h2 id="算法及数据结构可视化介绍与对比"><a href="#算法及数据结构可视化介绍与对比" class="headerlink" title="算法及数据结构可视化介绍与对比"></a>算法及数据结构可视化介绍与对比</h2><h3 id="VisuAlgo"><a href="#VisuAlgo" class="headerlink" title="VisuAlgo"></a>VisuAlgo</h3><p>VisuAlgo: <a href="https://visualgo.net/en" target="_blank" rel="noopener">https://visualgo.net/en</a></p>
+<p>主要项目成员：Steven Halim, Felix Halim</p>
+<h4 id="主界面"><a href="#主界面" class="headerlink" title="主界面"></a>主界面</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/18ebcdf966ddb1ba60fac1705f5d52c5e0edddf5.png" alt="VisuAlgo_Main"></p>
+<p><center>图19  VisuAlgo主界面</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/73b7dd48abfc6a4fd3efbed10d85eabe24395097.png" alt="topo_visualgo"></p>
+<p><center>图20  VisuAlgo拓扑排序可视化</center></p>
+<h3 id="Algorithm-Visualizer"><a href="#Algorithm-Visualizer" class="headerlink" title="Algorithm Visualizer"></a>Algorithm Visualizer</h3><p>Algorithm Visualizer: <a href="https://algorithm-visualizer.org/" target="_blank" rel="noopener">https://algorithm-visualizer.org/</a></p>
+<p>主要项目成员：Jinseo Park, RaghavDua, Nemanja Stojanovic, Veljko Tornjanski</p>
+<h4 id="主界面-1"><a href="#主界面-1" class="headerlink" title="主界面"></a>主界面</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/6047edb691562e5caa60463b5336b7f539f0e2e2.png" alt="algo_visu_Main"></p>
+<p><center>图21  Algorithm Visualizer主界面</center></p>
+<h3 id="Data-Structure-Visualization"><a href="#Data-Structure-Visualization" class="headerlink" title="Data Structure Visualization"></a>Data Structure Visualization</h3><p>Data Structure Visualization: <a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank" rel="noopener">https://www.cs.usfca.edu/~galles/visualization/Algorithms.html</a></p>
+<p>主要项目成员：David Galles</p>
+<h4 id="主界面-2"><a href="#主界面-2" class="headerlink" title="主界面"></a>主界面</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/5a971e66a63b19d7101b92ad1070be2727636bd8.png" alt="DS_Vis_main"></p>
+<p><center>图22  Data Structure Visualization主界面</center></p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p><center>表3  算法和数据结构可视化网站对比</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/caecd3d7c44f759538f595e714583f00d0b8b70d.png" alt="Algo_DS_summary"></p>
+<h3 id="参考文献-1"><a href="#参考文献-1" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li>算法导论 - Thomas H.Cormen</li>
+<li>算法竞赛进阶指南 - 李煜东</li>
+</ul>
+<h3 id="其他资料"><a href="#其他资料" class="headerlink" title="其他资料"></a>其他资料</h3><ul>
+<li>用于学习算法目的（Python语言描述，可能没有PythonStandardLibrary那么有效率）：<a href="https://github.com/TheAlgorithms/Python" target="_blank" rel="noopener">https://github.com/TheAlgorithms/Python</a></li>
+<li>Python常用代码备忘录（常用工程代码块备忘）：<a href="https://gto76.github.io/python-cheatsheet/" target="_blank" rel="noopener">https://gto76.github.io/python-cheatsheet/</a></li>
+<li>机器学习概念与算法可视化：<a href="https://distill.pub/" target="_blank" rel="noopener">https://distill.pub/</a></li>
+<li>优化算法（如SGD、Adam、AdaGrad、AdaDelta等）可视化：<a href="https://vis.ensmallen.org/" target="_blank" rel="noopener">https://vis.ensmallen.org/</a></li>
+</ul>
+<h2 id="Bokeh交互式可视化库"><a href="#Bokeh交互式可视化库" class="headerlink" title="Bokeh交互式可视化库"></a>Bokeh交互式可视化库</h2><p>Bokeh是一个Python交互式可视化库，它能读取大型数据集或者流数据，以简单快速的方式为网页提供优美、高交互性能的图形。Bokeh可以构建应用，在Notebook中使用以及可视化流式数据等。在几个图形间传递组件参数即可实现数据联动，在制作交互式商业报表时十分有用。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/c3dbe98bf9edbe11ba36ef7cf6816ac6d1c4bfe5.png" alt="Bokeh_show"></p>
+<p><center>图23  Bokeh展示效果</center><br>例如，用Bokeh可以重现经典的Hans Rosling经典的TED Talk中的效果。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/88dbdc874102b4e0d8024146d50a8fde3032496e.png" alt="Hans_Rosling"></p>
+<p><center>图24  Bokeh实现经典TED Talk效果</center></p>
+<h3 id="Bokeh与D3的对比"><a href="#Bokeh与D3的对比" class="headerlink" title="Bokeh与D3的对比"></a>Bokeh与D3的对比</h3><p><center>表4  Bokeh与D3的对比</center><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/5b5e7105c277b7e43a42632a87fc91817e767e47.png" alt="bokeh_vs_D3"></p>
+<h3 id="补充资料-1"><a href="#补充资料-1" class="headerlink" title="补充资料"></a>补充资料</h3><p>其他Python可视化工具包</p>
+<ul>
+<li>Matplotlib、Seaborn、Pandas（适合比较初步的探索）</li>
+<li>ggplot（从R语言中借鉴过来的，用“图形语法”来构建图片）</li>
+<li>NetworkX（基于matplotlib，分析网络的解决方案）</li>
+</ul>
+<p>没法说哪个最好，不同场景下可以使用不同的可视化工具</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

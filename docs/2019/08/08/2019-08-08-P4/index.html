@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        P4: Portable Parallel Processing Pipelines for Interactive Information Visualization - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#P4-Portable-Parallel-Processing-Pipelines-for-Interactive-Information-Visualization"><span class="toc-text">P4: Portable Parallel Processing Pipelines for Interactive Information Visualization</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图形与可视化技术"><span class="toc-text">图形与可视化技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-声明式可视化语法"><span class="toc-text">1. 声明式可视化语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-GPU技术"><span class="toc-text">2. GPU技术</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高性能可视化技术"><span class="toc-text">高性能可视化技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-大规模数据处理"><span class="toc-text">1. 大规模数据处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-实时交互性增强"><span class="toc-text">2. 实时交互性增强</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统结构"><span class="toc-text">系统结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编程接口"><span class="toc-text">编程接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制流"><span class="toc-text">控制流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视觉设计优化"><span class="toc-text">视觉设计优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并行体系"><span class="toc-text">并行体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能评估"><span class="toc-text">性能评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-数据处理"><span class="toc-text">1. 数据处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-可移植性"><span class="toc-text">2. 可移植性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-可视化表现"><span class="toc-text">3. 可视化表现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#讨论分析"><span class="toc-text">讨论分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        P4: Portable Parallel Processing Pipelines for Interactive Information Visualization
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-08-08 21:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-08-08</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#赵晓冬"
+                title="赵晓冬">赵晓冬</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="P4-Portable-Parallel-Processing-Pipelines-for-Interactive-Information-Visualization"><a href="#P4-Portable-Parallel-Processing-Pipelines-for-Interactive-Information-Visualization" class="headerlink" title="P4: Portable Parallel Processing Pipelines for Interactive Information Visualization"></a>P4: Portable Parallel Processing Pipelines for Interactive Information Visualization</h1><p>作者：Jianping Kelvin Li and Kwan-Liu Ma</p>
+<p>发表：TVCG 2018 Sep. 19</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本文介绍了一个基于GPU加速的信息可视化框架：P4 (Portable Parallel Processing Pipelines)。它利用GPU辅助进行信息可视化过程中的数据计算与图形渲染，能够对大规模数据进行可视化。</p>
+<p>该框架实现了四个可视化开发中的目标：</p>
+<ol>
+<li><strong>Performance</strong>: 运用GPU处理数据和渲染视图</li>
+<li><strong>Productivity</strong>: 声明式语法</li>
+<li><strong>Programmability</strong>: 运行时处理用户定义逻辑</li>
+<li><strong>Portability</strong>: 基于浏览器平台(WebGL)</li>
+</ol>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><h3 id="图形与可视化技术"><a href="#图形与可视化技术" class="headerlink" title="图形与可视化技术"></a>图形与可视化技术</h3><h4 id="1-声明式可视化语法"><a href="#1-声明式可视化语法" class="headerlink" title="1. 声明式可视化语法"></a>1. 声明式可视化语法</h4><p>常见的可视化框架采用声明式的语法定义可视化编码与交互，能够很直观地呈现可视化效果，提升开发人员的效率。常见的可视化框架，如D3、Protovis可以声明式定义可视化属性，Vega、Vega Lite等框架可声明式定义可视化交互。</p>
+<h4 id="2-GPU技术"><a href="#2-GPU技术" class="headerlink" title="2. GPU技术"></a>2. GPU技术</h4><p>目前GPU主要应用于两个方面：图形绘制和通用计算。</p>
+<p>在图形绘制方面，有基于渲染管线的绘制框架：OpenGL、WebGL，以及不同平台下的渲染框架，如Metal、DirectX等等。在通用计算（GPGPU）方面，一些框架可以利用GPU计算浮点数的高效性以及并行上的优势完成高速计算，如OpenCL，CUDA等。</p>
+<h3 id="高性能可视化技术"><a href="#高性能可视化技术" class="headerlink" title="高性能可视化技术"></a>高性能可视化技术</h3><h4 id="1-大规模数据处理"><a href="#1-大规模数据处理" class="headerlink" title="1. 大规模数据处理"></a>1. 大规模数据处理</h4><p>对于大规模数据可以采取减小实际处理的数据量的方式进行优化，如对数据进行filtering、sampling，做data cubes等。除此之外，也可以运用分布式的技术来处理，这种方法常见于企业级的可视化工具种，如Spotfire、Tableau等。</p>
+<h4 id="2-实时交互性增强"><a href="#2-实时交互性增强" class="headerlink" title="2. 实时交互性增强"></a>2. 实时交互性增强</h4><p>为了提升用户交互的实时性，额可以采用多线程并行处理的技术，分管不同的工作，保证系统不会阻塞。同时也可以使用增量可视化的形式，逐步呈现可视化结果。</p>
+<h2 id="系统结构"><a href="#系统结构" class="headerlink" title="系统结构"></a>系统结构</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/9/f2041adbf40e5ae8974f34bcdbb603c82791f9f7.png" alt></p>
+<p>如图所示，整个系统包含四个部分：</p>
+<ul>
+<li>程序接口部分：图中左上角。接受用户的输入，支持JavaScript调用或者JSON格式的设定，同时接收用户传入的结构化数据；</li>
+<li>核心处理部分：图中右上角。处理用户输入或设定的数据处理逻辑与可视化编码，调用相应的函数或调用GPU程序生成模块生成Shader程序；</li>
+<li>GPU程序模块：根据用户定义的逻辑，在运行时控制生成对应的shader程序；</li>
+<li>GPU计算部分：调用WebGL相应API完成数据和程序到GPU的传入，控制GPU进行计算于渲染。</li>
+</ul>
+<h3 id="编程接口"><a href="#编程接口" class="headerlink" title="编程接口"></a>编程接口</h3><p>P4的编程接口遵循InfoVis Reference Model：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/9/8efacc27864037110653997b3225b395fc87d263.png" alt></p>
+<p>大致有五部分组成：</p>
+<ol>
+<li><strong>原始数据</strong>：设定数据的来源以及数据的格式</li>
+<li><strong>数据变换</strong>：通过原始数据得到可视化图表需要的目标数据，支持Derive，Match，Aggregate三种操作</li>
+<li><strong>可视化映射</strong>：设定对应的可视化编码以及编码的属性可视呈现数据</li>
+<li><strong>视图变换</strong>：对视图整体属性进行设定</li>
+<li><strong>用户交互</strong>：设定用户交互事件以及响应行为</li>
+</ol>
+<h3 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h3><p>P4整体是一个流水线机制，在每一步中，上一步的输出作为下一步的输入，在整个过程中不存储中间计算结果，因此，如果想在单一路径的流水线中加入新的分支，需要支持一定的手动控制操作。</p>
+<p>目前P4支持三种手动控制操作：</p>
+<ol>
+<li><strong>Register</strong>：保存计算中间状态</li>
+<li><strong>Resume</strong>：恢复保存的状态</li>
+<li><strong>Export</strong>：将计算完成的结果导出为JSON或JavaScript Object</li>
+</ol>
+<h3 id="视觉设计优化"><a href="#视觉设计优化" class="headerlink" title="视觉设计优化"></a>视觉设计优化</h3><p>当可视化大规模数据时，会有大量的点分布重叠，因此需要采取一定的方式呈现重叠的程度。本文采取了根据重叠度不同设定不同透明度的方式进行优化，公式如下：</p>
+<script type="math/tex; mode=display">\alpha = (1 - \alpha_{min})(\frac{\rho}{\rho_{max}})^{\frac{1}{3}} + \alpha_{min}</script><p>其中：</p>
+<ul>
+<li>$\alpha_{min}$: 设定的最小透明度，默认为0.1</li>
+<li>$\rho_{max}$: 视图中最大的重叠元素个数</li>
+<li>$\rho$: 当前位置的重叠元素个数</li>
+</ul>
+<p>运用上述优化后的效果如下图中间视图所示（左侧为WebGL默认颜色混合函数，右侧为聚合后使用不同颜色编码后结果）：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/9/f4e5ce7201122366e39eea061249745c6fb31582.png" alt></p>
+<h2 id="并行体系"><a href="#并行体系" class="headerlink" title="并行体系"></a>并行体系</h2><p>P4首先设计了4中可并行的GPU加速元操作：fetch，filter，map，reduce</p>
+<p>数据转换操作可以由上述的四种操作组合而得到：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/9/1e9ff3dcf4436c8e7cb07c80ef043f1caec797e9.png" alt></p>
+<p>同样，可视化与交互也可由并行元操作进行实现：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/9/bfbee4fde0b642dd1d71f00e15908badfe1c9d13.png" alt></p>
+<h2 id="性能评估"><a href="#性能评估" class="headerlink" title="性能评估"></a>性能评估</h2><p>本文就P4的几方面功能分别展开了评估：</p>
+<h4 id="1-数据处理"><a href="#1-数据处理" class="headerlink" title="1. 数据处理"></a>1. 数据处理</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/9/4ead08c27bd312d1127632ad71f91d4f4f7f4399.png" alt></p>
+<p>本文对比了D3、Lodash以及Vega三个JavaScript框架，就其在对数据进行filter、derive以及获取整体数据特征方面的效率进行比较。从图中可以看出，在大多数情况下，尤其是当数据量逐步增大时，P4有更好的表现，这得益于P4利用了GPU对其进行加速。</p>
+<h4 id="2-可移植性"><a href="#2-可移植性" class="headerlink" title="2. 可移植性"></a>2. 可移植性</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/9/4230c012941201d9c90b171094605ede2990eb0d.png" alt></p>
+<p>本文针对P4在不同显卡下进行了数据处理的性能评测。从上图中可以看出，当所使用的显卡性能越高时，处理数据所用的时间越少。</p>
+<h4 id="3-可视化表现"><a href="#3-可视化表现" class="headerlink" title="3. 可视化表现"></a>3. 可视化表现</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/9/ddb8e3c2efd4aae58a04c710d29276606debb59e.png" alt></p>
+<p>本文将P4与其它三个可视化框架（D3、Vega、Stardust）进行对比，从对比结果中我们可以发现：</p>
+<ol>
+<li>当数据到达一定规模时，其它三个框架由于浏览器或自身的限制没有办法正常绘制，而P4对于大规模数据仍能够正常绘制；</li>
+<li>P4的初始化时间要大于D3、Stardust框架，因为P4需要进行编译shader、传输数据等初始化操作；</li>
+<li>P4的可视化时间在这四个框架中表现最好，这得益于GPU的高速绘制功能。</li>
+</ol>
+<h2 id="讨论分析"><a href="#讨论分析" class="headerlink" title="讨论分析"></a>讨论分析</h2><ol>
+<li>该框架仍有需要优化与拓展的地方。目前，P4基于WebGL1.0实现，后续考虑迁移到WebGL 2.0上。另外，目前P4支持的可视化效果比较有限，后续考虑以插件的形式添加更多的功能；</li>
+<li>该框架存在着一定的不足需要进行改进，最大的不足在于其对数据的操作对GPU的内存消耗较大，一些操作可能受限于GPU显存容量而无法进行；</li>
+<li>未来考虑添加更多的GPU操作，比如添加scan元操作已进行平行排序数据，同时，在可视化方面，也考虑添加支持设定极坐标的位置。</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>该框架将主流可视化框架的表现力和GPU计算与渲染的高性能相结合，融合了两者的优势；</li>
+<li>该框架核心功能运用WebGL绘制，而标记组件等非核心不见采用不同技术实现，降低了开发难度；</li>
+<li>该系统架构采用Bottom-up的形式组装功能，以数据元操作为基础，逐步组装得到更高级的功能。</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
