@@ -770,7 +770,7 @@ body {
   letter-spacing: 1px;
 }
 
-.post-content p img {
+.post-content img {
   /* width: 80%; */
   display: table;
   margin: 0 auto;
