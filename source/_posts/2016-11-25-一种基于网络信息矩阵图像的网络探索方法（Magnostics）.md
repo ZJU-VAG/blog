@@ -2,7 +2,7 @@
 title: "Magnostics: Image-based Search of Interesting Matrix Views for Guided Network Exploration"
 tags: ["论文评述", "报告"]
 date: 2016-11-25
-author: 韩冬明
+author: 韩东明
 mathjax: true
 ---
 
