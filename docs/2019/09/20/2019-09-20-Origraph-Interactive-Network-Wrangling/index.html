@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Origraph: Interactive Network Wrangling - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#作者"><span class="toc-text">作者</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Graph-Editing"><span class="toc-text">Graph Editing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wrangling-Tabular-Data"><span class="toc-text">Wrangling Tabular Data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程脚本（Scripting-for-Graph-Wrangling）"><span class="toc-text">编程脚本（Scripting for Graph Wrangling）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图建模（Network-Modeling）"><span class="toc-text">图建模（Network Modeling）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Graph-Operation"><span class="toc-text">Graph Operation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模型操作-modeling-operations"><span class="toc-text">模型操作 (modeling operations)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#个体操作-item-operations"><span class="toc-text">个体操作 (item operations)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性操作-attribute-operations"><span class="toc-text">属性操作 (attribute operations)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统设计"><span class="toc-text">系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络模型视图（Network-Model-View）"><span class="toc-text">网络模型视图（Network Model View）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性视图-Attribute-View"><span class="toc-text">属性视图 (Attribute View)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络采样视图-Network-Sample-View"><span class="toc-text">网络采样视图 (Network Sample View)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作视图-Operation-Views"><span class="toc-text">操作视图 (Operation Views)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Connection-Support-Interface"><span class="toc-text">Connection Support Interface</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Path-Based-Operations"><span class="toc-text">Path-Based Operations</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Origraph: Interactive Network Wrangling
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-09-20 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-09-20</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#潘嘉铖"
+                title="潘嘉铖">潘嘉铖</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li>论文：Origraph: Interactive Network Wrangling</li>
+<li>作者：Alex Bigelow, Carolina Nobre, Miriah Meyer, Alexander Lex</li>
+<li>发表：VIS 2019 ( Conference Paper)</li>
+</ul>
+<h1 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h1><ol>
+<li><p>Alex Bigelow</p>
+<ul>
+<li>University of Utah (2014-2019 PhD)</li>
+<li>University of Arizona, Postdoc</li>
+<li>兴趣：<ul>
+<li>Graph (network)</li>
+<li>Visualization authoring</li>
+<li>Data wrangling</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/697673cb0c814d49a77328ede87f84243cfe506f.png" alt="1569217637977"></p>
+</li>
+<li><p>Carolina Nobre</p>
+<ul>
+<li>University of Utah (2015- PhD)</li>
+<li>兴趣：<ul>
+<li>Graph (network)</li>
+<li>Data wrangling</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/75dbec91c0107211cf78cadc53ccfd6aad5fcebb.png" alt="1569217666036"></p>
+</li>
+<li><p>Miriah Meyer</p>
+<ul>
+<li>University of Utah (associate prof)</li>
+<li>宾大天文系毕业</li>
+<li>犹他大学计算机博士</li>
+<li>哈佛博后研究员</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/d1f7772dd55110ce4ff95c60c4f480771bec0246.png" alt="1569217472666"></p>
+</li>
+</ol>
+<ol>
+<li><p>Alexander Lex</p>
+<ul>
+<li>本硕博：Graz University of Technology</li>
+<li>哈佛博后研究员（2012-2015）</li>
+<li>哈佛医学院访问学者（2011）</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/1e862fb72b787177c083269bd491118c1e81b889.png" alt="1569217477125"></p>
+</li>
+</ol>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>文章的动机是关于数据整理（Data Wrangling）相关的，主要包括三个方面：</p>
+<ul>
+<li>数据清洗</li>
+<li>数据集的合并</li>
+<li>数据变换</li>
+</ul>
+<p>但是迄今为止，没有专门应对图数据的数据整理工具。虽然现有一部分进行图建模（graph modeling）的工具，但是他们或是聚焦于创建一个初始图模型，而不是重建该图模型，又或是一种编程语言，学习曲线太过陡峭。</p>
+<p>于是作者提出了Origraph，一种用于图数据建模&amp;重建的工具。他们的贡献点一共有三个：</p>
+<ol>
+<li>提出了一个工具：Origraph</li>
+<li>提出了关于图数据整理相关操作的讨论</li>
+<li>两个复杂网络建模的案例学习（use case）</li>
+</ol>
+<p>下面是他们的fast forward视频：<a href="https://www.youtube.com/watch?v=bxjDvq6kjeo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bxjDvq6kjeo</a></p>
+<h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h3 id="Graph-Editing"><a href="#Graph-Editing" class="headerlink" title="Graph Editing"></a>Graph Editing</h3><p>图编辑的工作一般假设输入的图都是整理好的，相关的工具有如下几种：</p>
+<ul>
+<li><p>Cytoscape</p>
+</li>
+<li><p>Gephi</p>
+</li>
+<li><p>Graphviz</p>
+</li>
+</ul>
+<h3 id="Wrangling-Tabular-Data"><a href="#Wrangling-Tabular-Data" class="headerlink" title="Wrangling Tabular Data"></a>Wrangling Tabular Data</h3><ul>
+<li><p>商业化软件有：</p>
+<ul>
+<li>Google Refine (OpenRefine)</li>
+<li>Data Wrangler (Trifacta Wrangler)</li>
+<li>Microsoft Excel</li>
+</ul>
+</li>
+<li><p>与图可视化相关的有：</p>
+<ul>
+<li><p>D-Dupe: An Interactive Tool for Entity Resolution in Social Networks</p>
+<p>利用图可视化来检测数据中的潜在重复值（potential duplicates）</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/506dee586503fe6f05ab94c50ce68e74cdeab92d.png" alt="1569218007041"></p>
+</li>
+<li><p>Schema Mapper: Visualization of Mappings Between Schemas </p>
+<p>用图可视化来可视化两种不同数据模式之间的映射</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/9c5368d5edd7137dad04130a36639c230f227476.png" alt="1569218035108"></p>
+</li>
+<li><p>GraphCuisine: Interactive Random Graph Generation with Evolutionary Algorithms</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/d5048d3d57e318d03651cc41daecb7a2b5b43850.png" alt="1569218087740"></p>
+</li>
+<li><p>NodeXL: 一个excel的插件</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/5d38f73c530154bdf333495e261d98a97898da98.png" alt="1569218095841"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="编程脚本（Scripting-for-Graph-Wrangling）"><a href="#编程脚本（Scripting-for-Graph-Wrangling）" class="headerlink" title="编程脚本（Scripting for Graph Wrangling）"></a>编程脚本（Scripting for Graph Wrangling）</h3><ul>
+<li><p>编程库</p>
+<ul>
+<li>NetworkX</li>
+<li>Mully: An R Package to Create, Modify and Visualize Multilayered Graphs.</li>
+</ul>
+</li>
+<li><p>图数据库</p>
+<ul>
+<li>Neo4j</li>
+<li>OrientDB</li>
+<li>GraphDB</li>
+</ul>
+</li>
+</ul>
+<h3 id="图建模（Network-Modeling）"><a href="#图建模（Network-Modeling）" class="headerlink" title="图建模（Network Modeling）"></a>图建模（Network Modeling）</h3><p>图建模工具的主要目的是，从表格型数据构建图数据。</p>
+<ul>
+<li><p>商业系统</p>
+<ul>
+<li>TouchGraph Navigator</li>
+<li>Centrifuge</li>
+</ul>
+</li>
+<li><p>Orion: A system for modeling, transformation and visualization of multidimensional heterogeneous networks</p>
+<p>Jeffrey Heer 在2014年发表于Information Visualization的论文，其目的是交互性的提供一个图建模的方法，并且提供了一些图数据的可视化和交互。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/faebaea4e56c6dc334c9703348e2cc9953287444.png" alt="1569218325153"></p>
+</li>
+<li><p>Ploceus: Modeling, visualizing, and analyzing tabular data as networks</p>
+<p>Zhicheng Liu, Shamkant B Navathe and John T Stasko等人在2014年发表于Information Visualization的论文，与上面的论文类似，也是做图建模的。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/3c683923dfc332a0a18b3352de0bc279dca094d5.png" alt="1569218372781"></p>
+</li>
+<li><p>Graphiti: Interactive Specification of Attribute-based Edges for Network Modeling and Visualization</p>
+<p>ArjunSrinivasan, Hyunwoo Park, Alex Endert,Rahul C. Basole等人发表于VAST2017年的论文，它的侧重点在于如何构建点与点之间的边。当用户确定用某种关系作为构建边的关系时，会应用于全局。</p>
+</li>
+</ul>
+<h1 id="Graph-Operation"><a href="#Graph-Operation" class="headerlink" title="Graph Operation"></a>Graph Operation</h1><p>作者通过对以往的survey、工作、系统等总结的一系列任务，以及和领域专家的合作经验等，还进行了一些非正式的任务分析，总结了一套针对图数据整理的操作。作者把这些操作分成了三大类：</p>
+<ul>
+<li>模型操作 (modeling operations)：引入新的类，以修改图模型、图拓扑结构</li>
+<li><p>个体操作 (item operations)：引入/删除个体，以修改图拓扑结构</p>
+</li>
+<li><p>属性操作 (attribute operations)：管理属性/增加新属性</p>
+</li>
+</ul>
+<h3 id="模型操作-modeling-operations"><a href="#模型操作-modeling-operations" class="headerlink" title="模型操作 (modeling operations)"></a><strong>模型操作 </strong>(modeling operations)</h3><p>模型操作主要有以下几种：</p>
+<ol>
+<li><p>连接/断开 (connecting or disconnecting)</p>
+<p>指定两类节点之间应该通过什么关系连接；</p>
+</li>
+<li><p>属性提升 (promoting attributes)</p>
+<p>把某个属性提炼，单独形成节点。下图中就把类型（genre）这个属性提炼出来作为节点。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/55df2158719e7150a8eafd973adb06351babe186.png" alt="1569219069513"></p>
+</li>
+<li><p>切面 (faceting)</p>
+<p>把某种属性当成类。下图把类型这个属性当成类。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/eef570df9bcac069a11cc2496d701568cfe09a31.png" alt="1569219094243"></p>
+</li>
+<li><p>点边转化 (converting between nodes and edges)</p>
+<p>把点转化成边，或者把边转化成点。下图把电影节点转化为了边。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/12dfbab7a3d521bc5660daf95e820c81471f0a6a.png" alt="1569219133943"></p>
+</li>
+<li><p>边投影 (edge projection)</p>
+<p>可以通过某种路径，在两类不相连的节点之间构建边。比如下图通过演员-角色-电影-出品公司的关系，把演员和出品公司连在了一起（黄色边）</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/3303d8bb91941961e7a63b01a938cadf3268e93a.png" alt="1569219190612"></p>
+</li>
+<li><p>超节点 (creating supernodes)</p>
+<p>把某些点之间的共同点提炼出来作为一个新的超节点，代表这些点。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/f734a5f691c239d3602ccbda8b2a2d092a80b24b.png" alt="1569219240359"></p>
+</li>
+<li><p>卷边 (rolling up edges)</p>
+<p>多重边的聚合。</p>
+</li>
+</ol>
+<h3 id="个体操作-item-operations"><a href="#个体操作-item-operations" class="headerlink" title="个体操作 (item operations)"></a>个体操作 (item operations)</h3><p>个体操作主要有两种：</p>
+<ul>
+<li><p>属性过滤 (filtering by attributes)</p>
+<p>根据属性值，移除特定的节点/边</p>
+</li>
+<li><p>连通性过滤 (connectivity-based filtering)</p>
+<p>利用网络的连通性来过滤节点/边。ex. 过滤所有没有出演过任何电影的演员，身价却超过100万的。</p>
+</li>
+</ul>
+<h3 id="属性操作-attribute-operations"><a href="#属性操作-attribute-operations" class="headerlink" title="属性操作 (attribute operations)"></a>属性操作 (attribute operations)</h3><ul>
+<li><p>类内属性推导 (deriving in-class attributes)</p>
+<p>ex. 出生日期，死亡日期 推导出 年纪</p>
+</li>
+<li><p>连通性相关属性推导 (connectivity-based attribute derivation)</p>
+<p>通过相连的类来推导节点/边的属性</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/e433dba958df4449e9ff1bdea4e438cce62d239a.png" alt="1569219416375"></p>
+</li>
+<li><p>改变边的方向性 (changing edge directionality)</p>
+<p>有向边的转换，或者把有向边转化为无向边。</p>
+</li>
+</ul>
+<h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/6dd3d6447b77277190099538eb06e777857b0475.png" alt="1569219457269"></p>
+<p>其中包含三大View：</p>
+<ul>
+<li><p>Network Model View: 展示节点/边之间的关系，</p>
+</li>
+<li><p>Attribute View: 展示节点/边的属性，执行属性相关操作</p>
+</li>
+<li><p>Network Sample View: 展现网络现状的preview</p>
+</li>
+</ul>
+<h3 id="网络模型视图（Network-Model-View）"><a href="#网络模型视图（Network-Model-View）" class="headerlink" title="网络模型视图（Network Model View）"></a>网络模型视图（Network Model View）</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/a3e90cfb5f2ef3395fae47c9a9d57dab8f40e795.png" alt="1569219498059"></p>
+<p>节点用圆形编码，类别用菱形编码，数量用数字表示，边的一节保持水平（保证label可读）。</p>
+<p>它提供了包括以下几种的操作：</p>
+<ul>
+<li>连接/断开 (connecting or disconnecting)</li>
+<li>点边转化 (converting between nodes and edges)</li>
+<li>边投影 (edge projection)</li>
+<li>改变边的方向性 (changing edge directionality)</li>
+</ul>
+<h3 id="属性视图-Attribute-View"><a href="#属性视图-Attribute-View" class="headerlink" title="属性视图 (Attribute View)"></a>属性视图 (Attribute View)</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/7cb4a7e04332f193a96029b95654d100ecf394fa.png" alt="1569219601816"></p>
+<p>提供了很多关于属性的操作，包括：</p>
+<ul>
+<li>属性提升 (promoting attributes)</li>
+<li>切面 (faceting)</li>
+<li>属性过滤 (filtering by attributes)</li>
+<li>连通性过滤 (connectivity-based filtering)</li>
+<li>类内属性推导 (deriving in-class attributes)</li>
+<li>连通性相关属性推导 (connectivity-based attribute derivation)</li>
+</ul>
+<h3 id="网络采样视图-Network-Sample-View"><a href="#网络采样视图-Network-Sample-View" class="headerlink" title="网络采样视图 (Network Sample View)"></a>网络采样视图 (Network Sample View)</h3><p>用采样后的网络，展示当前状态。其中采用了深度优先采样方法：A Survey and Taxonomy of Graph Sampling。作者对该方法做了一些改进，平衡了不同类之间的采样，用户可以自由选择节点/边作为种子。</p>
+<h3 id="操作视图-Operation-Views"><a href="#操作视图-Operation-Views" class="headerlink" title="操作视图 (Operation Views)"></a>操作视图 (Operation Views)</h3><h4 id="Connection-Support-Interface"><a href="#Connection-Support-Interface" class="headerlink" title="Connection Support Interface"></a>Connection Support Interface</h4><p>主要用于提供连接操作。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/41ac17fcde21252e5ba551d308ba57c14fb26a1a.png" alt="1569219995252"></p>
+<p>它会计算一个分数，来推荐哪些关系相连可以作为边。</p>
+<script type="math/tex; mode=display">
+\operatorname{score}_{n, m}=\sum_{c l a s s \in\{s r c, t r g\}} \frac{\sum_{i t e m \in \text {class}}\left\{\frac{1}{d e g_{n, m}(\text {item})},\text { if } \operatorname{deg}_{n, m}(\text {item})>0\right.}{|class|}</script><p>这个分数，会让那种有一对一匹配的关系有更高的分数。当如果两类节点能通过某种关系进行1对1匹配，没有多也没有少时，这个关系的score将会是2；而如果没有任何的匹配，这种关系的score将会是-2。</p>
+<h4 id="Path-Based-Operations"><a href="#Path-Based-Operations" class="headerlink" title="Path-Based Operations"></a>Path-Based Operations</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/7aebaae16b48d66fe99f8daf1665f8e74add188d.png" alt="1569220095085"></p>
+<p>主要提供以下操作：</p>
+<ul>
+<li>边投影 (edge projection)</li>
+<li>连通性过滤 (connectivity-based filtering)</li>
+<li>连通性相关属性推导 (connectivity-based attribute derivation)</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

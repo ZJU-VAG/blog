@@ -1,0 +1,190 @@
+---
+title: "Real-time Personalization using Embeddings for Search Ranking at Airbnb"
+tags: ["论文评述", "报告"]
+date: 2019-08-21
+author: 刘一璟
+mathjax: true
+---
+
+
+
+这篇文章提出了对产品页面(listing)以及用户的嵌入技术，用于实时个性化搜索排序与相似产品页面推荐中。所使用的嵌入模型为Airbnb的市场量身打造，能够捕捉客户的短期及长期兴趣，生成有效的主页列表推荐。
+
+## 引言
+
+Airbnb成立于2008年8月，总部设在美国加州旧金山市。Airbnb是一个旅行房屋租赁社区，用户可通过网络或手机应用程序发布、搜索度假房屋租赁信息并完成在线预定程序。
+
+随着可搜集数据数量的增大，机器学习算法在信息检索领域的使用频率逐渐上升。
+
+在不同的平台，对搜索算法有着不同的要求。在双边市场中，我们通常需要对双方的搜索结果都进行优化，即买卖双方。
+
+对于Airbnb，优化房客与租客双方的搜索结果的需求很明确，给定一个地点和旅行日期，我们需要排出一个高分产品页，其位置、价格、类型、评论等等都要使租客感兴趣，同时对于房客的旅行时长与交货时间偏好也要进行较好匹配。进一步，也要给出较次的候选产品页面。
+
+ 这里使用了Lambda Rank模型(Christopher J Burges, Robert Ragno, and Quoc V Le. 2011. Learning to rank with non-smooth cost functions. In Advances in NIPS 2007.)的变型.
+
+同时也利用了用户在搜索阶段的操作行为（如点击多个产品页面、跳过高排名产品等），来度量租客对当前给出候选列表的满意程度，文章中从搜索阶段学习对产品页面进行低维嵌入来完成上面的度量。
+
+本文中还进行另一种形式的嵌入来捕捉用户长期的兴趣，使用用户的订单信息进行嵌入。但由于airbnb市场的特殊性，用户的订单在时间上较稀疏，文章中对用户类型进行嵌入而不是用户个体，且与产品页面嵌入在同一空间中进行，便于度量两者的相似性。
+
+主要创新贡献如下：、
+
+* 实时个性化定制：大部分使用嵌入的相关工作是离线地创建推荐，然后需要时再呈现出来。本工作以在线机制对用户最近的交互物品进行嵌入，并生成排序推荐。
+* 对聚集式搜索的学习调整：用户高频率地在某个特定市场搜索（如巴黎），在进行负采样时将这点考虑进嵌入训练算法中。
+* 使用成交单作为全局语境：在学习产品页面嵌入时总会将其放入训练样本中。
+* 用户类型嵌入：在许多应用场景，单个用户的数据常常不足以训练得到其良好嵌入，并且用户嵌入的储存和计算需要许多存储空间。这里仅对用户的类型进行嵌入，同个类型的用户群体拥有相同嵌入表示。
+* 拒绝作为显式负作用：为了减少订单最终被房客拒绝的推荐，在学习房客偏好与产品页面嵌入时，拒绝将对其造成显式的负作用。
+
+## 相关工作
+
+在最近的研究中，嵌入的技术从词语表示拓展到NLP领域以外的应用中，对于网络搜索、电子商务与市场领域的研究者，正如将句子中的词汇序列作为词嵌入的训练语境，也可以将用户的操作进行嵌入。
+
+例如被点击或付款的物品、被点击的广告或咨询等等。
+
+Mihajlo Grbovic, Vladan Radosavljevic, Nemanja Djuric, Narayan Bhamidipati, Jaikit Savla, Varun Bhagwan, and Doug Sharp. 2015. E-commerce in your inbox: Product recommendations at scale. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.
+
+Mihajlo Grbovic, Nemanja Djuric, Vladan Radosavljevic, Fabrizio Silvestri, Ricardo Baeza-Yates, Andrew Feng, Erik Ordentlich, Lee Yang, and Gavin Owens. 2016. Scalable semantic matching of queries to ads in sponsored search advertising. In SIGIR 2016. ACM, 375–384.
+
+从这之后，嵌入就被用于网络的各种推荐中，包括音乐推荐、工作搜索，应用、电影推荐等等。
+
+Dongjing Wang, Shuiguang Deng, Xin Zhang, and Guandong Xu. 2016. Learning music embedding with metadata for context aware recommendation. In Proceedings of the 2016 ACM on International Conference on Multimedia Retrieval.
+
+Krishnaram Kenthapadi, Benjamin Le, and Ganesh Venkataraman. 2017. Personalized Job Recommendation System at LinkedIn: Practical Challenges and Lessons Learned. In Proceedings of the Eleventh ACM Conference on Recommender Systems. ACM, 346–347.
+
+Vladan Radosavljevic, Mihajlo Grbovic, Nemanja Djuric, Narayan Bhamidipati, Daneo Zhang, Jack Wang, Jiankai Dang, Haiying Huang, Ananth Nagarajan, and Peiji Chen. 2016. Smartphone app categorization for interest targeting in advertising marketplace. In Proceedings of the 25th International Conference Companion on World Wide Web. International World Wide Web Conferences Steering Committee, 93–94.
+
+Oren Barkan and Noam Koenigstein. 2016. Item2vec: neural item embedding for collaborative filtering. In Machine Learning for Signal Processing (MLSP), 2016 IEEE 26th International Workshop on. IEEE, 1–6.
+
+更进一步，用户交互的物品被表明可以直接嵌入到进行用户嵌入的特征空间中，如此可以直接地进行用户-物品推荐。
+
+Nemanja Djuric, Vladan Radosavljevic, Mihajlo Grbovic, and Narayan Bhamidipati. 2014. Hidden conditional random fields with distributed user embeddings for ad targeting. In IEEE International Conference on Data Mining.
+
+Mihajlo Grbovic, Vladan Radosavljevic, Nemanja Djuric, Narayan Bhamidipati, and Ananth Nagarajan. 2015. Gender and interest targeting for sponsored post advertising at tumblr. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM, 1819–1828.
+
+另一种方法便于冷启动推荐，即仍然使用文本嵌入并利用物品及用户的数据（标题与描述）去计算它们的嵌入。
+
+Ting Chen, Liangjie Hong, Yue Shi, and Yizhou Sun. 2017. Joint Text Embedding for Personalized Content-based Recommendation. In arXiv preprint arXiv:1706.01084.
+
+最后，在社交网络分析中相似的拓展嵌入技术被提出，图结构中的节点嵌入可以用图上随机游走进行学习。
+
+Aditya Grover and Jure Leskovec. 2016. node2vec: Scalable feature learning for networks. In Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining. ACM, 855–864.
+
+嵌入技术对学界工业界都有着较大影响，最近的工业会议以及演讲表明在主要网络公司中这项技术被成功应用于个性化定制、推荐以及排序引擎。
+
+Facebook: Ledell Wu, Adam Fisch, Sumit Chopra, Keith Adams, Antoine Bordes, and Jason Weston. 2017. StarSpace: Embed All The Things! arXiv preprint arXiv:1709.03856.
+
+Yahoo: Dawei Yin, Yuening Hu, Jiliang Tang, Tim Daly, Mianwei Zhou, Hua Ouyang, Jianhui Chen, Changsung Kang, Hongbo Deng, Chikashi Nobata, et al. 2016. Ranking relevance in yahoo search. In Proceedings of the 22nd ACM SIGKDD.
+
+## 方法
+
+分为两个不同的方法，即短期实时个性化的产品页面嵌入，以及长时个性化的用户类型及铲平类型嵌入。
+
+### 产品页面嵌入
+
+训练的目标函数如下，实际上与Word2Vec中使用的skip-gram model相同：
+$$
+\mathcal{L}=\sum_{s \in \mathcal{S}} \sum_{l_{i} \in s}\left(\sum_{-m \geq j \leq m, i \neq 0} \log \mathbb{P}\left(l_{i+j} | l_{i}\right)\right)\tag{1}
+$$
+这里$s=\left(l_{1}, \dots, l_{M}\right) \in \mathcal{S}$是由用户交互产生的产品页面元组，条件概率是如下定义的：
+$$
+\mathbb{P}\left(l_{i+j} | l_{i}\right)=\frac{\exp \left(\mathbf{v}_{l_{i}}^{\top} \mathbf{v}_{l_{i+j}}^{\prime}\right)}{\sum_{l=1}^{|\mathcal{V}|} \exp \left(\mathbf{v}_{l_{i}}^{\top} \mathbf{v}_{l}^{\prime}\right)}\tag{2}
+$$
+对(1)进行极大化的优化，能够使有相似语境的产品页面拥有相似的表示。
+
+同时为了减少对(1)式梯度的计算复杂度，这里仍然沿用了skip-gram model中方法，负采样方法。具体来说会生成正样本对集$\mathcal{D}_{p}$(用户产生)，以及负样本对集$\mathcal{D}_{n}$(随机产生)，目标函数变为如下形式：
+$$
+\underset{\theta}{\operatorname{argmax}} \sum_{(l, c) \in \mathcal{D}_{p}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{l}}}+\sum_{(l, c) \in \mathcal{D}_{n}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{l}}}\tag{3}
+$$
+**将成功预订的产品页面作为全局语境**
+
+用户交互阶段产生的集合$\mathcal{S}$可以分为：
+
+1. 预定阶段，即以用户预订某个产品为结束的交互阶段
+2. 探索阶段，即用户仅仅是浏览产品，并没有进行预订
+
+预定阶段可以用于预测用户最终预订产品，在此阶段更新规则变为：
+$$
+\underset{\theta}{\operatorname{argmax}} \sum_{(l, c) \in \mathcal{D}_{p}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{l}}}+\sum_{(l, c) \in \mathcal{D}_{n}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{l}}}+\log \frac{1}{1+e^{-v_{l}^{\prime} v_{l}}}\tag{4}
+$$
+探索阶段的优化目标不变。
+
+![1565858254818.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566460844684-0fcc5083-4ed0-408c-84d9-5c74b064ac0a.png)
+
+**对集中搜索调整训练**
+
+用户使用时常常只搜索单个市场，$\mathcal{D}_{\boldsymbol{P}}$包含的产品页面大多都仅来自一个市场，而由于$\mathcal{D}_{n}$的随机性其产品页面几乎与该市场不同。这种不平衡在实践中导致了嵌入无法很好表示同市场产品的相似性，故进行了如下调整：
+$$
+\begin{aligned} \underset{\theta}{\operatorname{argmax}} & \sum_{(l, c) \in \mathcal{D}_{p}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{l}}}+\sum_{(l, c) \in \mathcal{D}_{n}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{l}}} \\ &+\log \frac{1}{1+e^{-v_{l}^{\prime} v_{l}^{v} l}}+\sum_{\left(l, m_{n}\right) \in \mathcal{D}_{m_{n}}} \log \frac{1}{1+e^{v_{m_{n}}^{\prime} v_{l}}} \end{aligned}\tag{5}
+$$
+这里$\mathcal{D}_{m_{n}}$从与$l$相同市场中对产品抽样产生。
+
+**冷启动产品嵌入**
+
+在Airbnb每天新的产品页面都会由房主发布，但是并不存在对这些新页面的嵌入，这里利用已有嵌入来生成其嵌入，方式如下：
+
+在10英里内寻找3个地理位置最近、拥有嵌入的产品，并且拥有相同产品类型（如私人房间）、属于相同价格区间，然后使用三个嵌入的平均作为新嵌入。
+
+这一方法能够覆盖超过98%的新产品页面。
+
+**检验产品页面嵌入**
+
+![1565860902189.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566460894127-d541989f-24e8-4a42-b1b7-0cbbd966f016.png)
+
+这里使用式子(5)对8忆交互阶段数据进行32维的嵌入，图二是k均值聚类(100类)的结果，这表明嵌入较好地表示了地理位置的相似性
+
+![1565861306575.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566460941747-5b7c999b-08d5-432f-bd5b-45aad0dcb9b8.png)
+
+对产品结构、风格与体验等更难以表示的特征也进行了检验：
+
+![1565870215845.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566460964494-3cc214c9-d9e6-4658-87b2-de4d50eb5aca.png)
+
+为了简单快速地探索产品页面嵌入空间，本工作还研发了一个内部相似探索工具：
+
+![1565870451953.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566460976677-6ffb17a7-1411-4b24-aa9c-c126ee90d66a.png)
+
+### 用户类型与产品类型嵌入
+
+对于个性化定制，用户长时间的偏好特征也同样很有价值。尽管跨市场的相似性在先前部分的训练中被捕捉到了一部分，特定用户长时间的预订习惯更容易学习到这种相似性。但由于单个用户数据较少、时间跨度长的问题，这里以基于规则的方式对产品类型、用户类型进行编码，如下面表格所示，其中的区间划分由数据决定以最大化每个区间的涵盖数量。
+
+![1565873275663.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566460999139-06e1141d-f44d-4aef-a5d2-a38348c9d04f.png)
+
+两者的嵌入是在同一个特征空间进行的。
+
+首先将$N$个用户的预订数据按时间顺序分别形成$s_{b}=\left(u_{t y p e_{1}} l_{t y p e_{1}}, \ldots, u_{t y p e_{M}} l_{t y p e_{M}}\right) \in \mathcal{S}_{b}$形式的序列，这里指出相同用户的用户类型有可能随时间改变。
+
+目标函数类似(3)式中的定义
+$$
+\underset{\theta}{\operatorname{argmax}} \sum_{\left(u_{t}, c\right) \in \mathcal{D}_{b o o k}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{u_{t}}}}+\sum_{\left(u_{t}, c\right) \in \mathcal{D}_{n e g}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{u t}}}\tag{6}
+$$
+计算过程如下图示意
+
+![1565875683975.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566461032456-ecfe3096-5218-4227-b850-b20f0e5b9d75.png)
+
+**将拒绝作为显式负**
+
+交互阶段仅反映了用户的偏好，预定阶段则同时反映了商家的偏好，将拒绝订单的信息融合到训练过程中，将减少导致拒绝的推荐。
+$$
+\underset{\theta}{\operatorname{argmax}} \sum_{\left(u_{t}, c\right) \in \mathcal{D}_{b o o k}} \log \frac{1}{1+\exp ^{-v_{c}^{\prime} v_{u_{t}}}}+\sum_{\left(u_{t}, c\right) \in \mathcal{D}_{n e g}} \log \frac{1}{1+\exp ^{v_{c}^{\prime} v u_{t}}}+\sum_{\left(u_{t}, l_{t}\right) \in \mathcal{D}_{\text {reject}}} \log \frac{1}{1+\exp ^{\mathrm{v}_{l_{t}}^{\prime} \mathrm{v}_{u_{t}}}}\tag{7}
+$$
+下面给出了利用用户类型嵌入进行推荐的例子：
+
+![1565877047111.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566461067917-70f3ecfa-48c1-433b-bf30-109abd0b8791.png)
+
+## 实验
+
+### 产品页面嵌入的离线评估
+
+给定最近的交互产品页面与需要排序的产品候选，其中包含用户最终预订的产品。我们可以计算交互的产品页面与候选产品间的余弦相似度，对候选产品进行排序、观察最终预订产品的位次。
+
+![1565936835749.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566461077095-9b23a529-3629-4164-8086-811743400e43.png)
+
+### 使用嵌入寻找相似产品
+
+对airbnb现有的相似产品算法与新的基于嵌入的方法进行A/B测试，该测试在线上进行并且是并发式的。
+
+A/B测试显示基于嵌入的方法提高了相似推荐列表21%的点击通过率。
+
+提高了4.9%相似推荐列表中产品被最终预订的比例。、
+
+### 使用嵌入进行搜索排序
+
+![1565942518060.png](https://cdn.nlark.com/yuque/0/2019/png/416994/1566461095778-0627c1b5-edf4-4739-831f-1626e11f8cdf.png)
