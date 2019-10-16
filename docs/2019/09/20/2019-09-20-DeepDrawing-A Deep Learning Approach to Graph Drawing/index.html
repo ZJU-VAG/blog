@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        DeepDrawing: A Deep Learning Approach to Graph Drawing - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-简介"><span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-相关工作"><span class="toc-text">2. 相关工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-算法与模型"><span class="toc-text">3. 算法与模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题定义"><span class="toc-text">问题定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模型设计"><span class="toc-text">模型设计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-实验"><span class="toc-text">4. 实验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        DeepDrawing: A Deep Learning Approach to Graph Drawing
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-09-20 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-09-20</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#胡元哲"
+                title="胡元哲">胡元哲</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>作者：Yong Wang, Zhihua Jin, Qianwen Wang, Weiwei Cui, Tengfei Ma and Huamin Qu</p>
+<p>本文发表于VIS2019, 来自于香港科技大学的可视化小组(屈华民教授领导)的研究</p>
+<h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>图数据广泛用于各个领域，例如生物信息学，金融和社交网络分析。在过去的五十年中，已经提出了许多图布局算法，来满足所需的视觉要求，例如更少的边缘交叉，更少的节点遮挡以及更好的聚团保护。传统的图布局算法大致可以分为两个方向：基于弹簧，能量模型和基于降维模型。当用户使用特定的图布局时，取得好的可视化效果往往需要许多参数的实验，对于没有相关经验的用户来说，是一个不小的挑战。由于特定于算法的参数和布局效果通常取决于输入的图结构，因此我们考虑是否可以使用<strong>深度学习</strong>来学习别人的布局算法。</p>
+<p>这个问题有以下三个挑战：</p>
+<ol>
+<li>模型选择: 图布局算法不同与普通的分类问题，它的输入是复杂的图结构，输出是点的坐标(不定长二维数组)。</li>
+<li>损失函数设计: 图布局的结果很难判断好坏(很多时候是主观的印象)，除此之外，图布局通过旋转和放缩之后，依然具有相同的结构。</li>
+<li>训练数据的缺少：不同于图像领域有 Imagenet, MNIST 等数据集，图布局算法并没有这方面的数据集</li>
+</ol>
+<p>本文提出一种<strong>基于graph-LSTM的方法来直接根据输入图的拓扑结构生成图布局结果</strong>。本文使用广度优先搜索(BFS)将图拓扑信息转换为一系列邻接矩阵，其中每个子向量对序列中每个节点及其相邻节点之间的连接信息进行编码。还提出了一种基于Prostats Statistics的损失函数，该函数对于图的平移，旋转和缩放基本上是不变的，以此评估学习质量并指导模型训练。在训练过程中，使用了三种图数据集(网格图，星形图和随机图)。</p>
+<h3 id="2-相关工作"><a href="#2-相关工作" class="headerlink" title="2. 相关工作"></a>2. 相关工作</h3><ul>
+<li>传统的图布局算法大致可以分为两个方向：基于弹簧，能量模型和基于降维模型。基于弹簧，能量模型最著名的有力引导模型，ForceAtlas等。基于降维有PivotMDS以及tsNET等算法。除此之外还有一些基于层次布局和空间索引树的优化，比如FM3算法。</li>
+<li>图神经网络被用于各种图相关学习的研究，过去基于谱(Spectral)卷积的算法往往只能用于固定结构的图数据研究，除了谱卷积之外，非谱方法还可以直接在图上进行卷积,此类算法将节点的邻域定义为传入范围，并且提出了各种方法，例如Semi-Supervised Classification with Graph Convolutional Networks等。他们大多应用于点预测，边预测，与本文的任务还是有所区别。</li>
+<li>已有一些研究将深度学习，机器学习应用到图布局当中，比如Kwon et al.(VIS 2017)提出了一种机器学习方法,为用户提供了图布局的快速预览，并使用了图的拓扑结构信息来计算不同图结构之间的相似度。H. Haleem et al.提出了基于神经网络的方法来评估图布局绘制结果。</li>
+</ul>
+<h3 id="3-算法与模型"><a href="#3-算法与模型" class="headerlink" title="3. 算法与模型"></a>3. 算法与模型</h3><h4 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h4><ul>
+<li><p>图布局算法的输入是$G=(V,E) \quad V=\{v_{1},v_{2}…v_{n}\} \quad E\subseteq V \times V $，输出是$C = \{c_{v}|v ∈ V\}$, 其中$c_v$属于二维向量。</p>
+</li>
+<li><p>传统的图布局算法考虑不同的评价标准来设计算法，在本文中，我们将图布局算法转化为学习问题，一旦成功训练了深度学习模型，当给定一个新图数据，它就可以自动分析图结构并直接生成一个带有训练数据特性的布局效果。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/f384984b9910b33e6bf47e6adc2a86a775a86b68.png" width="400px"></p>
+</li>
+</ul>
+<h4 id="模型设计"><a href="#模型设计" class="headerlink" title="模型设计"></a>模型设计</h4><ul>
+<li>由于图布局的输出是一个不定长的二维数组，cv领域常用的CNN网络并不适用于此类问题，第一CNN网络无法处理图数据的输入，其次CNN网络的输出一般是一个定长的数组。</li>
+<li>本文使用LSTM(长短期记忆)作为基础模型，LSTM是RNN(循环神经网络)的变种，一开始用于自然语言处理方向。 他可以同时参考过去网络中的最新信息以及较久的信息。我们可以使用点的特征序列作为输入向量，顺序输出每个点的二维坐标。LSTM的结构和公式如下图所示, $c_{t-1}, h_{t-1}, x_{t}$是他的输入，$h_{t}, c_{t}$是他的输出。</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/d969596e0318478e07be984da2443be49f8a4060.png" width="400px"></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/3c79d0e94fb86171d9fe1bacbb73ac2edecb2088.png" width="300px"></p>
+<ul>
+<li>但是这样的方案并没有考虑到图中边的信息，所以参考skip-connection的技术，可以对于LSTM网络进行改进，将边作为两个神经元之间的联系，如下图所示，其中$P(t)$表示该点的领域， 和标准LSTM的主要区别在于，本文的模型进一步考虑了图中边的信息。除此之外本文还使用了双向LSTM的技术，使其能更全面考虑所有点对某个点的贡献。</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/5f93fbb6b88654dfc231606f09e1e1bb41f21e60.png" width="400px"></p>
+<ul>
+<li>所以本文的模型如下所示。输入点的顺序是图的BFS(广度优先搜索)序列，每个节点都由一个邻接向量表示，该向量编码了与先前节点的连接情况。 黄色的虚线箭头传播了先前节点对后续节点图形的总体影响，而弯曲的绿色箭头（图的边）反映了实际的图结构，为了生成最终的2D节点布局，还考虑前后的信息(双向LSTM)。</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/0d3ea543834884c0a58502fd259f3b203a381dbe.png"></p>
+<ul>
+<li>本文还对于loss function进行了重新的设计, 考虑了旋转，放缩不变性等原理。基于Prostats Statistics提出了一种损失函数。</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/e4fb2574091c12120e4ba0991e330755b7c1b59a.png" width="400px"></p>
+<h3 id="4-实验"><a href="#4-实验" class="headerlink" title="4. 实验"></a>4. 实验</h3><ul>
+<li>本文设计了三种不同的图数据：网格，星形，随机网络，使用PivotMDS 和 ForceAtlas2算法生成布局结果，并对于数据集进行了训练，验证，测试集的划分。总共有30000以上的数据行，每个数据在20-50点左右。</li>
+<li>通过实验发现，双向4层LSTM具有较好的效果, 将其作为和本算法比较的baseline。实验中，在三种数据集上分别训练baseline 和 本文算法，将输入向量定为35的长度。其中随机网络的可视化如下所示。</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/2324bd63969d6041b5558a6814a7f2a565347781.png"></p>
+<ul>
+<li>本文还从Prostats loss(模型loss)，边交叉($A_{ec}$)，点聚集($A_{no}$)，聚团覆盖($A_{co}$)，运行时间这几个指标进行了评估，实验结果如下所示。左上模型loss，右上运行时间，下面是剩余三种指标。</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/8be1216591bbed5bfe7c464410b40c4044b645a5.png"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文从结构来看非常完整，工作量也很足。但还是有很多不足之处，比如：生成输入向量的算法依然不稳定，只在小数据(20-50点)work，模型无法解释，学习不同的布局数据需要重新训练等问题。作者也提出了要把算法改进到大规模图数据上的设想，除此之外作者提出能否将方法应用到动态图当中。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

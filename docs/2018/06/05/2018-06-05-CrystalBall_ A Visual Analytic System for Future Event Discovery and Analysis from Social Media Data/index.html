@@ -106,7 +106,7 @@
     </div>
     
     <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-介绍"><span class="toc-text">1. 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-处理与提取未来事件数据"><span class="toc-text">2. 处理与提取未来事件数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-可视化界面"><span class="toc-text">3. 可视化界面</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#按时间轴检索"><span class="toc-text">按时间轴检索</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#按地点检索"><span class="toc-text">按地点检索</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-样例验证"><span class="toc-text">4. 样例验证</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-缺陷与未来工作"><span class="toc-text">5. 缺陷与未来工作</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-介绍"><span class="toc-text">1. 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-处理与提取未来事件数据"><span class="toc-text">2. 处理与提取未来事件数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-可视化界面"><span class="toc-text">3. 可视化界面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#按时间轴检索"><span class="toc-text">按时间轴检索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按地点检索"><span class="toc-text">按地点检索</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-样例验证"><span class="toc-text">4. 样例验证</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-缺陷与未来工作"><span class="toc-text">5. 缺陷与未来工作</span></a></li></ol>
 </div>
     
 </div>
@@ -190,7 +190,7 @@
 <p><strong>推特相似性</strong>：但是并不是所有推文都有@和转发相关联。该指标计算了每篇推文的相似性</p>
 <p>现在已经提出了未来事件的7个指标。下一步是结合这些措施来评估已确定的未来事件的质量。论文希望对事件进行排名，以便CrystalBall首先直观地表示高质量的事件。</p>
 <p><strong>RankSVM进行排序</strong>。为了训练RankSVM，论文开发了一个标签数据集，其中包含三天内提取的未来事件（约1000个事件）。作者将事件分为了5个类别。标注决定表明更加重视地缘政治和基层性质的事件。使用标记的数据集来训练RankSVM，训练出一个可应用于无标签事件排序的模型。</p>
-<h1 id="3-可视化界面"><a href="#3-可视化界面" class="headerlink" title="3. 可视化界面"></a>3. 可视化界面</h1><h5 id="按时间轴检索"><a href="#按时间轴检索" class="headerlink" title="按时间轴检索"></a>按时间轴检索</h5><p>我们从整个时间轴进行查看。下图每行是一个日期，表示当天所可能发生的事件，实线连接的是有相同的地点的事件。虚线连接的是具有同样的关键词的事件。每个事件都有自己的颜色，颜色代表整个事件的感情属性，而颜色的深浅表达了置信度。</p>
+<h1 id="3-可视化界面"><a href="#3-可视化界面" class="headerlink" title="3. 可视化界面"></a>3. 可视化界面</h1><h2 id="按时间轴检索"><a href="#按时间轴检索" class="headerlink" title="按时间轴检索"></a>按时间轴检索</h2><p>我们从整个时间轴进行查看。下图每行是一个日期，表示当天所可能发生的事件，实线连接的是有相同的地点的事件。虚线连接的是具有同样的关键词的事件。每个事件都有自己的颜色，颜色代表整个事件的感情属性，而颜色的深浅表达了置信度。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/Screen-Shot-2018-05-17-at-11.51.21-PM.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/Screen-Shot-2018-05-17-at-11.51.21-PM.png" alt="img"></a></p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/Screen-Shot-2018-05-18-at-4.30.20-PM.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/Screen-Shot-2018-05-18-at-4.30.20-PM.png" alt="img"></a></p>
 <p>除此之外我们可以点击某个日期，进入当日的事件界面，如下图所示：</p>
@@ -200,7 +200,7 @@
 <li>C图中，未来事件中的关键词，D按钮可以用来收藏</li>
 </ol>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/Screen-Shot-2018-05-18-at-4.47.53-PM.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/Screen-Shot-2018-05-18-at-4.47.53-PM.png" alt="img"></a></p>
-<h5 id="按地点检索"><a href="#按地点检索" class="headerlink" title="按地点检索"></a>按地点检索</h5><p>A图中可以放缩不同尺寸的地点，中间的数字表示的是事件数，不同深浅表达了在不同时间点内的事件。</p>
+<h2 id="按地点检索"><a href="#按地点检索" class="headerlink" title="按地点检索"></a>按地点检索</h2><p>A图中可以放缩不同尺寸的地点，中间的数字表示的是事件数，不同深浅表达了在不同时间点内的事件。</p>
 <p>B图中当我们点击华盛顿城市，会跳出关系该城市的事件映像。</p>
 <p>除此之外还有词云界面，关系网界面，这里不再赘述，有兴趣的读者可以自行去论文查看</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/Screen-Shot-2018-05-18-at-5.59.02-PM.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/Screen-Shot-2018-05-18-at-5.59.02-PM.png" alt="img"></a></p>
