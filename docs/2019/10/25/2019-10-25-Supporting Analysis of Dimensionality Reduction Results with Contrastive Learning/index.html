@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Supporting Analysis of Dimensionality Reduction Results with Contrastive Learning - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#挑战"><span class="toc-text">挑战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贡献"><span class="toc-text">贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#探索降维结果的可视化方法"><span class="toc-text">探索降维结果的可视化方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#InfoVis2015-Probing-Projections-Interaction-Techniques-for-Interpreting-Arrangements-and-Errors-of-Dimensionality-Reductions"><span class="toc-text">(InfoVis2015) Probing Projections: Interaction Techniques for Interpreting Arrangements and Errors of Dimensionality Reductions</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判别分析"><span class="toc-text">判别分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2017-Linear-Discriminative-Star-Coordinates-for-Exploring-Class-and-Cluster-Separation-of-High-Dimensional-Data"><span class="toc-text">(2017) Linear Discriminative Star Coordinates for Exploring Class and Cluster Separation of High Dimensional Data</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对比学习"><span class="toc-text">对比学习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析流程"><span class="toc-text">分析流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cPCA"><span class="toc-text">cPCA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ccPCA"><span class="toc-text">ccPCA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相对贡献"><span class="toc-text">相对贡献</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统界面"><span class="toc-text">系统界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例分析"><span class="toc-text">案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#案例一"><span class="toc-text">案例一</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Supporting Analysis of Dimensionality Reduction Results with Contrastive Learning
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-10-25 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-10-25</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#潘如晟"
+                title="潘如晟">潘如晟</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p><img src="https://i.loli.net/2019/10/25/csu5ql3QaYVHXBp.jpg" alt></p>
+<ul>
+<li>可视化中对于经常遇到的高维数据往往需要对其降维和聚类，来进行理解。然而实际上，对于复杂或是专业领域的数据，我们并不知道为什么会得到这样的聚类结果。聚类之间划分的依据是什么？他们各自有怎样的特点？由于降维浓缩了很多信息，因此答案只能在原始数据中去找。</li>
+<li>可是这样一来就形成了一个闭环，问题出在降维之后得到结论，并不一定容易理解。对研究者而言，这样难以继续深入挖掘数据背后的含义；对读者而言，也比较晦涩，不够具备说服力。</li>
+<li>如果有一种方法可以告诉我们，每一坨聚类对应的高维数据中最与众不同的几个维度的分布。例如这里的表格数据，它的每一列就是一个 feature，我们需要知道各个聚类对应的关键 feature。这样我们就可以得知聚类的特征，从而理解聚类的背后的含义</li>
+</ul>
+<h2 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h2><ul>
+<li>理解降维数据聚类的方法方面的研究不多。</li>
+<li>现有的可以 review 原始数据的特征的方法不够 scaling，比较耗时。</li>
+</ul>
+<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><ul>
+<li>本文设计了一个可以有效高亮出降维结果的聚类中重要 feature 的可视分析流程</li>
+<li>介绍了对比-主成分分析（cPCA）的增强使用方式</li>
+<li>基于 cPCA 提出了对比聚类-主成分分析（ccPCA），用于计算每个 feature 在聚类之间的相对贡献</li>
+<li>实现了一个支持理解降维数据聚类之后的结果在 feature 中的相对贡献的交互式系统</li>
+</ul>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><h3 id="探索降维结果的可视化方法"><a href="#探索降维结果的可视化方法" class="headerlink" title="探索降维结果的可视化方法"></a>探索降维结果的可视化方法</h3><h4 id="InfoVis2015-Probing-Projections-Interaction-Techniques-for-Interpreting-Arrangements-and-Errors-of-Dimensionality-Reductions"><a href="#InfoVis2015-Probing-Projections-Interaction-Techniques-for-Interpreting-Arrangements-and-Errors-of-Dimensionality-Reductions" class="headerlink" title="(InfoVis2015) Probing Projections: Interaction Techniques for Interpreting Arrangements and Errors of Dimensionality Reductions"></a>(InfoVis2015) Probing Projections: Interaction Techniques for Interpreting Arrangements and Errors of Dimensionality Reductions</h4><p><img src="https://i.loli.net/2019/10/25/nRF2QkHDJtzvqKL.jpg" alt></p>
+<ul>
+<li><p>Workflow</p>
+<ol>
+<li>User selects the cluster in MDS</li>
+<li>Depict the correspond density plots</li>
+<li>Finish the feature comparison</li>
+</ol>
+</li>
+<li><p>Limitation</p>
+<ol>
+<li>not scalable for large number of features</li>
+</ol>
+</li>
+</ul>
+<h3 id="判别分析"><a href="#判别分析" class="headerlink" title="判别分析"></a>判别分析</h3><h4 id="2017-Linear-Discriminative-Star-Coordinates-for-Exploring-Class-and-Cluster-Separation-of-High-Dimensional-Data"><a href="#2017-Linear-Discriminative-Star-Coordinates-for-Exploring-Class-and-Cluster-Separation-of-High-Dimensional-Data" class="headerlink" title="(2017) Linear Discriminative Star Coordinates for Exploring Class and Cluster Separation of High Dimensional Data"></a>(2017) Linear Discriminative Star Coordinates for Exploring Class and Cluster Separation of High Dimensional Data</h4><p><img src="https://i.loli.net/2019/10/25/kelzg8rwFDXQvbZ.jpg" alt></p>
+<ul>
+<li><p>这篇文章用了 Star coordinates 来表示原始数据在二维空间的一个线性嵌入。右下角的 E 视图按照贡献大小对 star coordinates 的各个维度进行排序。</p>
+</li>
+<li><p>Limitation：仅适用于相互独立的 feature。assumes the features are independent to each other</p>
+</li>
+</ul>
+<h3 id="对比学习"><a href="#对比学习" class="headerlink" title="对比学习"></a>对比学习</h3><ul>
+<li>对比-主成分分析（cPCA），</li>
+<li>本文第一个使用对比学习方法来进行可视分析研究。</li>
+</ul>
+<h2 id="分析流程"><a href="#分析流程" class="headerlink" title="分析流程"></a>分析流程</h2><p><img src="https://i.loli.net/2019/10/25/rTbDtzFaZkC1vKs.jpg" alt></p>
+<p>这张图简洁的表示了文章的 analysis workflow。<br>（a）首先对高维数据应用降维方法，这里支持 MDS，PCA 和 t-SNE。<br>（b）然后再进行聚类，例如 k-means，DB-SCAN，谱聚类和手动聚类。<br>（c）接下来是对先通过 cPCA 理解聚类结果的特征。<br>（d）再分别将每个聚类作为 target 来 review 相对剩余的其他数据点之间贡献较高的 feature 值的详细差异。<br>通过（c）（d）两步，我们可以理解原始数据中的哪个 feature 是如何对每个聚类产生贡献的，在理解了所选聚类的特征之后，用户可以选择一部分感兴趣的数据点来更新降维结果和聚类，或者改变算法参数。再重复以上步骤。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="cPCA"><a href="#cPCA" class="headerlink" title="cPCA"></a>cPCA</h3><p><img src="https://i.loli.net/2019/10/25/tnyxr8JXZQ5mvHK.jpg" alt></p>
+<p>当我们拥有多个相关联的数据集或者数据集可按照某种特征来分割，我们就可以使用对比学习。<br>例如，我们可以将 patient 数据集按照是否患有某种疾病分为 X 和 Y。当用户想要挖掘 X 的 pattern，但是 Y 又包含了用户想要从 X 中去掉的结构信息。传统的 PCA 只能看出所有聚类之间的差异，但是无法单独考虑某个聚类和其他所有聚类之间的差异。所以就提出了 cPCA 这种对比 PCA 方法。</p>
+<h3 id="ccPCA"><a href="#ccPCA" class="headerlink" title="ccPCA"></a>ccPCA</h3><p><img src="https://i.loli.net/2019/10/25/jtBJPe3Al5oD4Hh.jpg" alt></p>
+<p><img src="https://i.loli.net/2019/10/25/Gu5IDa4sxVkJzbe.jpg" alt></p>
+<p>这里比较的是葡萄酒识别数据集的降维结果。四种颜色分别表示 4 类特征的白酒，这里关注绿色的类。<br>（a）使用 PCA。当 PC1 和 PC2 结合起来时，绿色分类和其他的较好的分开，但是只用 PC1 时，绿色和橘色则有重叠。<br>（b）使用 cPCA。绿色作为 target，其他的作为 background，并且通过半自动方法确定最优的 alpha，从两个主成分单独和结合来看，绿色都与其他类有较大的重叠。<br>（c）使用 ccPCA。整个数据集作为 target，除绿色之外的作为 background，通过自动方法确定 alpha。可以看出只用 PC1 的分类结果好于之前两个。</p>
+<h3 id="相对贡献"><a href="#相对贡献" class="headerlink" title="相对贡献"></a>相对贡献</h3><p><img src="https://i.loli.net/2019/10/25/TUpgh7DSeICayX3.jpg" alt></p>
+<h2 id="系统界面"><a href="#系统界面" class="headerlink" title="系统界面"></a>系统界面</h2><p><img src="https://i.loli.net/2019/10/25/Wpxb7kcTFUDCuqN.jpg" alt></p>
+<p>系统的 demo 分析了葡萄酒识别数据集。这个数据集包含了 178 种葡萄酒以及 13 中 feature，包括酒精度、色彩强烈度、黄酮含量等。<br>首先是（d）中的 panel，先使用 t-sne 降维。然后使用 DB-SCAN 对降维结果聚类。<br>接着是（a）中展示的是三种聚类，用不同颜色表示。黑色表示的是 DB_SCAN 识别出的异常点或者是噪声数据。<br>对每个聚类应用提出的 ccPCA 方法，从而得到了每个 feature 对聚类作出的贡献。贡献视图如（b）部分所示。<br>最后（c）部分表示的是各个聚类 3 个贡献绝对值最大的 feature 的直方图，可以直观的看出每个聚类的特征。这里的直方图将 target cluster 用相应的颜色表示，其余类用灰色。Y 轴表示频率的相对大小。</p>
+<h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><ul>
+<li>Tennis Major Tournament Match Statistics dataset<ul>
+<li>174 data points (tennis players)</li>
+<li>13 features (statistics)</li>
+</ul>
+</li>
+<li>Nutrient dataset<ul>
+<li>7,637 data points (foods)</li>
+<li>14 features (nutrients)</li>
+</ul>
+</li>
+<li>Communities and Crime dataset<ul>
+<li>2,215 data points (communities)</li>
+<li>143 features (statistics)</li>
+</ul>
+</li>
+</ul>
+<h3 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h3><p><img src="https://i.loli.net/2019/10/25/c1XIxdRDFZ9y4PY.jpg" alt></p>
+<p>这个数据集是 2013 年四大满贯的男子和女子的比赛统计。可以看出每个聚类都有不同的打球技术风格。</p>
+<ol>
+<li><p>the purple cluster tends to have low ‘DBF’ (双误数), high ‘BPC’ (破发数), and high ‘FNL’ (首场获胜数). 运动员发球失误率低，接发率高，从而胜率高。</p>
+</li>
+<li><p>the orange cluster has high ‘WNR’ (胜场数) and ‘NPA’ (净胜分). 运动员擅长拿下多拍回合。</p>
+</li>
+<li><p>the brown cluster has low ‘WNR’ (胜场数) but high ‘FSW’ (一发得分数) and ‘TPW’ (总得分). 擅长通过发球得分。</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>优势： 1.支持大型数据集 2.适用于非线性方法<br>不足； 1.时空复杂度高，无法实现实时处理 2.需要数据本身有较好的聚类结果</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

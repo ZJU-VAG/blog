@@ -1,5 +1,5 @@
 ---
-title: "Text-to-Viz: Automatic Generation of Infographicsfrom Proportion-Related Natural Language Statements"
+title: "Text-to-Viz: Automatic Generation of Infographics from Proportion-Related Natural Language Statements"
 tags: ["论文评述", "报告"]
 date: 2019-11-14
 author: 周舒悦
@@ -145,8 +145,3 @@ E.g. More than 76% of students find math difficult.
 	- 扩展到其他类型的文本
 	- 集成到Office这样的工具中，方便使用
 	- 尝试新的技术来提升生成结果的质量
-
-
-
-
-

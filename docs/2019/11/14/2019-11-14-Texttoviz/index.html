@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Text-to-Viz: Automatic Generation of Infographics from Proportion-Related Natural Language Statements - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#挑战"><span class="toc-text">挑战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Preliminary-Survey"><span class="toc-text">Preliminary Survey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Text-to-Viz流程"><span class="toc-text">Text-to-Viz流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文本解析"><span class="toc-text">文本解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化生成"><span class="toc-text">可视化生成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Layout-Candidates"><span class="toc-text">Layout Candidates</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Description-Candidates"><span class="toc-text">Description Candidates</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Graphic-Candidates"><span class="toc-text">Graphic Candidates</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Color-Palette-Candidates"><span class="toc-text">Color Palette Candidates</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组合候选"><span class="toc-text">组合候选</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择与修改"><span class="toc-text">选择与修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Ranking"><span class="toc-text">Ranking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户选择与修改"><span class="toc-text">用户选择与修改</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评估"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#失败的结果"><span class="toc-text">失败的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#User-Study"><span class="toc-text">User Study</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Text-to-Viz: Automatic Generation of Infographics from Proportion-Related Natural Language Statements
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-11-14 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-11-14</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#周舒悦"
+                title="周舒悦">周舒悦</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>Infographics（信息图）是”information” and “graphics”的组合单词，是对信息进行图形化的表达.信息图可以清楚地表达复杂且大量的信息，应用也非常广泛，但是制作一个信息图并不容易，这是一个很耗时的过程，并且还需要用户懂一定的设计。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/a9f81ccefbfb9bb96451d6cc5de4a944a61438a5.png" alt="Alt text"><br>要制作信息图有多个选择，可以使用专业的设计软件，也可以借助现有的一些图形化的工具，但是对于没有设计基础、且不懂软件操作的人来说，这是非常困难的。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/c45da6bc5b291a21e28d8b72b8ef5f31fb5f06ff.png" alt="Alt text"><br>因此本文提出了一个可以将比例相关的自然语言自动转化成信息图的方法，目标是不需要任何提前了解的技术，每个人都可以轻松的创建信息图。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/6b8b8da8229f86d338b97f1b71db9663abfa8155.png" alt="Alt text"></p>
+<h2 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h2><ol>
+<li>文本<ul>
+<li>如何理解输入的文本</li>
+<li>如何提取出需要可视化的信息</li>
+</ul>
+</li>
+<li>可视化<ul>
+<li>如何把文本转化为可视化元素（图标、图表、颜色、描述…）</li>
+<li>如何处理多个可视化元素的布局（空间、配色）<h2 id="Preliminary-Survey"><a href="#Preliminary-Survey" class="headerlink" title="Preliminary Survey"></a>Preliminary Survey</h2>为了更好地理解和学习infographics在现实生活中的使用，并且要为本文的系统找到一种特定的文本类型，作者做了初步的survey。具体做法是使用“Infographic”作为搜索关键词，用谷歌图片搜索下载了200个不同的结果，并按以下三点标准将其分为983个独立的信息图单元。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>至少传达一种信息</p>
+</li>
+<li><p>至少包含一个图形元素</p>
+</li>
+<li><p>视觉上和语义上一致且完整<br>基于统计结果发现，统计数据相关的占主要部分，其中，基于比例的最多，达到了45.7%。于是最终选择了基于比例的文本来作为本文系统自动可视化的输入：<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/a72f4a337965e2d2b26e1ff33b2a583c7d05da68.png" alt="Alt text"></p>
+</li>
+</ul>
+<h2 id="Text-to-Viz流程"><a href="#Text-to-Viz流程" class="headerlink" title="Text-to-Viz流程"></a>Text-to-Viz流程</h2><p>  <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/f031bc30cc368b72551cabdc5af554b5f1b8dfa0.png" alt="Alt text"></p>
+<h3 id="文本解析"><a href="#文本解析" class="headerlink" title="文本解析"></a>文本解析</h3><ol>
+<li>训练集<ul>
+<li>理解人们如何用日常的语言来表达比例相关的信息<ul>
+<li>收集了约10万份ppt，使用正则表达式匹配n%, m in n, m out of n, half of等，提取了5562句文本描述，最终采样了800句作为训练集</li>
+</ul>
+</li>
+<li>关键信息：Number, Whole, and Part<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/d5051e7c313f5ae1c39a29a2e13d9c7b6ed1d576.png" alt="Alt text"></li>
+</ul>
+</li>
+<li>具体步骤</li>
+</ol>
+<ul>
+<li><p>Tokenization 分词</p>
+</li>
+<li><p>Featurization 特征提取<br>word embedding feature,  syntactic feature, Brown clustering feature…</p>
+</li>
+<li><p>CNN + CRF layer 共同训练<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/b012a9ee439ae1c3e31718c61955183781fe948a.png" alt="Alt text"></p>
+</li>
+</ul>
+<h3 id="可视化生成"><a href="#可视化生成" class="headerlink" title="可视化生成"></a>可视化生成</h3><p>  为了更好的了解与比例相关的信息图，作者和两个专家进行了一个小时的讨论，这两名专家都是有四年以上设计经验。主要内容是作者展示一些信息图，然后讨论它们是如何从一个手稿或是想法生成的。最终总结出了四个维度的设计空间：<br>  <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/12aac9f4be4d6672b97c970d837fa362627afb3c.png" alt="Alt text"><br>  Step 1: 在每个设计维度生成一组候选<br>  Step 2: 枚举候选的组合，获取有效的信息图<br>  Step 3: 将上一步得到的结果进行评分排序，用户可以选择某一个信息图进行进一步的调整</p>
+<h4 id="Layout-Candidates"><a href="#Layout-Candidates" class="headerlink" title="Layout Candidates"></a>Layout Candidates</h4><p>  包含一组描述整体布局的模板</p>
+<ul>
+<li><p>画布的长宽比例，以及区域的划分</p>
+</li>
+<li><p>每个区域所放置的元素类型</p>
+</li>
+</ul>
+<p>经过对训练集的分析，总共生成了20组布局模板。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/48ae0c35602038733423035d7ae7859bbc30a1bf.png" alt="Alt text"></p>
+<h4 id="Description-Candidates"><a href="#Description-Candidates" class="headerlink" title="Description Candidates"></a>Description Candidates</h4><p>从文本解析模块可以得到四个字段，为了生成更多候选的文本块，还使用了stanford Parser这个nlp工具，来提取出不同长度的描述，来满足不同的layout.<br>E.g.   More than 20% of smartphone users are social network users.<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/12f8e61a39b0ca51463a5161ee68d1685d6e687e.png" alt="Alt text"></p>
+<p>Number: 20%, Whole: “of smartphone users”, “smartphone users”, Part: “are social network users”, Modifier: “more than”, After-number: “of smartphone users are social network  users”, etc.</p>
+<h4 id="Graphic-Candidates"><a href="#Graphic-Candidates" class="headerlink" title="Graphic Candidates"></a>Graphic Candidates</h4><ul>
+<li>七类高频使用的图形元素<ul>
+<li>Pictograph, adornment, donut chart, pie chart, bar chart, filled icon, and scaled icon</li>
+</ul>
+</li>
+<li>图形库<ul>
+<li>建了一个有100个常用icon的图形库，且每个icon都手动标记了代表其语义的关键词以及可视属性</li>
+<li>对于输入中的所有非停词，使用Word2Vec来匹配icon<br>E.g. More than 76% of students find math difficult.<br>对不同的字段匹配图形元素：<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/a5e6701ad1ba5759e5538f7228ddeada9632e583.png" alt="Alt text"></li>
+</ul>
+</li>
+</ul>
+<h4 id="Color-Palette-Candidates"><a href="#Color-Palette-Candidates" class="headerlink" title="Color Palette Candidates"></a>Color Palette Candidates</h4><ul>
+<li>视觉上和谐统一&amp;与语义匹配</li>
+<li>方法<ul>
+<li>建立了一个颜色主题库，每个颜色对应标记了使用场景（如background,text等）和关键词（如taxi, fruit, environment等）</li>
+<li>对输入中的所有非停词，使用Word2vec匹配</li>
+</ul>
+</li>
+</ul>
+<h4 id="组合候选"><a href="#组合候选" class="headerlink" title="组合候选"></a>组合候选</h4><ul>
+<li><p>对于所有的布局模板</p>
+<ul>
+<li>找到满足布局内每个区域的要求的所有元素，生成有效的组合</li>
+</ul>
+</li>
+<li>对于每个有效的组合（ layout + description + graphic + color）<ul>
+<li>在满足布局限制的前提下，将其中的元素进行统一放缩，最大化他们的总体尺寸（UI界面优化问题，使用quadratic programming解决）</li>
+</ul>
+</li>
+</ul>
+<h3 id="选择与修改"><a href="#选择与修改" class="headerlink" title="选择与修改"></a>选择与修改</h3><h4 id="Ranking"><a href="#Ranking" class="headerlink" title="Ranking"></a>Ranking</h4><p>​      <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/8b662a5d1b7e91a78196504e4a171f1537f00126.png" alt="Alt text"></p>
+<ol>
+<li>语义分数是为了评估匹配到的图标和颜色主题的准确性，因为它们都是通过关键词匹配得到的，所以匹配结果越好，这个分数就越高。</li>
+<li><p>信息分数是如果用户能够从信息图中轻松地看出原始信息的话，这个分数越高。在本文的系统中，由于空间的限制，可能有些内容会被省去，所以通过计算非停词在结果中出现的比例来得到信息分数：<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/6d442270f328e14aacadac4055bc14a9e94f41fc.png" alt="Alt text"></p>
+</li>
+<li><p>视觉分数是衡量各个元素在布局各个区域中fit得好不好，通过计算空间浪费的程度来得到：<br> <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/15/fe29aa60c44479f17d4432637f34867362976dc8.png" alt="Alt text"><br>总分数是以上三个分数的加权和 ，权重分别为0.25、0.25、0.5。</p>
+</li>
+</ol>
+<h4 id="用户选择与修改"><a href="#用户选择与修改" class="headerlink" title="用户选择与修改"></a>用户选择与修改</h4><p>用户可以选择某一个结果，修改其中的图标、颜色、文本描述等。</p>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><h3 id="失败的结果"><a href="#失败的结果" class="headerlink" title="失败的结果"></a>失败的结果</h3><ol>
+<li>对于稍微复杂点的输入，分词不够准确</li>
+<li>有些icon的选择不太合适</li>
+<li>歧义问题<ul>
+<li>30% of students are French, while 40% are American.</li>
+<li>30% of students speak French, while 40% speak English.<h3 id="User-Study"><a href="#User-Study" class="headerlink" title="User Study"></a>User Study</h3></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Casual User Interview: 举办了两场公开的展会，总共80+用户参与，包括软件开发工程师、销售人员、项目管理员等，大多数人都没有设计经验<ul>
+<li>反馈都非常积极，他们很喜欢这种可以立即得到结果、不用自己设计的形式。问得最多的一个问题是可不可以支持其他类型的输入，以及比如是在一个现有的ppt模板上面使用，可不可以自动匹配一套对应的颜色方案。</li>
+</ul>
+</li>
+<li>Expert Interview: 与三个有丰富设计经验的专家分别进行了1h的讨论<ul>
+<li>总体上都认为这个工具非常有前景。有个专家提到一点是，这个系统并不是要生成多完美的设计结果，受众是那些不懂设计的人，可能就是做些简单的展示，并不会追求最好，所以保持它的简介性最重要。<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></li>
+</ul>
+</li>
+<li>本文提出了一种把比例数据相关的文本自动转化为一组信息图的方法</li>
+<li>未来工作<ul>
+<li>扩展到其他类型的文本</li>
+<li>集成到Office这样的工具中，方便使用</li>
+<li>尝试新的技术来提升生成结果的质量</li>
+</ul>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
