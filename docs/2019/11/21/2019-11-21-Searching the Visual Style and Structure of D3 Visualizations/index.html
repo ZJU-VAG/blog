@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Searching the Visual Style and Structure of D3 Visualizations - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统介绍"><span class="toc-text">系统介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索引擎组成"><span class="toc-text">搜索引擎组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化爬取"><span class="toc-text">可视化爬取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化解构"><span class="toc-text">可视化解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统界面"><span class="toc-text">系统界面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用"><span class="toc-text">应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#探索设计空间"><span class="toc-text">探索设计空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#信息查询"><span class="toc-text">信息查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视化设计统计分析"><span class="toc-text">可视化设计统计分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#user-study"><span class="toc-text">user study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#讨论"><span class="toc-text">讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不足"><span class="toc-text">不足</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未来工作"><span class="toc-text">未来工作</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Searching the Visual Style and Structure of D3 Visualizations
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-11-21 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-11-21</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#顾宇辉"
+                title="顾宇辉">顾宇辉</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Searching the Visual Style and Structure of D3 Visualizations</p>
+<p>作者：Enamul Hoque, Maneesh Agrawala</p>
+<p>发表：Proc IEEE InfoVis 2019, IEEE, 2019</p>
+<p>本文针对D3可视化提供了一个搜索引擎，该引擎允许根据视觉样式和底层结构来进行查询，从而支持可视化开发人员进行设计空间探索以及信息查询。</p>
+<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><ul>
+<li>机器无法直接访问图表数据。</li>
+<li>可视化的设计探索和统计分析困难。<ul>
+<li>开发人员搜寻样例来编码。</li>
+<li>研究人员分析频繁的设计模式。</li>
+</ul>
+</li>
+</ul>
+<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><h3 id="搜索引擎组成"><a href="#搜索引擎组成" class="headerlink" title="搜索引擎组成"></a>搜索引擎组成</h3><p>本文提出的搜索引擎主要由3个部分组成：可视化爬虫，可视化解构和搜索界面。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/088e69e89558d3ed4a413534722b2aa3cfab7135.png" alt=" "></p>
+<h3 id="可视化爬取"><a href="#可视化爬取" class="headerlink" title="可视化爬取"></a>可视化爬取</h3><p>系统爬取了7860件D3可视化作品，来源包括d3.js，bl.ocks.org，the “Big List of D3 Example”，the New York Times，the Wall Street Journal等网站。</p>
+<h3 id="可视化解构"><a href="#可视化解构" class="headerlink" title="可视化解构"></a>可视化解构</h3><p>针对每个可视化作品，系统会解析该可视化的数据、符号、数据到符号的映射以及背景颜色等非数据相关的属性，然后以json格式保存在数据库。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/e9ae632e4a8de22b9f992be8a40b52549f644ca4.png" alt=" "></p>
+<h3 id="系统界面"><a href="#系统界面" class="headerlink" title="系统界面"></a>系统界面</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/125ea0102f9d0d4963299da04bc5339e1c37097e.png" alt=" "></p>
+<p>系统使用了基于Vega-lite的查询语法。查询返回的结果排序会基于排名策略和随机策略两种策略。排名策略会按按匹配的编码数量排序，若相同则比较不匹配的编码数量。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="探索设计空间"><a href="#探索设计空间" class="headerlink" title="探索设计空间"></a>探索设计空间</h3><ul>
+<li>查找正负值都有的柱形图可视化设计</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/52da6b9d2b36ed21a9c3f14af65da15b88f9880e.png" alt="查找正负值都有的柱形图可视化设计"></p>
+<ul>
+<li>查找数据量大于1500的可视化设计</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/173ba9670b1fb274eb11128f9320e1cdc933c982.png" alt="查找数据量大于1500的可视化设计"></p>
+<ul>
+<li>通过样例来查找编码相近的可视化设计</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/9dad396c4920d0885920d0530768ed27ca340e06.png" alt="通过样例来查找编码相近的可视化设计"></p>
+<ul>
+<li>查找背景颜色相似（在LAB色彩空间上）的可视化设计</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/b0e706e97e32fbaf5cb608bb7ba67c4c7a9493ba.png" alt="查找背景颜色相似（在LAB色彩空间上）的可视化设计"></p>
+<h3 id="信息查询"><a href="#信息查询" class="headerlink" title="信息查询"></a>信息查询</h3><p>用户如果希望找到与特定主题相关的可视化，可以通过指定相应的关键字来搜索。例如查找美国选举相关的可视化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;keyword&quot;: &quot;US election&quot;,</span><br><span class="line">&quot;encoding&quot;: [&#123;</span><br><span class="line">&quot;channel&quot;: &quot;color&quot;, &quot;type&quot;: &quot;nominal&quot;,</span><br><span class="line">&quot;values&quot;: &#123;&quot;and&quot;:[&quot;red&quot;, &quot;blue&quot;]&#125; &#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>有时数据字段的名称可能与用户指定的名称完全不同，而是使用语义相似的同义词。对于这种情况，本文使用word2vec向量模型来计算单词间的语义相似度，可以通过“wordSim”字段来指定。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;data&quot;:&#123;&quot;field&quot;: &#123;&quot;wordSim&quot;: &quot;population&quot;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="可视化设计统计分析"><a href="#可视化设计统计分析" class="headerlink" title="可视化设计统计分析"></a>可视化设计统计分析</h2><p>为了确定D3图表开发人员常用的视觉设计模式，本文使用搜索引擎对7860件D3可视化集合进行了统计分析。同时为了进行比较，独立分析了从《纽约时报》抓取的457件D3图表的子集合。<br>根据统计结果，对标记的使用，标记属性的使用，多属性映射的使用，相关/不相关属性对的使用以及填充颜色的使用5个方面进行了讨论。分析表明，可视化开发人员在创建D3可视化时往往遵循最佳设计实践。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/78fa61a61cac2f15a8f33d1b8d8fe245d623f8ab.png" alt=" "></p>
+<h2 id="user-study"><a href="#user-study" class="headerlink" title="user study"></a>user study</h2><p>为了评估本文搜索引擎的有效性，本文设计了user study：12名拥有可视化经验的人员分别使用本文的系统以及SightLine来进行探索性的搜索任务，每个任务都对应了在某个场景下需要用户查找符合某些设计标准的5个可视化作品。最后实验人员需要完成问卷。问卷结果表明在有效性，满意度和明确性上本文的系统高于SightLine。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/21/c0586cb9ffac859f65c9f320b8d016050196c5bb.png" alt=" "></p>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><h3 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h3><ul>
+<li>难以解构非线性映射、算法布局等可视化</li>
+<li>没有将代码纳入查询范围</li>
+<li>查询语法表达复杂，考虑NLP</li>
+<li>User study只有主观数据</li>
+</ul>
+<h3 id="未来工作"><a href="#未来工作" class="headerlink" title="未来工作"></a>未来工作</h3><ul>
+<li>扩展解构函数，支持更多的可视化。</li>
+<li>添加更多可视化集合，如Vega-lite、位图。</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
