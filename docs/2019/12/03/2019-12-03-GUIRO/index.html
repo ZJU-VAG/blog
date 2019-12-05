@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        GUIRO: User-Guided Matrix Reordering - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本信息"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贡献"><span class="toc-text">贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户场景分析"><span class="toc-text">用户场景分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预备知识"><span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#矩阵可视化特征"><span class="toc-text">矩阵可视化特征</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#block-diagnal"><span class="toc-text">block-diagnal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#off-diagnal-block"><span class="toc-text">off-diagnal block</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Band"><span class="toc-text">Band</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Star-Line"><span class="toc-text">Star/Line</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩阵重排序方法"><span class="toc-text">矩阵重排序方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统介绍"><span class="toc-text">系统介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#矩阵重排序"><span class="toc-text">矩阵重排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户交互"><span class="toc-text">用户交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法指标分析"><span class="toc-text">算法指标分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统评估"><span class="toc-text">系统评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Case-Study"><span class="toc-text">Case Study</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#讨论"><span class="toc-text">讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优势"><span class="toc-text">优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不足与未来工作"><span class="toc-text">不足与未来工作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        GUIRO: User-Guided Matrix Reordering
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-12-03 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2019-12-03</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#赵晓冬"
+                title="赵晓冬">赵晓冬</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><ul>
+<li><strong>论文：</strong> GUIRO: User-Guided Matrix Reordering</li>
+<li><strong>作者：</strong> Michael Behrisch, Tobias Schreck, and Hanspeter Pfister</li>
+<li><strong>来源：</strong> IEEE Vis 2019 / TVCG 2020 Jan.</li>
+</ul>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>邻接矩阵是常见的一种表示关系型数据的方式，在表示大规模数据时有许多节点-链接图所不具备的优势。矩阵重排序的几个研究问题需要解决：</p>
+<ol>
+<li><strong>Which</strong>      选取哪种重排序算法？</li>
+<li><strong>What</strong>       通过重排序可以从数据中得到什么信息？</li>
+<li><strong>How</strong>        如何设计出更好的矩阵重排序算法？</li>
+</ol>
+<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><p>构建了用于矩阵重排序的可视分析系统：GUIRO: user-GUIded matrix Re-Ordering。做到了：</p>
+<ul>
+<li>整合并提供重排序算法</li>
+<li>交互选择并自动/手动重排序</li>
+<li>比较重排序算法量化指标</li>
+</ul>
+<h2 id="用户场景分析"><a href="#用户场景分析" class="headerlink" title="用户场景分析"></a>用户场景分析</h2><p>本文将矩阵重排序的用户场景分为三类：学者、网络分析师以及算法设计师，对与三类分别阐述了他们的动机和应用场景。</p>
+<ul>
+<li>学者：主要通过比较不同算法的效果，选取合适的算法呈现自己数据中的特征</li>
+<li>网络分析师：运用多种分析手段，对数据的全局/局部特征进行分析</li>
+<li>算法设计师：设计新的重排序算法并进行比较分析</li>
+</ul>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><h3 id="矩阵可视化特征"><a href="#矩阵可视化特征" class="headerlink" title="矩阵可视化特征"></a>矩阵可视化特征</h3><p>以下方的图为例进行阐述：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/3/91aeef53ca69a1b0d69459581ac00bff97aadaef.png" alt></p>
+<h4 id="block-diagnal"><a href="#block-diagnal" class="headerlink" title="block-diagnal"></a>block-diagnal</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/3/c6dd68d6febfdecb42708c78398ac13f0e19b7a0.png" alt></p>
+<p>聚集在对角线的方阵形式，如v1,v2,v3，表示一个全连接的子图。</p>
+<h4 id="off-diagnal-block"><a href="#off-diagnal-block" class="headerlink" title="off-diagnal block"></a>off-diagnal block</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/3/1a5ece4b03b1190e53c76b1c0dad567e047b9c0c.png" alt></p>
+<p>分布在对角线外的两侧，为部分群体与另一部分群体均有连接的情况，如v5,v6和v1-v4。</p>
+<h4 id="Band"><a href="#Band" class="headerlink" title="Band"></a>Band</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/3/3f37e7068ed8eecf5a8252bd2f5509d71ae8655b.png" alt></p>
+<p>成条带状，表示图中的路径结构。</p>
+<h4 id="Star-Line"><a href="#Star-Line" class="headerlink" title="Star/Line"></a>Star/Line</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/3/497512fd1cc8ee0ec108899a7943690c75c3ffb5.png" alt></p>
+<p>星状或带状结构，表示图中的星状的连接结构。</p>
+<h3 id="矩阵重排序方法"><a href="#矩阵重排序方法" class="headerlink" title="矩阵重排序方法"></a>矩阵重排序方法</h3><p>常见的矩阵重排序方法有两类，自动与手动。</p>
+<ul>
+<li><strong>自动重排序：</strong>通过优化某种度量指标（如相邻行/列的相似程度）来指导进行排序</li>
+<li><strong>手动重排序：</strong>通过交互的方式，用户指定对应的排序</li>
+</ul>
+<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/4/66637ade1cc46a1f200c084fd6c04203e24555be.png" alt></p>
+<p>系统主体分为三个部分，分别为：左侧的数据集与重排序算法选择界面；中部的重排序结果呈现视图以及右侧的重排序结果的投影视图。</p>
+<h3 id="矩阵重排序"><a href="#矩阵重排序" class="headerlink" title="矩阵重排序"></a>矩阵重排序</h3><p>系统左侧视图，列举了本文所封装实现的71种矩阵重排序算法，用户可以预览结果、评价指标，以及针对启发式算法生成的多重结果来选择应用于全局的重排序算法。</p>
+<p>另外，本文创新性的引入了投影视图来辅助重排序算法的呈现与交互：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/5/65f4f68d64951606111ae8b1f5ebe01f4ee603b3.png" alt></p>
+<p>将矩阵的每一行/列提取成一个向量，并对其运用降维方法进行投影，得到而为空间的点，而其中的边则表示的是重排序的相邻关系。</p>
+<h3 id="用户交互"><a href="#用户交互" class="headerlink" title="用户交互"></a>用户交互</h3><p>用户可以在投影视图中进行直观的交互。主要有两种形式。</p>
+<p>一种是半自动的操作，即用户用lasso选取部分节点，生成submatrix，然后针对submatrix应用重排序得到局部的排序结果。</p>
+<p>另一种是手动操作，用户对排序结果进行调整，改变节点间的相邻关系，从而得到新的符合用户需求的排序。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/5/d7a312a1cd06f261b1e59be6913fb10097d491de.png" alt></p>
+<h3 id="算法指标分析"><a href="#算法指标分析" class="headerlink" title="算法指标分析"></a>算法指标分析</h3><p>GUIRO还提供了不同算法的对比分析视图以供算法设计者比较不同的算法：</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/5/aabe5741bd58576033bfc5731436de0f36934ba6.png" alt></p>
+<p>除了在表格中呈现不同算法对应的指标之外，GUIRO还采取了平行坐标的形式来展现不同算法的排序结果，用户还可以通过拖拽的交互调整顺序来表达不同算法的计算结果。</p>
+<h2 id="系统评估"><a href="#系统评估" class="headerlink" title="系统评估"></a>系统评估</h2><h3 id="Case-Study"><a href="#Case-Study" class="headerlink" title="Case Study"></a>Case Study</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/12/3/e3a0614ff1f01be7b38e506c3f6b454fcae4e042.png" alt></p>
+<p>如上图所示，本文展示了如何利用GUIRO来指导用户重排序并得到更好的pattern。</p>
+<ol>
+<li>初始导入的数据，为随机排序，毫无特征可言</li>
+<li>为数据应用全局的重排序算法之后，得到了初步结果</li>
+<li>发现左上角分布仍然比较杂乱，因此试图从投影视图中发现改进方法</li>
+<li>在投影视图中选取左上角聚类，发现在排序的矩阵中分布并不连续，对其应用另一种重排序算法之后，得到了右图所示的结果，此时发现左上角的特征得到了呈现</li>
+</ol>
+<p>通过上述操作流程，我们可以看到，在GUIRO系统的指导下，的确对我们分析数据并得到数据中的全局或局部特征有一定帮助。</p>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
+<li>引入Projection View，便于交互提取submatrix，便于对局部的submatrix应用重排序算法</li>
+<li>支持交互式手动排序，提高了排序的灵活性</li>
+<li>支持层级式操作，可以从全局到局部渐进地进行重排序与特征的提取</li>
+</ul>
+<h3 id="不足与未来工作"><a href="#不足与未来工作" class="headerlink" title="不足与未来工作"></a>不足与未来工作</h3><p>在系统所用的方法上：</p>
+<ol>
+<li>目前仅支持对称方阵，考虑支持非对称方阵，非方矩阵</li>
+<li>需要拓展projection方法，增强Projection View的指导性</li>
+</ol>
+<p>在系统的技术实现上：</p>
+<ol>
+<li>目前采用了Web-based C/S结构，信息传递效率低</li>
+<li>矩阵绘制为SVG，考虑基于Canvas/WebGL实现</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文用可视分析的方法进行矩阵重排序，主要有以下特点：</p>
+<ul>
+<li>引入投影视图，打开重排序算法的黑盒</li>
+<li>交互选取对全局或局部应用重排序算法</li>
+<li>对不同重排序算法指标进行对比分析</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

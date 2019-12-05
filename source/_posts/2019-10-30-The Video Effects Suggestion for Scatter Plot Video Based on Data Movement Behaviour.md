@@ -1,7 +1,7 @@
 ---
 title: "The Video Effects Suggestion for Scatter Plot Video Based on Data Movement Behaviour"
 tags: ["论文评述", "报告"]
-date: 2019-11-30
+date: 2019-10-30
 author: NOPTANIT CHOTISARN
 mathjax: true
 ---
