@@ -100,7 +100,7 @@ fact sheet的设计者不仅要深刻理解地数据，还要制作出引人注�
 
 1. 子空间枚举(Subspace Enumeration):
 
-   $subspace  = \{\{f[1]:v[1]\}, …\{f[n]:v[n]\}\}$ 使用BUC算法，按top-down顺序枚举数据子空间。限制数据立方的格点深度为3，因为经过超过3维过滤的数据子空间对用户来说通常是无趣的。
+   $subspace  = \left\{\left\{f[1]:v[1]\right\}, \ldots, \left\{f[n]:v[n]\right\}\right\}$ 使用BUC算法，按top-down顺序枚举数据子空间。限制数据立方的格点深度为3，因为经过超过3维过滤的数据子空间对用户来说通常是无趣的。
 
 2. 事实计算(Fact Computation)
 

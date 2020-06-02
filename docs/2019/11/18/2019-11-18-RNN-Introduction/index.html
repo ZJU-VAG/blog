@@ -162,7 +162,7 @@
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/time-series.png" alt="时序数据"></p>
 <p>循环神经网络的提出就是为了解决数据中这种典型的时序依赖关系. RNN 是内部包含循环的神经网络 (普通 CNN 不包含循环), RNN 的一个循环单元如下图所示<sup><a href="#fn_1" id="reffn_1">1</a></sup>.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/RNN-rolled.png" alt="RNN 的循环单元"></p>
-<p>其中 $x_t$ 表示输入序列中时刻 $t$ 时的值, $h_t$ 为该层在时刻 $t$ 的输出. 方块 $A$ 是一个操作符, 把前一时刻的输出 $h_{t-1}$ 和当前时刻的输入 $x_t$ 映射为当前时刻的输出. 注意, $h_t$ 通常扮演两个角色, 既是循环单元在当前时刻的输出, 又是当前时刻循环单元的<em>状态</em>. 公式表示如下:</p>
+<p>其中 $x<em>t$ 表示输入序列中时刻 $t$ 时的值, $h_t$ 为该层在时刻 $t$ 的输出. 方块 $A$ 是一个操作符, 把前一时刻的输出 $h</em>{t-1}$ 和当前时刻的输入 $x_t$ 映射为当前时刻的输出. 注意, $h_t$ 通常扮演两个角色, 既是循环单元在当前时刻的输出, 又是当前时刻循环单元的<em>状态</em>. 公式表示如下:</p>
 <script type="math/tex; mode=display">
 h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1}).</script><p>其中 $W$ 为权重参数, $\sigma$ 表示激活函数, 常用的是 $\tanh(\cdot)$ 函数, 可以把输出的值域控制在 $[-1, 1]$ 之间, 避免在循环过程中不收敛. 我们可以沿着时间轴把上面的循环单元展开, 更加直观.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/RNN-unrolled.png" alt="RNN 循环单元展开示意图"></p>
@@ -200,11 +200,11 @@ h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1}).</script><p>其中 $W$ 为权重参数, 
 <li>上一步结束后的单元状态 $C_{t-1}$</li>
 </ul>
 <p>要注意三个向量是相同的长度.</p>
-<p><strong>遗忘门(forget gate).</strong> 每循环一步时, 首先根据上一步的输出 $h_{t-1}$ 和当前步的输入 $x_t$ 来决定要遗忘掉上一步的什么信息(从单元状态 $C_{t-1}$ 中遗忘). 因此只需要计算一个遗忘系数 $f_t$ 乘到单元状态上即可. 如下图所示, 公式中的方括号表示 $concat$ 操作.</p>
+<p><strong>遗忘门(forget gate).</strong> 每循环一步时, 首先根据上一步的输出 $h<em>{t-1}$ 和当前步的输入 $x_t$ 来决定要遗忘掉上一步的什么信息(从单元状态 $C</em>{t-1}$ 中遗忘). 因此只需要计算一个遗忘系数 $f_t$ 乘到单元状态上即可. 如下图所示, 公式中的方括号表示 $concat$ 操作.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM3-focus-f.png" alt="遗忘门"></p>
-<p><strong>输入门(input gate).</strong> 这一步来决定当前新的输入 $x_t$ 我们应该把多少信息储存在单元状态中. 这部分有两步, 首先一个输入门计算要保留哪些信息, 得到过滤系数 $i_t$, 然后使用一个全连接层来从上一步的输出 $h_{t-1}$ 和当前步的输入 $x_t$ 中提取特征 $\tilde{C}_t$. 如下图所示.</p>
+<p><strong>输入门(input gate).</strong> 这一步来决定当前新的输入 $x<em>t$ 我们应该把多少信息储存在单元状态中. 这部分有两步, 首先一个输入门计算要保留哪些信息, 得到过滤系数 $i_t$, 然后使用一个全连接层来从上一步的输出 $h</em>{t-1}$ 和当前步的输入 $x_t$ 中提取特征 $\tilde{C}_t$. 如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM3-focus-i.png" alt="输入门"></p>
-<p><strong>新旧信息合并.</strong> 计算好了遗忘系数, 输入系数, 以及新的要记忆的特征, 现在就可以在单元状态 $C_{t-1}$ 上执行遗忘操作 $f_t\ast C_{t-1}$ 和记忆操作 $+i_t\ast\tilde{C}_t$. 如下图所示.</p>
+<p><strong>新旧信息合并.</strong> 计算好了遗忘系数, 输入系数, 以及新的要记忆的特征, 现在就可以在单元状态 $C<em>{t-1}$ 上执行遗忘操作 $f_t\ast C</em>{t-1}$ 和记忆操作 $+i_t\ast\tilde{C}_t$. 如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM3-focus-C.png" alt="新旧信息合并"></p>
 <p><strong>输出门(output gate).</strong> 最后我们要决定输出什么信息了. 这需要从当前的单元状态 $C_t$ 来获取要输出的信息. 但显然我们并不会在这一个时间步输出所有记忆的信息, 而是只要输出当前需要的信息, 因此我们用一个输出门来过滤输出的信息, 过滤系数为 $o_t$. 此外我们希望输出的特征的取值能够介于 $[-1, 1]$ 之间, 因此使用一个 $tanh$ 函数把单元状态 $C_t$ 映射到相应的范围, 最后乘上过滤系数得到当前步的输出. 如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM3-focus-o.png" alt="输出门"></p>
@@ -221,10 +221,10 @@ h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1}).</script><p>其中 $W$ 为权重参数, 
 </ul>
 <h2 id="3-门控循环单元-Gated-Recurrent-Unit-GRU"><a href="#3-门控循环单元-Gated-Recurrent-Unit-GRU" class="headerlink" title="3. 门控循环单元(Gated Recurrent Unit, GRU)"></a>3. 门控循环单元(Gated Recurrent Unit, GRU)</h2><p>GRU<sup><a href="#fn_8" id="reffn_8">8</a></sup> 是一种比 LSTM 稍简单一些的循环单元. GRU 把 LSTM 中的隐藏状态 $h$ 和单元状态 $C$ 合并为单个的隐藏状态. 如下图所示. </p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM3-var-GRU.png" alt="门控循环单元 (GRU)"></p>
-<p><strong>更新门(update gate).</strong> 更新门系数 $z_t$ 控制了 $h_{t-1}$ 中保存的信息(如长期记忆)在当前步保留多少. $z_t$ 接近 0 时上一步的隐藏状态中的信息 $h_{t-1}$ 得以保留, 新输入的信息 $\tilde{h}_t$ 会被忽略; $z_t$ 接近 1 时则丢弃已有的信息, 并填入新输入的信息. </p>
-<p><strong>输入信息的加工.</strong> 当前步输入的信息需要加工后才能合并到隐藏状态 $h_t$ 中. 输入信息加工时需要参考上一步的隐藏状态 $h_{t-1}$ 来决定哪些信息有用, 哪些没用. 加工后的信息用 $\tilde{h}_t$ 表示.</p>
+<p><strong>更新门(update gate).</strong> 更新门系数 $z<em>t$ 控制了 $h</em>{t-1}$ 中保存的信息(如长期记忆)在当前步保留多少. $z<em>t$ 接近 0 时上一步的隐藏状态中的信息 $h</em>{t-1}$ 得以保留, 新输入的信息 $\tilde{h}_t$ 会被忽略; $z_t$ 接近 1 时则丢弃已有的信息, 并填入新输入的信息. </p>
+<p><strong>输入信息的加工.</strong> 当前步输入的信息需要加工后才能合并到隐藏状态 $h<em>t$ 中. 输入信息加工时需要参考上一步的隐藏状态 $h</em>{t-1}$ 来决定哪些信息有用, 哪些没用. 加工后的信息用 $\tilde{h}_t$ 表示.</p>
 <p><strong>重置门(reset gate).</strong> 重置门系数 $r_t$ 控制了在加工输入信息的时候使用上一步的隐藏状态中的哪些信息. $r_t$ 接近 0 时新输入的信息占主导地位, 说明当前步的输入包含的信息与前面的信息关联性很小; $r_t$ 接近 1 时新输入的信息和前面的长期信息有较大关联性, 需要综合考虑来产生当前步加工后的信息. </p>
-<h2 id="4-编码-解码器-Encoder-Decoder"><a href="#4-编码-解码器-Encoder-Decoder" class="headerlink" title="4. 编码-解码器 (Encoder-Decoder)"></a>4. 编码-解码器 (Encoder-Decoder)</h2><p>编码-解码器模型是为了实现 $n\rightarrow m$ 序列映射的模型框架. 这类模型也称为 Sequence to Sequence(seq2seq). 编码器只负责处理输入序列, 并形成输入序列的特征向量后送入解码器. 为了清楚, 我们用公式来表示这个过程<sup><a href="#fn_5" id="reffn_5">5</a></sup>. 对于输入序列 $X=\\{x_1, x_2, \cdots, x_S\\}$ 和期望的输出序列 $Y=\\{y_1, y_2, \cdots, y_T\\}$, 我们使用 RNN 模型对其进行建模, 形成一个条件概率 $P(Y\vert X)$, 使用链式法则解耦如下:</p>
+<h2 id="4-编码-解码器-Encoder-Decoder"><a href="#4-编码-解码器-Encoder-Decoder" class="headerlink" title="4. 编码-解码器 (Encoder-Decoder)"></a>4. 编码-解码器 (Encoder-Decoder)</h2><p>编码-解码器模型是为了实现 $n\rightarrow m$ 序列映射的模型框架. 这类模型也称为 Sequence to Sequence(seq2seq). 编码器只负责处理输入序列, 并形成输入序列的特征向量后送入解码器. 为了清楚, 我们用公式来表示这个过程<sup><a href="#fn_5" id="reffn_5">5</a></sup>. 对于输入序列 $X=\{x_1, x_2, \cdots, x_S\}$ 和期望的输出序列 $Y=\{y_1, y_2, \cdots, y_T\}$, 我们使用 RNN 模型对其进行建模, 形成一个条件概率 $P(Y\vert X)$, 使用链式法则解耦如下:</p>
 <script type="math/tex; mode=display">
 P(Y|X) = \prod_{t=1}^TP(y_t\lvert y_1, y_2, \cdots, y_{t-1}, X).</script><p>那么该 RNN 模型就是一个编码器, 在时刻 $s$ 的状态通过下式计算:</p>
 <script type="math/tex; mode=display">
@@ -243,7 +243,7 @@ P(y_t\lvert y_1, y_2, \cdots, y_{t-1}, X) = Softmax(Linear(g_t)).</script><p>使
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/decoder-2.png" alt="解码器-2"></p>
 <h3 id="4-1-编码-解码器模型的局限性"><a href="#4-1-编码-解码器模型的局限性" class="headerlink" title="4.1 编码-解码器模型的局限性"></a>4.1 编码-解码器模型的局限性</h3><ul>
 <li>信息的丢失: 整个时间序列只能压缩为一个固定长度的语义向量</li>
-<li>不合理性: seq2seq 的任务中输入序列 $\\{x_0, x_1, \dots, x_{t−1},  x_𝑡, x_{t+1},\dots \\}$ 中的每个元素对所有 $y_s$ 的贡献度是相同的</li>
+<li>不合理性: seq2seq 的任务中输入序列 $\{x<em>0, x_1, \dots, x</em>{t−1},  x<em>𝑡, x</em>{t+1},\dots \}$ 中的每个元素对所有 $y_s$ 的贡献度是相同的</li>
 </ul>
 <p>例如: The animal didn’t cross the street because <strong>it</strong> was too tired. 在这句话中, 人是通过综合整句话的信息来判断单词 it 指代的是 the animal, 从而翻译时 the animal 应该对 it 的影响更大.</p>
 <p>人们提出了注意力模型来解决普通编码-解码器模型的问题.</p>
@@ -256,9 +256,9 @@ P(y_t\lvert y_1, y_2, \cdots, y_{t-1}, X) = Softmax(Linear(g_t)).</script><p>使
 <li>决定输入信息的哪部分是重要的</li>
 <li>把资源集中分配到重要的信息上</li>
 </ul>
-<p>沿用编码-解码器模型的结构, 注意力机制通过引入一组归一化的系数 $\\{\alpha_1, \alpha_2, \dots, \alpha_n \\}$ 来对输入的信息进行选择, 来解决编码-解码器的不合理性. 这里输入的信息就是指输入序列在 RNN 中的单元输出 $\mathbf{h}_s$. 归一化的系数 $\alpha_s$ 用来决定输入信息的重要性, 是编码器输出时对单元输出加权求和系数. 注意力机制在计算不同时间步的输出时, 实时构造编码器输出的语义向量 $\mathbf{c}_t$, 从而解决了普通编码-解码器信息丢失的问题. 注意力机制如下图所示.</p>
+<p>沿用编码-解码器模型的结构, 注意力机制通过引入一组归一化的系数 $\{\alpha_1, \alpha_2, \dots, \alpha_n \}$ 来对输入的信息进行选择, 来解决编码-解码器的不合理性. 这里输入的信息就是指输入序列在 RNN 中的单元输出 $\mathbf{h}_s$. 归一化的系数 $\alpha_s$ 用来决定输入信息的重要性, 是编码器输出时对单元输出加权求和系数. 注意力机制在计算不同时间步的输出时, 实时构造编码器输出的语义向量 $\mathbf{c}_t$, 从而解决了普通编码-解码器信息丢失的问题. 注意力机制如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/attention-1.png" alt="注意力机制"></p>
-<p>下面讨论加权系数是如何计算的. 考虑到加权系数要反映<strong>输入信息</strong>在当前<strong>时间步</strong>上的重要性, 因此需要把输入信息和时间信息结合起来计算加权系数. 因此通常使用一个 MLP 接收输入信息 $\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_n$ 和解码器上一时刻的状态 $\mathbf{s}_{t-1}$ 作为输入, 输出归一化的加权系数 $\alpha_{t1}, \alpha_{t2}, \dots, \alpha_{tn}$. 如下图所示.</p>
+<p>下面讨论加权系数是如何计算的. 考虑到加权系数要反映<strong>输入信息</strong>在当前<strong>时间步</strong>上的重要性, 因此需要把输入信息和时间信息结合起来计算加权系数. 因此通常使用一个 MLP 接收输入信息 $\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_n$ 和解码器上一时刻的状态 $\mathbf{s}_{t-1}$ 作为输入, 输出归一化的加权系数 $\alpha<em>{t1}, \alpha</em>{t2}, \dots, \alpha_{tn}$. 如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/attention-2.png" alt="注意力机制"></p>
 <p>注意: 编码-解码器的结构只是注意力机制的一个载体, 注意力机制的核心在于加权系数, 因此可以用于非 RNN 的结构.</p>
 <h3 id="5-2-自注意力-Self-Attention"><a href="#5-2-自注意力-Self-Attention" class="headerlink" title="5.2 自注意力 (Self-Attention)"></a>5.2 自注意力 (Self-Attention)</h3><p>自注意力是一个神经网络模块, 它仍然是使用了注意力机制, 与编码-解码器结构不同的是, 自注意力模块只使用输入的信息计算加权系数, 而不需要上一个时间步的信息, 因此可以实现更大规模的并行计算. Google 在 2017 年提出的 Transformer 实现了可并行的自注意力模块<sup><a href="#fn_9" id="reffn_9">9</a></sup>. 其结构如下图所示.</p>
@@ -321,26 +321,11 @@ P(y_t\lvert y_1, y_2, \cdots, y_{t-1}, X) = Softmax(Linear(g_t)).</script><p>使
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
         Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

@@ -196,10 +196,10 @@
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>分为两个不同的方法，即短期实时个性化的产品页面嵌入，以及长时个性化的用户类型及铲平类型嵌入。</p>
 <h3 id="产品页面嵌入"><a href="#产品页面嵌入" class="headerlink" title="产品页面嵌入"></a>产品页面嵌入</h3><p>训练的目标函数如下，实际上与Word2Vec中使用的skip-gram model相同：</p>
 <script type="math/tex; mode=display">
-\mathcal{L}=\sum_{s \in \mathcal{S}} \sum_{l_{i} \in s}\left(\sum_{-m \geq j \leq m, i \neq 0} \log \mathbb{P}\left(l_{i+j} | l_{i}\right)\right)\tag{1}</script><p>这里$s=\left(l_{1}, \dots, l_{M}\right) \in \mathcal{S}$是由用户交互产生的产品页面元组，条件概率是如下定义的：</p>
+\mathcal{L}=\sum_{s \in \mathcal{S}} \sum_{l_{i} \in s}\left(\sum_{-m \geq j \leq m, i \neq 0} \log \mathbb{P}\left(l_{i+j} | l_{i}\right)\right)\tag{1}</script><p>这里$s=\left(l<em>{1}, \dots, l</em>{M}\right) \in \mathcal{S}$是由用户交互产生的产品页面元组，条件概率是如下定义的：</p>
 <script type="math/tex; mode=display">
 \mathbb{P}\left(l_{i+j} | l_{i}\right)=\frac{\exp \left(\mathbf{v}_{l_{i}}^{\top} \mathbf{v}_{l_{i+j}}^{\prime}\right)}{\sum_{l=1}^{|\mathcal{V}|} \exp \left(\mathbf{v}_{l_{i}}^{\top} \mathbf{v}_{l}^{\prime}\right)}\tag{2}</script><p>对(1)进行极大化的优化，能够使有相似语境的产品页面拥有相似的表示。</p>
-<p>同时为了减少对(1)式梯度的计算复杂度，这里仍然沿用了skip-gram model中方法，负采样方法。具体来说会生成正样本对集$\mathcal{D}_{p}$(用户产生)，以及负样本对集$\mathcal{D}_{n}$(随机产生)，目标函数变为如下形式：</p>
+<p>同时为了减少对(1)式梯度的计算复杂度，这里仍然沿用了skip-gram model中方法，负采样方法。具体来说会生成正样本对集$\mathcal{D}<em>{p}$(用户产生)，以及负样本对集$\mathcal{D}</em>{n}$(随机产生)，目标函数变为如下形式：</p>
 <script type="math/tex; mode=display">
 \underset{\theta}{\operatorname{argmax}} \sum_{(l, c) \in \mathcal{D}_{p}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{l}}}+\sum_{(l, c) \in \mathcal{D}_{n}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{l}}}\tag{3}</script><p><strong>将成功预订的产品页面作为全局语境</strong></p>
 <p>用户交互阶段产生的集合$\mathcal{S}$可以分为：</p>
@@ -212,9 +212,9 @@
 \underset{\theta}{\operatorname{argmax}} \sum_{(l, c) \in \mathcal{D}_{p}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{l}}}+\sum_{(l, c) \in \mathcal{D}_{n}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{l}}}+\log \frac{1}{1+e^{-v_{l}^{\prime} v_{l}}}\tag{4}</script><p>探索阶段的优化目标不变。</p>
 <p><img src="https://cdn.nlark.com/yuque/0/2019/png/416994/1566460844684-0fcc5083-4ed0-408c-84d9-5c74b064ac0a.png" alt="1565858254818.png"></p>
 <p><strong>对集中搜索调整训练</strong></p>
-<p>用户使用时常常只搜索单个市场，$\mathcal{D}_{\boldsymbol{P}}$包含的产品页面大多都仅来自一个市场，而由于$\mathcal{D}_{n}$的随机性其产品页面几乎与该市场不同。这种不平衡在实践中导致了嵌入无法很好表示同市场产品的相似性，故进行了如下调整：</p>
+<p>用户使用时常常只搜索单个市场，$\mathcal{D}<em>{\boldsymbol{P}}$包含的产品页面大多都仅来自一个市场，而由于$\mathcal{D}</em>{n}$的随机性其产品页面几乎与该市场不同。这种不平衡在实践中导致了嵌入无法很好表示同市场产品的相似性，故进行了如下调整：</p>
 <script type="math/tex; mode=display">
-\begin{aligned} \underset{\theta}{\operatorname{argmax}} & \sum_{(l, c) \in \mathcal{D}_{p}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{l}}}+\sum_{(l, c) \in \mathcal{D}_{n}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{l}}} \\ &+\log \frac{1}{1+e^{-v_{l}^{\prime} v_{l}^{v} l}}+\sum_{\left(l, m_{n}\right) \in \mathcal{D}_{m_{n}}} \log \frac{1}{1+e^{v_{m_{n}}^{\prime} v_{l}}} \end{aligned}\tag{5}</script><p>这里$\mathcal{D}_{m_{n}}$从与$l$相同市场中对产品抽样产生。</p>
+\begin{aligned} \underset{\theta}{\operatorname{argmax}} & \sum_{(l, c) \in \mathcal{D}_{p}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{l}}}+\sum_{(l, c) \in \mathcal{D}_{n}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{l}}} \\ &+\log \frac{1}{1+e^{-v_{l}^{\prime} v_{l}^{v} l}}+\sum_{\left(l, m_{n}\right) \in \mathcal{D}_{m_{n}}} \log \frac{1}{1+e^{v_{m_{n}}^{\prime} v_{l}}} \end{aligned}\tag{5}</script><p>这里$\mathcal{D}<em>{m</em>{n}}$从与$l$相同市场中对产品抽样产生。</p>
 <p><strong>冷启动产品嵌入</strong></p>
 <p>在Airbnb每天新的产品页面都会由房主发布，但是并不存在对这些新页面的嵌入，这里利用已有嵌入来生成其嵌入，方式如下：</p>
 <p>在10英里内寻找3个地理位置最近、拥有嵌入的产品，并且拥有相同产品类型（如私人房间）、属于相同价格区间，然后使用三个嵌入的平均作为新嵌入。</p>
@@ -230,7 +230,7 @@
 <h3 id="用户类型与产品类型嵌入"><a href="#用户类型与产品类型嵌入" class="headerlink" title="用户类型与产品类型嵌入"></a>用户类型与产品类型嵌入</h3><p>对于个性化定制，用户长时间的偏好特征也同样很有价值。尽管跨市场的相似性在先前部分的训练中被捕捉到了一部分，特定用户长时间的预订习惯更容易学习到这种相似性。但由于单个用户数据较少、时间跨度长的问题，这里以基于规则的方式对产品类型、用户类型进行编码，如下面表格所示，其中的区间划分由数据决定以最大化每个区间的涵盖数量。</p>
 <p><img src="https://cdn.nlark.com/yuque/0/2019/png/416994/1566460999139-06e1141d-f44d-4aef-a5d2-a38348c9d04f.png" alt="1565873275663.png"></p>
 <p>两者的嵌入是在同一个特征空间进行的。</p>
-<p>首先将$N$个用户的预订数据按时间顺序分别形成$s_{b}=\left(u_{t y p e_{1}} l_{t y p e_{1}}, \ldots, u_{t y p e_{M}} l_{t y p e_{M}}\right) \in \mathcal{S}_{b}$形式的序列，这里指出相同用户的用户类型有可能随时间改变。</p>
+<p>首先将$N$个用户的预订数据按时间顺序分别形成$s<em>{b}=\left(u</em>{t y p e<em>{1}} l</em>{t y p e<em>{1}}, \ldots, u</em>{t y p e<em>{M}} l</em>{t y p e<em>{M}}\right) \in \mathcal{S}</em>{b}$形式的序列，这里指出相同用户的用户类型有可能随时间改变。</p>
 <p>目标函数类似(3)式中的定义</p>
 <script type="math/tex; mode=display">
 \underset{\theta}{\operatorname{argmax}} \sum_{\left(u_{t}, c\right) \in \mathcal{D}_{b o o k}} \log \frac{1}{1+e^{-v_{c}^{\prime} v_{u_{t}}}}+\sum_{\left(u_{t}, c\right) \in \mathcal{D}_{n e g}} \log \frac{1}{1+e^{v_{c}^{\prime} v_{u t}}}\tag{6}</script><p>计算过程如下图示意</p>
@@ -285,26 +285,11 @@
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
         Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

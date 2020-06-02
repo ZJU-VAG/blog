@@ -174,7 +174,7 @@
 <li>已有一些研究将深度学习，机器学习应用到图布局当中，比如Kwon et al.(VIS 2017)提出了一种机器学习方法,为用户提供了图布局的快速预览，并使用了图的拓扑结构信息来计算不同图结构之间的相似度。H. Haleem et al.提出了基于神经网络的方法来评估图布局绘制结果。</li>
 </ul>
 <h3 id="3-算法与模型"><a href="#3-算法与模型" class="headerlink" title="3. 算法与模型"></a>3. 算法与模型</h3><h4 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h4><ul>
-<li><p>图布局算法的输入是$G=(V,E) \quad V=\{v_{1},v_{2}…v_{n}\} \quad E\subseteq V \times V $，输出是$C = \{c_{v}|v ∈ V\}$, 其中$c_v$属于二维向量。</p>
+<li><p>图布局算法的输入是$G=(V,E) \quad V={v<em>{1},v</em>{2}…v<em>{n}} \quad E\subseteq V \times V $，输出是$C = {c</em>{v}|v ∈ V}$, 其中$c_v$属于二维向量。</p>
 </li>
 <li><p>传统的图布局算法考虑不同的评价标准来设计算法，在本文中，我们将图布局算法转化为学习问题，一旦成功训练了深度学习模型，当给定一个新图数据，它就可以自动分析图结构并直接生成一个带有训练数据特性的布局效果。</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/f384984b9910b33e6bf47e6adc2a86a775a86b68.png" width="400px"></p>
@@ -182,7 +182,7 @@
 </ul>
 <h4 id="模型设计"><a href="#模型设计" class="headerlink" title="模型设计"></a>模型设计</h4><ul>
 <li>由于图布局的输出是一个不定长的二维数组，cv领域常用的CNN网络并不适用于此类问题，第一CNN网络无法处理图数据的输入，其次CNN网络的输出一般是一个定长的数组。</li>
-<li>本文使用LSTM(长短期记忆)作为基础模型，LSTM是RNN(循环神经网络)的变种，一开始用于自然语言处理方向。 他可以同时参考过去网络中的最新信息以及较久的信息。我们可以使用点的特征序列作为输入向量，顺序输出每个点的二维坐标。LSTM的结构和公式如下图所示, $c_{t-1}, h_{t-1}, x_{t}$是他的输入，$h_{t}, c_{t}$是他的输出。</li>
+<li>本文使用LSTM(长短期记忆)作为基础模型，LSTM是RNN(循环神经网络)的变种，一开始用于自然语言处理方向。 他可以同时参考过去网络中的最新信息以及较久的信息。我们可以使用点的特征序列作为输入向量，顺序输出每个点的二维坐标。LSTM的结构和公式如下图所示, $c<em>{t-1}, h</em>{t-1}, x<em>{t}$是他的输入，$h</em>{t}, c_{t}$是他的输出。</li>
 </ul>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/d969596e0318478e07be984da2443be49f8a4060.png" width="400px"></p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/3c79d0e94fb86171d9fe1bacbb73ac2edecb2088.png" width="300px"></p>
@@ -204,7 +204,7 @@
 </ul>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/2324bd63969d6041b5558a6814a7f2a565347781.png"></p>
 <ul>
-<li>本文还从Prostats loss(模型loss)，边交叉($A_{ec}$)，点聚集($A_{no}$)，聚团覆盖($A_{co}$)，运行时间这几个指标进行了评估，实验结果如下所示。左上模型loss，右上运行时间，下面是剩余三种指标。</li>
+<li>本文还从Prostats loss(模型loss)，边交叉($A<em>{ec}$)，点聚集($A</em>{no}$)，聚团覆盖($A_{co}$)，运行时间这几个指标进行了评估，实验结果如下所示。左上模型loss，右上运行时间，下面是剩余三种指标。</li>
 </ul>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/22/8be1216591bbed5bfe7c464410b40c4044b645a5.png"></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文从结构来看非常完整，工作量也很足。但还是有很多不足之处，比如：生成输入向量的算法依然不稳定，只在小数据(20-50点)work，模型无法解释，学习不同的布局数据需要重新训练等问题。作者也提出了要把算法改进到大规模图数据上的设想，除此之外作者提出能否将方法应用到动态图当中。</p>
@@ -247,26 +247,11 @@
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
         Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>
