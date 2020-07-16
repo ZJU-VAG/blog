@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Answering Questions about Charts and Generating Visual Explanations - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本信息"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前期调研"><span class="toc-text">前期调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动化可视化问答系统流水线"><span class="toc-text">自动化可视化问答系统流水线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-text">案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评估"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法性能"><span class="toc-text">方法性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户调研"><span class="toc-text">用户调研</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不足与未来工作"><span class="toc-text">不足与未来工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作与个人感言"><span class="toc-text">相关工作与个人感言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用自然语言与可视化交互的工作"><span class="toc-text">用自然语言与可视化交互的工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自然语言“产生”可视化"><span class="toc-text">自然语言“产生”可视化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自然语言对可视化的引用、辅助文字阅读"><span class="toc-text">自然语言对可视化的引用、辅助文字阅读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自然语言生成-可视化生成的商业产品-插件"><span class="toc-text">自然语言生成/可视化生成的商业产品/插件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对于文章背后idea、思路的思考"><span class="toc-text">对于文章背后idea、思路的思考</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Answering Questions about Charts and Generating Visual Explanations
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2020-07-09 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2020-07-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陆俊华"
+                title="陆俊华">陆俊华</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><ul>
+<li><strong>论文：</strong> Answering Questions about Charts and Generating Visual Explanations</li>
+<li><strong>作者：</strong> Dae Hyun Kim, Enamul Hoque, Maneesh Agrawala</li>
+<li><strong>来源：</strong> CHI 2020</li>
+</ul>
+<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><ul>
+<li><p>利用可视化来分析数据、回答问题和解释如何获得该答案是不少决策任务的核心。</p>
+</li>
+<li><p>但基于可视化的分析任务并不总是那么简单：常常需要组合一些不同操作才能获得最终的答案，如下图所示</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/3bf355fee7bc74fc59d1487ca9c5a2bbf11e4006.png" alt="Intro"></p>
+</li>
+<li><p>能否将上述过程<strong>自动化</strong>？</p>
+<ul>
+<li>自动化的可视化问答系统(VisQA)可以减少用户在进行各种复杂操作上的时间精力</li>
+<li>在数据分析的工作流程中引入自然语言界面，可以<strong>降低</strong>用可视化图表分析数据所需的<strong>门槛</strong>；没有正规数据分析训练和可视化素养的用户也可用</li>
+</ul>
+</li>
+<li><p>自动化的难点</p>
+<ul>
+<li>如何<strong>透明地</strong>解释该问答系统为何给出这个答案？</li>
+<li>需要视觉化的解释（<strong>visual explanations</strong>）：调研表明，最有效的解释是描述“答案是如何依据图表上的<strong>视觉特征</strong>得到的”</li>
+</ul>
+</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="前期调研"><a href="#前期调研" class="headerlink" title="前期调研"></a>前期调研</h3><ul>
+<li>对图表、问题、回答、解释的调研</li>
+<li>收集47个柱状图与5个折线图</li>
+<li>每人用<strong>自然语言</strong>写5个关于上述图表的<strong>问题</strong>（Q），<strong>回答</strong>（A）10个问题，并提供对应的<strong>解释</strong>（E）。</li>
+<li>问题分类：单一数值检索lookup /复合型compositional (70%)<ul>
+<li>复合型的例子：极值；两个数值差异；多个值的和等等</li>
+</ul>
+</li>
+<li>问题和解释的分类： 视觉化visual (51%) /非视觉化non-visual<ul>
+<li>视觉化的例子：利用到了图表的<strong>视觉特征</strong>，比如“muslin在柱状图中有最长的橙色条”</li>
+<li>非视觉化例子：仅和数据有关，如”muslin中有57%认为是常见的，是比所有其他宗教都多的“</li>
+</ul>
+</li>
+<li>从学校同事那额外收集了277个<strong>视觉化问题</strong>以分析涉及<strong>标记</strong>、<strong>可视属性</strong>的词法、句法结构</li>
+</ul>
+<h3 id="自动化可视化问答系统流水线"><a href="#自动化可视化问答系统流水线" class="headerlink" title="自动化可视化问答系统流水线"></a>自动化可视化问答系统流水线</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/b02870ac95b9dda88ba9a161ab5f434a3c1b2017.gif" alt="pipeline"></p>
+<p>三个步骤：</p>
+<ul>
+<li><p>第一步提取可视化中的可视编码、提取数据并将数据整理成unfolded数据表（为了下一步的Sempre的使用）</p>
+<ul>
+<li>如果可视化本身是vega-lite，这一步可以直接从vega-lite的specification找到；如果是D3，可以用他们以前做的D3 deconstructor；如果是位图，可以用ReVision（多年前由李飞飞、本文通讯作者、以及Jeffrey Heer合作的对可视化进行解析的工作）<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/54eab59b4cb0d47929aa39e446cd0cf978d7e4ad.png" alt="step1"></li>
+</ul>
+</li>
+<li><p>第二步转换为非视觉问题，主要思想就是把视觉问题里的视觉元素一步步替换为数据集本身的元素。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/3ef36f6890ab7fac597d43dee429d1914e3f2865.png" alt="step2"></p>
+</li>
+<li><p>第三步生成视觉化解释：结合 Sempre在回答问题时产生的λ表达式与自然语言模板生成<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/e6fda318224eba29c16ed1b36b46d4e7e1897744.png" alt="step3"></p>
+</li>
+</ul>
+<p>总的来说，其实是一种自然语言到自然语言的<em>变换</em>，过程中做了两次<em>翻译</em>，利用了Sempre这个工具作出了回答。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>文中给出了一些案例，可以看到最后几个回答也出现了错误。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/849bb829242e00377147c4728524cf78e84eba4b.png" alt="casep1"><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/022492de79472bcb97ec5b962f062b3c96304b43.png" alt="casep2"></p>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><h3 id="方法性能"><a href="#方法性能" class="headerlink" title="方法性能"></a>方法性能</h3><p>与仅用Sempre比较准确性，各方面完胜。但是注意到，总体准确率也仅有51%。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/85890869255f80aeeecd6351ba4aff82f27b2449.png" alt="performance1"></p>
+<p>各个步骤的必要性。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/2d195596173e70ca58fd11fc287fcf5b3f64cbe1.png" alt="performance2"></p>
+<h3 id="用户调研"><a href="#用户调研" class="headerlink" title="用户调研"></a>用户调研</h3><ul>
+<li><p>16人，within-subject。</p>
+</li>
+<li><p>视觉化的解释相比没有解释显著提升了透明度；信任度有提升但不显著</p>
+</li>
+<li><p>视觉化的解释比人写的解释显著提升了透明度；信任度方面提升不大</p>
+</li>
+<li><p>视觉化与非视觉化的解释，从透明度、信任度和有用度相比起来，都比后者高但都不显著。</p>
+</li>
+</ul>
+<h2 id="不足与未来工作"><a href="#不足与未来工作" class="headerlink" title="不足与未来工作"></a>不足与未来工作</h2><ul>
+<li>QA中的Q多样性仍然不够，对应的解答也一样不够丰富。</li>
+<li>解释的方式也不够丰富。其实仔细一想，本文方法仍然是基于规则的，数据仍然是基于他们收集的数据。但是提供了一个很好的可行思路。</li>
+<li>可视化的多样性不足在文中<em>并未提及</em><ul>
+<li>文中只有条形图与折线图。这两种在网上最多；先前一篇调研也表面他们其实是最容易让大众读懂的。但诸如饼图等也很简单，本文并未提到；猜测与CHI的文章特性有关：可操作性强、能实现出来。</li>
+</ul>
+</li>
+</ul>
+<h2 id="相关工作与个人感言"><a href="#相关工作与个人感言" class="headerlink" title="相关工作与个人感言"></a>相关工作与个人感言</h2><h3 id="用自然语言与可视化交互的工作"><a href="#用自然语言与可视化交互的工作" class="headerlink" title="用自然语言与可视化交互的工作"></a>用自然语言与可视化交互的工作</h3><p>今年来由于普通用户对可视化需求越开越大，这方面的工作也越来越多，这里仅列举一部分，有兴趣的朋友可以看看原文了解最新进展。</p>
+<h4 id="自然语言“产生”可视化"><a href="#自然语言“产生”可视化" class="headerlink" title="自然语言“产生”可视化"></a>自然语言“产生”可视化</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/2e50510e790ab7c1770bb9249091ea39eab41af1.png" alt="emp1"></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/d3d2ddff2ed65bc2ed2461a2ccef1255ef48cbeb.png" alt="emp2"></p>
+<h4 id="自然语言对可视化的引用、辅助文字阅读"><a href="#自然语言对可视化的引用、辅助文字阅读" class="headerlink" title="自然语言对可视化的引用、辅助文字阅读"></a>自然语言对可视化的引用、辅助文字阅读</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/e2324f242896ed3ef5df8fa7305ce496930dadb8.png" alt="emp3"></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/adce7241676b6a1de61c8c18a4931da500b82dfe.png" alt="emp4"></p>
+<p>本身上述不少工作是有商业产品背景的，这里再列举一些商业智能BI或者可视化叙事storytelling的产品。</p>
+<h4 id="自然语言生成-可视化生成的商业产品-插件"><a href="#自然语言生成-可视化生成的商业产品-插件" class="headerlink" title="自然语言生成/可视化生成的商业产品/插件"></a>自然语言生成/可视化生成的商业产品/插件</h4><p>Tableau。可以看到这个自然语言生成的结果也很模板划，不过这是多年前的产品截图了。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/519cbfd715fd17b0999ffcb06ea3e76d0325a952.png" alt="prod1"></p>
+<p>YellowFin。从广告简介来看，该公司的assisted insight比automated insight更接近我们可视分析“human in the loop”的思路，并且受众不是可视化专家而是更为普通的BI用户。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/c13ad81315584f27e1e6395d1f897be10c78e4ac.png" alt="prod2"></p>
+<p>Calliope / 同济大学曹楠老师组。自动insight发现、故事生成。自动化方法，但支持各种可配置项进行定制。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/7/15/df86962ac64ee6fdc089f933b7f1c9ad1463aa71.png" alt="prod3"></p>
+<h3 id="对于文章背后idea、思路的思考"><a href="#对于文章背后idea、思路的思考" class="headerlink" title="对于文章背后idea、思路的思考"></a>对于文章背后idea、思路的思考</h3><ul>
+<li><p>一些大佬们的作品的共性</p>
+<ul>
+<li>GraphScape用了线性规划对不同可视化之间transition代价建模</li>
+<li>Draco用了Answer Set Programming对可视化设计中的软限制、硬限制建模</li>
+</ul>
+</li>
+<li><p>没有用比较高深的机器学习/深度学习方法；用的方法都比较可解释</p>
+</li>
+<li>大家都用了Vega-Lite：可视化还是比较结构化的东西，很多情况下如果当做位图来处理可能还是没那么有效</li>
+<li>l大多数情况还是需要人工标注、人工生成的信息</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
