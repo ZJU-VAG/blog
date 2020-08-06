@@ -182,7 +182,7 @@
 </li>
 <li><p>阶段折叠：将对齐的事件分成多个阶段。</p>
 </li>
-<li><p>数据建模：事件序列数据可以由三路张量$\mathscr{X} \in R<em>{+}^{M \times T \times N}$表示。其中M，T，N分别表示事件，阶段和实体的数量。$\mathscr{X}</em>{i j k}$表示在第k个实体的j阶段发生的第i个事件。</p>
+<li><p>数据建模：事件序列数据可以由三路张量$\mathscr{X} \in R_{+}^{M \times T \times N}$表示。其中M，T，N分别表示事件，阶段和实体的数量。$\mathscr{X}_{i j k}$表示在第k个实体的j阶段发生的第i个事件。</p>
 </li>
 <li><p>汇总算法：上步中我们得到了表示事件序列数据集的三路张量χ，利用张量分解得到潜在的序列模式，即线程。转化成如下的优化问题：</p>
 </li>
@@ -259,11 +259,26 @@
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
         Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

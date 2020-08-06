@@ -229,10 +229,10 @@
 <p><center>图14  贝叶斯网络示意图</center><br>如图所示，$p(a,b,c,d,e)=p(a)p(b|a)p(c|a,b)p(d|b)p(e|c)$</p>
 <p>除此之外，本章还介绍似然函数和根据数据更新先验分布为后验分布的可视化。</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/8/10/e577241d4785ab7095363fc3b67067b0b099ba0a.png" alt="likelihood_function"></p>
-<p><center>图15  似然函数可视化</center><br>对于离散型总体$X$，设其概率分布为$P(X=a<em>i)=p(a_i;\theta),i=1,2,\cdots$，称函数$L(\theta)=L(X_1,X_2,\cdots,X_n;\theta)=\prod\limits</em>{i=1}^n p(X_i;\theta)$</p>
+<p><center>图15  似然函数可视化</center><br>对于离散型总体$X$，设其概率分布为$P(X=a_i)=p(a_i;\theta),i=1,2,\cdots$，称函数$L(\theta)=L(X_1,X_2,\cdots,X_n;\theta)=\prod\limits_{i=1}^n p(X_i;\theta)$</p>
 <p>为参数$\theta$的似然函数。</p>
 <p>对于连续型总体$X$，概率密度为$f(x;\theta)$，则称函数</p>
-<p>$L(\theta)=L(X<em>1,X_2,\cdots,X_n;\theta)=\prod\limits</em>{i=1}^nf(X_i;\theta)$</p>
+<p>$L(\theta)=L(X_1,X_2,\cdots,X_n;\theta)=\prod\limits_{i=1}^nf(X_i;\theta)$</p>
 <p>为参数$\theta$的似然函数。</p>
 <p>对于给定的样本值$(x_1,x_2,\cdots,x_n)$，使似然函数$L(x_1,x_2,\cdots,x_n;\theta)$达到最大值的参数值$\hat{\theta}=\hat{\theta}(x_1,x_2,\cdots,x_n)$称为未知参数$\theta$的最大似然估计值，相应的使似然函数$L(X_1,X_2,\cdots,X_n;\theta)$达到最大值的参数值$\hat{\theta}=\hat{\theta}(X_1,X_2,\cdots,X_n)$称为$\theta$的最大似然估计量。一般统称为$\theta$的最大似然估计。称这种估计法为最大似然估计法。</p>
 <p>对数似然方程或对数似然方程组除了一些简单的情况外，往往没有有限函数形式的解，这就需要用数值方法求近似解，例如牛顿-拉弗森算法等。</p>
@@ -334,11 +334,26 @@
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
         Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

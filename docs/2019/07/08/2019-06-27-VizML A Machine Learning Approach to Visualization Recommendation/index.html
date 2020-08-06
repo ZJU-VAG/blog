@@ -165,7 +165,7 @@
 <p>现有的可视化推荐系统分为两类: 基于<strong>规则</strong>的与基于<strong>机器学习</strong>的. 前者一般是根据专家经验或实验得到的可视化准则; 后者则是直接学习从数据到可视化的模型. 本文属于后者. 本文将可视化定义为一个做可视化选择(<strong>making design choice</strong>)的过程, 这个过程让人来做是耗时耗力的. 为了减少人的工作量, 一个常用办法就是推荐, 具体来说是机器学习模拟逼近来模拟人做最优选择的过程.</p>
 <p>在可视化中, 可视化编码包含了标记marks (如点、线、矩形) 与通道channels/retinal properties (如位置、长度、颜色等). 而创建可视化就是结合数据选择这些标记、通道的过程. 下图是一个简单的例子.</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/1561881383307.png" alt="1561881383307"></p>
-<p>如果用形式化的定义就是, 给定数据集$d$ , 一系列内在关联的设计选择$C={c}$以及上下文信息$T$(美观性、任务、领域、受众). 人进行可视化设计的目标就是$C_{max} = \arg\max_CEff(C~|~d, T) $. 我们可以用神经网络来逼近它.</p>
+<p>如果用形式化的定义就是, 给定数据集$d$ , 一系列内在关联的设计选择$C=\{c\}$以及上下文信息$T$(美观性、任务、领域、受众). 人进行可视化设计的目标就是$C_{max} = \arg\max_CEff(C~|~d, T) $. 我们可以用神经网络来逼近它.</p>
 <p>本文与近期其他一些基于机器学习方法区别在于以下三点:</p>
 <ul>
 <li><p>学习的任务</p>
@@ -306,11 +306,26 @@
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
         Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>
