@@ -223,19 +223,19 @@
 <p><strong>Fact Extraction:</strong></p>
 <ol>
 <li><p>子空间枚举(Subspace Enumeration):</p>
-<p>$subspace  = \left{\left{f[1]:v[1]\right}, \ldots, \left{f[n]:v[n]\right}\right}$ 使用BUC算法，按top-down顺序枚举数据子空间。限制数据立方的格点深度为3，因为经过超过3维过滤的数据子空间对用户来说通常是无趣的。</p>
+<p>$subspace  = \left\{\left\{f[1]:v[1]\right\}, \ldots, \left\{f[n]:v[n]\right\}\right\}$ 使用BUC算法，按top-down顺序枚举数据子空间。限制数据立方的格点深度为3，因为经过超过3维过滤的数据子空间对用户来说通常是无趣的。</p>
 </li>
 <li><p>事实计算(Fact Computation)</p>
 <p>在枚举数据子空间的过程中，DataShot进行计算以搜索不同类型的事实。目前，DataShot在一次计算中只支持一个度量.</p>
 </li>
 <li><p>计算事实分数（Fact Scoring）</p>
-<p>$score = W<em>s·score</em>{significance} + W<em>f·score</em>{focus} + W<em>c·score</em>{context}$ 参数分别为0.6/0.2/0.2</p>
+<p>$score = W_s·score_{significance} + W_f·score_{focus} + W_c·score_{context}$ 参数分别为0.6/0.2/0.2</p>
 </li>
 </ol>
 <p><strong>Fact Composition:</strong></p>
 <ol>
 <li><p>主题提取(Topic Extraction): </p>
-<p>$sheet_{topic} (t)={fact[1],fact[2],…,fact[d]}$  $where fact[i].subject.context=t or fact[i].subject.focus=t$</p>
+<p>$sheet_{topic} (t)=\{fact[1],fact[2],…,fact[d]\}$  $where fact[i].subject.context=t or fact[i].subject.focus=t$</p>
 </li>
 <li><p>事实选取(Fact Selection):</p>
 <p>根据事实分数，选择top-N个数据事实，然而，在许多情况下，最重要的事实在语义上可能非常相似，因为它们共享在统计上非常重要的属性，支配着最终的得分。因此需要平衡事实的重要性和差异性。具体过程是：</p>

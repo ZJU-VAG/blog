@@ -165,7 +165,7 @@
 </ul>
 <h3 id="Markov-Reward-Process"><a href="#Markov-Reward-Process" class="headerlink" title="Markov Reward Process"></a>Markov Reward Process</h3><ul>
 <li>在前者的基础上，增加了$(\mathcal{S,P,\color{red}{\mathcal{R,\gamma}}})$</li>
-<li>$\color{red}{\mathcal{R}是一个奖励函数，\mathcal{R<em>s}=\mathbb{E}[R</em>{t+1}|\mathcal{S}=s]}$</li>
+<li>$\color{red}{\mathcal{R}是一个奖励函数，\mathcal{R_s}=\mathbb{E}[R_{t+1}|\mathcal{S}=s]}$</li>
 <li>$\color{red}\gamma是一个衰减因子，\gamma\in[0,1]$</li>
 </ul>
 <p>奖励函数$\mathcal{R}$代表了从状态$s$转移到状态$s’$时获得的奖励，这里奖励是离开状态后得到的(至于离开得到奖励还是进入一个新状态得到奖励只是定义了一种获得的规则而已)</p>
@@ -180,7 +180,7 @@ v(s)=\Bbb{E}[G_t|\mathcal{S_t}=s]</script><p>其代表着在状态$s$下的，$G
 \begin{align}
 v(s) &= \Bbb{E}[R_{t+1}+\gamma v(\mathcal{S_{t+1}})|\mathcal{S_t}=s] \\
 &=\mathcal{R_s}+\gamma \sum_{s'\in S}\mathcal{P}_{ss'}v(s')
-\end{align}</script><p>其有两部分组成，及时奖励的期望$\boldsymbol{R<em>{t+1}}$  ,下一个时刻状态$\boldsymbol{s</em>{t+1}}$ 的期望</p>
+\end{align}</script><p>其有两部分组成，及时奖励的期望$\boldsymbol{R_{t+1}}$  ,下一个时刻状态$\boldsymbol{s_{t+1}}$ 的期望</p>
 <h4 id="矩阵求解"><a href="#矩阵求解" class="headerlink" title="矩阵求解"></a>矩阵求解</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/0e260df4c3dcb2edacb8aa623869cbbf38489bc5.png" alt></p>
 <h3 id="Markov-Decision-Process"><a href="#Markov-Decision-Process" class="headerlink" title="Markov Decision Process"></a>Markov Decision Process</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/b63cb3ae94de7ee1b2def12376e148cc76b44eb9.png" alt></p>
 <h3 id="策略-policy"><a href="#策略-policy" class="headerlink" title="策略(policy)"></a>策略(policy)</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/e60ff0160a4c1bf5dd56d7da59ff14744cdf2d4c.png" alt></p>
@@ -222,19 +222,19 @@ q_\pi(s,a)&=\mathcal{R}_s^a+\gamma\sum_{s'\in\mathcal{S}}\mathcal{P}_{ss'}^a\sum
 <ul>
 <li>Deterministic: $\pi(s)=a.$</li>
 <li>Stochastic: $\pi(a|s)=\mathbb{P}_\pi[A=a|S=s]$</li>
-<li>$\pi<em>\theta(a|s)=\mathbb{P}</em>\pi[A=a|S=s,\theta]$</li>
+<li>$\pi_\theta(a|s)=\mathbb{P}_\pi[A=a|S=s,\theta]$</li>
 </ul>
 <h4 id="Policy-Gradient"><a href="#Policy-Gradient" class="headerlink" title="Policy Gradient"></a>Policy Gradient</h4><p><strong>object function</strong>:</p>
 <p><strong>episodic environments:</strong></p>
-<p>$J<em>1(\theta)=V^{\pi</em>\theta}(s<em>1)=\mathbb{E}</em>{\pi_\theta}[V_1]$</p>
+<p>$J_1(\theta)=V^{\pi_\theta}(s_1)=\mathbb{E}_{\pi_\theta}[V_1]$</p>
 <p><strong>continuing environments:</strong></p>
 <p><em>连续型环境就没有初始状态一说了，那么就取平均，考虑agent在某时刻处于某个状态下的概率，即状态分布</em></p>
 <p><strong>average value:</strong></p>
-<p>$J<em>{avV}(\theta)=\sum_sd^{\pi</em>\theta}(s)V^{\pi_\theta}(s)$</p>
+<p>$J_{avV}(\theta)=\sum_sd^{\pi_\theta}(s)V^{\pi_\theta}(s)$</p>
 <p>对每个可能的状态计算从该时刻(该状态)开始于环境一直交互下去的奖励，然后对其概率分布求和.</p>
 <p><strong>average reward per time-step:</strong></p>
-<p>$J<em>{avR}(\theta)=\sum_sd^{\pi</em>\theta}(s)\sum<em>a\pi</em>\theta(s,a)\mathcal{R}_s^a$</p>
-<p>其中,$d^{\pi<em>\theta}(s)$是马尔科夫链在$\pi</em>\theta$下的随机概率分布；即$d^\pi(s)=lim<em>{t→∞}P(s_t=s|s_0,\pi</em>θ)$就表示你从状态$s<em>0$开始，在策略$\pi</em>θ$下经过$t$个时间步后到达状态$s$的概率。</p>
+<p>$J_{avR}(\theta)=\sum_sd^{\pi_\theta}(s)\sum_a\pi_\theta(s,a)\mathcal{R}_s^a$</p>
+<p>其中,$d^{\pi_\theta}(s)$是马尔科夫链在$\pi_\theta$下的随机概率分布；即$d^\pi(s)=lim_{t→∞}P(s_t=s|s_0,\pi_θ)$就表示你从状态$s_0$开始，在策略$\pi_θ$下经过$t$个时间步后到达状态$s$的概率。</p>
 <p>该式代表了到达某个状态$s$,并且采用动作$a$的情况下，获得的平均回报$\mathcal{R_s^a}$,概率化累加就是平均回报.</p>
 <p>这个可以如下计算(以李宏毅教授PPT为例)，每条迹的概率*该条迹累计的期望即为平均</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/9/23/2d99f29215e2162298d27f45456142a4ed46ab00.png" alt></p>
