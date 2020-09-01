@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        对结对编程的重新思考 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-为什么选这个题"><span class="toc-text">0. 为什么选这个题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-结对编程"><span class="toc-text">1. 结对编程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结对编程的优势"><span class="toc-text">结对编程的优势</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#对团队而言"><span class="toc-text">对团队而言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#对个人而言"><span class="toc-text">对个人而言</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结对变成的问题"><span class="toc-text">结对变成的问题</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-对结对的思考和延申"><span class="toc-text">3. 对结对的思考和延申</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#结对科研"><span class="toc-text">结对科研</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对于我们实验室的价值"><span class="toc-text">对于我们实验室的价值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结对工具"><span class="toc-text">结对工具</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#live-share"><span class="toc-text">live share</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前人经验"><span class="toc-text">前人经验</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-总结"><span class="toc-text">4. 总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        对结对编程的重新思考
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2020-08-13 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2020-08-13</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#王智勇"
+                title="王智勇">王智勇</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="0-为什么选这个题"><a href="#0-为什么选这个题" class="headerlink" title="0. 为什么选这个题"></a>0. 为什么选这个题</h1><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/f6b26292e28456e244fedc56e387ca93c856e97a.png" alt="image.png">今天没有报告论文，而是选择了一般被大家忽视的工作技巧——结对编程，这个话题和大家讨论一下。目的除了让大家重新认真了解一下结对编程的概念，更重要的是想和大家讨论，结对编程，乃至结对科研这种结对的工作思想对于我们实验室的价值。<br>我个人认为它在某些方面是能够提升我们实验室的创新、效率、质量的。内容没啥深奥的，比较好理解，适合组会大家一起讨论。<br>先说一下为什么会选这个题，其实本科在接触到结对编程这个概念的时候，觉得很扯很水，浪费时间，不会真的有人用吧。我估计也会有很多人和我一样。这可能也是这种方法一直被主流忽视的原因。<br>最近之所以会重新了解结对编程，是因为一直以来，在华为项目都有一个项目管理上的问题，就是如何传递大家的知识，比如一个新人要加入项目，要怎么样培养他，了解这个项目当前的重点，熟悉开发流程，然后快速加入进来。<br>也是恰巧，最近在youtube上看到有人用tmux做分屏，两个人同时连接到tmux session上做结对编程。就突然想起，是不是结对编程这个概念还挺能解决一些项目问题的。后来花时间专门学习并且找同学实践了一下，发现这东西很适合我们的实验室的工作，不仅仅是编程，后面我也会提到。</p>
+<h1 id="1-结对编程"><a href="#1-结对编程" class="headerlink" title="1. 结对编程"></a>1. 结对编程</h1><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>结对编程，是一个敏捷开发的技巧，它是指两个程序员组成一队，在同一时间同一台电脑，共同完成一个编程任务。两个人分成两个角色：driver和navigator，可以比喻成司机和导航的关系，也可以当作拉力赛里赛车手和领航员的关系。两个人每隔一段时间互换一下角色。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/d6e43e08e9e94559bc1d1a5dd3d333e9c04f6c77.png" alt="image.png"><br>传统的结伴开发中，driver负责写代码，他只关注整个任务里的某个子任务，比如具体的遍历该如何写，用什么数据结构。<br>navigator负责看driver写代码，关注代码是否有bug、逻辑问题，同时负责更加宏观的结构设计，以及思考接下来的工作。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/855c77a9e2283194bc65ebfa8cccc93b66146407.png" alt="image.png"><br>按照协作方式，可以把结对编程分成in-person和remote的两种，也就是当面的结对编程和远程的结对编程。当面的就是两个人坐在一起，用同一个键盘鼠标显示器，两个人轮流编程。当然navigator的角色也可以有一台电脑，但不是用来编程，而是用一些笔记之类的工具作为辅助；<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/1cf5e81293b431001cdb21d92d06a51c59a39e26.png" alt="image.png"><br>remote pair programming，顾名思义，就是两个人可以不用坐在一起，通过视频会议、teamviewer，vs code的插件或者IDE的插件来实现结对编程（对，vs code和主流的IDE，比如pycharm，都是有专门服务于结对编程的插件的）一般而言，当面的结对编程在沟通上效率更高，但现在似乎远程的结对编程更容易被接收一些，一方面因为两个人不用挤在同一台电脑旁边，也有更多的私人空间，适当的划划水，不至于太神经紧绷。另一方面，也是远程办公在硅谷也越来越流行，另外为开源社区工作的人也越来越多，这里面是有很多结对开发的爱好者的。我自己目前只尝试过远程的结对编程。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/472cebfee235506d8ef6a00816a2be5ce3c9fd8c.png" alt="image.png"></p>
+<h4 id="结对编程的优势"><a href="#结对编程的优势" class="headerlink" title="结对编程的优势"></a>结对编程的优势</h4><h5 id="对团队而言"><a href="#对团队而言" class="headerlink" title="对团队而言"></a>对团队而言</h5><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/0869ef65759f4d1c21703094ea9345c9e7f4673d.png" alt="image.png"></p>
+<ol>
+<li>代码质量的提升，这一点对于企业很重要，毕竟产品要持续迭代，代码质量差以后会成本会越来越高，不像我们可能投完稿代码基本上可以扔了。结对开发毕竟代码是由2个人共同完成的，相当于代码已经经过了一遍code review，而且从设计层面上来说，两个人共同设计的代码会避免掉很多低级的错误，也会减少很多逻辑上的bug。从业务角度来说，两个人能够减少对需求的理解偏差。从管理者的角度来讲，两个人同时工作可以避免很多偷工减料的情况。</li>
+<li>知识传递，这个对企业也很重要，万恶的资本世界总是希望每个人都是容易替代的，即使是在文档很规范的团队里，如果有人跳槽，对我们实验室来说可能就是如果有人毕业，那他之前的工作成果可能需要很长时间才能整个团队被消化，尤其是一些困难问题的解决方案。但是在结对编程里，相当于多了个备胎，就减少了这种风险。</li>
+<li><p>工作成果会更加具有创新性，这个是我在文献里看到的，也不难理解，两个人紧密配合地去完成一项工作，两个人的思维碰撞很容易产生一些创新性的解决方案。这点一会介绍结对科研的时候也会说到。</p>
+<h5 id="对个人而言"><a href="#对个人而言" class="headerlink" title="对个人而言"></a>对个人而言</h5></li>
+<li><p>提高效率。这个可能有点反直觉，两个人同时做一个工作难道工作效率不会降低吗？左边这图里有一个点是，Done might really mean done，啥意思，实际工作里提交的代码可能要反反复复返工好几遍，可能是没过测试可能是需求有偏差，不停的返工应该是程序员职业生涯中要面临的最痛苦的事情之一。我们华为项目里，虽然我们没有测试，也不会有返工，但是后期的bug fix的代码提交不要太多。而结对编程里，完成了可能真的就是完成了。另一方面，结对编程会创造一个正式的工作氛围，氛围里自带了一种紧张感，在心理上，当有一个人在你旁边和你紧密配合的时候，你不好意思开小差，也不好意思糊弄</p>
+</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/a8eaec1da2a2b7123f6df7ba647553169939301d.png" alt="image.png"></p>
+<ol>
+<li>帮助快速学习，可以分两种学习来看，一个是对团队工作的快速学习，也就是我最刚开始提到的问题，一个新人加进来，如何才能快速培养他，如果让一个老人和这个新人一起结对编程，新人会上手很快，这比文档之类的效果好很多。另一种学习，是自身技能的拓展，毕竟你是看着对方一点点写代码，总是能从对方身上学到不少东西的。也是左边图中的cross traning，这就像是你看游戏主播打游戏可以快速提升自己的游戏水平一样，无论是战术方面还是操作方面，都远比自己摸索来的快。左边这图上的old dogs learn new tricks, new dogs learn old tricks其实就在说这个。另外结对编程一定程度上也能锻炼表达能力。</li>
+<li>发现自己的问题和不足，平时自己藏着掖着的毛病，在结对编程中都会被轻易指出。</li>
+<li>networking，这个点很有趣我也放进来了，是我从stackoverflow的结对编程经验总结里看到的，他是说，通过结对编程，能够和同伴更快地建立起亲近的人际关系。这对于程序员这种自身不太需要与人打交道的工种来说，是个不错的社交方式。比如在GitHub上，在自己感兴趣的项目中，和其他人结对编程，就算是一种社交。什么叫全球最大的同性交友网站，这就是。</li>
+</ol>
+<p>其他的好处比如说什么提升新人的自信，more focus，everyone know your strength就不一一说了</p>
+<h4 id="结对变成的问题"><a href="#结对变成的问题" class="headerlink" title="结对变成的问题"></a>结对变成的问题</h4><p>说完优势，再来说说结对编程可能面临的问题，我也总结了几个关键的<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/5d5b445bf0d58a9722fa706d2e41ff775f25af00.png" alt="image.png"></p>
+<ol>
+<li>累，这个是很多网上的经验反馈中都提到的一点。刚才也说了，结对编程能创造一个正式的工作环境，带有紧张感，这样的好处当然是大家能够更集中注意力。但是连续的高度集中会导致疲劳，就像考试一样。</li>
+<li>结对中，容易出现一方干活，一方划水的情况，尤其是当两个人并不想结对，真是leader要求的时候。</li>
+<li>缺乏隐私空间，这个问题也不小，和性格有关，有些人的工作习惯就是不喜欢被别人看着工作，这种就不适合结对。还有就不能划水了，本来可以一遍写代码一遍刷刷微博回个微信，结对就不太行了。网上一个结对编程了3万小时程序员总结了结对中最频繁的一句话：“你啥时候上卫生间”。</li>
+<li><p>结对编程并不适合所有工作，也不适合一直使用，一般一周结对个几小时。结对编程适合有一定挑战性或者创新性的任务，这样更能发挥两个人合作的优势；而不适合trivial的工作，一些琐碎的脏活，两个人做就是浪费人力。</p>
+<h1 id="3-对结对的思考和延申"><a href="#3-对结对的思考和延申" class="headerlink" title="3. 对结对的思考和延申"></a>3. 对结对的思考和延申</h1><h4 id="结对科研"><a href="#结对科研" class="headerlink" title="结对科研"></a>结对科研</h4><p>既然有结对编程，那有没有结对科研呢，还真有。下面这篇论文，Pair Research，就是借鉴了结对编程提出的结对科研的方法。而且很有趣的是，这篇文章是14年发表在CSCW的一篇文章，这是个计算机的A类会议。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/b6e185b2f4b4ab125bb3e95773e8799c7d9b4214.png" alt="image.png"><br>这篇文章设计了一套结对科研的方法，因为他们也是搞计算机科研的，所以他们结对科研里其实也包含了结对编程。具体方法我就不介绍了，感兴趣的可以自己查一下。我只说结果了，他们找了很多的研究生和研究员，做了一个对照实验，结论是结对科研能够帮助大家更高效更具创造性的完成自己的课题，并且还能够了解结对伙伴的研究课题和领域<br>其实结对也不一定就限于结对编程，结对科研什么的，结对的思想有更广泛的应用，比如结对学习、结对写作，这些在谷歌上搜索，都能找到很多相关的资料。什么pair learning、pair writing什么的。还有一些潜在的，比如ACM竞赛里，三个人用一台电脑做题，三个人有各自的分工，这是确确实实的1+1+1&gt;3的。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/923f54f4868d82ee5e4c70888a7f3f9335c73781.png" alt="image.png"></p>
+<h4 id="对于我们实验室的价值"><a href="#对于我们实验室的价值" class="headerlink" title="对于我们实验室的价值"></a>对于我们实验室的价值</h4><p>那么回到我们实验室，为什么我今天选这个题，就是我发现我们实验室其实就很适合结对，不仅是结对编程了，也可以是结对科研或者其他工作。为什么呢</p>
+</li>
+<li><p>我们人多，有充分的结对空间</p>
+</li>
+<li>我们的工作性质，毕竟实验室的核心还是做创新和说故事，这个工作性质是需要创新性、需要解决问题的，有很多不trivial的工作，需要探索，不像互联网公司的业务部门，需求很多是产品经理定死的。这里是结对最能发挥作用的领域。</li>
+<li>我们实验室不同于企业的一点是，我们的能力培养和结果产出并重的。甚至能力培养更重要。对于博士生，可能前两年都是在培养阶段，后面才开始有产出，而且很多时候也是边学边做。过去我们的培养方式主要是新人跟着老人一起做某个课题或者项目，一起讨论，一起头脑风暴，然后再各自做各自的，遇到问题再交流问题。如果是使用结对的方法，就不单单是在讨论和开会的时候大家交流。而是在部分工作上都一起。比如写作的时候，我们可以异想天开一些，可以尝试结对写作。pair writing还真的是有的，在google上搜，方法和经验都能找到。博士生第一次写论文的时候应该都不太有自信，我不知道，应该第一次给陈老师看论文还挺紧张的吧。但如果在此之前，和老博士生们结对写过论文，应该会好很多。也不仅是新老人之间，就是两个熟练的人一起结对，也能从对方身上学到一些更多东西，来优化自己的技巧。</li>
+<li>我们的工作需要多面手。怎么说呢，放在企业里，我们的工作需要很多工种，前端、后端、数据，还有设计、UI、storytelling。但毕竟我们是学生团队，想像企业里那样明确分工不太现实，我们没有那么娴熟，而工作本身就很难切割。我记得寒假的时候东明学长就分享过VIS投稿的一些经验，大概是说前后端不能只各顾各的，不然大家的工作会很难对接，大家需要多沟通交流，最好都能做到全栈。我觉得结对编程也是一个很好的解决方法，刚好王杰就做过类似的，去年王杰和叶慧在做陆博的一个课题时，就用了结对编程方式，他们一个更擅长前端，一个更擅长后端，双方结对时边沟通边实现，方便了对接，也避免了很多问题。<h4 id="结对工具"><a href="#结对工具" class="headerlink" title="结对工具"></a>结对工具</h4><h5 id="live-share"><a href="#live-share" class="headerlink" title="live share"></a>live share</h5><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/07a5a4c9abaa371964fa0b0badd640f63bc2e03f.png" alt="image.png"><br>工具类的东西，我这里就推荐一个吧。叫live share，是vs code的一个插件，他是微软针对结对编程开发的一个工具，两个人可以同时使用vs code连接到一个session上，然后两个人就可以同时编辑一份代码，一起调试。而且也支持语音。所以以后大家如果想尝试结对编程，可以尝试一下live share。另外其他的主流IDE，比如pycharm intelliJ之类的，也有一些专门针对结对编程的工具，这个就自行搜索了。<h4 id="前人经验"><a href="#前人经验" class="headerlink" title="前人经验"></a>前人经验</h4></li>
+</ol>
+<ul>
+<li>VMware 30,000小时结对编程的工程师经验分享：<a href="https://www.youtube.com/watch?v=RCDfBioUgts&amp;t=2110s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=RCDfBioUgts&amp;t=2110s</a></li>
+<li>Atlassian结对编程教程：<a href="https://blog.developer.atlassian.com/try-pair-programming/" target="_blank" rel="noopener">https://blog.developer.atlassian.com/try-pair-programming/</a></li>
+<li>微软关于结对编程的总结文献：<a href="https://www.microsoft.com/en-us/research/publication/pair-programming-whats-in-it-for-me/" target="_blank" rel="noopener">https://www.microsoft.com/en-us/research/publication/pair-programming-whats-in-it-for-me/</a></li>
+<li>知乎相关讨论：</li>
+<li><a href="https://www.zhihu.com/question/19832735" target="_blank" rel="noopener">国内为何很少有人做结对编程呢？是确实不好还是属于中国特色？</a></li>
+<li><a href="https://www.zhihu.com/question/20188422" target="_blank" rel="noopener">工程师结对编程能否大幅提高工作效率？</a></li>
+</ul>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h1><p>这就回到我做这个报告最初的目的，就是想和大家讨论一下，我们是不是可以尝试尝试这种结对的工作学习方式。我其实在调研这个主题过程中，有过一段异想天开的阶段，就觉得结对非常好，迫不及待的想什么都结对尝试一下。<br>后来冷静下来，要是结对真的这么香，为什么不主流呢，国内几乎没人用，硅谷也只有10%的人经常使用结对。它还是在某些任务上才能发挥更大的价值。<br>最后大家听完这个报告，如果有想刻意尝试结对的想法，我们可以一起实践。哪怕是以后在做某个任务的时候能够想起，还有结对这种选择，这次报告就算是有价值了。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
