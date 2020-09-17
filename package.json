@@ -6,7 +6,7 @@
         "version": "3.9.0"
     },
     "scripts": {
-        "deploy": "hexo clean && hexo g && git add . && git commit -m 'once generate' && git push origin master"
+      "deploy": "hexo clean && hexo g && git add . && git commit -m 'generated' && git push origin master"
     },
     "dependencies": {
         "hexo": "^3.9.0",
