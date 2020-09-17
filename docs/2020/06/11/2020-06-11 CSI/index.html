@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Visual Interaction with Deep Learning Models through Collaborative Semantic Inference - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1. 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-作者介绍"><span class="toc-text">1.1 作者介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-内容简介"><span class="toc-text">1.2 内容简介</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#解决思路"><span class="toc-text">解决思路</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-如何将模型和交互结合"><span class="toc-text">2. 如何将模型和交互结合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-机器学习可视化分类"><span class="toc-text">2.1 机器学习可视化分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-按照模型和交互的结合程度"><span class="toc-text">a. 按照模型和交互的结合程度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-按照可视化的目标来分"><span class="toc-text">b. 按照可视化的目标来分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-实例分析"><span class="toc-text">2.2 实例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-Passive-Observation-amp-Model-Understanding"><span class="toc-text">1. Passive Observation    &amp;    Model Understanding</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Passive-Observation-amp-Desicion-Understanding"><span class="toc-text">2. Passive Observation    &amp;    Desicion-Understanding</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-Interactive-Observation-amp-Model-Understanding"><span class="toc-text">3. Interactive Observation    &amp;     Model-Understanding</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-Interactive-Observation-amp-Decision-Understanding"><span class="toc-text">4. Interactive Observation    &amp;     Decision-Understanding</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-Interactive-Collaboration-amp-Model-Shaping"><span class="toc-text">5. Interactive Collaboration    &amp;    Model-Shaping</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-Interactive-Collaboration-amp-Decision-Shaping"><span class="toc-text">6. Interactive Collaboration    &amp;    Decision-Shaping</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-CSI"><span class="toc-text">3 CSI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-什么是-CSI"><span class="toc-text">3.1 什么是 CSI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-CSI-的实现思路"><span class="toc-text">3.2 CSI 的实现思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-模型需要对外暴露可解释的-hook"><span class="toc-text">1. 模型需要对外暴露可解释的 hook</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-hook-要和人的心理模型相关联"><span class="toc-text">2. hook 要和人的心理模型相关联</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-通过合适的视觉隐喻，将-hook-和交互关联起来"><span class="toc-text">3. 通过合适的视觉隐喻，将 hook 和交互关联起来</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-再看-CSI-是什么"><span class="toc-text">3.3 再看 CSI 是什么</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Use-Case-——-document-summarization"><span class="toc-text">4. Use Case —— document summarization</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-功能演示"><span class="toc-text">4.1 功能演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-如何实现的"><span class="toc-text">4.2 如何实现的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-总结"><span class="toc-text">5. 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-本文贡献"><span class="toc-text">5.1 本文贡献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-笔者小结"><span class="toc-text">5.2 笔者小结</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Visual Interaction with Deep Learning Models through Collaborative Semantic Inference
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2020-06-11 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2020-06-11</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#王智勇"
+                title="王智勇">王智勇</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>文章来源：VAST 2019<br>报告人：王智勇<br>时间：2020-06-11 下午 4 点<br>地点：钉钉线上会议</p>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><h3 id="1-1-作者介绍"><a href="#1-1-作者介绍" class="headerlink" title="1.1 作者介绍"></a>1.1 作者介绍</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/bb63124c031a3d5930c04198f5467fffa896696e.png" alt="img"><br>几位作者除了大家都熟悉的 VCG 大神的 Hanspeter Pfister，其他几位的本职研究和 NLP 相关。他们也几乎都和哈佛有关，一作 Sebastian Gehrmann，是哈佛毕业的博士，现在在 google AI 做可控和可解释的深度学习，本文其实就是一种可控深度学习的研究成果；二作 Hendrik Strobelt 是 IBM 的研究员，也在哈佛做过博士后，本质做 NLP 研究；Hanspeter 是可视化的大神，就不多介绍了，本文通讯作者 Alexander 是康奈尔的副教授，14 年 MIT 毕业的博士，本职研究是 NLP，但也拿过 VAST 的 best paper，成果颇多。</p>
+<h3 id="1-2-内容简介"><a href="#1-2-内容简介" class="headerlink" title="1.2 内容简介"></a>1.2 内容简介</h3><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>在深度学习的发展过程中，研究者为了提高性能和速度，模型变得越来越复杂，动辄上亿的参数量。着导致深度学习的过程难以<strong>解释、分析和可视化。</strong>而且用户要使用这样的黑盒，就得完全放弃自己的控制权，被迫去相信和依赖模型。然而模型往往会产生一些无法预测、难以解释的错误。<br>这篇文章想解决的问题是：<strong>如何让用户重新获得对推理过程的控制权</strong></p>
+<h5 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h5><p>作者认为，如果能够通过某种方法，通过对模型推理的过程进行解释和<strong>干预</strong>，将模型作为团队中的一员，让人和模型合作式的完成任务，人就能重新获得对推理过程的控制。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/3b3e88998165d1bfa2cf92c8bcb3f745e447d331.png" alt="image.png"><br>因此，作者提出了一套理论概念：Collaborative Semantic Inference（CSI），来尝试系统化地阐述，如何达到将人和模型协作起来完成任务。同时，作者也给出了一个 CSI 的 use case，一个文本总结系统，也证明这套方法的有效性。</p>
+<h2 id="2-如何将模型和交互结合"><a href="#2-如何将模型和交互结合" class="headerlink" title="2. 如何将模型和交互结合"></a>2. 如何将模型和交互结合</h2><h3 id="2-1-机器学习可视化分类"><a href="#2-1-机器学习可视化分类" class="headerlink" title="2.1 机器学习可视化分类"></a>2.1 机器学习可视化分类</h3><p>文章先针对过去机器学习可视化的成果进行了一个分类。作者主要从 2 个维度对现有成果进行分类：</p>
+<h4 id="a-按照模型和交互的结合程度"><a href="#a-按照模型和交互的结合程度" class="headerlink" title="a. 按照模型和交互的结合程度"></a>a. 按照模型和交互的结合程度</h4><p>可分为三类<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/1647614f1f31e551c18c8203cb5a330e688dae0a.png" alt="image.png"></p>
+<ol>
+<li><strong>Passive Observation</strong></li>
+</ol>
+<p>用户和模型之间没有交互：模型作为数据的上游，向可视化系统提供数据，可视化系统并不会对模型造成任何影响。用户对模型仅能进行观察。可视化和模型之间无耦合。</p>
+<ol>
+<li><strong>Interactive Observation</strong></li>
+</ol>
+<p>用户能够在一定程度上进行交互：用户可以通过交互改变模型的输入数据，从而改变模型在训练或推理过程中产生的数据。同样，用户仅能对模型进行观察，而无法做到对模型进行修改。可视化和模型之间弱耦合。</p>
+<ol>
+<li><strong>Interactive Collaboration</strong></li>
+</ol>
+<p>用户能够通过交互，来改变模型的行为，进而能够和模型协作完成某些任务。例如在训练过程中，用户可以交互地修改训练数据的标签，从而影响模型参数。CSI 就是在这一类别内。可视化和模型之间强耦合，需要对模型、交互、可视化进行共同设计(co-design)。</p>
+<h4 id="b-按照可视化的目标来分"><a href="#b-按照可视化的目标来分" class="headerlink" title="b. 按照可视化的目标来分"></a>b. 按照可视化的目标来分</h4><p>可以分成是对模型进行理解和修改的，还是对决策过程进行理解和修改的。</p>
+<ol>
+<li><strong>Model Understanding / Shaping</strong></li>
+</ol>
+<p>首先，第一类可视化，目标是对模型进行理解和修改，它不涉及模型是如何进行推理的，而是单纯对模型本身进行可视化。例如对 loss、激活值、模型参数、梯度值、模型中高维张量的降维投影等，都是这类可视化。</p>
+<ol>
+<li><strong>Decision-Understanding / Shaping</strong></li>
+</ol>
+<p>大部分的机器学习可解释性的工作都是这一类，它并不阐述模型内部的各种数值，而是以帮助人理解为目的，去分析模型是如何进行推理。例如卷积网络在对一张猫的图片分类时，通过对卷积层的激活值可视化，发现猫的耳朵激活程度较高，进而我们可以理解模型是通过猫的耳朵做推理决策的。</p>
+<h3 id="2-2-实例分析"><a href="#2-2-实例分析" class="headerlink" title="2.2 实例分析"></a>2.2 实例分析</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/736109859033de0584b0e8900085cc6fae0df0e8.png" alt="image.png"><br>作者给出了上图这样的二维表格，表格内填有相应类型的可视化工作。我们每一种类型挑选一个来简要介绍一下</p>
+<h5 id="1-Passive-Observation-amp-Model-Understanding"><a href="#1-Passive-Observation-amp-Model-Understanding" class="headerlink" title="1. Passive Observation    &amp;    Model Understanding"></a>1. Passive Observation    &amp;    Model Understanding</h5><p>以 TensorBoard 为例：<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/40b7a2762ae97828a9822b22cbc2f0c8e1ba02d7.png" alt="image.png"><br>tensorboard 应该是大家最熟悉的一个机器学习可视化工具了，它单纯的接受模型在训练过程中产生的各种数据，并不能反向影响模型行为，因此它是 Passive Observation 的。其次，它的可视化主要围绕模型本身的各类数值指标，并不帮助用户理解模型的决策，因此它是 Model Understanding 的工作。</p>
+<h5 id="2-Passive-Observation-amp-Desicion-Understanding"><a href="#2-Passive-Observation-amp-Desicion-Understanding" class="headerlink" title="2. Passive Observation    &amp;    Desicion-Understanding"></a>2. Passive Observation    &amp;    Desicion-Understanding</h5><p>此类成果用户同样只能对上游的数据进行观测，但可视化是服务于对模型决策/推理过程进行理解的。<br>例如 Deconvolution：<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/4604f880bea756b4c040d7d4fb3a993d2df472f1.png" alt="image.png"><br>Deconvolution 能够根据卷积神经网络推理的数据，可视化出输入图片在每一层卷积层上，模型看到了什么，从而帮助用户理解模型的决策过程。</p>
+<h5 id="3-Interactive-Observation-amp-Model-Understanding"><a href="#3-Interactive-Observation-amp-Model-Understanding" class="headerlink" title="3. Interactive Observation    &amp;     Model-Understanding"></a>3. Interactive Observation    &amp;     Model-Understanding</h5><p>例如 ActiVis:<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/e34101d826f2ffbec7771f20baf089543920b199.png" alt="image.png"><br>Facebook 研发的 ActiVis 在功能上相比 TensorBoard，多了数据实例选择的交互。用户可以通过实例选择器，选择喂给模型的输入数据，模型会产生新的数据给系统做可视化。</p>
+<h5 id="4-Interactive-Observation-amp-Decision-Understanding"><a href="#4-Interactive-Observation-amp-Decision-Understanding" class="headerlink" title="4. Interactive Observation    &amp;     Decision-Understanding"></a>4. Interactive Observation    &amp;     Decision-Understanding</h5><p>如同样由这篇文章的几位作者的工作成果：Seq2Seq-Vis<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/cd8d7ad02cc30115fa7bc78162fc08918449c272.png" alt="image.png"><br>Seq2Seq-Vis 是针对 Seq2Seq 模型可解释性的可视化工具。它将 output 和 input 之间的 attention 可视化出来，来解释模型是如何通过在 input 中推理到当前结果的。同时它也具备用户选择输入数据的交互。</p>
+<h5 id="5-Interactive-Collaboration-amp-Model-Shaping"><a href="#5-Interactive-Collaboration-amp-Model-Shaping" class="headerlink" title="5. Interactive Collaboration    &amp;    Model-Shaping"></a>5. Interactive Collaboration    &amp;    Model-Shaping</h5><p>以大家最熟悉的 TensorBoard-Playground 为例：<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/ba861811fa299c1c15de795df790c1a1e54a623c.gif" alt="playground.gif"><br>playground 的交互级别不仅仅是选择输入数据，还可以通过交互，改变模型的结构（增加删除层和神经元），因此它属于 Interactive Collaboration，同时，它是对模型直接进行修改，而不是对决策进行修改，所以是 Model-Shaping。</p>
+<h5 id="6-Interactive-Collaboration-amp-Decision-Shaping"><a href="#6-Interactive-Collaboration-amp-Decision-Shaping" class="headerlink" title="6. Interactive Collaboration    &amp;    Decision-Shaping"></a>6. Interactive Collaboration    &amp;    Decision-Shaping</h5><p>本文的重点，做到这一点，就可以认为是 CSI 了。<br>过去的工作成果中，也有些工作可以被认为是这一类的。例如 GANPaint<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/122c145dd6892298f1973c0ca1e3c5c5f550832e.gif" alt="1_coOn6XhI_6tBpX6YyJuDvQ.gif"><br>GANPaint 是港科大研发的，曾经也被刷爆朋友圈。用户只需要选择一种对象，比如树，然后在图片就能直接画出相应的对象。<br>它背后的原理可以理解为：先对模型中的神经元进行语义的提取，找到哪些神经元控制哪些场景，比如某 100 个神经元控制树的生成。然后将这些神经元作为 hook，暴露在模型之外，用户能够通过交互修改这些神经元，从而影响模型的推理过程，改变模型的输出。</p>
+<p>这种就属于 CSI 思想。接下来我来介绍到底什么是 CSI。</p>
+<h2 id="3-CSI"><a href="#3-CSI" class="headerlink" title="3 CSI"></a>3 CSI</h2><h3 id="3-1-什么是-CSI"><a href="#3-1-什么是-CSI" class="headerlink" title="3.1 什么是 CSI"></a>3.1 什么是 CSI</h3><p>如前文所述，其实符合 Interactive Collaboration 且是服务于 Decision-Shaping 的可视化，都可以理解为是 CSI。<br>根据文章中的描述，CSI 可解释为：<strong>模型预测和用户对模型进行干预交替进行的推理过程。</strong>它包括 forward 和 backward。<br>利用 CSI 的推理过程是：<br><strong>模型推理 —&gt; 用户对模型的输出不满意，用户查看模型推理过程(backward) —&gt; 用户改变模型推理过程，模型重新进行推理(forward)</strong></p>
+<p>但是要如何实现这一点呢？</p>
+<h3 id="3-2-CSI-的实现思路"><a href="#3-2-CSI-的实现思路" class="headerlink" title="3.2 CSI 的实现思路"></a>3.2 CSI 的实现思路</h3><p>要实现 CSI，需要解决的核心问题，就是如何去控制模型的推理过程。模型里拥有海量的参数，能对这些参数进行直接修改吗？不能，因为模型过于复杂，人不可能直接理解这些参数的含义，改参数毫无意义。<br>因此文章提出，要实现 CSI，首先：</p>
+<h5 id="1-模型需要对外暴露可解释的-hook"><a href="#1-模型需要对外暴露可解释的-hook" class="headerlink" title="1. 模型需要对外暴露可解释的 hook"></a>1. 模型需要对外暴露可解释的 hook</h5><p>hook 直接翻译理解，就是钩子。交互改变 hook，hook 来改变模型推理过程。在机器学习模型中，这个 hook 就是模型中的潜变量。通过修改潜变量的值，模型的推理过程也会发生变化。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/c7ad3b68dc1918269a3159d03a338caef38206e2.png" alt="image.png"><br>用形式化语言表达就是：假设模型中存在潜变量 z，那么推理过程就是求输出 y 关于输入 x 和潜变量 z 的分布，即</p>
+<script type="math/tex; mode=display">p(y|x, z)</script><p>同时这个潜变量也一定是可解释的。以下图中自动驾驶火车为例，在正向推理过程中，火车在左图左边的情况时，我们无法判断火车往左还是往右，更不可能控制。而左图右边的推杆，就是一个可解释的潜变量，它暴露在模型之外，用户通过交互，可以改变推杆的方向，从而影响模型的推理过程。<br><strong><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/d623737180508dce188288625a2bb95f4dcaaf50.png" alt="image.png"></strong><br>再看 backward 的部分。如果没有 hook，当火车到达右图左边所示位置时，我们无从得知，火车是从左边过来的还是右边过来的。而通过求潜变量 z 的后验分布，即</p>
+<script type="math/tex; mode=display">p(z|x,y)</script><p>根据推杆的值，就可以知道火车是如何到达当前位置的，即模型是如何推理到当前结果的。</p>
+<h5 id="2-hook-要和人的心理模型相关联"><a href="#2-hook-要和人的心理模型相关联" class="headerlink" title="2. hook 要和人的心理模型相关联"></a>2. hook 要和人的心理模型相关联</h5><p>毕竟 hook 是给人用的，需要符合人的心理直觉，不用多解释。</p>
+<h5 id="3-通过合适的视觉隐喻，将-hook-和交互关联起来"><a href="#3-通过合适的视觉隐喻，将-hook-和交互关联起来" class="headerlink" title="3. 通过合适的视觉隐喻，将 hook 和交互关联起来"></a>3. 通过合适的视觉隐喻，将 hook 和交互关联起来</h5><p>有了 hook 如何做可视化设计，应该无需多做解释。</p>
+<h3 id="3-3-再看-CSI-是什么"><a href="#3-3-再看-CSI-是什么" class="headerlink" title="3.3 再看 CSI 是什么"></a>3.3 再看 CSI 是什么</h3><p><strong><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/9f9899362b3d7ed33dc93fb779ec7417c605cfcf.png" alt="image.png"></strong><br>如图，CSI 的三个单词：</p>
+<ol>
+<li><p>Collaborative，协作式的。让机器和人协作起来。</p>
+</li>
+<li><p>Semantic，语义的。指 hook 具备人能理解的语义。人和模型之间通过这样一个能共同能理解的语义，建立起共同语言，从而能够进行合作。</p>
+</li>
+<li>inference，推理。人和模型共同完成推理。</li>
+</ol>
+<h2 id="4-Use-Case-——-document-summarization"><a href="#4-Use-Case-——-document-summarization" class="headerlink" title="4. Use Case —— document summarization"></a>4. Use Case —— document summarization</h2><p>作者除了提出 CSI 这套路概念，也实现了一个 CSI 的 case：文本总结系统。它的模型输入是一段文本，输出是对这段文本的简要总结。<br>如果使用过去 interactive observation 的可视化工具做这件事情，用户可以向输入框中复制一段文本，然后模型给出输出结果。但是当用户觉得输出不太好，想进行改进时，就需要自己进行重新编辑，无法复用模型；而当模型输出是错的时候，用户只能选择自己重写。</p>
+<h3 id="4-1-功能演示"><a href="#4-1-功能演示" class="headerlink" title="4.1 功能演示"></a>4.1 功能演示</h3><p>而通过 CSI 实现的文本总结系统，是这样的：<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/ecb4bc76d24130dc5bb80c4b63408c21efee6ab2.png" alt="image.png"><br>如图，a 处是输入文本，c 是输出文本，用户可以点击 e 处的”init with”来让模型初步生成几句 summary，点击 add sentence 可以让模型再添加一句 summary。b 处可视化了模型中的注意力，使得用户能够看到当前输出结果是哪些输入所影响的。<br>d 中的色块对应每一段文本，蓝色表示当前选择的输入语句，如果用户 unselect 了某个输入，这个输入文本就不会被模型 summary。<strong>注意，用户 unselect 了某个输入，这个输入依然会作为模型的输入，只是输出中不会出现它</strong>。这就是通过 hook 来改变推理过程而做到的 forward 过程。具体原理下节解释。<br>d 中红色边框表示文本被 summary 考虑，a 中红色下划线表示相应的单词被 summary 所考虑。这就是 backward，即给定输出，能够给出推理路径。<br>点击 h 中的 all、match、none 可自动对文本进行全选、只选当前被 summary 考虑的、全不选。</p>
+<p>接下来我们以一个用户协作式总结”How scientist found water on Mars”为例：<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/64643558dc6e32d03aa777c969ae2a0d95f2dc03.gif" alt="1.gif"><br>如上图，用户想从当前被输出考虑到输入中再总结一句，于是他点击 match，来只选择当前被考虑的，然后点击 add sentence，模型又生成了一句 summary。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/76fb3b5fee192dc8155f561f37c0feb22715796a.gif" alt="2.gif"><br>但是用户对这句新生成的总结并不满意，于是 unselect 了导致这句总结的输入，然后在右边将这句总结删掉。然后再次点击 add sentence，这次模型给出了一个不同的总结。用户表示很满意。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/3b515db5594673f12dca1e7d48b99db5181bcee0.gif" alt="3333.gif"><br>此时用户还想添加一句，他先全选了输入文本，然后在输出文本中输入”the water is …”，模型的自动不全功能根据当前用户的输入又产生了一句新的总结。</p>
+<h3 id="4-2-如何实现的"><a href="#4-2-如何实现的" class="headerlink" title="4.2 如何实现的"></a>4.2 如何实现的</h3><p>作者是如何实现模型中的 hook 来控制某些输入文本不被考虑进输出呢？<br>事实上这几位作者在 2018 年提出了一种文本总结架构。（<em>S. Gehrmann, Y. Deng, and A. Rush. Bottom-up abstractive summarization. In Proceedings ofthe 2018 Conference on Empirical Methods in Natural Language Processing, pp. 4098–4109, 2018.）</em>这种架构使用了带有 copy-attention 机制的 seq2seq 模型，这种模型中恰好有一组潜变量，每个潜变量对应一个输入单词，它控制了该单词的 attention 是否会被复制到模型的 decoder 中，这就控制了输入文本是否会被考虑进输出。<br>这组潜变量被暴露出模型，即 hook，用户通过交互来修改它们，这就构成了 CSI 中的 forward 过程。<br>另一方面，该模型在给定 x，y 时，能够方便的求出潜变量的分布，即<script type="math/tex">p(z|x,y）</script>，因此用户能够从界面中看到是哪些输入单词影响了输出结果，即 CSI 中的 backward 过程。</p>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h2><h3 id="5-1-本文贡献"><a href="#5-1-本文贡献" class="headerlink" title="5.1 本文贡献"></a>5.1 本文贡献</h3><p>本文的主要贡献是：</p>
+<ol>
+<li>定义了 CSI 的概念</li>
+<li>给出了 CSI 的实现方法（通过可解释的 hook）</li>
+<li>给出一个 CSI 的 case</li>
+</ol>
+<h3 id="5-2-笔者小结"><a href="#5-2-笔者小结" class="headerlink" title="5.2 笔者小结"></a>5.2 笔者小结</h3><p>作者的写作逻辑是：先提出 CSI 的概念，再根据 CSI 开发 use case 来说明 CSI 的有效性。但事实应该是，作者已经有了可交互的模型（copy attention 机制里的潜变量），再去拿这个模型来做交互。然后将概念扩大，提出 CSI。<br>我认为真的按作者的方法去做 CSI 很难。首先可解释的潜变量就很难设计，有时候可遇不可求。想像作者说的那样，共同设计模型、交互、可视化就更难了。作者的 case 更像是面向已有适合交互的模型来做交互，而非 co-design。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

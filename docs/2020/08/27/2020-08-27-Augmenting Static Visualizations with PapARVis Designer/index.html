@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Augmenting Static Visualizations with PapARVis Designer - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本信息"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计标准"><span class="toc-text">设计标准</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主要特性"><span class="toc-text">主要特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计目标"><span class="toc-text">设计目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#增强模式"><span class="toc-text">增强模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用场景"><span class="toc-text">使用场景</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体设计"><span class="toc-text">具体设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WorkFlow"><span class="toc-text">WorkFlow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AR-预览"><span class="toc-text">AR 预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#校验器"><span class="toc-text">校验器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实验结果"><span class="toc-text">实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试流程"><span class="toc-text">测试流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试结果"><span class="toc-text">测试结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验总结"><span class="toc-text">实验总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结-amp-心得"><span class="toc-text">总结 &amp; 心得</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Augmenting Static Visualizations with PapARVis Designer
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2020-08-27 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2020-08-27</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#温圳"
+                title="温圳">温圳</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><ul>
+<li><strong>论文：</strong> Augmenting Static Visualizations with PapARVis Designer</li>
+<li><strong>作者：</strong> Chen, Zhutian, Wai Tong, Qianwen Wang, Benjamin Bach, and Huamin Qu</li>
+<li><strong>来源：</strong> ACM CHI 2020<br>_<img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/8c6e6486070e6f1999e79ed25ca063c14c8f569b.png" alt="image.png"></li>
+</ul>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>利用 AR 增强可视化，可以将物理世界和数字世界结合展现，Figure 1 中展示了现实和增强后的效果。PapARVis Designer 是一个设计 AR 增强静态可视化的创作环境。</p>
+<h2 id="设计标准"><a href="#设计标准" class="headerlink" title="设计标准"></a>设计标准</h2><ol>
+<li>图形一致性</li>
+<li>可读性</li>
+<li>合法性：增强前后，相同的视觉数值对应相同的数据。Figure 2b 中增强前后相同数据的对应弧长发生了变化，这是不合法的。</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/c6a4b1a0a5798b8496b01f57c64821640ce8dafd.png" alt="image.png"></p>
+<h2 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h2><ol>
+<li>AR 预览：在桌面平台上预览 AR 效果</li>
+<li>校验器：辅助设计与 debug</li>
+</ol>
+<h2 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h2><ol>
+<li>只使用一个工具完成可视化的设计、测试、debug、发布。</li>
+<li>可以在设计平台上预览可视化，避免来回切换设备。</li>
+<li>提供自动设计辅助。</li>
+</ol>
+<h2 id="增强模式"><a href="#增强模式" class="headerlink" title="增强模式"></a>增强模式</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/9303d3d217855243034f05a1d61173da668631ce.png" alt="image.png"></p>
+<p>如上图所示，有四种增强模式：</p>
+<ol>
+<li><strong>Extended View</strong>：同一视图、相同视觉编码（Figure 3a）</li>
+<li><strong>Composite View</strong>：同一视图、不同视觉编码（Figure 3b）</li>
+<li><strong>Small Multiple</strong>：不同视图、相同视觉编码（Figure 3c）</li>
+<li><strong>Multiple View</strong>：不同视图、不同视觉编码（Figure 3d）</li>
+</ol>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>Figure 7 中，a - d 是 k 的增强结果；e - j 展示了多种不同的增强方式，子图中是静态可视化。</p>
+<p>Figure 7e 中应用比较有趣，是在一张统计所有学生成绩分布的图表上，利用 AR 显示个人成绩在分布中的位置，很好地展示了个人信息，又保护了个人隐私。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/a355a9f85b46fe9a94c8cd17d3c879905e213059.png" alt="image.png"></p>
+<h1 id="具体设计"><a href="#具体设计" class="headerlink" title="具体设计"></a>具体设计</h1><h2 id="WorkFlow"><a href="#WorkFlow" class="headerlink" title="WorkFlow"></a>WorkFlow</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/9667e14e724207ee1f5a00eb406a44e08ddb1625.png" alt="image.png"><br>在原有的静态可视化 <script type="math/tex">V_s</script> 的基础上，设计增强虚拟可视化 <script type="math/tex">V_v</script>，利用 AR 将两者结合成为可视化 <script type="math/tex">V_{AR}</script> 展示出来。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/4091105889d03853e4a523fdecada76421e1b622.png" alt="image.png"><br>系统主要包含三个模块：</p>
+<ol>
+<li><strong>VegaAR Editor</strong>：基于 <a href="https://github.com/vega/editor" target="_blank" rel="noopener">Vega Editor</a>，用于创建 $V_s$ 可视化，并在 ar block 中定义 $V_v$。发布时将内容上传到 SpecHub，生成二维码链接。</li>
+<li><strong>SpecHub</strong>：部署在云端，用于接收和托管 VegaAR Editor 上传的内容，生成 $V_s$ 参考图像用于 AR 识别，解析 $V_v$ 用于生成 AR 可视化。</li>
+<li><strong>AR Viewer</strong>：通过扫描二维码，获取 SpecHub 上相应的配置文件，查看 AR 增强可视化效果，实现在 iOS、Android、Web 平台上。</li>
+</ol>
+<h2 id="AR-预览"><a href="#AR-预览" class="headerlink" title="AR 预览"></a>AR 预览</h2><p>在 Vega Editor 的基础上添加 ar block 配置，用于定义 $V_v$，并提供预览效果。</p>
+<p>$V_v$ 的物理空间由 Vega 定义，与 $V_s$相关。</p>
+<h2 id="校验器"><a href="#校验器" class="headerlink" title="校验器"></a>校验器</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/4c32a5a5519682bf5940b3fb4364ba391296486f.png" alt="image.png"></p>
+<p>检测原始数据与合并增强数据后的数据，经过数据变换后，原始数据对应的数值是否保持不变。如果不变，证明增强方式合法。Figure 6 中是对 Figure 4c 中发生的合法性错误的提示。</p>
+<h1 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h1><p>邀请 12 位没有 AR 经验的可视化设计者，进行了分组实验。</p>
+<h2 id="测试流程"><a href="#测试流程" class="headerlink" title="测试流程"></a>测试流程</h2><p>Base Mode：移除 AR 预览和校验器特性，作为 baseline。</p>
+<p>Pro Mode：完整版 PapARVis Designer。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/0816d03f07899eda8fab320c649056dda5e2a281.png" alt="image.png"></p>
+<h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/3966aa377656c2dab11ff998dd2a805f54cff69f.png" alt="image.png"><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/5bb2faa202022e72cd087eb35339d73fb342cad6.png" alt="image.png"><br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/f0e352ba5875f3bc5ac6dde386a6f1e07daeeb51.png" alt="image.png"></p>
+<h2 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h2><ol>
+<li>PapARVis Designer 的 AR 模块类似于一个黑盒部署在服务器上，设计者有时无法判断错误出在 AR 模块上，还是自己的设计上。</li>
+<li>设计者在设计时容易混淆现实可视化和虚拟可视化。如果能直接在原场景上进行设计可能更好。</li>
+<li>校验器检测到错误时的提示可能被忽视，无法帮助到设计者 debug。把提示变成类似编译器编译错误的强制警告可能更好。</li>
+<li>参与者们认为，这项技术可以应用于公共展示中，例如信息板、公园地图、互动性艺术品等。</li>
+</ol>
+<h1 id="总结-amp-心得"><a href="#总结-amp-心得" class="headerlink" title="总结 &amp; 心得"></a>总结 &amp; 心得</h1><p>PapARVis Designer 的本质还是在桌面端做静态可视化设计，然后通过 AR 展现出来。首先，使用起来需要一定的 Vega 或 D3 基础。另外，当原始数据无法获取或数据量较大时，手动创建可视化非常困难，难以应用在增强他人的可视化上。</p>
+<p>当然 PapARVis Designer 也有很多优点，可以用来克服现实可视化的空间限制，在旧的可视化上展示新数据，拓展可视化的细节，做隐私保护，显示个人信息等。</p>
+<p>另一方面，相较于传统现实的可视化，AR 是虚拟的可视化。它可以用来辅助增强现实的可视化，可以打破平面的限制拓展到 3D 层面，一定程度上给人更直观的感受和更强的代入感。除了本文中 2D 静态的 AR 可视化，3D AR、交互动态 AR、场景适应的 AR 也是 AR 可视化可以研究的方向。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
