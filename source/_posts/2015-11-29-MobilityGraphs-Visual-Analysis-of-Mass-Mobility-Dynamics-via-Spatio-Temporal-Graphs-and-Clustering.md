@@ -3,6 +3,7 @@ title: "MobilityGraphs: Visual Analysis of Mass Mobility Dynamics via Spatio-Tem
 tags: ["论文评述"]
 date: 2015-11-29
 author: 张天野
+mail: zhangtianye1026@zju.edu.cn
 mathjax: true
 ---
 

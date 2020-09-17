@@ -164,21 +164,20 @@
 <ol>
 <li>用户需要在得到对于该对象主要假设可能性的同时，能知道是什么原因的出了这个可能性的结论。</li>
 <li>对于与主要结论无关的数据不进行展示</li>
-<li>当用户在对某些原因进行交互的时候，能够具体的向用户展示支持该原因的证据（例如在不同数据源中id不同可以证明该对象想要隐藏身份）</li>
-<li><p>在展示证据的时候能够让用户快速的在数据中找到支持选定原因的数据矛盾点或者数据吻合点。</p>
-<h2 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h2></li>
+<li>当用户在对某些原因进行交互的时候，能够具体的向用户展示支持该原因的证据（例如在不同数据源中 id 不同可以证明该对象想要隐藏身份）</li>
+<li>在展示证据的时候能够让用户快速的在数据中找到支持选定原因的数据矛盾点或者数据吻合点。</li>
 </ol>
-<p>为了解决上述问题。本文展示了一种对于常规自动推理模型的推理过程的可视化（图1）。通过对于推理过程的DAG图的展示，使得用户明白是哪些原因导致了该推理的结论。（例如该船有可能有犯罪的行为，是因为它想要隐藏自己的身份，而它想隐藏身份是因为它不同数据源中id不同）</p>
+<h2 id="本文方法"><a href="#本文方法" class="headerlink" title="本文方法"></a>本文方法</h2><p>为了解决上述问题。本文展示了一种对于常规自动推理模型的推理过程的可视化（图 1）。通过对于推理过程的 DAG 图的展示，使得用户明白是哪些原因导致了该推理的结论。（例如该船有可能有犯罪的行为，是因为它想要隐藏自己的身份，而它想隐藏身份是因为它不同数据源中 id 不同）</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ图片20150915093200.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ%E5%9B%BE%E7%89%8720150915093200.png" alt="img"></a></p>
-<p>（图1）</p>
+<p>（图 1）</p>
 <h3 id="可视设计"><a href="#可视设计" class="headerlink" title="可视设计"></a>可视设计</h3><p>本文的可视化界面主要由两部分组成：</p>
-<h4 id="推理过程图展示部分："><a href="#推理过程图展示部分：" class="headerlink" title="推理过程图展示部分："></a>推理过程图展示部分：</h4><p>整体采用DAG图和Sugiyama layout的方法展示推理过程。</p>
+<h4 id="推理过程图展示部分："><a href="#推理过程图展示部分：" class="headerlink" title="推理过程图展示部分："></a>推理过程图展示部分：</h4><p>整体采用 DAG 图和 Sugiyama layout 的方法展示推理过程。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ图片20150915093358.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ%E5%9B%BE%E7%89%8720150915093358.png" alt="img"></a></p>
-<p>对于对象的一种假设Hypotheses用一个矩形节点表示。作者设计了一种对于节点假设可能性的方法，分级展示可能性。红色表示有可能，蓝色表示没有可能。横条数目表示可能性的数值大小（图2）</p>
+<p>对于对象的一种假设 Hypotheses 用一个矩形节点表示。作者设计了一种对于节点假设可能性的方法，分级展示可能性。红色表示有可能，蓝色表示没有可能。横条数目表示可能性的数值大小（图 2）</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ图片20150915093444.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ%E5%9B%BE%E7%89%8720150915093444.png" alt="img"></a></p>
-<p>（图2）</p>
-<p>而推理过程用节点之间的曲线表示，例如隐藏ID到犯罪行为的连线表示该对象隐藏ID可以推出该对象有可能犯罪行为。模型采用一阶概率分布，对于子节点到父节点的边赋予权值，用于加权计算父节点的可能性。权值可正（表示可以推出某行为）可负（可以推出没有某行为），正值用红色表示，负值用蓝色表示。权值大小用边的粗细表示。</p>
-<h4 id="证据矩阵部分"><a href="#证据矩阵部分" class="headerlink" title="证据矩阵部分"></a>证据矩阵部分</h4><p>对于选定的一个假设节点，展示支持该节点的证据矩阵，其中一列表示一种数据源（例如AIS），一行表示该对象的一个属性（例如id，是否成年，是否有犯罪记录）。为了使用户发现数据矛盾点和吻合点，本文用不同颜色染色来标出了某一属性在不同数据源中的不同记录（例如上图蓝色和黄色表示了该属性在不同书数据源中的两种数据记录信息。），用户鼠标悬停时可以查看具体信息。对于数据源的可信度展示，系统不仅预置了一种矩形条图的展示方法，还提供了一个时间轴，用户可以在时间轴上查看数据源记录的时间，从而做出决策。</p>
+<p>（图 2）</p>
+<p>而推理过程用节点之间的曲线表示，例如隐藏 ID 到犯罪行为的连线表示该对象隐藏 ID 可以推出该对象有可能犯罪行为。模型采用一阶概率分布，对于子节点到父节点的边赋予权值，用于加权计算父节点的可能性。权值可正（表示可以推出某行为）可负（可以推出没有某行为），正值用红色表示，负值用蓝色表示。权值大小用边的粗细表示。</p>
+<h4 id="证据矩阵部分"><a href="#证据矩阵部分" class="headerlink" title="证据矩阵部分"></a>证据矩阵部分</h4><p>对于选定的一个假设节点，展示支持该节点的证据矩阵，其中一列表示一种数据源（例如 AIS），一行表示该对象的一个属性（例如 id，是否成年，是否有犯罪记录）。为了使用户发现数据矛盾点和吻合点，本文用不同颜色染色来标出了某一属性在不同数据源中的不同记录（例如上图蓝色和黄色表示了该属性在不同书数据源中的两种数据记录信息。），用户鼠标悬停时可以查看具体信息。对于数据源的可信度展示，系统不仅预置了一种矩形条图的展示方法，还提供了一个时间轴，用户可以在时间轴上查看数据源记录的时间，从而做出决策。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ图片20150915093421.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/09/QQ%E5%9B%BE%E7%89%8720150915093421.png" alt="img"></a></p>
 <h2 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h2><p>综上所述本文的主要贡献有：</p>
 <ol>
@@ -192,42 +191,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zhaosong_huang@zju.edu.cn"><code> ✉️ zhaosong_huang@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -259,24 +242,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

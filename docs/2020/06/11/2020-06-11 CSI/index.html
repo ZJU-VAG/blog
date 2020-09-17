@@ -158,7 +158,7 @@
         </span>
     </div>
     <div class="post-content ">
-        <p>文章来源：VAST 2019<br>报告人：王智勇<br>时间：2020-06-11 下午 4 点<br>地点：钉钉线上会议</p>
+        <p>文章来源：VAST 2019<br>报告人：王智勇<br>mail: zerowangzy@zju.edu.cn<br>时间：2020-06-11 下午 4 点<br>地点：钉钉线上会议</p>
 <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><h3 id="1-1-作者介绍"><a href="#1-1-作者介绍" class="headerlink" title="1.1 作者介绍"></a>1.1 作者介绍</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/bb63124c031a3d5930c04198f5467fffa896696e.png" alt="img"><br>几位作者除了大家都熟悉的 VCG 大神的 Hanspeter Pfister，其他几位的本职研究和 NLP 相关。他们也几乎都和哈佛有关，一作 Sebastian Gehrmann，是哈佛毕业的博士，现在在 google AI 做可控和可解释的深度学习，本文其实就是一种可控深度学习的研究成果；二作 Hendrik Strobelt 是 IBM 的研究员，也在哈佛做过博士后，本质做 NLP 研究；Hanspeter 是可视化的大神，就不多介绍了，本文通讯作者 Alexander 是康奈尔的副教授，14 年 MIT 毕业的博士，本职研究是 NLP，但也拿过 VAST 的 best paper，成果颇多。</p>
 <h3 id="1-2-内容简介"><a href="#1-2-内容简介" class="headerlink" title="1.2 内容简介"></a>1.2 内容简介</h3><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>在深度学习的发展过程中，研究者为了提高性能和速度，模型变得越来越复杂，动辄上亿的参数量。着导致深度学习的过程难以<strong>解释、分析和可视化。</strong>而且用户要使用这样的黑盒，就得完全放弃自己的控制权，被迫去相信和依赖模型。然而模型往往会产生一些无法预测、难以解释的错误。<br>这篇文章想解决的问题是：<strong>如何让用户重新获得对推理过程的控制权</strong></p>
 <h5 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h5><p>作者认为，如果能够通过某种方法，通过对模型推理的过程进行解释和<strong>干预</strong>，将模型作为团队中的一员，让人和模型合作式的完成任务，人就能重新获得对推理过程的控制。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/3b3e88998165d1bfa2cf92c8bcb3f745e447d331.png" alt="image.png"><br>因此，作者提出了一套理论概念：Collaborative Semantic Inference（CSI），来尝试系统化地阐述，如何达到将人和模型协作起来完成任务。同时，作者也给出了一个 CSI 的 use case，一个文本总结系统，也证明这套方法的有效性。</p>
@@ -228,42 +228,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zerowangzy@zju.edu.cn"><code> ✉️ zerowangzy@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -295,24 +279,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

@@ -172,7 +172,7 @@
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/2.png" alt="img"></a></p>
 <ol>
 <li><p>绘制选项，系统提供了绘制选项使得用户可以自定义轨迹绘制的透明度，颜色宽度等属性，完成自定义的可视化效果。</p>
-<p>3.4.5. 轨迹的各种分析视图，包括反应道路交通流向关系的桑基图，轨迹数据各个维度的平行坐标图，数据的详细列表，和反应轨迹数据速度的环形热力图。并用文本的方式总结了轨迹的基本特点，包括轨迹的速度，车辆数目，上下客的最多的5条道路等信息。帮助用户完成轨迹的多角度分析任务。</p>
+<p> 3.4.5. 轨迹的各种分析视图，包括反应道路交通流向关系的桑基图，轨迹数据各个维度的平行坐标图，数据的详细列表，和反应轨迹数据速度的环形热力图。并用文本的方式总结了轨迹的基本特点，包括轨迹的速度，车辆数目，上下客的最多的 5 条道路等信息。帮助用户完成轨迹的多角度分析任务。</p>
 </li>
 </ol>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/3.png" alt="img"></a></p>
@@ -180,12 +180,12 @@
 <li>地图面板，用于在地图上直观的绘制轨迹，并添加文本的标签帮助用户理解轨迹的语义信息。</li>
 </ol>
 <h2 id="数据处理方法"><a href="#数据处理方法" class="headerlink" title="数据处理方法"></a>数据处理方法</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/4.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/4.png" alt="img"></a></p>
-<p>出租车的轨迹数据如上图所示，记录了某城市一个月的8120辆出租车的轨迹信息。基本的数据处理流程如下图。</p>
+<p>出租车的轨迹数据如上图所示，记录了某城市一个月的 8120 辆出租车的轨迹信息。基本的数据处理流程如下图。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/5.png" alt="img"></a></p>
 <p>系统通过文本语义的转换工具，把原始的出租车轨迹数据转换成两种不同类型的数据索引文件，包括出租车轨迹索引文件和行程索引文件。前者记录某出租车的轨迹语义索引，后者通过上下客信息记录某一段乘客的行程语义信息。并通过行驶距离计算出行驶的花费。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/11.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/11.png" alt="img"></a></p>
 <p>转换过程中，每一条数据的街道名称通过距离数据经纬度最近的街道来获取，而速度信息也通过赋予速度数值语义的方式转化为用户更能理解的数据格式，方便用户进行语义查询。</p>
-<h2 id="分析及案例"><a href="#分析及案例" class="headerlink" title="分析及案例"></a>分析及案例</h2><p>系统通过了交通专家，犯罪学家及15名计算机学生的实验，通过该实验，结果表明轨迹数据的语义信息有利于更快速有效的理解数据。系统展示的各种统计图表和查询效率非常有利于交通问题的分析。系统中总结的文本信息有利于对数据信息的挖掘。证明了系统的有效性。</p>
+<h2 id="分析及案例"><a href="#分析及案例" class="headerlink" title="分析及案例"></a>分析及案例</h2><p>系统通过了交通专家，犯罪学家及 15 名计算机学生的实验，通过该实验，结果表明轨迹数据的语义信息有利于更快速有效的理解数据。系统展示的各种统计图表和查询效率非常有利于交通问题的分析。系统中总结的文本信息有利于对数据信息的挖掘。证明了系统的有效性。</p>
 <p>查询速率方面，作者提出了三个问题：</p>
 <ul>
 <li><p>Q1：查询经过上塘路的所有出租车轨迹</p>
@@ -197,9 +197,9 @@
 </ul>
 <p>验证系统的查询速率。结果表明所有的查询都能控制在交互级别的时间。证明了语义索引文件的有效性。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/8.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/8.png" alt="img"></a></p>
-<p>最后通过案例分析，验证了系统在解决实际问题方面的有效性（举1例）：<br>浙江博物馆的管理人员想要选择接送游客的班车地点。他们通过输入浙江博物馆作为上下客地点为条件，过滤出的出租车图例如下。绿色(红色) 点表示出租车的上客(下客)地点。用户通过总结的文本信息和绿色点的位置分布，很容易的找到来博物馆的人最多的街道名称和地点，从而能够建立游客接送点。</p>
+<p>最后通过案例分析，验证了系统在解决实际问题方面的有效性（举 1 例）：<br>浙江博物馆的管理人员想要选择接送游客的班车地点。他们通过输入浙江博物馆作为上下客地点为条件，过滤出的出租车图例如下。绿色(红色) 点表示出租车的上客(下客)地点。用户通过总结的文本信息和绿色点的位置分布，很容易的找到来博物馆的人最多的街道名称和地点，从而能够建立游客接送点。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/9.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/9.png" alt="img"></a></p>
-<p>然后管理人员通过平行坐标图，发现，下午3点到5点的车辆明显比其他白天的车辆少很多，从而能够得出在下午3点和5点可以适当的减少车辆来节约成本的结论。</p>
+<p>然后管理人员通过平行坐标图，发现，下午 3 点到 5 点的车辆明显比其他白天的车辆少很多，从而能够得出在下午 3 点和 5 点可以适当的减少车辆来节约成本的结论。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/10.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2016/11/10.png" alt="img"></a></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>语义信息和地理信息的结合将愈演愈热，就像计算机与人，缺一不可。</p>
 
@@ -208,42 +208,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zhaosong_huang@zju.edu.cn"><code> ✉️ zhaosong_huang@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -275,24 +259,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

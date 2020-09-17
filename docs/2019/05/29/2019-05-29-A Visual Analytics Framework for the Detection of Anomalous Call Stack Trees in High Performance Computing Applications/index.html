@@ -161,7 +161,7 @@
         <p>论文：A Visual Analytics Framework for the Detection of Anomalous Call Stack Trees in High Performance Computing Applications</p>
 <p>作者：Cong Xie, Wei Xu, Klaus Mueller</p>
 <p>发表：IEEE InfoVis 2018</p>
-<p>一句话：一种用来检测分析异常代码调用栈的可视分析方法，基于embedding和OCSVM来交互式理解分析异常调用栈。</p>
+<p>一句话：一种用来检测分析异常代码调用栈的可视分析方法，基于 embedding 和 OCSVM 来交互式理解分析异常调用栈。</p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>耗时异常，父子节点相互调用，兄弟节点直接的通信中会有耗时异常</p>
 <ul>
 <li>不同孩子对同一父亲</li>
@@ -170,19 +170,19 @@
 </ul>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片19.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%8719.png" alt="img"></a></p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片24.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%8724.png" alt="img"></a></p>
-<p>这是chrome页面代码的调用栈，展示了调用顺序，时间，父子节点。</p>
+<p>这是 chrome 页面代码的调用栈，展示了调用顺序，时间，父子节点。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>为了解决异常代码检测的问题，这篇文章的解决方案是“找出异常的树结构”。全篇也是围绕着，如何建立树结构，如何表示树结构的信息，如何发现其中异常。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片34.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%8734.png" alt="img"></a></p>
 <h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><ol>
 <li>把异常行为的检测范化为异常树结构的检测（Formulate）</li>
-<li>Stack2vec，优化了Graph kernel approach，然后用神经网络学习树表达（Approach）</li>
+<li>Stack2vec，优化了 Graph kernel approach，然后用神经网络学习树表达（Approach）</li>
 <li>可视异常检测方法支持用户查找，验证，标记（Visualization）</li>
 </ol>
 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ol>
-<li>异常分布的概览  Overview</li>
-<li>异常调用树的排序  Rank</li>
-<li>调用树的详情  Detail-1</li>
-<li>调用树的时序模式  Detail-2</li>
+<li>异常分布的概览 Overview</li>
+<li>异常调用树的排序 Rank</li>
+<li>调用树的详情 Detail-1</li>
+<li>调用树的时序模式 Detail-2</li>
 </ol>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol>
 <li>生成调用树</li>
@@ -199,24 +199,24 @@
 <li>生成树表达（Skip-Gram Model）</li>
 </ol>
 <h4 id="抽取树结构-amp-类比树表达"><a href="#抽取树结构-amp-类比树表达" class="headerlink" title="抽取树结构&amp;类比树表达"></a>抽取树结构&amp;类比树表达</h4><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片54.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%8754.png" alt="img"></a></p>
-<p>用WL算法，给每个点赋予label，每种label都表示了一种子树结构。那么一棵树的结构就可以被多种子树结构所代表。</p>
+<p>用 WL 算法，给每个点赋予 label，每种 label 都表示了一种子树结构。那么一棵树的结构就可以被多种子树结构所代表。</p>
 <h4 id="生成树表达"><a href="#生成树表达" class="headerlink" title="生成树表达"></a>生成树表达</h4><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片63.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%8763.png" alt="img"></a></p>
-<p>类比于Doc2vec，读入的树结构表达当做一个文档，用来预测子树结构，也就是单词。中间的权重就是每个树的embedding</p>
+<p>类比于 Doc2vec，读入的树结构表达当做一个文档，用来预测子树结构，也就是单词。中间的权重就是每个树的 embedding</p>
 <h3 id="检测异常树"><a href="#检测异常树" class="headerlink" title="检测异常树"></a>检测异常树</h3><ul>
 <li>不能用密度分布</li>
 <li>异常较少</li>
 <li>没有足够异常标记</li>
-<li>采用OCSVM(One-Class Support Vector Machine)</li>
+<li>采用 OCSVM(One-Class Support Vector Machine)</li>
 <li>一种无监督的异常检测算法，利用标记信息来改进模型生成</li>
 </ul>
 <h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片72.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%8772.png" alt="img"></a></p>
-<p>(a) 投影视图，可以用PCA，MDS，或者异常检测，每个点代表一个树，这样就可以看到异常的地方</p>
+<p>(a) 投影视图，可以用 PCA，MDS，或者异常检测，每个点代表一个树，这样就可以看到异常的地方</p>
 <p>(b) 异常推荐视图，用来推荐异常的树结构，每个图代表一个树（只展示了一部分）</p>
 <p>(c) 树细节视图，用来看树结构的组成细节</p>
 <p>(d) 树时间和通信细节视图，用来看树结构在时间和通信维度上的细节信息</p>
-<p>(e) 超参数面板，用来调节WL参数，机器学习模型参数，投影方法等</p>
+<p>(e) 超参数面板，用来调节 WL 参数，机器学习模型参数，投影方法等</p>
 <h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><ul>
-<li>3个Case Study</li>
+<li>3 个 Case Study</li>
 <li>Quantitative Analysis: Performance, Complexity</li>
 <li>User Feedback: Learning Cost, Usability</li>
 </ul>
@@ -224,7 +224,7 @@
 <p>从异常检测的投影视图中发现，异常树结构。发现耗时很多（圆的半径编码了耗时）</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/Snipaste_2019-05-29_13-35-47.jpg" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/Snipaste_2019-05-29_13-35-47.jpg" alt="img"></a></p>
 <p>看细节图，发现是某几个函数引起的</p>
-<p> <a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片142.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%87142.png" alt="img"></a></p>
+<p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片142.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%87142.png" alt="img"></a></p>
 <p>而正常的图应该是，孩子函数用时都比较少</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片103.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%87103.png" alt="img"></a></p>
 <p>进一步看时间和通信，在这个程序下正常的应该频繁通信，但是突然有一段通信要等很久。</p>
@@ -232,49 +232,33 @@
 <p>投影视图中看到一些离群的点组成的聚类，发现这些点都用同样的问题。集体异常的情况。</p>
 <h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><p>专家标注了所有的异常点，然后通过不同的算法组合测试准确率</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/图片123.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2019/05/%E5%9B%BE%E7%89%87123.png" alt="img"></a></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文研究的问题很简单，也很重要，一句话就可以说的明白。用WL+Doc2vec的方法表示树结构，并根据树结构的特性，对WL优化了一下。用生成的向量去做异常检测，加入可视化的交互来反馈。同时设计了可视分析系统，以及对应的可视化设计。评估做的也特别全面。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文研究的问题很简单，也很重要，一句话就可以说的明白。用 WL+Doc2vec 的方法表示树结构，并根据树结构的特性，对 WL 优化了一下。用生成的向量去做异常检测，加入可视化的交互来反馈。同时设计了可视分析系统，以及对应的可视化设计。评估做的也特别全面。</p>
 
         
         <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:dongminghan@zju.edu.cn"><code> ✉️ dongminghan@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -306,24 +290,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

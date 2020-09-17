@@ -3,10 +3,11 @@ title: "Poemage: Visualizing the Sonic Topology of a Poem"
 tags: ["论文评述"]
 date: 2015-12-25
 author: 王叙萌
+mail: wangxumeng@zju.edu.cn
 mathjax: true
 ---
 
-论文：Poemage: Visualizing the Sonic Topology of a Poem
+论文：Poemage: Visualizing the Sonic Topology of a Poemcadhyz
 
 作者：Nina McCurdy, Julie Lein, Katharine Coles, Miriah Meyer
 

@@ -106,7 +106,7 @@
     </div>
     
     <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fact-Sheet设计的调研"><span class="toc-text">Fact Sheet设计的调研</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整体设计"><span class="toc-text">整体设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视觉元素级设计"><span class="toc-text">视觉元素级设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataShot"><span class="toc-text">DataShot</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设计目标："><span class="toc-text">设计目标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统Pipeline"><span class="toc-text">系统Pipeline:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评估以及讨论"><span class="toc-text">评估以及讨论</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fact-Sheet-设计的调研"><span class="toc-text">Fact Sheet 设计的调研</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整体设计"><span class="toc-text">整体设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视觉元素级设计"><span class="toc-text">视觉元素级设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataShot"><span class="toc-text">DataShot</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设计目标："><span class="toc-text">设计目标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统-Pipeline"><span class="toc-text">系统 Pipeline:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评估以及讨论"><span class="toc-text">评估以及讨论</span></a></li></ol>
 </div>
     
 </div>
@@ -161,9 +161,9 @@
         <p>论文：DataShot: Automatic Generation of Fact Sheet from Tabular data</p>
 <p>作者：Yun Wang, Zhida Sun, Haidong Zhang, Weiwei Cui, Ke Xu, Xiaojuan Ma, and Dongmei Zhang</p>
 <p>发表：VIS 2019</p>
-<p>fact sheet的设计者不仅要深刻理解地数据，还要制作出引人注目的图形表达，这一工作通常是耗时繁琐的，本文提出了一种从表格数据中自动生成fact sheet的方法，从而简化用户的操作。</p>
-<p><a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/08/VIS2019_DataShot.pdf" target="_blank" rel="noopener">报告PDF链接</a></p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>Fact sheet是什么：</strong></p>
+<p>fact sheet 的设计者不仅要深刻理解地数据，还要制作出引人注目的图形表达，这一工作通常是耗时繁琐的，本文提出了一种从表格数据中自动生成 fact sheet 的方法，从而简化用户的操作。</p>
+<p><a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/08/VIS2019_DataShot.pdf" target="_blank" rel="noopener">报告 PDF 链接</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>Fact sheet 是什么：</strong></p>
 <ul>
 <li>Fact sheet is a presentation of data in a format which <strong>emphasizes key points concisely</strong>, usually using tables, bullet points and/or headings, <strong>on a single printed page</strong>.</li>
 <li>Fact sheets often contain product information, technical data, lists, statistics, answers to common questions (e.g. FAQs), educational material, or how-to, “do it yourself” advice. They are sometimes <strong>a summary of a longer document.</strong></li>
@@ -175,7 +175,7 @@
 <li>使得观众高效地理解数据相关的事实</li>
 <li>留下深刻的印象</li>
 </ul>
-<p><strong>生成Fact Sheet的挑战：</strong></p>
+<p><strong>生成 Fact Sheet 的挑战：</strong></p>
 <ul>
 <li><p>第一个挑战是从数据表中<strong>提取数据事实</strong>，并将事实<strong>组织到有意义的主题中</strong>。</p>
 </li>
@@ -184,30 +184,30 @@
 </ul>
 <p><strong>文章贡献：</strong></p>
 <ol>
-<li>调查研究了一个优质的infographic数据库，用来分析fact sheet的实际设计。</li>
-<li>使用新颖的技术来描述DataShot框架，以将数据事实组织为主题，并将数据事实转换为fact sheet。为了验证这一技术，实现了一个概念验证系统来从表格数据自动地产生fact sheet。</li>
-<li>使用真实的数据来演示系统的使用，并在实验室进行用户研究，以揭示DataShot的潜在的好处</li>
+<li>调查研究了一个优质的 infographic 数据库，用来分析 fact sheet 的实际设计。</li>
+<li>使用新颖的技术来描述 DataShot 框架，以将数据事实组织为主题，并将数据事实转换为 fact sheet。为了验证这一技术，实现了一个概念验证系统来从表格数据自动地产生 fact sheet。</li>
+<li>使用真实的数据来演示系统的使用，并在实验室进行用户研究，以揭示 DataShot 的潜在的好处</li>
 </ol>
-<h2 id="Fact-Sheet设计的调研"><a href="#Fact-Sheet设计的调研" class="headerlink" title="Fact Sheet设计的调研"></a>Fact Sheet设计的调研</h2><p><strong>数据来源</strong>： <a href="https://www.informationisbeautifulawards.com/showcase?page=1&amp;type=awards" target="_blank" rel="noopener"><strong>Kantar Information is Beautiful Awards</strong></a> 选择2012-2018年，298个信息图表类型的作品。去除了53个包含 特殊设计的艺术图像或符号 的例子，保留了245个由常见的单一视觉效果或复合视觉效果组成的fact sheet</p>
+<h2 id="Fact-Sheet-设计的调研"><a href="#Fact-Sheet-设计的调研" class="headerlink" title="Fact Sheet 设计的调研"></a>Fact Sheet 设计的调研</h2><p><strong>数据来源</strong>： <a href="https://www.informationisbeautifulawards.com/showcase?page=1&amp;type=awards" target="_blank" rel="noopener"><strong>Kantar Information is Beautiful Awards</strong></a> 选择 2012-2018 年，298 个信息图表类型的作品。去除了 53 个包含 特殊设计的艺术图像或符号 的例子，保留了 245 个由常见的单一视觉效果或复合视觉效果组成的 fact sheet</p>
 <p><strong>定性分析阶段</strong> ：整体设计（Sheet-Level Design）、视觉元素级设计（Element-Level Design）</p>
 <h3 id="整体设计"><a href="#整体设计" class="headerlink" title="整体设计"></a>整体设计</h3><ol>
 <li><p>内容结构：random，sequence, multiple plots</p>
-<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/c36d034a25406095270e9e41cd2403eaa46d684f.jpeg" alt="random facts"><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/c559ef392dd3733cb75ddccfdbb89ee0e3e885db.jpeg" alt="Sequence"><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/cb5ef7d5e6c70cb531b8b6ab45525885ea0a0247.jpeg" alt="Multiple Plots"></p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/c36d034a25406095270e9e41cd2403eaa46d684f.jpeg" alt="random facts"><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/c559ef392dd3733cb75ddccfdbb89ee0e3e885db.jpeg" alt="Sequence"><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/cb5ef7d5e6c70cb531b8b6ab45525885ea0a0247.jpeg" alt="Multiple Plots"></p>
 </li>
 <li><p>页面布局：编码了八种布局方式：</p>
-<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/986557d148e3482b1a09ff43549cdc5ba6a62132.jpeg" alt></p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/986557d148e3482b1a09ff43549cdc5ba6a62132.jpeg" alt></p>
 </li>
 </ol>
-<p><strong>在245个例子中的分布情况</strong>：</p>
+<p><strong>在 245 个例子中的分布情况</strong>：</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/d8299f4734665d3400e27b438251a531b45deddb.jpeg" alt></p>
-<p>发现最多使用的是：随机事实这种内容结构方式，平铺的页面布局。因此决定，从这两个配置开始，开发Fact-Sheet的自动生成方法。</p>
+<p>发现最多使用的是：随机事实这种内容结构方式，平铺的页面布局。因此决定，从这两个配置开始，开发 Fact-Sheet 的自动生成方法。</p>
 <h3 id="视觉元素级设计"><a href="#视觉元素级设计" class="headerlink" title="视觉元素级设计"></a>视觉元素级设计</h3><ol>
-<li><p>可视化风格：从245个fact sheet中提取出793个视觉元素,分布情况如下图所示</p>
-<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/08c194b94ec006336db6e878d3c0a8c5d4bdcd3d.jpeg" alt></p>
+<li><p>可视化风格：从 245 个 fact sheet 中提取出 793 个视觉元素,分布情况如下图所示</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/08c194b94ec006336db6e878d3c0a8c5d4bdcd3d.jpeg" alt></p>
 </li>
-<li><p>常用的事实类型：总结出11类事实类型</p>
-<p>​    数值、比例、差异、分布、趋势、排名、聚合、相关性、极端案例、类别、异常情况</p>
-<p>由统计的数据表明：设计者更愿意选用饼图来展示比例；更愿意用折线图来表示趋势……</p>
+<li><p>常用的事实类型：总结出 11 类事实类型</p>
+<p> ​ 数值、比例、差异、分布、趋势、排名、聚合、相关性、极端案例、类别、异常情况</p>
+<p> 由统计的数据表明：设计者更愿意选用饼图来展示比例；更愿意用折线图来表示趋势……</p>
 </li>
 </ol>
 <h2 id="DataShot"><a href="#DataShot" class="headerlink" title="DataShot"></a>DataShot</h2><h3 id="设计目标："><a href="#设计目标：" class="headerlink" title="设计目标："></a>设计目标：</h3><ul>
@@ -217,28 +217,28 @@
 <li>G4 呈现的内容 简明、让人印象深刻</li>
 <li>G5 支持简单的用户交互</li>
 </ul>
-<h3 id="系统Pipeline"><a href="#系统Pipeline" class="headerlink" title="系统Pipeline:"></a>系统Pipeline:</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/8b8817050110ea21a2a5527d6a7723c3430c860f.jpeg" alt></p>
+<h3 id="系统-Pipeline"><a href="#系统-Pipeline" class="headerlink" title="系统 Pipeline:"></a>系统 Pipeline:</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/8b8817050110ea21a2a5527d6a7723c3430c860f.jpeg" alt></p>
 <p><strong>Fact Formulation:</strong></p>
-<p>将fact定义为如下形式：$fact = {type, parameters, measures,subject,score}$</p>
+<p>将 fact 定义为如下形式：$fact = {type, parameters, measures,subject,score}$</p>
 <p><strong>Fact Extraction:</strong></p>
 <ol>
 <li><p>子空间枚举(Subspace Enumeration):</p>
-<p>$subspace  = \left\{\left\{f[1]:v[1]\right\}, \ldots, \left\{f[n]:v[n]\right\}\right\}$ 使用BUC算法，按top-down顺序枚举数据子空间。限制数据立方的格点深度为3，因为经过超过3维过滤的数据子空间对用户来说通常是无趣的。</p>
+<p> $subspace  = \left\{\left\{f[1]:v[1]\right\}, \ldots, \left\{f[n]:v[n]\right\}\right\}$ 使用 BUC 算法，按 top-down 顺序枚举数据子空间。限制数据立方的格点深度为 3，因为经过超过 3 维过滤的数据子空间对用户来说通常是无趣的。</p>
 </li>
 <li><p>事实计算(Fact Computation)</p>
-<p>在枚举数据子空间的过程中，DataShot进行计算以搜索不同类型的事实。目前，DataShot在一次计算中只支持一个度量.</p>
+<p> 在枚举数据子空间的过程中，DataShot 进行计算以搜索不同类型的事实。目前，DataShot 在一次计算中只支持一个度量.</p>
 </li>
 <li><p>计算事实分数（Fact Scoring）</p>
-<p>$score = W_s·score_{significance} + W_f·score_{focus} + W_c·score_{context}$ 参数分别为0.6/0.2/0.2</p>
+<p> $score = W_s·score_{significance} + W_f·score_{focus} + W_c·score_{context}$ 参数分别为 0.6/0.2/0.2</p>
 </li>
 </ol>
 <p><strong>Fact Composition:</strong></p>
 <ol>
-<li><p>主题提取(Topic Extraction): </p>
-<p>$sheet_{topic} (t)=\{fact[1],fact[2],…,fact[d]\}$  $where fact[i].subject.context=t or fact[i].subject.focus=t$</p>
+<li><p>主题提取(Topic Extraction):</p>
+<p> $sheet_{topic} (t)=\{fact[1],fact[2],…,fact[d]\}$ $where fact[i].subject.context=t or fact[i].subject.focus=t$</p>
 </li>
 <li><p>事实选取(Fact Selection):</p>
-<p>根据事实分数，选择top-N个数据事实，然而，在许多情况下，最重要的事实在语义上可能非常相似，因为它们共享在统计上非常重要的属性，支配着最终的得分。因此需要平衡事实的重要性和差异性。具体过程是：</p>
+<p> 根据事实分数，选择 top-N 个数据事实，然而，在许多情况下，最重要的事实在语义上可能非常相似，因为它们共享在统计上非常重要的属性，支配着最终的得分。因此需要平衡事实的重要性和差异性。具体过程是：</p>
 <ul>
 <li>计算事实之间的距离。</li>
 <li>从上到下选择，选择最重要的事实，同时排除和它最接近的。如果几个事实的分数相同，那么选择最“离群的”</li>
@@ -249,8 +249,8 @@
 <ol>
 <li><p>事实-视觉映射（Fact-Visual Mapping）:</p>
 <ul>
-<li>使用793个视觉元素以及他的事实类型，训练一棵决策树。</li>
-<li>还考虑了Inter-consistency和Intra-diversity。比如：事实类型相同，主题及度量也相同，应采用相同的视觉映射来保持一致性；相同的事实类型，主题或者度量不一样，就尽量采用不同的可视化方法。</li>
+<li>使用 793 个视觉元素以及他的事实类型，训练一棵决策树。</li>
+<li>还考虑了 Inter-consistency 和 Intra-diversity。比如：事实类型相同，主题及度量也相同，应采用相同的视觉映射来保持一致性；相同的事实类型，主题或者度量不一样，就尽量采用不同的可视化方法。</li>
 </ul>
 </li>
 <li><p>事实描述的生成(Fact Description Generation)</p>
@@ -268,24 +268,24 @@
 <li>支持三种风格，七种配色方案</li>
 </ul>
 </li>
-<li><p>UI界面：</p>
-<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/c4ee98fdf80ef21febda8ae22351ea2f8bfd2b60.jpeg" alt></p>
+<li><p>UI 界面：</p>
+<p> <img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/c4ee98fdf80ef21febda8ae22351ea2f8bfd2b60.jpeg" alt></p>
 </li>
 </ol>
 <h2 id="评估以及讨论"><a href="#评估以及讨论" class="headerlink" title="评估以及讨论"></a>评估以及讨论</h2><p><strong>Use Cases:</strong> 搜集一些网络数据制作了如下结果：</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/e7c322ab4668bc6f62b8209bcc0e1154c084553d.jpeg" alt></p>
 <p><strong>User Study</strong></p>
-<p>由于DataShot是提出的第一个直接从表格数据生成事实表的系统，因此没有理想的工具或技术可供比较。因此，设计了一个用户研究，要求参与者首先使用问卷对DataShot进行评价，然后通过研究后的访谈，根据他们使用DataShot的经验收集他们的反馈。</p>
+<p>由于 DataShot 是提出的第一个直接从表格数据生成事实表的系统，因此没有理想的工具或技术可供比较。因此，设计了一个用户研究，要求参与者首先使用问卷对 DataShot 进行评价，然后通过研究后的访谈，根据他们使用 DataShot 的经验收集他们的反馈。</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/22/bbfa117de4e82f3040ce3fa57ded9a9bd3a39370.jpeg" alt></p>
 <p><strong>Limitation</strong>:</p>
 <ol>
 <li><p>把每个数据列独立看待，没有考虑它们之间的相关性。比如：国家 地区</p>
 </li>
-<li><p>图表和视觉效果主要来自于预定义的库，受库大小的限制；只支持平铺式的layout。</p>
+<li><p>图表和视觉效果主要来自于预定义的库，受库大小的限制；只支持平铺式的 layout。</p>
 </li>
-<li><p>视觉元素只来自于调查中的fact sheet样例。不够丰富</p>
+<li><p>视觉元素只来自于调查中的 fact sheet 样例。不够丰富</p>
 </li>
-<li><p>Inter-consistency 有待加强，以提高fact sheet的质量</p>
+<li><p>Inter-consistency 有待加强，以提高 fact sheet 的质量</p>
 </li>
 <li><p>按照分数和相异性来选择事实会引起偏差，不完美。需要开发一个更好地事实评估方法</p>
 </li>
@@ -296,42 +296,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:1220341948@qq.com"><code> ✉️ 1220341948@qq.com </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -363,24 +347,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

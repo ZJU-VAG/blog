@@ -3,9 +3,9 @@ title: 循环神经网络 (Recurrent Neural Network, RNN)
 tags: ["报告", "主题报告"]
 date: 2019-11-18
 author: 张建伟
+mail: zjw.cs@zju.edu.cn
 mathjax: true
 ---
-
 
 ## 1. 循环神经网络 (Recurrent Neural Network, RNN)
 
@@ -28,35 +28,35 @@ $$
 
 ![RNN 循环单元展开示意图](https://www.jarvis73.cn/images/2018-1-24/RNN-unrolled.png)
 
-循环神经网络可以由多层循环单元堆叠而成, 前一个循环单元的输出作为下一循环单元的输入, 如下图所示. 
+循环神经网络可以由多层循环单元堆叠而成, 前一个循环单元的输出作为下一循环单元的输入, 如下图所示.
+
 <!-- 在训练过程中, ... -->
 
 ![多层循环单元堆叠](https://www.jarvis73.cn/images/2018-1-24/multilayer-RNN.png)
 
-RNN 的输入通常表示成**嵌入 (embedding)**的形式, 即构造一个**查询表 (lookup table)**, 把输入序列的每个时刻的特征向量通过查询表转为一个等长的向量. 从而一个序列的形状变为 `[num_time_steps, embedding_size]`. 
+RNN 的输入通常表示成**嵌入 (embedding)**的形式, 即构造一个**查询表 (lookup table)**, 把输入序列的每个时刻的特征向量通过查询表转为一个等长的向量. 从而一个序列的形状变为 `[num_time_steps, embedding_size]`.
 
 ### 1.1 RNN 的应用
 
 RNN 可以根据输入序列的长度和输出序列的长度分为三大类.
 
-* 多对一: 常用于情感分析, 文本分类
-* 一对多: Image Caption
-* 多对多: 机器翻译
-* 一对一: 退化为 MLP
+-   多对一: 常用于情感分析, 文本分类
+-   一对多: Image Caption
+-   多对多: 机器翻译
+-   一对一: 退化为 MLP
 
 ### 1.2 RNN 的局限性
 
 RNN 也存在一些缺陷:
 
-* RNN 可以很好的学习序列中邻近时间步数据点(短期)之间的关系, 但对于长期依赖会变得不稳定.
-* RNN 可以把固定长度的输入序列映射到指定长度的输出序列, 但不能动态地根据输入决定输出多长的序列.
+-   RNN 可以很好的学习序列中邻近时间步数据点(短期)之间的关系, 但对于长期依赖会变得不稳定.
+-   RNN 可以把固定长度的输入序列映射到指定长度的输出序列, 但不能动态地根据输入决定输出多长的序列.
 
 而 LSTM 和 Encoder-Decoder 的提出解决了这两个问题.
 
-
 ## 2. 长短期记忆 (Long Short Term Memory, LSTM)[^1]
 
-前面提到, RNN 对于长期依赖经实验表明是不稳定的. 对于短序列, 如一个句子: "The clouds are in the ()", 括号中预测一个词, 那么很容易根据该词前面的 clouds 和 in 推断出填 sky. 但是对于长序列, 如 "I grew up in France ... I speak fluent ()", 句子中的省略号包含了大量其他信息, 此时最后括号中的词应当根据开头的 France 推断为 French, 但中间大量的无用语句会稀释前期的信息, 导致 RNN 无法正确预测最后的词. 而 Hochreiter & Schmidhuber 提出的 LSTM [^6] 正是解决该问题的. 
+前面提到, RNN 对于长期依赖经实验表明是不稳定的. 对于短序列, 如一个句子: "The clouds are in the ()", 括号中预测一个词, 那么很容易根据该词前面的 clouds 和 in 推断出填 sky. 但是对于长序列, 如 "I grew up in France ... I speak fluent ()", 句子中的省略号包含了大量其他信息, 此时最后括号中的词应当根据开头的 France 推断为 French, 但中间大量的无用语句会稀释前期的信息, 导致 RNN 无法正确预测最后的词. 而 Hochreiter & Schmidhuber 提出的 LSTM [^6] 正是解决该问题的.
 
 LSTM 和通常的 CNN 一样为一个循环单元的结构, 但是与 RNN 仅有一个 tanh 激活层不同, LSTM 中包含了更复杂的四层网络的结构设计, 并且四层网络相互耦合, 如下图所示.
 
@@ -66,11 +66,11 @@ LSTM 和通常的 CNN 一样为一个循环单元的结构, 但是与 RNN 仅有
 
 ![图例](https://www.jarvis73.cn/images/2018-1-24/LSTM2-notation.png)
 
-下面详细介绍 LSTM 单元的内部结构. 
+下面详细介绍 LSTM 单元的内部结构.
 
 ### 2.1 LSTM 的核心思想
 
-LSTM 相比于 RNN, 关键在于引入了单元状态(state) $C$ —— 横穿下图顶部的直线. 
+LSTM 相比于 RNN, 关键在于引入了单元状态(state) $C$ —— 横穿下图顶部的直线.
 
 ![单元状态](https://www.jarvis73.cn/images/2018-1-24/LSTM3-C-line.png)
 
@@ -78,14 +78,15 @@ LSTM 可以通过**门(gate)**来控制向单元状态中增加信息或减少�
 
 ![门](https://www.jarvis73.cn/images/2018-1-24/LSTM3-gate.png)
 
-$sigmoid$ 层输出的值在 $[0, 1]$ 之间, 控制了信息的通过量. 越接近 0, 则表明不允许信息通过(从而形成*遗忘*); 越接近 1, 则表明允许信息全部通过(从而形成*记忆*). 
+$sigmoid$ 层输出的值在 $[0, 1]$ 之间, 控制了信息的通过量. 越接近 0, 则表明不允许信息通过(从而形成*遗忘*); 越接近 1, 则表明允许信息全部通过(从而形成*记忆*).
 
 ### 2.2 LSTM 单元解析
 
-LSTM 单元在每个时间步需要注意三个向量: 
-* 输入的特征向量 $x_t$
-* 上一步输出的特征向量 $h_{t-1}$
-* 上一步结束后的单元状态 $C_{t-1}$
+LSTM 单元在每个时间步需要注意三个向量:
+
+-   输入的特征向量 $x_t$
+-   上一步输出的特征向量 $h_{t-1}$
+-   上一步结束后的单元状态 $C_{t-1}$
 
 要注意三个向量是相同的长度.
 
@@ -119,21 +120,21 @@ LSTM 单元在每个时间步需要注意三个向量:
 
 **其他参考:** 其他可以参考如下文献:
 
-* [Depth Gated RNNs](http://arxiv.org/pdf/1508.03790v2.pdf)
-* [Variants comparision](http://arxiv.org/pdf/1503.04069.pdf)
-* [Ten thousand RNN architecture tests](http://jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)
+-   [Depth Gated RNNs](http://arxiv.org/pdf/1508.03790v2.pdf)
+-   [Variants comparision](http://arxiv.org/pdf/1503.04069.pdf)
+-   [Ten thousand RNN architecture tests](http://jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)
 
 ## 3. 门控循环单元(Gated Recurrent Unit, GRU)
 
-GRU[^8] 是一种比 LSTM 稍简单一些的循环单元. GRU 把 LSTM 中的隐藏状态 $h$ 和单元状态 $C$ 合并为单个的隐藏状态. 如下图所示. 
+GRU[^8] 是一种比 LSTM 稍简单一些的循环单元. GRU 把 LSTM 中的隐藏状态 $h$ 和单元状态 $C$ 合并为单个的隐藏状态. 如下图所示.
 
 ![门控循环单元 (GRU)](https://www.jarvis73.cn/images/2018-1-24/LSTM3-var-GRU.png)
 
-**更新门(update gate).** 更新门系数 $z_t$ 控制了 $h_{t-1}$ 中保存的信息(如长期记忆)在当前步保留多少. $z_t$ 接近 0 时上一步的隐藏状态中的信息 $h_{t-1}$ 得以保留, 新输入的信息 $\tilde{h}_t$ 会被忽略; $z_t$ 接近 1 时则丢弃已有的信息, 并填入新输入的信息. 
+**更新门(update gate).** 更新门系数 $z_t$ 控制了 $h_{t-1}$ 中保存的信息(如长期记忆)在当前步保留多少. $z_t$ 接近 0 时上一步的隐藏状态中的信息 $h_{t-1}$ 得以保留, 新输入的信息 $\tilde{h}_t$ 会被忽略; $z_t$ 接近 1 时则丢弃已有的信息, 并填入新输入的信息.
 
 **输入信息的加工.** 当前步输入的信息需要加工后才能合并到隐藏状态 $h_t$ 中. 输入信息加工时需要参考上一步的隐藏状态 $h_{t-1}$ 来决定哪些信息有用, 哪些没用. 加工后的信息用 $\tilde{h}_t$ 表示.
 
-**重置门(reset gate).** 重置门系数 $r_t$ 控制了在加工输入信息的时候使用上一步的隐藏状态中的哪些信息. $r_t$ 接近 0 时新输入的信息占主导地位, 说明当前步的输入包含的信息与前面的信息关联性很小; $r_t$ 接近 1 时新输入的信息和前面的长期信息有较大关联性, 需要综合考虑来产生当前步加工后的信息. 
+**重置门(reset gate).** 重置门系数 $r_t$ 控制了在加工输入信息的时候使用上一步的隐藏状态中的哪些信息. $r_t$ 接近 0 时新输入的信息占主导地位, 说明当前步的输入包含的信息与前面的信息关联性很小; $r_t$ 接近 1 时新输入的信息和前面的长期信息有较大关联性, 需要综合考虑来产生当前步加工后的信息.
 
 ## 4. 编码-解码器 (Encoder-Decoder)
 
@@ -178,13 +179,12 @@ $$
 
 ### 4.1 编码-解码器模型的局限性
 
-* 信息的丢失: 整个时间序列只能压缩为一个固定长度的语义向量
-* 不合理性: seq2seq 的任务中输入序列 $\\{x_0, x_1, \dots, x_{t−1},  x_𝑡, x_{t+1},\dots \\}$ 中的每个元素对所有 $y_s$ 的贡献度是相同的
+-   信息的丢失: 整个时间序列只能压缩为一个固定长度的语义向量
+-   不合理性: seq2seq 的任务中输入序列 $\\{x_0, x_1, \dots, x_{t−1},  x_𝑡, x_{t+1},\dots \\}$ 中的每个元素对所有 $y_s$ 的贡献度是相同的
 
 例如: The animal didn't cross the street because **it** was too tired. 在这句话中, 人是通过综合整句话的信息来判断单词 it 指代的是 the animal, 从而翻译时 the animal 应该对 it 的影响更大.
 
 人们提出了注意力模型来解决普通编码-解码器模型的问题.
-
 
 ## 5. 注意力机制 (Attention Mechanism)[^11]
 
@@ -196,8 +196,8 @@ $$
 
 注意力是把有限的资源集中在更重要的目标上. 注意力机制的两个要素:
 
-* 决定输入信息的哪部分是重要的
-* 把资源集中分配到重要的信息上
+-   决定输入信息的哪部分是重要的
+-   把资源集中分配到重要的信息上
 
 沿用编码-解码器模型的结构, 注意力机制通过引入一组归一化的系数 $\\{\alpha_1, \alpha_2, \dots, \alpha_n \\}$ 来对输入的信息进行选择, 来解决编码-解码器的不合理性. 这里输入的信息就是指输入序列在 RNN 中的单元输出 $\mathbf{h}_s$. 归一化的系数 $\alpha_s$ 用来决定输入信息的重要性, 是编码器输出时对单元输出加权求和系数. 注意力机制在计算不同时间步的输出时, 实时构造编码器输出的语义向量 $\mathbf{c}_t$, 从而解决了普通编码-解码器信息丢失的问题. 注意力机制如下图所示.
 
@@ -217,14 +217,11 @@ $$
 
 自注意力模块工作方式如下[^10]:
 
-* 输入的序列首先转化为相同长度的 embedding
-* 创建三个矩阵: 查询矩阵 (Query), 键矩阵 (Key), 值矩阵 (Value)
-* 使用这三个矩阵把每个单词的 embedding 映射为三个稍短的特征向量, 分别代表了当前单词的查询向量, 键向量和值向量.
-* 比如我们要计算单词 Thinking 关于句子中其他单词的注意力时, 使用 Thinking 的查询向量依次与句子中所有单词 (包括 Thinking) 的键向量做点积来计算相似度, 并对相似度进行归一化得到加权系数 (这是 attention 的核心部分).
-* 加权系数乘到所有单词的值向量上来得到单词 Thinking 经过自注意力模块后输出的特征向量, 这个特征向量中可以看作包含了翻译任务重对准确翻译 Thinking 所需要的信息, 而不包含其他信息 (其他信息在翻译其他词时可能有用, 但在翻译 Thinking 时无用).
-
-
-
+-   输入的序列首先转化为相同长度的 embedding
+-   创建三个矩阵: 查询矩阵 (Query), 键矩阵 (Key), 值矩阵 (Value)
+-   使用这三个矩阵把每个单词的 embedding 映射为三个稍短的特征向量, 分别代表了当前单词的查询向量, 键向量和值向量.
+-   比如我们要计算单词 Thinking 关于句子中其他单词的注意力时, 使用 Thinking 的查询向量依次与句子中所有单词 (包括 Thinking) 的键向量做点积来计算相似度, 并对相似度进行归一化得到加权系数 (这是 attention 的核心部分).
+-   加权系数乘到所有单词的值向量上来得到单词 Thinking 经过自注意力模块后输出的特征向量, 这个特征向量中可以看作包含了翻译任务重对准确翻译 Thinking 所需要的信息, 而不包含其他信息 (其他信息在翻译其他词时可能有用, 但在翻译 Thinking 时无用).
 
 ## References
 
@@ -233,7 +230,7 @@ $$
     [[link]](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) OnLine.
 
 [^2]:
-    **详解从 Seq2Seq模型、RNN结构、Encoder-Decoder模型 到 Attention模型** <br />
+    **详解从 Seq2Seq 模型、RNN 结构、Encoder-Decoder 模型 到 Attention 模型** <br />
     [[link]](https://caicai.science/2018/10/06/attention%E6%80%BB%E8%A7%88/) OnLine.
 
 [^3]:
@@ -243,7 +240,7 @@ $$
 
 [^4]:
     **Sequence to Sequence Learning with Neural Networks** <br />
-    Ilya Sutskever, Oriol Vinyals, Quoc V.Le.  <br />
+    Ilya Sutskever, Oriol Vinyals, Quoc V.Le. <br />
     [[link]](http://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks) In Advances in neural information processing systems. 2014: 3104-3112.
 
 [^5]:
@@ -272,11 +269,11 @@ $$
     [[link]](https://arxiv.org/abs/1706.03762) Advances in neural information processing systems. 2017: 5998-6008.
 
 [^10]:
-    **The Illustrated Transformer**  <br />
+    **The Illustrated Transformer** <br />
     Jay Alammar <br />
     [[link]](https://jalammar.github.io/illustrated-transformer/) OnLine.
 
 [^11]:
     **Neural machine translation by jointly learning to align and translate** <br />
     Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio <br />
-    [[link]](https://arxiv.org/abs/1409.0473) arXiv preprint arXiv:1409.0473, 2014. 
+    [[link]](https://arxiv.org/abs/1409.0473) arXiv preprint arXiv:1409.0473, 2014.

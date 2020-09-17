@@ -1,14 +1,15 @@
 ---
 title: "Visual Analytics for Complex Engineering Systems: Hybrid Visual Steering of Simulation Ensembles"
-tags: ["论文评述","报告"]
+tags: ["论文评述", "报告"]
 date: 2015-05-25
 author: 陆俊华
+mail: akiori@zju.edu.cn
 mathjax: true
 ---
 
 ## 简介
 
-本文提出的是一种复杂工程系统可视分析的新方法—-仿真集的混合可视操控(Hybrid Visual Steering of Simulation Ensembles). 它在传统的仿真相关的可视化方法基础上增加了一个自动优化的组件(方法). 在这样一个提出问题解决问题过程中, 作者(们)先是提出一个对复杂系统的混合可视操控(Hybrid Visual Steering) 的任务的抽象, 然后他们以汽车发动机中的共轨燃油喷射系统进行一个案例分析,  广泛联合了领域专家, 与专家们进行深入讨论, 并设计完善了这个方法和一个针对该领域的系统原型.
+本文提出的是一种复杂工程系统可视分析的新方法—-仿真集的混合可视操控(Hybrid Visual Steering of Simulation Ensembles). 它在传统的仿真相关的可视化方法基础上增加了一个自动优化的组件(方法). 在这样一个提出问题解决问题过程中, 作者(们)先是提出一个对复杂系统的混合可视操控(Hybrid Visual Steering) 的任务的抽象, 然后他们以汽车发动机中的共轨燃油喷射系统进行一个案例分析, 广泛联合了领域专家, 与专家们进行深入讨论, 并设计完善了这个方法和一个针对该领域的系统原型.
 
 ## 方法概览
 

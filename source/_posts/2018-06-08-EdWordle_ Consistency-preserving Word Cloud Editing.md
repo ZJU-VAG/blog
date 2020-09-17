@@ -3,23 +3,23 @@ title: " EdWordle: Consistency-preserving Word Cloud Editing"
 tags: ["论文评述", "报告"]
 date: 2018-06-08
 author: 陈则衔
+mail: zexianchen@zju.edu.cn
 mathjax: true
 ---
+
 论文：EdWordle: Consistency-preserving Word Cloud Editing
 
-作者：Yunhai Wang,  Xiaowei Chu, Chen Bao, Lifeng Zhu, Oliver Deussen, Baoquan Chen and Michael Sedlmair
+作者：Yunhai Wang, Xiaowei Chu, Chen Bao, Lifeng Zhu, Oliver Deussen, Baoquan Chen and Michael Sedlmair
 
-发表:  IEEE infoVis 2017
+发表: IEEE infoVis 2017
 
 ## 简介
 
-现有的Wordle，存在不一致性的问题，即在词云的调整过程中，会将摆放不正确的单词单纯地移动到其他空白区域，这样有可能导致全局大量单词需要改变，最后导致词云结果不尽如人意。
+现有的 Wordle，存在不一致性的问题，即在词云的调整过程中，会将摆放不正确的单词单纯地移动到其他空白区域，这样有可能导致全局大量单词需要改变，最后导致词云结果不尽如人意。
 
-为了保持词云的一致性，合适的编辑改变方式变得更加重要。并且每个单词的临近单词都应该被考虑，因为它们之间可能有着重要的意义。为此本篇文章提出了一个名为EdWordle的工具，这个工具主要用到了一个使得词云局部和全局上下文感知交互技术。
+为了保持词云的一致性，合适的编辑改变方式变得更加重要。并且每个单词的临近单词都应该被考虑，因为它们之间可能有着重要的意义。为此本篇文章提出了一个名为 EdWordle 的工具，这个工具主要用到了一个使得词云局部和全局上下文感知交互技术。
 
 该工具是一个编辑词云的工具，在编辑词云的过程中，单词之间的邻里关系可以得到很好的保留，并且有着很好的紧凑性，可以用于编辑词云、提升现有词云并作为一个创作工具使用。
-
-
 
 ## 工作内容
 
@@ -35,7 +35,7 @@ mathjax: true
 
 1.具可以在不降低单词邻里关系的情况下，使得词云的紧凑性得到提高；
 
-2.相比起现有最好的可编辑词云工具，EdWordle更快、更紧凑、更紧凑；
+2.相比起现有最好的可编辑词云工具，EdWordle 更快、更紧凑、更紧凑；
 
 3.可以将其作为一款不错的创作工具
 
@@ -47,21 +47,19 @@ mathjax: true
 
 [![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-1.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-1.png)
 
-左图为将dedicate移动到Nation单词上方的操作，右图分别对应了不同箱装结构对应的结果。(a)为单词结构，可以发现正常移动但是并不紧凑(b)为字母结构，虽然很紧凑，但是dedicate会插入到nation之间，因为此时它也能达到受力平衡(c)采用了本篇文章提出的双层箱装结构，很紧凑且没有重叠问题
+左图为将 dedicate 移动到 Nation 单词上方的操作，右图分别对应了不同箱装结构对应的结果。(a)为单词结构，可以发现正常移动但是并不紧凑(b)为字母结构，虽然很紧凑，但是 dedicate 会插入到 nation 之间，因为此时它也能达到受力平衡(c)采用了本篇文章提出的双层箱装结构，很紧凑且没有重叠问题
 
 在确定好刚体结构的基础上，加入了迭代衰减的受力系统来使得整个布局在较短时间内达到较好的稳定布局。
 
-整体受力如下图所示，合力由两部分组成，分别为邻居的吸引力和中心的吸引力，邻居吸引力跟万有引力相似，越近力越大，而吸引力于此相反，越近力越小这是为了防止中心力对边界部分缺乏影响力。于此同时，为了防止中心力过大而破坏邻里关系，在合力中为此添加一个常量系数，系数α默认值为0.1。当一个系统受力达不到平衡时，整个系统会发生抖动，为此对合力添加了衰减系数避免震荡，beta同样是一个常数。当受力平衡时，若速度不为0，系统同样会继续震荡直至速度为0，为了加速这个过程，同样对速度添加了衰减函数，使得整体系统快速达到一个稳定状态。 每次操作后，系统布局发生变化，变化过程中，迭代次数最多为80次，耗时在0.6s左右。
+整体受力如下图所示，合力由两部分组成，分别为邻居的吸引力和中心的吸引力，邻居吸引力跟万有引力相似，越近力越大，而吸引力于此相反，越近力越小这是为了防止中心力对边界部分缺乏影响力。于此同时，为了防止中心力过大而破坏邻里关系，在合力中为此添加一个常量系数，系数 α 默认值为 0.1。当一个系统受力达不到平衡时，整个系统会发生抖动，为此对合力添加了衰减系数避免震荡，beta 同样是一个常数。当受力平衡时，若速度不为 0，系统同样会继续震荡直至速度为 0，为了加速这个过程，同样对速度添加了衰减函数，使得整体系统快速达到一个稳定状态。 每次操作后，系统布局发生变化，变化过程中，迭代次数最多为 80 次，耗时在 0.6s 左右。
 
 在合力中，在定义邻居吸引力之前，需要先定义邻居关系。当两者刚体的质心相连不会穿过其他刚体时，则认为两者是邻里关系，具体也如下图所示，黑色实现为邻里关系，黑色虚线为中心吸引力。
 
 [![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-21.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-21.png)
 
-为了证明力的有效性，以下可以通过一个具体例子看出，具体如下图，(a)为删除*conceived*单词;(b)只用上相邻吸引力，发现不够紧凑;(c)加上中心力，发现破坏了邻里关系，比如*vain*和*resolve*，两者在(a)中是邻居而此时不是;(d)加上常量系数α=0.1，发现效果很好[![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-3.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-3.png)[
+为了证明力的有效性，以下可以通过一个具体例子看出，具体如下图，(a)为删除*conceived*单词;(b)只用上相邻吸引力，发现不够紧凑;(c)加上中心力，发现破坏了邻里关系，比如*vain*和*resolve*，两者在(a)中是邻居而此时不是;(d)加上常量系数 α=0.1，发现效果很好[![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-3.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-3.png)[
 ](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-2.png)[
 ](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-3-2.png)
-
- 
 
 ## 局部词云布局算法
 
@@ -77,35 +75,33 @@ mathjax: true
 
 4.可能会有点破坏，但是可以更紧凑，所以对用户来说是可选操作
 
-表现不好的单词在边界处寻找，边界定义为，在中心点为圆心画圈，其中半径R = β*min(w,h)，该圈为则认为是边界部分，圈外所有单词认定为布局不好的单词，其中β=0.8，用户在操作过程中可以修改。当寻找候选位置时，如(b)所示，以当前刚体质心与布局中心连线中点作为基准点，按照螺旋式向外寻找候选位置，先到先得，候选个数k=20，同样用户可以修改。螺旋式寻找方法详情来自于另一篇论文J. Feinberg. Wordle-beautiful word clouds. http://www.wordle.net/.2009. 至此，完成了该工具的主要算法部分。
+表现不好的单词在边界处寻找，边界定义为，在中心点为圆心画圈，其中半径 R = β\*min(w,h)，该圈为则认为是边界部分，圈外所有单词认定为布局不好的单词，其中 β=0.8，用户在操作过程中可以修改。当寻找候选位置时，如(b)所示，以当前刚体质心与布局中心连线中点作为基准点，按照螺旋式向外寻找候选位置，先到先得，候选个数 k=20，同样用户可以修改。螺旋式寻找方法详情来自于另一篇论文 J. Feinberg. Wordle-beautiful word clouds. http://www.wordle.net/.2009. 至此，完成了该工具的主要算法部分。
 
 [![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-4-2.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-4-2.png)
 
 ## 验证
 
-前文所言，该篇文章总共进行了3个case，详细描述一下前2个case的具体过程。
+前文所言，该篇文章总共进行了 3 个 case，详细描述一下前 2 个 case 的具体过程。
 
-​    **case 1：定量分析**
+​ **case 1：定量分析**
 
-通过与Barth等人提出的语义词云相比较，来说明能在保持单词邻里关系的情况下，EdWordle的紧凑性更好。
+通过与 Barth 等人提出的语义词云相比较，来说明能在保持单词邻里关系的情况下，EdWordle 的紧凑性更好。
 
-比较指标为Barth等人提出的6个指标，分别为：实现邻接关系、失真率、紧凑性、统一面积利用率、长宽比以及运行时间，在该case中，主要比较实现邻接关系和紧凑性。
+比较指标为 Barth 等人提出的 6 个指标，分别为：实现邻接关系、失真率、紧凑性、统一面积利用率、长宽比以及运行时间，在该 case 中，主要比较实现邻接关系和紧凑性。
 
-两者使用的布局算法为Star Forest&&Cycle Cover，原因在于这两个算法在语义词云方面表现地较好。
+两者使用的布局算法为 Star Forest&&Cycle Cover，原因在于这两个算法在语义词云方面表现地较好。
 
-数据集为WIKI英文文本和SEA&&ALENEX的56篇科学论文
+数据集为 WIKI 英文文本和 SEA&&ALENEX 的 56 篇科学论文
 
 实验结果如下
 
 [![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-5-1.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-5-1.png)
 
-​    (a)中为邻里关系比较，图中实线均为输入，在(a)图中，只有黄线稍差一点，其他几乎一样；(b)为紧凑性比较，波点为输出，发现EdWordle要明显优于输入
+​ (a)中为邻里关系比较，图中实线均为输入，在(a)图中，只有黄线稍差一点，其他几乎一样；(b)为紧凑性比较，波点为输出，发现 EdWordle 要明显优于输入
 
- 
+​ **case 2：与现有最优的词云编辑器 ManiWordle 做对比**
 
-​    **case 2：与现有最优的词云编辑器ManiWordle做对比**
-
-首先，基于EdWordle本身编辑器有好几个版本，先做一个挑选，其版本包括如下3个，
+首先，基于 EdWordle 本身编辑器有好几个版本，先做一个挑选，其版本包括如下 3 个，
 
 1.不预测用户移动后产生的结果
 
@@ -113,11 +109,11 @@ mathjax: true
 
 3.连带影响，即移动桌子，桌子上的苹果同样也会移动的移动方式
 
-挑选了6个测试者，一致认为版本2是最好的，所以选版本2与ManiWordle作对比
+挑选了 6 个测试者，一致认为版本 2 是最好的，所以选版本 2 与 ManiWordle 作对比
 
-​    **用户操作任务：**
+​ **用户操作任务：**
 
-1.两两放置，给予两个单词x,y，指定拜访
+1.两两放置，给予两个单词 x,y，指定拜访
 
 2.语义错位，需要用户将相同颜色的单词放在一起
 
@@ -125,53 +121,52 @@ mathjax: true
 
 [![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-5-2.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-5-2.png)
 
-​    **实验前的假设：**
+​ **实验前的假设：**
 
-1.在相同的操作任务下，EdWordle效率更高
+1.在相同的操作任务下，EdWordle 效率更高
 
-2.Task1中，EdWordle准确率更高
+2.Task1 中，EdWordle 准确率更高
 
-3.EdWordle布局更紧凑
+3.EdWordle 布局更紧凑
 
-4.EdWordle主观评分更高，因为可预测
+4.EdWordle 主观评分更高，因为可预测
 
-​    **测试指标如下：**
+​ **测试指标如下：**
 
 效率: 时间 + 点击次数 + 鼠标移动距离
 
-准确性: 统计没有按照task要求正确放置单词的个数
+准确性: 统计没有按照 task 要求正确放置单词的个数
 
-紧凑性&&主观评分:用ManiWordle用过的调查问卷(6个问题);其中 评级分布由（*十分不同意* 到*十分同意* 共7个评级）
+紧凑性&&主观评分:用 ManiWordle 用过的调查问卷(6 个问题);其中 评级分布由（_十分不同意_ 到*十分同意* 共 7 个评级）
 
-​    **数据集**
+​ **数据集**
 
 Task1:“Participatory Visualization with Wordle” by Viegas et al.
 
 Task2:全敏珠维基条目
 
-​    **参与人员**
+​ **参与人员**
 
-8男8女,20-29岁之间，平均22岁，大多为当地大学生，没有眼科问题，没用过相似工具，所有人都要用2个工具完成2个task
+8 男 8 女,20-29 岁之间，平均 22 岁，大多为当地大学生，没有眼科问题，没用过相似工具，所有人都要用 2 个工具完成 2 个 task
 
-​    **流程**
+​ **流程**
 
-1.2min介绍任务;
+1.2min 介绍任务;
 
 2.task1
 
 3.task2
 
-4.做调查问卷，在做问卷的过程中，参与人员可以再次使用工具，并且查看自己task后的词云布局结果
+4.做调查问卷，在做问卷的过程中，参与人员可以再次使用工具，并且查看自己 task 后的词云布局结果
 
-​    **实验结果**
+​ **实验结果**
 
-  [![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-5-31.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-5-31.png)
+[![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-5-31.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/EdWordle-5-31.png)
 
-​    左上角图为4个测试指标，实线为EdWordle，可以发现每个指标EdWordle都表现地更好；错误方面因为task2 只要把相同颜色放在一起所以没有错误，而task1也是EdWordle表现更好，错误更少；在调查问卷方面，EdWordle也占据了绝对的优势
+​ 左上角图为 4 个测试指标，实线为 EdWordle，可以发现每个指标 EdWordle 都表现地更好；错误方面因为 task2 只要把相同颜色放在一起所以没有错误，而 task1 也是 EdWordle 表现更好，错误更少；在调查问卷方面，EdWordle 也占据了绝对的优势
 
 ## 总结
 
-​    总体来说，实现了一个款可以在线编辑的词云布局工具，并且在布局过程中可以较好保证邻里关系和紧凑性，与力引导图等比较接近。
+​ 总体来说，实现了一个款可以在线编辑的词云布局工具，并且在布局过程中可以较好保证邻里关系和紧凑性，与力引导图等比较接近。
 
-​    该工具在线网站：http://www.edwordle.net/
-
+​ 该工具在线网站：http://www.edwordle.net/

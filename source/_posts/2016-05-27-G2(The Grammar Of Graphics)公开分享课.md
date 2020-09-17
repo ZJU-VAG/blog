@@ -6,11 +6,11 @@ author: admin
 mathjax: true
 ---
 
-##### 时间：2016年5月27日（星期五）
+##### 时间：2016 年 5 月 27 日（星期五）
 
-##### 地点：浙江大学紫金港校区蒙民伟楼CAD&CG国家重点实验室421室
+##### 地点：浙江大学紫金港校区蒙民伟楼 CAD&CG 国家重点实验室 421 室
 
-本周组会之后，将有支付宝前端的工程师向大家介绍蚂蚁金服最新推出的可视化语言G2。
+本周组会之后，将有支付宝前端的工程师向大家介绍蚂蚁金服最新推出的可视化语言 G2。
 
 相关链接：http://g2.alipay.com/
 
@@ -24,16 +24,17 @@ mathjax: true
 
 附：本周组会通知
 
-时间：5月27日（星期五）上午09:30
+时间：5 月 27 日（星期五）上午 09:30
 
-地点：421会议室
+地点：421 会议室
 
 本周组会的报告者及内容是：
 
-朱闽峰：
+朱闽峰
+mail: minfeng_zhu@zju.edu.cn：
 TrajGraph: A Graph-Based Visual Analytics Approach to Studying Urban Network Centralities Using Taxi Trajectory Data.
 VAST 2015
-近些年来，越来越多的机构例如交通局、公司或者研究机构利用出租车GPS轨迹数据分析城市交通。来自Kent State大学的这个工作利用图模型分析轨迹数据，分析城市中不同区域在交通中的重要程度。
+近些年来，越来越多的机构例如交通局、公司或者研究机构利用出租车 GPS 轨迹数据分析城市交通。来自 Kent State 大学的这个工作利用图模型分析轨迹数据，分析城市中不同区域在交通中的重要程度。
 
 唐谈：
 TargetVue: Visual Analysis of Anomalous User Behaviors in Online Communication Systems.

@@ -160,11 +160,11 @@
     <div class="post-content ">
         <h2 id="一、简介："><a href="#一、简介：" class="headerlink" title="一、简介："></a><strong>一、简介：</strong></h2><p>本文提出的方法普遍适用于各种形式的时序数据。由于本文是在研究能源数据时受到的启发，因此文章以能源数据为例进行介绍。能源数据多取自各个能源站中的传感器，如光伏电厂、风车、水电厂等。在对获取到的能源数据进行下一步的预测或统计任务前，均需要对数据进行质量评估，避免利用大误差数据进行工作。常见的能源数据质量检测方法是数据合理性检查（plausibility check），但是目前如何利用可视化的方法将合理性检查的结果进行统一管理、分析仍然是一个问题。</p>
 <p>针对现在的数据量大、数据维度高、合理性检查多样性、实际检查的时间区间局限性等挑战，本文利用了基于数据属性和合理性检查结果的元数据，根据结构化的元数据将数据从维度上分为若干个子集，从而构建了一个层次结构，实现了可扩展的数据的集合。</p>
-<h2 id="二、数据概览："><a href="#二、数据概览：" class="headerlink" title="二、数据概览："></a><strong>二、数据概览：</strong><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/data.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/data.png" alt="img"></a></h2><p>文章使用的数据包括95个光伏电站的传感器数据和若干个气象站的传感器数据，共计160余条时间序列，9000余条数据记录。每个时间序列都会进行若干次合理性检查（plausibility check），每次合理性检查会指定一个检查规则，例如上图右下角第一列数据，指定的规则为是否大于0，检查结果由一个二进制序列表示，符合规则的记录用1表示，反之用0表示。本文使用的检查规则共529条，可以概括为如下：</p>
+<h2 id="二、数据概览："><a href="#二、数据概览：" class="headerlink" title="二、数据概览："></a><strong>二、数据概览：</strong><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/data.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/data.png" alt="img"></a></h2><p>文章使用的数据包括 95 个光伏电站的传感器数据和若干个气象站的传感器数据，共计 160 余条时间序列，9000 余条数据记录。每个时间序列都会进行若干次合理性检查（plausibility check），每次合理性检查会指定一个检查规则，例如上图右下角第一列数据，指定的规则为是否大于 0，检查结果由一个二进制序列表示，符合规则的记录用 1 表示，反之用 0 表示。本文使用的检查规则共 529 条，可以概括为如下：</p>
 <ol>
 <li><p>是否数据缺失</p>
 </li>
-<li><p>是否数据异常：白天为0， 晚上不为0，数据点离群，数据产生非0的重复等等。</p>
+<li><p>是否数据异常：白天为 0， 晚上不为 0，数据点离群，数据产生非 0 的重复等等。</p>
 </li>
 <li><p>是否违反了约束条件：违反边界条件，时间节点异常，时间戳重复等等。</p>
 </li>
@@ -173,9 +173,9 @@
 <p>于是传感器读取的元数据中又可以加上质量问题的类别、子类、严重程度等若干信息（见上图右上角），文章将通过结构化的元数据中记录的数据属性对所有有质量问题的时序数据进行层次划分。</p>
 <p><strong>三、系统介绍</strong></p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/system.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/05/system.png" alt="img"></a></p>
-<p>系统采用的是增量式设计，初始状态时的系统仅包含上图的a、c部分，且没有构建好的层次结构，整个系统为一条线。之后，用户根据需要构建出文章中的层次结构，逐步加入需要的视图，例如时间分布情况、问题严重程度、时序曲线、原始数据等视图，最终共同构成了上述完整的系统。</p>
-<p>图中a部分为用户自己构造的层次结构，可根据问题类别、时序数据、传感器种类等分类方法区分不同层次；b部分为一个简单的检查规则和符合要求的时序数据统计；c部分为经过变形的scale-stack bar chart用于统计各个类别的数据质量问题在相应的时序序列中的出现占比；d部分为每一行代表的问题类别出现的频率在时间上分布；e为严重程度统计；h为原始时序数据；i为原始数据。</p>
-<p>其中scale-stack bar chart是为了解决直方图中不同类别的数据数量相差过多的问题。它将区间线性的分为四段，每段均从0开始，表示一个数量级上的数据分布情况。</p>
+<p>系统采用的是增量式设计，初始状态时的系统仅包含上图的 a、c 部分，且没有构建好的层次结构，整个系统为一条线。之后，用户根据需要构建出文章中的层次结构，逐步加入需要的视图，例如时间分布情况、问题严重程度、时序曲线、原始数据等视图，最终共同构成了上述完整的系统。</p>
+<p>图中 a 部分为用户自己构造的层次结构，可根据问题类别、时序数据、传感器种类等分类方法区分不同层次；b 部分为一个简单的检查规则和符合要求的时序数据统计；c 部分为经过变形的 scale-stack bar chart 用于统计各个类别的数据质量问题在相应的时序序列中的出现占比；d 部分为每一行代表的问题类别出现的频率在时间上分布；e 为严重程度统计；h 为原始时序数据；i 为原始数据。</p>
+<p>其中 scale-stack bar chart 是为了解决直方图中不同类别的数据数量相差过多的问题。它将区间线性的分为四段，每段均从 0 开始，表示一个数量级上的数据分布情况。</p>
 <h2 id="四、案例分析"><a href="#四、案例分析" class="headerlink" title="四、案例分析"></a><strong>四、案例分析</strong></h2><p>文章通过三个任务，分别进行了三个案例分析，这里对案例不再进行阐述，三个任务包括：</p>
 <ol>
 <li><p>常规数据质量评估</p>
@@ -216,42 +216,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zhangtianye1026@zju.edu.cn"><code> ✉️ zhangtianye1026@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -283,24 +267,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

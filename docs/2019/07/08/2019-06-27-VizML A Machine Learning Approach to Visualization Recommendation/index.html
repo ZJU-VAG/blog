@@ -158,25 +158,25 @@
         </span>
     </div>
     <div class="post-content ">
-        <h1 id="VizML-A-Machine-Learning-Approach-to-Visualization-Recommendation"><a href="#VizML-A-Machine-Learning-Approach-to-Visualization-Recommendation" class="headerlink" title="VizML: A Machine Learning Approach to Visualization Recommendation"></a>VizML: A Machine Learning Approach to Visualization Recommendation</h1><p>本文发表于CHI 2019. 作者来自MIT Media Lab和MIT CSAIL.</p>
+        <h1 id="VizML-A-Machine-Learning-Approach-to-Visualization-Recommendation"><a href="#VizML-A-Machine-Learning-Approach-to-Visualization-Recommendation" class="headerlink" title="VizML: A Machine Learning Approach to Visualization Recommendation"></a>VizML: A Machine Learning Approach to Visualization Recommendation</h1><p>本文发表于 CHI 2019. 作者来自 MIT Media Lab 和 MIT CSAIL.</p>
 <h2 id="简介与背景"><a href="#简介与背景" class="headerlink" title="简介与背景"></a>简介与背景</h2><p>很多可视化工具学习曲线很陡, 往往需要人为指定: 如写代码或各种点击.</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/1561879652903.png" alt="1561879652903"></p>
 <p>然而, 在初步的数据探索以及创建基本可视化的时候, 往往探索的<strong>速度</strong>与<strong>广度</strong>比人为指定的定制性更重要. 可视化系统可以利用“数据集的性质会影响它被如何可视化”来支持这些基本需求.</p>
 <p>现有的可视化推荐系统分为两类: 基于<strong>规则</strong>的与基于<strong>机器学习</strong>的. 前者一般是根据专家经验或实验得到的可视化准则; 后者则是直接学习从数据到可视化的模型. 本文属于后者. 本文将可视化定义为一个做可视化选择(<strong>making design choice</strong>)的过程, 这个过程让人来做是耗时耗力的. 为了减少人的工作量, 一个常用办法就是推荐, 具体来说是机器学习模拟逼近来模拟人做最优选择的过程.</p>
-<p>在可视化中, 可视化编码包含了标记marks (如点、线、矩形) 与通道channels/retinal properties (如位置、长度、颜色等). 而创建可视化就是结合数据选择这些标记、通道的过程. 下图是一个简单的例子.</p>
+<p>在可视化中, 可视化编码包含了标记 marks (如点、线、矩形) 与通道 channels/retinal properties (如位置、长度、颜色等). 而创建可视化就是结合数据选择这些标记、通道的过程. 下图是一个简单的例子.</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/1561881383307.png" alt="1561881383307"></p>
 <p>如果用形式化的定义就是, 给定数据集$d$ , 一系列内在关联的设计选择$C=\{c\}$以及上下文信息$T$(美观性、任务、领域、受众). 人进行可视化设计的目标就是$C_{max} = \arg\max_CEff(C~|~d, T) $. 我们可以用神经网络来逼近它.</p>
 <p>本文与近期其他一些基于机器学习方法区别在于以下三点:</p>
 <ul>
 <li><p>学习的任务</p>
 <ul>
-<li>DeepEye学习分类与排序可视化、Data2Vis学习端到端生成模型、Draco-Learn学习软限制</li>
+<li>DeepEye 学习分类与排序可视化、Data2Vis 学习端到端生成模型、Draco-Learn 学习软限制</li>
 <li>本文学习的是<strong>设计选择</strong></li>
 </ul>
 </li>
 <li><p>数据量</p>
 <ul>
-<li>比DeepEye和Data2Vis多了几个数量级</li>
+<li>比 DeepEye 和 Data2Vis 多了几个数量级</li>
 <li>能表征数据集的更多方面、并支持深度网络</li>
 </ul>
 </li>
@@ -189,8 +189,8 @@
 </ul>
 <h2 id="方法概览"><a href="#方法概览" class="headerlink" title="方法概览"></a>方法概览</h2><p>本文从<em>Plotly community feed</em>上爬取了大量数据集与对应的可视化作品.</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/1561881498089.png" alt="1561881498089"></p>
-<h3 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h3><p>主要分为模型<strong>输入</strong>和<strong>输出</strong>两方面的准备. </p>
-<p>输入数据是被可视化的数据集的特征, 具体分为单维度、双维度以及数据集整体层面的特征. 经过处理后一共有841个标量值组成特征. 下图做了简单的示意.</p>
+<h3 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h3><p>主要分为模型<strong>输入</strong>和<strong>输出</strong>两方面的准备.</p>
+<p>输入数据是被可视化的数据集的特征, 具体分为单维度、双维度以及数据集整体层面的特征. 经过处理后一共有 841 个标量值组成特征. 下图做了简单的示意.</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/1561881837006.png" alt="1561881837006"></p>
 <p>输出数据当然是可视化设计选择, 他也是可以被量化的. 下图简单示意了这个抽取过程, 分为可视编码层面的选择和可视化层面的选择.</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/1561881999729.png" alt="1561881999729"></p>
@@ -199,21 +199,21 @@
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/1561882111144.png" alt="1561882111144"></p>
 <h3 id="神经网络与基线模型"><a href="#神经网络与基线模型" class="headerlink" title="神经网络与基线模型"></a>神经网络与基线模型</h3><ul>
 <li>全连接前向神经网络模型<ul>
-<li>三个隐藏层, 每层1000个神经元、ReLU激活函数</li>
+<li>三个隐藏层, 每层 1000 个神经元、ReLU 激活函数</li>
 </ul>
 </li>
-<li>Naïve Bayes、<em>k</em>-nearest neighbors、logistic回归和随机森林 (Random Forest)</li>
+<li>Naïve Bayes、_k_-nearest neighbors、logistic 回归和随机森林 (Random Forest)</li>
 </ul>
 <p>实验结果表明, 神经网络模型几乎全方位碾压其余模型</p>
 <h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><h3 id="特征重要性解读"><a href="#特征重要性解读" class="headerlink" title="特征重要性解读"></a>特征重要性解读</h3><ul>
-<li><p>本文抽取了大量特征, 有些是前人用过的、有些是本方法才使用的, 那么: </p>
+<li><p>本文抽取了大量特征, 有些是前人用过的、有些是本方法才使用的, 那么:</p>
 <ul>
-<li>这些特征重要性如何? </li>
-<li>是否和一些（经验性的）规则一致? </li>
-<li>是否一些先前没用过的特征也很重要? </li>
+<li>这些特征重要性如何?</li>
+<li>是否和一些（经验性的）规则一致?</li>
+<li>是否一些先前没用过的特征也很重要?</li>
 </ul>
 </li>
-<li><p>利用Random Forest模型的MDI指标来发现不同任务最重要的特征</p>
+<li><p>利用 Random Forest 模型的 MDI 指标来发现不同任务最重要的特征</p>
 <ul>
 <li>出于可解释性与稳定性的考虑</li>
 </ul>
@@ -232,18 +232,18 @@
 </li>
 <li><p>数据变化的尺度是线性还是对数（没有人用过）</p>
 </li>
-<li><p>结论: </p>
+<li><p>结论:</p>
 <ul>
 <li>基于规则的推荐系统需要更多的数据特征作为规则;</li>
-<li>任务特定的特征排序、非线性的依赖关系使得基于规则的系统更难跨任务跨领域使用 → 更需要基于ML的方法</li>
+<li>任务特定的特征排序、非线性的依赖关系使得基于规则的系统更难跨任务跨领域使用 → 更需要基于 ML 的方法</li>
 </ul>
 </li>
 </ul>
-<h3 id="结合众包打分对模型Benchmarking"><a href="#结合众包打分对模型Benchmarking" class="headerlink" title="结合众包打分对模型Benchmarking"></a>结合众包打分对模型<strong>Benchmarking</strong></h3><p>对于effectiveness: </p>
+<h3 id="结合众包打分对模型Benchmarking"><a href="#结合众包打分对模型Benchmarking" class="headerlink" title="结合众包打分对模型Benchmarking"></a>结合众包打分对模型<strong>Benchmarking</strong></h3><p>对于 effectiveness:</p>
 <ul>
-<li><p>在前面训练模型时, 默认Plotly用户上传的就是effective的. →  本文处理时认为effectiveness是二元的</p>
+<li><p>在前面训练模型时, 默认 Plotly 用户上传的就是 effective 的. → 本文处理时认为 effectiveness 是二元的</p>
 </li>
-<li><p>但以往研究表明他是连续值; 以往研究还发现同一个数据及可能有多种同等effective的可视化方式 → 连续且要能反应可视化的不明确性</p>
+<li><p>但以往研究表明他是连续值; 以往研究还发现同一个数据及可能有多种同等 effective 的可视化方式 → 连续且要能反应可视化的不明确性</p>
 </li>
 <li><p>同样预测任务，进行众包打分. 该打分最后用于比较人对设计选择与机器学习算法选择的性能.</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/20190708/1561882778566.png" alt="1561882778566"></p>
@@ -252,63 +252,47 @@
 <h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><ul>
 <li><p>不足</p>
 <ul>
-<li>数据偏向于Plotly这个平台本身</li>
-<li>不管是众包用户还是Plotly作者都不是真专家</li>
+<li>数据偏向于 Plotly 这个平台本身</li>
+<li>不管是众包用户还是 Plotly 作者都不是真专家</li>
 <li>只关注了可视化推荐的一部分任务</li>
 </ul>
 </li>
 <li><p>未来工作</p>
 <ul>
-<li>更全面的数据收集 → 减少bias、更完整去度量task相关的effectiveness</li>
-<li>收集客观的effectiveness度量</li>
-<li>用representation learning学习特征而不是手动去挑选</li>
+<li>更全面的数据收集 → 减少 bias、更完整去度量 task 相关的 effectiveness</li>
+<li>收集客观的 effectiveness 度量</li>
+<li>用 representation learning 学习特征而不是手动去挑选</li>
 </ul>
 </li>
 </ul>
 <h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>本文项目代码以及数据集地址: <a href="https://github.com/mitmedialab/vizml" target="_blank" rel="noopener">https://github.com/mitmedialab/vizml</a></p>
-<p>本文作者以及其他一些大佬在今年CHI上同一个panel下还有一篇文章收集了大量可视化研究中的数据集、期望用于可视化研究的benchmark问题 <strong>VizNet: Towards A Large-Scale Visualization Learning and Benchmarking Repository</strong>  </p>
+<p>本文作者以及其他一些大佬在今年 CHI 上同一个 panel 下还有一篇文章收集了大量可视化研究中的数据集、期望用于可视化研究的 benchmark 问题 <strong>VizNet: Towards A Large-Scale Visualization Learning and Benchmarking Repository</strong></p>
 
         
         <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:akiori@zju.edu.cn"><code> ✉️ akiori@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -340,24 +324,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

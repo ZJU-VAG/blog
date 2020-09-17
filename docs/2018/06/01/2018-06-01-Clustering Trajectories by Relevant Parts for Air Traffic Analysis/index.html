@@ -172,7 +172,7 @@
 <ol>
 <li>过滤：<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/21.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/21.png" alt="img"></a><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/2.png" target="_blank" rel="noopener">
 </a></li>
-<li>聚类：使用基于密度的聚类算法，选择合适的轨迹距离函数D(tr_1,m_1,tr_2,m_2)对过滤后的轨迹进行聚类。</li>
+<li>聚类：使用基于密度的聚类算法，选择合适的轨迹距离函数 D(tr_1,m_1,tr_2,m_2)对过滤后的轨迹进行聚类。</li>
 <li>总结与分析：为每个聚类构造一个具有总结性的表征代表这个聚类，并对聚类结果进行可视分析。</li>
 </ol>
 <h2 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h2><p>提出特殊的交互式过滤方法并不是本文的目标，任何已有方法及其组合都是可用的，只需要满足：</p>
@@ -185,9 +185,9 @@
 <ul>
 <li>Filter-aware rendering：用不同的线属性区分轨迹中的相关与不相关部分，例如，实线、虚线，或粗线、细线，不透明、带透明度的线等。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/3.png" alt="img"></a></li>
 <li>Visualization of Boolean attribute：赋予过滤后的每个点一个布尔值，true 或者 false，分别表示相关与不相关，可视化时用不同颜色的线进行区分。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/4.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/4.png" alt="img"></a></li>
-<li>Different level of detail：轨迹中相关的部分展示全部细节，不相关的部分则只展示聚合结果，下图用了hill shading的技术将不相关部分展示为密度表面。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/5.png" alt="img"></a></li>
+<li>Different level of detail：轨迹中相关的部分展示全部细节，不相关的部分则只展示聚合结果，下图用了 hill shading 的技术将不相关部分展示为密度表面。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/5.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/5.png" alt="img"></a></li>
 </ul>
-<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>本文采用基于密度的聚类算法Optics，算法的大致过程如下：</p>
+<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>本文采用基于密度的聚类算法 Optics，算法的大致过程如下：</p>
 <ul>
 <li>符号定义<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/6.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/6.png" alt="img"></a></li>
 <li>算法过程：遍历轨迹集中的所有点，确定哪些点是核心点，并将其他到核心点距离小于核心距离的点定义为直接可达点，存储每个核心点的直接可达点并按照距离排序。遍历每个核心点的直接可达点集合，判断该点是否为核心点，若是，则将其直接可达点集合加入原有集合。</li>
@@ -196,15 +196,15 @@
 </ul>
 <h2 id="总结与分析"><a href="#总结与分析" class="headerlink" title="总结与分析"></a>总结与分析</h2><p>本文使用一个聚类的中心轨迹(central trajectory of each cluster, CTC)来表征一个聚类的特征，本文提出的方法考虑地理位置上的相似性，并考虑到了相关性标记（计算时只考虑标记为有效的点）。算法分为对分与调整两个部分：</p>
 <ul>
-<li>对分：首先将一类轨迹的起点归为组1，重点归为组2，接着将每条轨迹中位于起点与终点中间位置的点，归为组3，接着寻找组1与组3，组2与组3的中间组，依次类推对轨迹进行二分。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/7.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/7.png" alt="img"></a></li>
+<li>对分：首先将一类轨迹的起点归为组 1，重点归为组 2，接着将每条轨迹中位于起点与终点中间位置的点，归为组 3，接着寻找组 1 与组 3，组 2 与组 3 的中间组，依次类推对轨迹进行二分。<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/7.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/7.png" alt="img"></a></li>
 <li>调整：完成分组后，计算每组中心（所有点坐标的平均数或中位数），找到轨迹中未被分组的点，判断该点到附近组中心的距离是否比该轨迹上在该组内的点离中心更新，若是，则用该点替代原有分组内的点并重新计算计算组的中心。</li>
 </ul>
 <p>计算完成后，按照组的前后顺序，连接各组中心作为该类的中心轨迹。</p>
 <h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p>本文邀请了两位领域专家，进行了三个案例的分析作为本文提出的轨迹聚类的定性评估。这里将介绍其中的一个案例，如何进行飞行路线选择。</p>
-<p>对于拥有相同出发地与目的地的航班而言，如何选择飞行路线是一件困难的事情，因为在穿过不同国家时收取的导航费与税费标准是不同的，且收取标准按照进入国界到出国界穿越的距离计算。本案例的研究目的为探究这些收费标准是如何影响飞行员进行路线选择的。案例用到的数据为2016年1月-5月，巴黎至伊斯坦布尔的6位操作员制定的不同飞行路线，收费标准按x欧元/（100公里，50吨重量）计算，数据集中共1,717条计划飞行路线，122,793个位置点，实际飞行路线与计划路线有个别偏离情况，共171,134个位置点。</p>
-<p>首先，为了找到1,717条路线中的主要飞行路线，需要过滤掉轨迹中的起飞与降落阶段，因为可用跑道不同或天气状况造成的不同操作流程，会导致对具有总体一致路线的航班，起飞与降落路径是不同的。可以通过在地图上刷选起飞与降落区域的机场范围来达到过滤目的，如下图：<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/8.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/8.png" alt="img"></a></p>
-<p>过滤完成后，需要对过滤后的轨迹进行聚类，作者尝试了不同的聚类参数，发现有一个超大类（包含轨迹数量特别多）。为了达到更好的聚类效果，作者采用渐进式聚类，先通过一次聚类找到数量最大的类 (ϵ=3km, MinPts=10)，再调整参数，对除最大类以外的所有轨迹进行聚类(ϵ=6km, MinPts=10)，最后共得到9类，包含1,626条轨迹 (94.7%，其余轨迹为噪音)，其中有1,031条属于最大类。下图为9类聚类的中心轨迹，颜色表示类别，轨迹的粗细表示类的大小：<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/9.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/9.png" alt="img"></a></p>
-<p>其次，领域专家对收费标准对路线选择的影响进行探究。下图中轨迹的粗细跟地图的灰色背景色的深浅均表示过路费标准的高低，轨迹越宽，灰度越深表示过路费越高。可以发现，瑞士的过路费相对较贵（LS），因此其他飞行线路都尽可能避免在瑞士开很远的距离，只有六号线路（紫色）在瑞士开的路线比较长。此外，离开瑞士以后，路线2（绿色）偏离了其他路线，往奥地利（LO）跟匈牙利（LH）方向行驶，因此避开了过路费更贵的意大利（LI）、斯洛文尼亚（LJ）、克罗地亚（LD）等区域，为所有线路中飞行成本最低的线路。</p>
+<p>对于拥有相同出发地与目的地的航班而言，如何选择飞行路线是一件困难的事情，因为在穿过不同国家时收取的导航费与税费标准是不同的，且收取标准按照进入国界到出国界穿越的距离计算。本案例的研究目的为探究这些收费标准是如何影响飞行员进行路线选择的。案例用到的数据为 2016 年 1 月-5 月，巴黎至伊斯坦布尔的 6 位操作员制定的不同飞行路线，收费标准按 x 欧元/（100 公里，50 吨重量）计算，数据集中共 1,717 条计划飞行路线，122,793 个位置点，实际飞行路线与计划路线有个别偏离情况，共 171,134 个位置点。</p>
+<p>首先，为了找到 1,717 条路线中的主要飞行路线，需要过滤掉轨迹中的起飞与降落阶段，因为可用跑道不同或天气状况造成的不同操作流程，会导致对具有总体一致路线的航班，起飞与降落路径是不同的。可以通过在地图上刷选起飞与降落区域的机场范围来达到过滤目的，如下图：<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/8.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/8.png" alt="img"></a></p>
+<p>过滤完成后，需要对过滤后的轨迹进行聚类，作者尝试了不同的聚类参数，发现有一个超大类（包含轨迹数量特别多）。为了达到更好的聚类效果，作者采用渐进式聚类，先通过一次聚类找到数量最大的类 (ϵ=3km, MinPts=10)，再调整参数，对除最大类以外的所有轨迹进行聚类(ϵ=6km, MinPts=10)，最后共得到 9 类，包含 1,626 条轨迹 (94.7%，其余轨迹为噪音)，其中有 1,031 条属于最大类。下图为 9 类聚类的中心轨迹，颜色表示类别，轨迹的粗细表示类的大小：<a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/9.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/9.png" alt="img"></a></p>
+<p>其次，领域专家对收费标准对路线选择的影响进行探究。下图中轨迹的粗细跟地图的灰色背景色的深浅均表示过路费标准的高低，轨迹越宽，灰度越深表示过路费越高。可以发现，瑞士的过路费相对较贵（LS），因此其他飞行线路都尽可能避免在瑞士开很远的距离，只有六号线路（紫色）在瑞士开的路线比较长。此外，离开瑞士以后，路线 2（绿色）偏离了其他路线，往奥地利（LO）跟匈牙利（LH）方向行驶，因此避开了过路费更贵的意大利（LI）、斯洛文尼亚（LJ）、克罗地亚（LD）等区域，为所有线路中飞行成本最低的线路。</p>
 <h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>本文的主要贡献为提出的轨迹相关聚类方法流程，对应案例分析作为唯一的定性评估。但是用中心轨迹作为一个聚类的表征只局限于地理形状相近的轨迹，无法考虑时间维度上的相似性。</p>
 
         
@@ -212,42 +212,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zhangtianye1026@zju.edu.cn"><code> ✉️ zhangtianye1026@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -279,24 +263,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

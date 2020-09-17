@@ -3,6 +3,7 @@ title: "BitExTract: Interactive Visualization for Extracting Bitcoin Exchange In
 tags: ["论文评述", "报告"]
 date: 2019-07-08 23:00:00
 author: 王毅超
+mail: 403624799@qq.com
 mathjax: true
 ---
 
