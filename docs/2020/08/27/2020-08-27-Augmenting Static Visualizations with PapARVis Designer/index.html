@@ -189,14 +189,14 @@
 </ol>
 <h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>Figure 7 中，a - d 是 k 的增强结果；e - j 展示了多种不同的增强方式，子图中是静态可视化。</p>
 <p>Figure 7e 中应用比较有趣，是在一张统计所有学生成绩分布的图表上，利用 AR 显示个人成绩在分布中的位置，很好地展示了个人信息，又保护了个人隐私。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/a355a9f85b46fe9a94c8cd17d3c879905e213059.png" alt="image.png"></p>
-<h1 id="具体设计"><a href="#具体设计" class="headerlink" title="具体设计"></a>具体设计</h1><h2 id="WorkFlow"><a href="#WorkFlow" class="headerlink" title="WorkFlow"></a>WorkFlow</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/9667e14e724207ee1f5a00eb406a44e08ddb1625.png" alt="image.png"><br>在原有的静态可视化 <script type="math/tex">V_s</script> 的基础上，设计增强虚拟可视化 <script type="math/tex">V_v</script>，利用 AR 将两者结合成为可视化 <script type="math/tex">V_{AR}</script> 展示出来。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/4091105889d03853e4a523fdecada76421e1b622.png" alt="image.png"><br>系统主要包含三个模块：</p>
+<h1 id="具体设计"><a href="#具体设计" class="headerlink" title="具体设计"></a>具体设计</h1><h2 id="WorkFlow"><a href="#WorkFlow" class="headerlink" title="WorkFlow"></a>WorkFlow</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/9667e14e724207ee1f5a00eb406a44e08ddb1625.png" alt="image.png"><br>在原有的静态可视化 <script type="math/tex">V_s</script>  的基础上，设计增强虚拟可视化 <script type="math/tex">V_v</script>，利用 AR 将两者结合成为可视化 <script type="math/tex">V_{AR}</script>  展示出来。<br><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/4091105889d03853e4a523fdecada76421e1b622.png" alt="image.png"><br>系统主要包含三个模块：</p>
 <ol>
-<li><strong>VegaAR Editor</strong>：基于 <a href="https://github.com/vega/editor" target="_blank" rel="noopener">Vega Editor</a>，用于创建 $V_s$ 可视化，并在 ar block 中定义 $V_v$。发布时将内容上传到 SpecHub，生成二维码链接。</li>
-<li><strong>SpecHub</strong>：部署在云端，用于接收和托管 VegaAR Editor 上传的内容，生成 $V_s$ 参考图像用于 AR 识别，解析 $V_v$ 用于生成 AR 可视化。</li>
+<li><strong>VegaAR Editor</strong>：基于 <a href="https://github.com/vega/editor" target="_blank" rel="noopener">Vega Editor</a>，用于创建 $V_s$  可视化，并在 ar block 中定义 $V_v$。发布时将内容上传到 SpecHub，生成二维码链接。</li>
+<li><strong>SpecHub</strong>：部署在云端，用于接收和托管 VegaAR Editor 上传的内容，生成 $V_s$  参考图像用于 AR 识别，解析 $V_v$  用于生成 AR 可视化。</li>
 <li><strong>AR Viewer</strong>：通过扫描二维码，获取 SpecHub 上相应的配置文件，查看 AR 增强可视化效果，实现在 iOS、Android、Web 平台上。</li>
 </ol>
 <h2 id="AR-预览"><a href="#AR-预览" class="headerlink" title="AR 预览"></a>AR 预览</h2><p>在 Vega Editor 的基础上添加 ar block 配置，用于定义 $V_v$，并提供预览效果。</p>
-<p>$V_v$ 的物理空间由 Vega 定义，与 $V_s$相关。</p>
+<p>$V_v$  的物理空间由 Vega 定义，与 $V_s$相关。</p>
 <h2 id="校验器"><a href="#校验器" class="headerlink" title="校验器"></a>校验器</h2><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/9/1/4c32a5a5519682bf5940b3fb4364ba391296486f.png" alt="image.png"></p>
 <p>检测原始数据与合并增强数据后的数据，经过数据变换后，原始数据对应的数值是否保持不变。如果不变，证明增强方式合法。Figure 6 中是对 Figure 4c 中发生的合法性错误的提示。</p>
 <h1 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h1><p>邀请 12 位没有 AR 经验的可视化设计者，进行了分组实验。</p>
@@ -219,42 +219,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:498621483@qq.com"><code> ✉️ 498621483@qq.com </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -286,24 +270,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

@@ -161,7 +161,7 @@
         <p>论文: Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations</p>
 <p>作者: KanitWongsuphasawat, Dominik Moritz, Anushka Anand, Jock Mackinlay, Bill Howe, and Jeffrey Heer</p>
 <p>发表期刊: TVCG 2016</p>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>可视化工具通常需要手动指定视图：分析人员必须选择数据变量，然后选择要应用的转换和可视编码。 这些决策通常涉及领域和可视化设计专长，并且可能施加妨碍探究的冗长的规范过程。 本文提供了一个混合主动系统Voyager，可以多方面浏览根据统计和感知度量选择的推荐图表进行探索性分析，补充手动图表构建方式。</p>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>可视化工具通常需要手动指定视图：分析人员必须选择数据变量，然后选择要应用的转换和可视编码。 这些决策通常涉及领域和可视化设计专长，并且可能施加妨碍探究的冗长的规范过程。 本文提供了一个混合主动系统 Voyager，可以多方面浏览根据统计和感知度量选择的推荐图表进行探索性分析，补充手动图表构建方式。</p>
 <h2 id="2-贡献"><a href="#2-贡献" class="headerlink" title="2. 贡献"></a>2. 贡献</h2><ol>
 <li><p>为面向广度探索的工具提供支持，提高数据集覆盖率</p>
 </li>
@@ -169,11 +169,11 @@
 </li>
 </ol>
 <h2 id="3-相关工作"><a href="#3-相关工作" class="headerlink" title="3. 相关工作"></a>3. 相关工作</h2><h3 id="探索性搜索方面"><a href="#探索性搜索方面" class="headerlink" title="探索性搜索方面"></a>探索性搜索方面</h3><ol>
-<li>EDA  探索性数据分析</li>
+<li>EDA 探索性数据分析</li>
 </ol>
-<p>Voyager的部分灵感来自探索性搜索，它与探索性数据分析（EDA）共享许多特征。 两者都涉及浏览和搜索的活动。 在探索性搜索或EDA中，人们可能不熟悉手头的资源（例如，特定数据集），不确定如何最好地实现他们的目标。</p>
+<p>Voyager 的部分灵感来自探索性搜索，它与探索性数据分析（EDA）共享许多特征。 两者都涉及浏览和搜索的活动。 在探索性搜索或 EDA 中，人们可能不熟悉手头的资源（例如，特定数据集），不确定如何最好地实现他们的目标。</p>
 <ol>
-<li>Facet browsing  分面浏览</li>
+<li>Facet browsing 分面浏览</li>
 </ol>
 <p>探索性搜索通常通过浏览器界面来支持。 分面浏览是一种用于探索集合的流行方法，其中用户使用元数据指定过滤器以找到共享期望属性的项目的子集。 通过上投票或下投票元数据或项目，进行交互式查询细化，从而进一步促进探索。</p>
 <p><img src="http://ww2.sinaimg.cn/large/005E4nlGgw1fbddxegf32j30cz0ahdhr.jpg" alt></p>
@@ -188,8 +188,8 @@
 </li>
 </ol>
 <p>可视化工具为视图构建提供各种层次的展示。</p>
-<p>使用可视化工具包（例如xxx）和设计工具（例如xxx）能够进行复杂的设计，但是需要详细的规范；高级语法，如Grammar of Graphics，可以生成大范围的统计图形，但仍然需要文本规范，这都影响了快速搭建。</p>
-<p>Tableau使用图形界面实现了可视化的类似规范。 用户将数据变量拖放到视觉编码“货架”上; 然后系统将这些操作转换为高级语法（VizQL），实现快速视图创建，从而有针对性地探索多维数据库。 Voyager采用类似的基于语法的方法来实现可视化; 但是，它会自动生成视图，并允许用户浏览推荐视图的库。</p>
+<p>使用可视化工具包（例如 xxx）和设计工具（例如 xxx）能够进行复杂的设计，但是需要详细的规范；高级语法，如 Grammar of Graphics，可以生成大范围的统计图形，但仍然需要文本规范，这都影响了快速搭建。</p>
+<p>Tableau 使用图形界面实现了可视化的类似规范。 用户将数据变量拖放到视觉编码“货架”上; 然后系统将这些操作转换为高级语法（VizQL），实现快速视图创建，从而有针对性地探索多维数据库。 Voyager 采用类似的基于语法的方法来实现可视化; 但是，它会自动生成视图，并允许用户浏览推荐视图的库。</p>
 <p><img src="http://ww3.sinaimg.cn/large/005E4nlGgw1fbde1dtydzj309606nwfh.jpg" alt></p>
 <p><img src="http://ww3.sinaimg.cn/large/005E4nlGgw1fbde2mupaqj30fe0800v6.jpg" alt></p>
 <h3 id="可视化推荐方面"><a href="#可视化推荐方面" class="headerlink" title="可视化推荐方面"></a>可视化推荐方面</h3><ol>
@@ -200,17 +200,17 @@
 <li><p>设计图库：VizDeck、Design galleries、Small multiples, large singles</p>
 </li>
 </ol>
-<p>现有的关于可视化推荐的研究集中在对一组有序的用户指定的数据变量推荐视觉编码。APT 提出了一个组合代数来枚举编码的空间。然后，应用一组表达和有效性标准来修剪和排序可视化集合。Sage 使用数据属性的分类法来扩展APT，用于推荐可视化。 Tableau的Show Me 介绍了一组启发式方法，以帮助构建小视图并推荐图表类型。 Voyager利用这一工作领域，例如使用表现力和有效性标准来评估视觉编码选项。 Voyager通过提供推荐数据变量和变换的方法来扩展已有的研究，并且允许交互式浏览和改进多个推荐。</p>
-<p>创建有效视图后，一些工具基于统计属性对视图进行排名，以推荐数据集中变量之间的有趣关系。 其他工具，如SemViz和VISO使用来自语义网的知识本体。 它们依赖于具有语义标签的数据，这也导致他们不总是可用的。Voyager在没有完全了解用户任务的情况下，提供了适当但多样化的视图类型可视化，涵盖了各种数据变量供用户使用。</p>
-<p>通常，图库会呈现多个可视化以便于数据探索。 经典的设计图库工作Design galleries通过改变编码参数的选择来生成视图的替代方案。类似地，Small multiples, large singles允许用户使用替代视图的小视图来浏览少量参数变量。两者都允许用户探索可视化规范空间的小区域。 相比之下，Voyager提供了数据变化和设计变化，以促进更广泛的数据探索。</p>
-<p>VizDeck可以根据感兴趣的统计属性提供一个推荐图表的库。 该系统包括投票机制，用户可以通过该机制调整排名并支持关键字查询。而Voyager通过包含或省略所选数据变量来更广泛的覆盖搜索空间和导航。</p>
+<p>现有的关于可视化推荐的研究集中在对一组有序的用户指定的数据变量推荐视觉编码。APT 提出了一个组合代数来枚举编码的空间。然后，应用一组表达和有效性标准来修剪和排序可视化集合。Sage 使用数据属性的分类法来扩展 APT，用于推荐可视化。 Tableau 的 Show Me 介绍了一组启发式方法，以帮助构建小视图并推荐图表类型。 Voyager 利用这一工作领域，例如使用表现力和有效性标准来评估视觉编码选项。 Voyager 通过提供推荐数据变量和变换的方法来扩展已有的研究，并且允许交互式浏览和改进多个推荐。</p>
+<p>创建有效视图后，一些工具基于统计属性对视图进行排名，以推荐数据集中变量之间的有趣关系。 其他工具，如 SemViz 和 VISO 使用来自语义网的知识本体。 它们依赖于具有语义标签的数据，这也导致他们不总是可用的。Voyager 在没有完全了解用户任务的情况下，提供了适当但多样化的视图类型可视化，涵盖了各种数据变量供用户使用。</p>
+<p>通常，图库会呈现多个可视化以便于数据探索。 经典的设计图库工作 Design galleries 通过改变编码参数的选择来生成视图的替代方案。类似地，Small multiples, large singles 允许用户使用替代视图的小视图来浏览少量参数变量。两者都允许用户探索可视化规范空间的小区域。 相比之下，Voyager 提供了数据变化和设计变化，以促进更广泛的数据探索。</p>
+<p>VizDeck 可以根据感兴趣的统计属性提供一个推荐图表的库。 该系统包括投票机制，用户可以通过该机制调整排名并支持关键字查询。而 Voyager 通过包含或省略所选数据变量来更广泛的覆盖搜索空间和导航。</p>
 <p><img src="http://ww2.sinaimg.cn/large/005E4nlGgw1fbde470r9bj306k0530sy.jpg" alt="img"></p>
 <p><img src="http://ww4.sinaimg.cn/large/005E4nlGgw1fbde4rulu9j307307qt9j.jpg" alt></p>
 <p><img src="http://ww1.sinaimg.cn/large/005E4nlGgw1fbde5fsjxrj308y063mxp.jpg" alt></p>
 <h2 id="4-界面设计"><a href="#4-界面设计" class="headerlink" title="4. 界面设计"></a>4. 界面设计</h2><h3 id="设计考虑因素"><a href="#设计考虑因素" class="headerlink" title="设计考虑因素"></a>设计考虑因素</h3><ol>
 <li>显示数据变化，而不是设计变化</li>
 </ol>
-<p>数据变化指的是不同的变量和变换，设计变化指的是相同数据的不同编码。为了鼓励面向广度的探索，Voyager优先展示数据变化而不是设计变化。 为了阻止过早固定并避免“空结果”的问题，Voyager在用户交互之前显示所有变量的单变量图表展示。 一旦用户进行选择，它会推荐明确选择的变量之外的其他变量。 为了帮助用户保持导向，避免组合爆炸，并减少不相关显示的风险，Voyager目前“前瞻”一次只有一个变量。</p>
+<p>数据变化指的是不同的变量和变换，设计变化指的是相同数据的不同编码。为了鼓励面向广度的探索，Voyager 优先展示数据变化而不是设计变化。 为了阻止过早固定并避免“空结果”的问题，Voyager 在用户交互之前显示所有变量的单变量图表展示。 一旦用户进行选择，它会推荐明确选择的变量之外的其他变量。 为了帮助用户保持导向，避免组合爆炸，并减少不相关显示的风险，Voyager 目前“前瞻”一次只有一个变量。</p>
 <ol>
 <li><p>交互操作驱动推荐</p>
 </li>
@@ -219,15 +219,15 @@
 <li><p>在上下文中阅读多个图表</p>
 </li>
 </ol>
-<p>Voyager为相关的图表提供一致的规范，使得对一个图表的认知可以帮助解释下一个图表。</p>
+<p>Voyager 为相关的图表提供一致的规范，使得对一个图表的认知可以帮助解释下一个图表。</p>
 <ol>
 <li>微调而不是详尽枚举</li>
 </ol>
-<p>即使是简单的图表也可能有许多重要的变化，包括排序顺序，长宽比或尺度变换的选择（例如，线性与对数）。Voyager不会在图表库中绘制非常相似的多个图表，占用大量空间，而是将他们折叠为具有默认参数的单个图表，但支持简单的交互以启用微调。</p>
+<p>即使是简单的图表也可能有许多重要的变化，包括排序顺序，长宽比或尺度变换的选择（例如，线性与对数）。Voyager 不会在图表库中绘制非常相似的多个图表，占用大量空间，而是将他们折叠为具有默认参数的单个图表，但支持简单的交互以启用微调。</p>
 <ol>
 <li>再访和后续分析</li>
 </ol>
-<p>Voyager提供了一个书签机制，允许用户重新审视有趣的视图或与协作者共享。通过使用高级语法（Vega-lite），Voyager可以轻松地导出可视化编码，用于发布或与其他工具共享。</p>
+<p>Voyager 提供了一个书签机制，允许用户重新审视有趣的视图或与协作者共享。通过使用高级语法（Vega-lite），Voyager 可以轻松地导出可视化编码，用于发布或与其他工具共享。</p>
 <h3 id="用户界面"><a href="#用户界面" class="headerlink" title="用户界面"></a>用户界面</h3><p><img src="http://ww2.sinaimg.cn/large/005E4nlGgw1fbde6xhbsgj30fe079wff.jpg" alt></p>
 <p>左侧是模式面板，右侧是可视化库。分析人员可以在模式面板中选择变量和所需的转换; 这些选择将成为推荐算法的输入。可视化库展示推荐的可视化。每个图表都支持交互式细化，书签和扩展，扩展可以增加图表大小并查看相关视图。顶部面板中提供了撤消按钮。</p>
 <h4 id="模式面板："><a href="#模式面板：" class="headerlink" title="模式面板："></a>模式面板：</h4><p><img src="http://ww1.sinaimg.cn/large/005E4nlGgw1fbde8bdr3zj30fd06hgmd.jpg" alt="img"></p>
@@ -238,35 +238,35 @@
 <p>用户可以通过点击可视化库中图表的展开视图按钮进入这里，在这里可以查看替代编码。</p>
 <p>此模式允许分析人员与较大的可视化图表进行交互，并检查相同数据的替代可视编码。 主面板的右上角（c）包括用于交互式细化的控制：移位轴，排序标准或顺序尺寸，以及调整尺度（例如，在线性和对数之间）。 替代编码的缩略图显示在边栏中。 用户可以单击缩略图以在主面板中加载图表。</p>
 <h2 id="5-系统设计"><a href="#5-系统设计" class="headerlink" title="5. 系统设计"></a>5. 系统设计</h2><p><img src="http://ww1.sinaimg.cn/large/005E4nlGgw1fbdeav32z6j30e20a20tl.jpg" alt></p>
-<p>这个图描述了主要系统组件之间的关系。Voyager的浏览器界面显示可视化，并支持用户导航和交互。可视化是使用Vega-lite指定的，Vega-lite是一种声明性语法，用于编译详细的Vega可视化规范。 Compass推荐引擎将用户选择，数据模式和统计属性作为输入，并以Vega-lite规范的形式生成推荐。推荐由数据和视觉相似性聚类，并通过感知有效性排序。每个组件都是用JavaScript实现的，并且可以作为一个开源项目单独使用。</p>
+<p>这个图描述了主要系统组件之间的关系。Voyager 的浏览器界面显示可视化，并支持用户导航和交互。可视化是使用 Vega-lite 指定的，Vega-lite 是一种声明性语法，用于编译详细的 Vega 可视化规范。 Compass 推荐引擎将用户选择，数据模式和统计属性作为输入，并以 Vega-lite 规范的形式生成推荐。推荐由数据和视觉相似性聚类，并通过感知有效性排序。每个组件都是用 JavaScript 实现的，并且可以作为一个开源项目单独使用。</p>
 <h3 id="Compass-推荐引擎"><a href="#Compass-推荐引擎" class="headerlink" title="Compass 推荐引擎"></a>Compass 推荐引擎</h3><p><img src="http://ww2.sinaimg.cn/large/005E4nlGgw1fbdebulp6qj30fe05jq3s.jpg" alt></p>
-<p>Compass推荐引擎的目标是支持在Voyager中进行快速，开放式的探索。Compass生成使用Vega-lite规范表示的一组表达性可视化设计。Compass还根据用户选择修剪推荐的空间，并将结果聚类为有意义的组。</p>
-<p>Compass采用以下输入：（1）数据模式，其包含一组变量（D）; （2）每个变量的描述性统计，包括基数，最小，最大，标准偏差和偏斜; （3）用户选择，其由一组选择的变量（U⊂D），每个变量的优选变换和一组排除的变量组成。</p>
-<p>Compass在三个阶段枚举，排名和修剪推荐，将每个阶段的输出作为下一阶段的输入。 该过程如上图所示。</p>
+<p>Compass 推荐引擎的目标是支持在 Voyager 中进行快速，开放式的探索。Compass 生成使用 Vega-lite 规范表示的一组表达性可视化设计。Compass 还根据用户选择修剪推荐的空间，并将结果聚类为有意义的组。</p>
+<p>Compass 采用以下输入：（1）数据模式，其包含一组变量（D）; （2）每个变量的描述性统计，包括基数，最小，最大，标准偏差和偏斜; （3）用户选择，其由一组选择的变量（U⊂D），每个变量的优选变换和一组排除的变量组成。</p>
+<p>Compass 在三个阶段枚举，排名和修剪推荐，将每个阶段的输出作为下一阶段的输入。 该过程如上图所示。</p>
 <ol>
-<li><p>变量选择   采用用户选择的变量集并推荐附加变量。</p>
+<li><p>变量选择 采用用户选择的变量集并推荐附加变量。</p>
 </li>
-<li><p>数据变换   应用函数，包括聚合和分级，以产生每个变量集的数据表。</p>
+<li><p>数据变换 应用函数，包括聚合和分级，以产生每个变量集的数据表。</p>
 </li>
-<li><p>编码设计   为每个数据表生成可视编码，通过感知有效性得分对结果排序，并修剪视觉上类似的结果。</p>
+<li><p>编码设计 为每个数据表生成可视编码，通过感知有效性得分对结果排序，并修剪视觉上类似的结果。</p>
 </li>
 </ol>
 <p>目前的推荐系统设计是很简单的。 虽然更高级的推荐系统是可行的，但本文的主要目标是开发和评估一个面向广度数据探索的整体方法。</p>
-<h2 id="6-评估"><a href="#6-评估" class="headerlink" title="6. 评估"></a>6. 评估</h2><p>作者进行了用户调研来对比推荐浏览与手动图表构建。 比较Voyager和PoleStar，自己实现的一个可视化规范接口，如下图。</p>
+<h2 id="6-评估"><a href="#6-评估" class="headerlink" title="6. 评估"></a>6. 评估</h2><p>作者进行了用户调研来对比推荐浏览与手动图表构建。 比较 Voyager 和 PoleStar，自己实现的一个可视化规范接口，如下图。</p>
 <p><img src="http://ww2.sinaimg.cn/large/005E4nlGgw1fbdecwqpqjj30cd05uq3a.jpg" alt="img"></p>
-<p>左侧面板显示数据模式，列出数据集中的所有变量。 数据模式旁边是编码层，表示Vega-lite支持的每个编码通道。用户可以将变量拖放到格子中以建立可视化编码。用户还可以通过弹出菜单修改数据的属性（例如，数据类型，数据变换）或可视编码变量（例如，调色板或排序顺序）。标记类型可以通过下拉菜单进行更改。在用户交互时，PoleStar生成新的Vega-lite规范并立即更新显示。</p>
-<h3 id="研究设计："><a href="#研究设计：" class="headerlink" title="研究设计："></a>研究设计：</h3><p>研究遵循2（可视化工具）×2（数据集）混合设计</p>
+<p>左侧面板显示数据模式，列出数据集中的所有变量。 数据模式旁边是编码层，表示 Vega-lite 支持的每个编码通道。用户可以将变量拖放到格子中以建立可视化编码。用户还可以通过弹出菜单修改数据的属性（例如，数据类型，数据变换）或可视编码变量（例如，调色板或排序顺序）。标记类型可以通过下拉菜单进行更改。在用户交互时，PoleStar 生成新的 Vega-lite 规范并立即更新显示。</p>
+<h3 id="研究设计："><a href="#研究设计：" class="headerlink" title="研究设计："></a>研究设计：</h3><p>研究遵循 2（可视化工具）×2（数据集）混合设计</p>
 <p>- 可视化工具</p>
 <p>Voyager &amp; PoleStar</p>
 <p>- 数据集</p>
 <p>movies &amp; birdstrikes</p>
 <p>- 参与者</p>
-<p>16名，均为学生，具有事先的数据分析经验</p>
-<p>每个研究持续约2小时</p>
-<h3 id="分析结果"><a href="#分析结果" class="headerlink" title="分析结果"></a>分析结果</h3><p>- Voyager提升数据变量覆盖率</p>
+<p>16 名，均为学生，具有事先的数据分析经验</p>
+<p>每个研究持续约 2 小时</p>
+<h3 id="分析结果"><a href="#分析结果" class="headerlink" title="分析结果"></a>分析结果</h3><p>- Voyager 提升数据变量覆盖率</p>
 <p>- 标记速率不受可视化工具的影响</p>
-<p>- Voyager中的大多数书签都包括推荐引擎添加的变量</p>
-<p>- 用户工具首选项取决于任务：针对特定问题时偏向于实用polestar，而面对不熟悉的数据集进行探索时，偏向于使用voyager</p>
+<p>- Voyager 中的大多数书签都包括推荐引擎添加的变量</p>
+<p>- 用户工具首选项取决于任务：针对特定问题时偏向于实用 polestar，而面对不熟悉的数据集进行探索时，偏向于使用 voyager</p>
 <p>- 参与者反馈：平衡宽度和深度</p>
 <h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a>7. 总结</h2><h3 id="未来工作"><a href="#未来工作" class="headerlink" title="未来工作"></a>未来工作</h3><p>- 添加其他交互技术来帮助分析（比如刷选）</p>
 <p>- 设计和评估更复杂和更可扩展的可视化推荐器</p>
@@ -277,42 +277,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:weiyating@zju.edu.cn"><code> ✉️ weiyating@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -344,24 +328,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

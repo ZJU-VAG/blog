@@ -3,6 +3,7 @@ title: "HOLA: Human-like Orthogonal Network Layout"
 tags: ["论文评述"]
 date: 2015-12-07
 author: 张天野
+mail: zhangtianye1026@zju.edu.cn
 mathjax: true
 ---
 

@@ -187,20 +187,20 @@
 <h3 id="检查语料库特征分布"><a href="#检查语料库特征分布" class="headerlink" title="检查语料库特征分布"></a>检查语料库特征分布</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/%E5%8F%AF%E8%A7%86%E5%8C%963.png" alt="img"></p>
 <p>上图显示了整个语料库在各个特征上的分布。每一列用一个小提琴图表示一个特征（词类）。每一个小提琴图中，背景灰色的柱状图表示该文档中，该词类在该文档中出现的频率。小提琴形状（两边）表示两个主题中该词类的参数分布（某词类在某文档中的权重）。</p>
 <h3 id="文档相关反馈"><a href="#文档相关反馈" class="headerlink" title="文档相关反馈"></a>文档相关反馈</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/%E5%8F%AF%E8%A7%86%E5%8C%964.png" alt="img"></p>
-<p>此视图中，用户可以通过在下方的柱状图中选择某一篇文档，对该篇文档的两个主题进项反馈，通过在C区域选择左边或右边的主题，以及上方的确定性分数，将更适合这个文本的主题反馈给系统。</p>
+<p>此视图中，用户可以通过在下方的柱状图中选择某一篇文档，对该篇文档的两个主题进项反馈，通过在 C 区域选择左边或右边的主题，以及上方的确定性分数，将更适合这个文本的主题反馈给系统。</p>
 <h2 id="话题收敛过程"><a href="#话题收敛过程" class="headerlink" title="话题收敛过程"></a>话题收敛过程</h2><p>话题收敛过程作用于参数空间和文档关键词向量，系统通过决策滑动条决定关键词的重要性变化。被用户认为好的模型将不会在收敛过程中受到改动，不好的模型会用新的根据决策滑动条确定的参数空间与文档关键词向量代替旧的参数，重新进行计算。</p>
 <h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>阶段一：模型改进</p>
 <ol>
-<li>任务：在2小时内通过可视化界面改进主题模型</li>
-<li>数据：2012Romney与Obama总统竞选辩论</li>
-<li>实验控制：2个LDA模型，各自产生9个主题</li>
-<li>被试：2语言学家、2政治科学家、2计算机科学家</li>
+<li>任务：在 2 小时内通过可视化界面改进主题模型</li>
+<li>数据：2012Romney 与 Obama 总统竞选辩论</li>
+<li>实验控制：2 个 LDA 模型，各自产生 9 个主题</li>
+<li>被试：2 语言学家、2 政治科学家、2 计算机科学家</li>
 </ol>
 <p>阶段二：模型评估</p>
 <ol>
 <li>任务：对给出的主题模型结果打分评估</li>
-<li>数据：2012Romney与Obama总统竞选辩论</li>
-<li>被试：3语言学家（不参与阶段一实验）</li>
+<li>数据：2012Romney 与 Obama 总统竞选辩论</li>
+<li>被试：3 语言学家（不参与阶段一实验）</li>
 </ol>
 <p>实验结果：主题的改进率与模型的不确定性在整个学习改进过程中逐步降低，语言学专家纷纷认为本文的工作非常有用。</p>
 
@@ -209,42 +209,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zhangtianye1026@zju.edu.cn"><code> ✉️ zhangtianye1026@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -276,24 +260,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

@@ -3,6 +3,7 @@ title: "德国慕尼黑工业大学Rüdiger Westermann教授来VAG实验室交�
 tags: ["学术交流", "报告"]
 date: 2015-12-06
 author: 张天野
+mail: zhangtianye1026@zju.edu.cn
 mathjax: true
 ---
 

@@ -8,54 +8,58 @@
 
 在博客搬运的过程中有几个点需要注意：
 
-1. 博客的 markdown 文件请命名为像如下格式：
+1.  博客的 markdown 文件请命名为像如下格式：
 
     `2012-02-15-Chinagraph’2012征文通知.md`
 
-2. 在博客的最上方，包含了这篇博客的基本信息
+2.  在博客的最上方，包含了这篇博客的基本信息
 
-    ```
-    ---
-    title: "Vol2velle Printable Interactive Volume Visualization 可打印的交互式体可视化"
-    tags: ["论文评述", "报告"]
-    date: 2016-02-29
-    author: 潘嘉铖
+        ```
+        ---
+        title: "Vol2velle Printable Interactive Volume Visualization 可打印的交互式体可视化"
+        tags: ["论文评述", "报告"]
+        date: 2016-02-29
+        author: 潘嘉铖
+
+    mail: panjiacheng@zju.edu.cn
     mathjax: true
     ---
     ```
 
-    注意！！这里一定要写为`---`，**三**个短线
+        注意！！这里一定要写为`---`，**三**个短线
 
-    以上内容中的标点符号，应该全是英文的标点符号，**切勿用中文的标点符号**
+        以上内容中的标点符号，应该全是英文的标点符号，**切勿用中文的标点符号**
 
-    英文的标点后面请加空格；中英文之间加入空格；
+        英文的标点后面请加空格；中英文之间加入空格；
 
-    - `title`是博客的名称，请务必加上**引号**
+        - `title`是博客的名称，请务必加上**引号**
 
-    - 在 tag 里面需要包含它的类别（因为有些同学写的博客没有勾选分类目录，可能直接被识别为“其他”，请纠正它，一般组会报告标记成`["论文评述", "报告"]`）：
+        - 在 tag 里面需要包含它的类别（因为有些同学写的博客没有勾选分类目录，可能直接被识别为“其他”，请纠正它，一般组会报告标记成`["论文评述", "报告"]`）：
 
-        - 业界新闻
-        - 主题报告
-        - 学术交流
-        - 学术会议
-        - 报告
-        - 新闻
-        - 活动
-        - 论文评述
-        - 通知
-        - 随感
+            - 业界新闻
+            - 主题报告
+            - 学术交流
+            - 学术会议
+            - 报告
+            - 新闻
+            - 活动
+            - 论文评述
+            - 通知
+            - 随感
 
-        ps: 这个类别可以在标题上面找到：
+            ps: 这个类别可以在标题上面找到：
 
-        ![1561980353316](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-01/1561980353316.png)
+            ![1561980353316](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-07-01/1561980353316.png)
 
-    - `date`表示这篇博客的发表时间，原始的博客里面应该也有
+        - `date`表示这篇博客的发表时间，原始的博客里面应该也有
 
-    - `author`表示这篇博客是谁写的（最好改成中文），如果这个人是 admin，那就还是 admin 即可
+        - `author`表示这篇博客是谁写的（最好改成中文），如果这个人是 admin，那就还是 admin 即可
 
-    - 如果这篇博客直接跳转到我（潘嘉铖）的博客上了，请直接找我要 markdown 文件，你再做修改即可；
+        - 如果这篇博客直接跳转到我（潘嘉铖
 
-3. **重要**，接下去也是最麻烦的一步，需要你重新去排版整个 markdown 文件（为了保证搬运后渲染出来的质量）
+    mail: panjiacheng@zju.edu.cn）的博客上了，请直接找我要 markdown 文件，你再做修改即可；
+
+3.  **重要**，接下去也是最麻烦的一步，需要你重新去排版整个 markdown 文件（为了保证搬运后渲染出来的质量）
 
     1. 章节标题：每一个小结都可能有一个小标题，请使用`##`作为第一级标题，`###`作为第二级标题以此类推；
 
@@ -110,15 +114,6 @@
     H(Y | X)=\sum_{x \in \mathcal{X}, y \in \mathcal{Y}} p(x, y) \log \left(\frac{p(x)}{p(x, y)}\right)
     $$
 
-
-
-
-
-
-
-
-
-
 # 博客配置
 
 我对小涛的 aircloud 主题进行了魔改，所以里面有很多东西都改变了
@@ -126,17 +121,17 @@
 1. 增加了`hexo-generator-author`，需要对其 index.js 做一些修改：
 
     ```javascript
-    hexo.extend.filter.register("template_locals", function(locals) {
+    hexo.extend.filter.register("template_locals", function (locals) {
         if (typeof locals.site.authors === "undefined") {
             const posts = locals.site.posts
             locals.site.authors = locals.site.posts
-                .map(post => post.author)
+                .map((post) => post.author)
                 .unique()
-                .map(author => ({
+                .map((author) => ({
                     name: author,
                     posts: posts.find({
-                        author
-                    })
+                        author,
+                    }),
                 }))
         }
     })
@@ -144,9 +139,9 @@
 
 2. 修改了渲染器，修改方法如下：
 
-    1. 第一步： 使用Kramed代替 Marked
+    1. 第一步： 使用 Kramed 代替 Marked
 
-       `hexo` 默认的渲染引擎是 `marked`，但是 `marked` 不支持 `mathjax`。 `kramed` 是在 `marked` 的基础上进行修改。我们在工程目录下执行以下命令来安装 `kramed`.
+        `hexo` 默认的渲染引擎是 `marked`，但是 `marked` 不支持 `mathjax`。 `kramed` 是在 `marked` 的基础上进行修改。我们在工程目录下执行以下命令来安装 `kramed`.
 
         ```
         npm uninstall hexo-renderer-marked --save
@@ -154,7 +149,7 @@
         ```
 
         然后，更改/node_modules/hexo-renderer-kramed/lib/renderer.js，更改：
-    
+
         ```
         // Change inline math rule
         function formatText(text) {
@@ -164,7 +159,7 @@
         ```
 
         为：
-    
+
         ```
         // Change inline math rule
         function formatText(text) {
@@ -173,7 +168,7 @@
         ```
 
     2. 第二步: 停止使用 hexo-math
-    
+
         首先，如果你已经安装 `hexo-math`, 请卸载它：
 
         ```
@@ -181,51 +176,52 @@
         ```
 
         然后安装 [hexo-renderer-mathjax](https://github.com/phoenixcw/hexo-renderer-mathjax) 包：
-    
+
         ```
         npm install hexo-renderer-mathjax --save
         ```
-    
+
     3. 第三步: 更新 Mathjax 的 CDN 链接
-    
+
         首先，打开/node_modules/hexo-renderer-mathjax/mathjax.html
-    
+
         然后，把`<script>`更改为：
-    
+
         ```
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
         ```
 
-	4. 第四步: 更改默认转义规则
-	
-	    因为 `hexo` 默认的转义规则会将一些字符进行转义，比如 `_` 转为 `<em>`, 所以我们需要对默认的规则进行修改.
-	    首先， 打开<path-to-your-project/node_modules/kramed/lib/rules/inline.js,
-	
-	    然后，把:
-	    ```
-	    escape: /^\\([\\`*{}\[\]()#$+\-.!_>])/,
-	    ```
-	    
-	    更改为:
-	
-	    ```
-	    escape: /^\\([`*\[\]()# +\-.!_>])/,
-	    ```
-	    
-	    把
-	
-	    ```
-	    em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
-	    ```
-	
-	    更改为:
-	
-	    ```
-	    em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
-	    ```
+    4. 第四步: 更改默认转义规则
 
-    5. 第五步: 开启mathjax
-    
+        因为 `hexo` 默认的转义规则会将一些字符进行转义，比如 `_` 转为 `<em>`, 所以我们需要对默认的规则进行修改.
+        首先， 打开<path-to-your-project/node_modules/kramed/lib/rules/inline.js,
+
+        然后，把:
+
+        ```
+        escape: /^\\([\\`*{}\[\]()#$+\-.!_>])/,
+        ```
+
+        更改为:
+
+        ```
+        escape: /^\\([`*\[\]()# +\-.!_>])/,
+        ```
+
+        把
+
+        ```
+        em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+        ```
+
+        更改为:
+
+        ```
+        em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+        ```
+
+    5. 第五步: 开启 mathjax
+
         在主题 `_config.yml` 中开启 Mathjax， 找到 `mathjax` 字段添加如下代码：
 
         ```
@@ -246,4 +242,4 @@
 
         通过以上步骤，我们就可以在 `hexo` 中使用 `Mathjax` 来书写数学公式。
 
-3. 其他魔改的内容都在theme文件夹下，pull下来应该就包括了，不再多说；
+3. 其他魔改的内容都在 theme 文件夹下，pull 下来应该就包括了，不再多说；

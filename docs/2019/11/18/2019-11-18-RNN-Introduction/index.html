@@ -166,9 +166,10 @@
 <script type="math/tex; mode=display">
 h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1}).</script><p>其中 $W$ 为权重参数, $\sigma$ 表示激活函数, 常用的是 $\tanh(\cdot)$ 函数, 可以把输出的值域控制在 $[-1, 1]$ 之间, 避免在循环过程中不收敛. 我们可以沿着时间轴把上面的循环单元展开, 更加直观.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/RNN-unrolled.png" alt="RNN 循环单元展开示意图"></p>
-<p>循环神经网络可以由多层循环单元堆叠而成, 前一个循环单元的输出作为下一循环单元的输入, 如下图所示.<br><!-- 在训练过程中, ... --></p>
+<p>循环神经网络可以由多层循环单元堆叠而成, 前一个循环单元的输出作为下一循环单元的输入, 如下图所示.</p>
+<!-- 在训练过程中, ... -->
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/multilayer-RNN.png" alt="多层循环单元堆叠"></p>
-<p>RNN 的输入通常表示成<strong>嵌入 (embedding)</strong>的形式, 即构造一个<strong>查询表 (lookup table)</strong>, 把输入序列的每个时刻的特征向量通过查询表转为一个等长的向量. 从而一个序列的形状变为 <code>[num_time_steps, embedding_size]</code>. </p>
+<p>RNN 的输入通常表示成<strong>嵌入 (embedding)</strong>的形式, 即构造一个<strong>查询表 (lookup table)</strong>, 把输入序列的每个时刻的特征向量通过查询表转为一个等长的向量. 从而一个序列的形状变为 <code>[num_time_steps, embedding_size]</code>.</p>
 <h3 id="1-1-RNN-的应用"><a href="#1-1-RNN-的应用" class="headerlink" title="1.1 RNN 的应用"></a>1.1 RNN 的应用</h3><p>RNN 可以根据输入序列的长度和输出序列的长度分为三大类.</p>
 <ul>
 <li>多对一: 常用于情感分析, 文本分类</li>
@@ -182,18 +183,18 @@ h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1}).</script><p>其中 $W$ 为权重参数, 
 <li>RNN 可以把固定长度的输入序列映射到指定长度的输出序列, 但不能动态地根据输入决定输出多长的序列.</li>
 </ul>
 <p>而 LSTM 和 Encoder-Decoder 的提出解决了这两个问题.</p>
-<h2 id="2-长短期记忆-Long-Short-Term-Memory-LSTM-1"><a href="#2-长短期记忆-Long-Short-Term-Memory-LSTM-1" class="headerlink" title="2. 长短期记忆 (Long Short Term Memory, LSTM)1"></a>2. 长短期记忆 (Long Short Term Memory, LSTM)<sup><a href="#fn_1" id="reffn_1">1</a></sup></h2><p>前面提到, RNN 对于长期依赖经实验表明是不稳定的. 对于短序列, 如一个句子: “The clouds are in the ()”, 括号中预测一个词, 那么很容易根据该词前面的 clouds 和 in 推断出填 sky. 但是对于长序列, 如 “I grew up in France … I speak fluent ()”, 句子中的省略号包含了大量其他信息, 此时最后括号中的词应当根据开头的 France 推断为 French, 但中间大量的无用语句会稀释前期的信息, 导致 RNN 无法正确预测最后的词. 而 Hochreiter &amp; Schmidhuber 提出的 LSTM <sup><a href="#fn_6" id="reffn_6">6</a></sup> 正是解决该问题的. </p>
+<h2 id="2-长短期记忆-Long-Short-Term-Memory-LSTM-1"><a href="#2-长短期记忆-Long-Short-Term-Memory-LSTM-1" class="headerlink" title="2. 长短期记忆 (Long Short Term Memory, LSTM)1"></a>2. 长短期记忆 (Long Short Term Memory, LSTM)<sup><a href="#fn_1" id="reffn_1">1</a></sup></h2><p>前面提到, RNN 对于长期依赖经实验表明是不稳定的. 对于短序列, 如一个句子: “The clouds are in the ()”, 括号中预测一个词, 那么很容易根据该词前面的 clouds 和 in 推断出填 sky. 但是对于长序列, 如 “I grew up in France … I speak fluent ()”, 句子中的省略号包含了大量其他信息, 此时最后括号中的词应当根据开头的 France 推断为 French, 但中间大量的无用语句会稀释前期的信息, 导致 RNN 无法正确预测最后的词. 而 Hochreiter &amp; Schmidhuber 提出的 LSTM <sup><a href="#fn_6" id="reffn_6">6</a></sup> 正是解决该问题的.</p>
 <p>LSTM 和通常的 CNN 一样为一个循环单元的结构, 但是与 RNN 仅有一个 tanh 激活层不同, LSTM 中包含了更复杂的四层网络的结构设计, 并且四层网络相互耦合, 如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM.png" alt="LSTM 循环单元展开示意图"></p>
 <p>上图中的圆角矩形框, 操作符, 分支箭头的含义如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM2-notation.png" alt="图例"></p>
-<p>下面详细介绍 LSTM 单元的内部结构. </p>
-<h3 id="2-1-LSTM-的核心思想"><a href="#2-1-LSTM-的核心思想" class="headerlink" title="2.1 LSTM 的核心思想"></a>2.1 LSTM 的核心思想</h3><p>LSTM 相比于 RNN, 关键在于引入了单元状态(state) $C$ —— 横穿下图顶部的直线. </p>
+<p>下面详细介绍 LSTM 单元的内部结构.</p>
+<h3 id="2-1-LSTM-的核心思想"><a href="#2-1-LSTM-的核心思想" class="headerlink" title="2.1 LSTM 的核心思想"></a>2.1 LSTM 的核心思想</h3><p>LSTM 相比于 RNN, 关键在于引入了单元状态(state) $C$ —— 横穿下图顶部的直线.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM3-C-line.png" alt="单元状态"></p>
 <p>LSTM 可以通过<strong>门(gate)</strong>来控制向单元状态中增加信息或减少信息. 门由一个 $sigmoid$ 函数和一个乘法运算符组成, 如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM3-gate.png" alt="门"></p>
-<p>$sigmoid$ 层输出的值在 $[0, 1]$ 之间, 控制了信息的通过量. 越接近 0, 则表明不允许信息通过(从而形成<em>遗忘</em>); 越接近 1, 则表明允许信息全部通过(从而形成<em>记忆</em>). </p>
-<h3 id="2-2-LSTM-单元解析"><a href="#2-2-LSTM-单元解析" class="headerlink" title="2.2 LSTM 单元解析"></a>2.2 LSTM 单元解析</h3><p>LSTM 单元在每个时间步需要注意三个向量: </p>
+<p>$sigmoid$ 层输出的值在 $[0, 1]$ 之间, 控制了信息的通过量. 越接近 0, 则表明不允许信息通过(从而形成<em>遗忘</em>); 越接近 1, 则表明允许信息全部通过(从而形成<em>记忆</em>).</p>
+<h3 id="2-2-LSTM-单元解析"><a href="#2-2-LSTM-单元解析" class="headerlink" title="2.2 LSTM 单元解析"></a>2.2 LSTM 单元解析</h3><p>LSTM 单元在每个时间步需要注意三个向量:</p>
 <ul>
 <li>输入的特征向量 $x_t$</li>
 <li>上一步输出的特征向量 $h_{t-1}$</li>
@@ -219,11 +220,11 @@ h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1}).</script><p>其中 $W$ 为权重参数, 
 <li><a href="http://arxiv.org/pdf/1503.04069.pdf" target="_blank" rel="noopener">Variants comparision</a></li>
 <li><a href="http://jmlr.org/proceedings/papers/v37/jozefowicz15.pdf" target="_blank" rel="noopener">Ten thousand RNN architecture tests</a></li>
 </ul>
-<h2 id="3-门控循环单元-Gated-Recurrent-Unit-GRU"><a href="#3-门控循环单元-Gated-Recurrent-Unit-GRU" class="headerlink" title="3. 门控循环单元(Gated Recurrent Unit, GRU)"></a>3. 门控循环单元(Gated Recurrent Unit, GRU)</h2><p>GRU<sup><a href="#fn_8" id="reffn_8">8</a></sup> 是一种比 LSTM 稍简单一些的循环单元. GRU 把 LSTM 中的隐藏状态 $h$ 和单元状态 $C$ 合并为单个的隐藏状态. 如下图所示. </p>
+<h2 id="3-门控循环单元-Gated-Recurrent-Unit-GRU"><a href="#3-门控循环单元-Gated-Recurrent-Unit-GRU" class="headerlink" title="3. 门控循环单元(Gated Recurrent Unit, GRU)"></a>3. 门控循环单元(Gated Recurrent Unit, GRU)</h2><p>GRU<sup><a href="#fn_8" id="reffn_8">8</a></sup> 是一种比 LSTM 稍简单一些的循环单元. GRU 把 LSTM 中的隐藏状态 $h$ 和单元状态 $C$ 合并为单个的隐藏状态. 如下图所示.</p>
 <p><img src="https://www.jarvis73.cn/images/2018-1-24/LSTM3-var-GRU.png" alt="门控循环单元 (GRU)"></p>
-<p><strong>更新门(update gate).</strong> 更新门系数 $z_t$ 控制了 $h_{t-1}$ 中保存的信息(如长期记忆)在当前步保留多少. $z_t$ 接近 0 时上一步的隐藏状态中的信息 $h_{t-1}$ 得以保留, 新输入的信息 $\tilde{h}_t$ 会被忽略; $z_t$ 接近 1 时则丢弃已有的信息, 并填入新输入的信息. </p>
+<p><strong>更新门(update gate).</strong> 更新门系数 $z_t$ 控制了 $h_{t-1}$ 中保存的信息(如长期记忆)在当前步保留多少. $z_t$ 接近 0 时上一步的隐藏状态中的信息 $h_{t-1}$ 得以保留, 新输入的信息 $\tilde{h}_t$ 会被忽略; $z_t$ 接近 1 时则丢弃已有的信息, 并填入新输入的信息.</p>
 <p><strong>输入信息的加工.</strong> 当前步输入的信息需要加工后才能合并到隐藏状态 $h_t$ 中. 输入信息加工时需要参考上一步的隐藏状态 $h_{t-1}$ 来决定哪些信息有用, 哪些没用. 加工后的信息用 $\tilde{h}_t$ 表示.</p>
-<p><strong>重置门(reset gate).</strong> 重置门系数 $r_t$ 控制了在加工输入信息的时候使用上一步的隐藏状态中的哪些信息. $r_t$ 接近 0 时新输入的信息占主导地位, 说明当前步的输入包含的信息与前面的信息关联性很小; $r_t$ 接近 1 时新输入的信息和前面的长期信息有较大关联性, 需要综合考虑来产生当前步加工后的信息. </p>
+<p><strong>重置门(reset gate).</strong> 重置门系数 $r_t$ 控制了在加工输入信息的时候使用上一步的隐藏状态中的哪些信息. $r_t$ 接近 0 时新输入的信息占主导地位, 说明当前步的输入包含的信息与前面的信息关联性很小; $r_t$ 接近 1 时新输入的信息和前面的长期信息有较大关联性, 需要综合考虑来产生当前步加工后的信息.</p>
 <h2 id="4-编码-解码器-Encoder-Decoder"><a href="#4-编码-解码器-Encoder-Decoder" class="headerlink" title="4. 编码-解码器 (Encoder-Decoder)"></a>4. 编码-解码器 (Encoder-Decoder)</h2><p>编码-解码器模型是为了实现 $n\rightarrow m$ 序列映射的模型框架. 这类模型也称为 Sequence to Sequence(seq2seq). 编码器只负责处理输入序列, 并形成输入序列的特征向量后送入解码器. 为了清楚, 我们用公式来表示这个过程<sup><a href="#fn_5" id="reffn_5">5</a></sup>. 对于输入序列 $X=\\{x_1, x_2, \cdots, x_S\\}$ 和期望的输出序列 $Y=\\{y_1, y_2, \cdots, y_T\\}$, 我们使用 RNN 模型对其进行建模, 形成一个条件概率 $P(Y\vert X)$, 使用链式法则解耦如下:</p>
 <script type="math/tex; mode=display">
 P(Y|X) = \prod_{t=1}^TP(y_t\lvert y_1, y_2, \cdots, y_{t-1}, X).</script><p>那么该 RNN 模型就是一个编码器, 在时刻 $s$ 的状态通过下式计算:</p>
@@ -272,58 +273,42 @@ P(y_t\lvert y_1, y_2, \cdots, y_{t-1}, X) = Softmax(Linear(g_t)).</script><p>使
 <li>加权系数乘到所有单词的值向量上来得到单词 Thinking 经过自注意力模块后输出的特征向量, 这个特征向量中可以看作包含了翻译任务重对准确翻译 Thinking 所需要的信息, 而不包含其他信息 (其他信息在翻译其他词时可能有用, 但在翻译 Thinking 时无用).</li>
 </ul>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><sup><a href="#fn_1" id="reffn_1">1</a></sup>:<br>    <strong>Understanding LSTM Networks — Colah’s blogs</strong> <br><br>    <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="noopener">[link]</a> OnLine.</p>
-<p><sup><a href="#fn_2" id="reffn_2">2</a></sup>:<br>    <strong>详解从 Seq2Seq模型、RNN结构、Encoder-Decoder模型 到 Attention模型</strong> <br><br>    <a href="https://caicai.science/2018/10/06/attention%E6%80%BB%E8%A7%88/" target="_blank" rel="noopener">[link]</a> OnLine.</p>
+<p><sup><a href="#fn_2" id="reffn_2">2</a></sup>:<br>    <strong>详解从 Seq2Seq 模型、RNN 结构、Encoder-Decoder 模型 到 Attention 模型</strong> <br><br>    <a href="https://caicai.science/2018/10/06/attention%E6%80%BB%E8%A7%88/" target="_blank" rel="noopener">[link]</a> OnLine.</p>
 <p><sup><a href="#fn_3" id="reffn_3">3</a></sup>:<br>    <strong>Learning phrase representations using RNN encoder-decoder for statistical machine translation</strong> <br><br>    Cho K, Van Merriënboer B, Gulcehre C, et al. <br><br>    <a href="https://arxiv.org/abs/1406.1078" target="_blank" rel="noopener">[link]</a> In arXiv preprint arXiv:1406.1078, 2014.</p>
-<p><sup><a href="#fn_4" id="reffn_4">4</a></sup>:<br>    <strong>Sequence to Sequence Learning with Neural Networks</strong> <br><br>    Ilya Sutskever, Oriol Vinyals, Quoc V.Le.  <br><br>    <a href="http://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks" target="_blank" rel="noopener">[link]</a> In Advances in neural information processing systems. 2014: 3104-3112.</p>
+<p><sup><a href="#fn_4" id="reffn_4">4</a></sup>:<br>    <strong>Sequence to Sequence Learning with Neural Networks</strong> <br><br>    Ilya Sutskever, Oriol Vinyals, Quoc V.Le. <br><br>    <a href="http://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks" target="_blank" rel="noopener">[link]</a> In Advances in neural information processing systems. 2014: 3104-3112.</p>
 <p><sup><a href="#fn_5" id="reffn_5">5</a></sup>:<br>    <strong>Order Matters: Sequence to Sequence for Sets</strong> <br><br>    Vinyals, Oriol, Samy Bengio, and Manjunath Kudlur. <br><br>    <a href="http://arxiv.org/abs/1511.06391." target="_blank" rel="noopener">[link]</a> In ArXiv:1511.06391, November. 2015.</p>
 <p><sup><a href="#fn_6" id="reffn_6">6</a></sup>:<br>    <strong>Long short-term memory</strong> <br><br>    Hochreiter S, Schmidhuber J. <br><br>    <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.676.4320&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">[link]</a> In Neural computation, 1997, 9(8): 1735-1780.</p>
 <p><sup><a href="#fn_7" id="reffn_7">7</a></sup>:<br>    <strong>Recurrent nets that time and count</strong> <br><br>    Gers F A, Schmidhuber J. <br><br>    <a href="ftp://ftp.idsia.ch/pub/juergen/TimeCount-IJCNN2000.pdf" target="_blank" rel="noopener">[link]</a> In Proceedings of the IEEE-INNS-ENNS International Joint Conference on Neural Networks. 2000.</p>
 <p><sup><a href="#fn_8" id="reffn_8">8</a></sup>:<br>    <strong>Learning phrase representations using RNN encoder-decoder for statistical machine translation</strong> <br><br>    Cho K, Van Merriënboer B, Gulcehre C, et al. <br><br>    <a href="https://arxiv.org/pdf/1406.1078" target="_blank" rel="noopener">[link]</a> In arXiv preprint arXiv:1406.1078, 2014.</p>
 <p><sup><a href="#fn_9" id="reffn_9">9</a></sup>:<br>    <strong>Attention is all you need</strong> <br><br>    Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin <br><br>    <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">[link]</a> Advances in neural information processing systems. 2017: 5998-6008.</p>
-<p><sup><a href="#fn_10" id="reffn_10">10</a></sup>:<br>    <strong>The Illustrated Transformer</strong>  <br><br>    Jay Alammar <br><br>    <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">[link]</a> OnLine.</p>
-<p><sup><a href="#fn_11" id="reffn_11">11</a></sup>:<br>    <strong>Neural machine translation by jointly learning to align and translate</strong> <br><br>    Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio <br><br>    <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="noopener">[link]</a> arXiv preprint arXiv:1409.0473, 2014. </p>
+<p><sup><a href="#fn_10" id="reffn_10">10</a></sup>:<br>    <strong>The Illustrated Transformer</strong> <br><br>    Jay Alammar <br><br>    <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">[link]</a> OnLine.</p>
+<p><sup><a href="#fn_11" id="reffn_11">11</a></sup>:<br>    <strong>Neural machine translation by jointly learning to align and translate</strong> <br><br>    Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio <br><br>    <a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="noopener">[link]</a> arXiv preprint arXiv:1409.0473, 2014.</p>
 
         
         <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjw.cs@zju.edu.cn"><code> ✉️ zjw.cs@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -355,24 +340,5 @@ P(y_t\lvert y_1, y_2, \cdots, y_{t-1}, X) = Softmax(Linear(g_t)).</script><p>使
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

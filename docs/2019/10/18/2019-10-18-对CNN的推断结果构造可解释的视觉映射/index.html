@@ -106,7 +106,7 @@
     </div>
     
     <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#卷积神经网络与梯度下降法介绍"><span class="toc-text">卷积神经网络与梯度下降法介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#卷积神经网络"><span class="toc-text">卷积神经网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#梯度下降法"><span class="toc-text">梯度下降法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可解释视觉映射：找到模型推断依据"><span class="toc-text">可解释视觉映射：找到模型推断依据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#细粒度方法"><span class="toc-text">细粒度方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#粗粒度方法"><span class="toc-text">粗粒度方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#因子激活映射：从分类器到无监督特征Embedding模型"><span class="toc-text">因子激活映射：从分类器到无监督特征Embedding模型</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#卷积神经网络与梯度下降法介绍"><span class="toc-text">卷积神经网络与梯度下降法介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#卷积神经网络"><span class="toc-text">卷积神经网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#梯度下降法"><span class="toc-text">梯度下降法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可解释视觉映射：找到模型推断依据"><span class="toc-text">可解释视觉映射：找到模型推断依据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#细粒度方法"><span class="toc-text">细粒度方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#粗粒度方法"><span class="toc-text">粗粒度方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#因子激活映射：从分类器到无监督特征-Embedding-模型"><span class="toc-text">因子激活映射：从分类器到无监督特征 Embedding 模型</span></a></li></ol>
 </div>
     
 </div>
@@ -159,17 +159,17 @@
     </div>
     <div class="post-content ">
         <p>报告：Interpretable Visual Explanations for the Inference of CNN</p>
-<p>作者：Matthew D.Zeiler,  Jost Tobias Springenberg</p>
+<p>作者：Matthew D.Zeiler, Jost Tobias Springenberg</p>
 <p>发表：ECCV(2015), ICLR(2015), CVPR (2016), ICCV(2017)</p>
-<p>CNN已经在序列数据的分类与特征学习问题上取得了巨大的成功，但是深度学习模型仍然是一个黑箱，其推断过程复杂难以直观理解。CNN可视化技术利用梯度作为动力，对模型的推断结果自动生成可解释的视觉映射。该领域的代表作有4篇，按时间顺序依次为: <sup><a href="#fn_ 1" id="reffn_ 1"> 1</a></sup><sup><a href="#fn_ 2" id="reffn_ 2"> 2</a></sup><sup><a href="#fn_ 3" id="reffn_ 3"> 3</a></sup> <sup><a href="#fn_4" id="reffn_4">4</a></sup>.  本文对这4篇代表作进行综述性介绍，并给出对无监督特征提取模型生成视觉解释的办法。</p>
-<p><a href="https://www.yuque.com/office/yuque/0/2019/pptx/419889/1573812932711-be22306c-87c6-4b88-a6a2-3004f2715d6c.pptx" target="_blank" rel="noopener">组会报告PDF链接</a></p>
+<p>CNN 已经在序列数据的分类与特征学习问题上取得了巨大的成功，但是深度学习模型仍然是一个黑箱，其推断过程复杂难以直观理解。CNN 可视化技术利用梯度作为动力，对模型的推断结果自动生成可解释的视觉映射。该领域的代表作有 4 篇，按时间顺序依次为: <sup><a href="#fn_ 1" id="reffn_ 1"> 1</a></sup><sup><a href="#fn_ 2" id="reffn_ 2"> 2</a></sup><sup><a href="#fn_ 3" id="reffn_ 3"> 3</a></sup> <sup><a href="#fn_4" id="reffn_4">4</a></sup>. 本文对这 4 篇代表作进行综述性介绍，并给出对无监督特征提取模型生成视觉解释的办法。</p>
+<p><a href="https://www.yuque.com/office/yuque/0/2019/pptx/419889/1573812932711-be22306c-87c6-4b88-a6a2-3004f2715d6c.pptx" target="_blank" rel="noopener">组会报告 PDF 链接</a></p>
 <h2 id="卷积神经网络与梯度下降法介绍"><a href="#卷积神经网络与梯度下降法介绍" class="headerlink" title="卷积神经网络与梯度下降法介绍"></a>卷积神经网络与梯度下降法介绍</h2><h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><p>卷积运算是一种对<strong>序列数据</strong>进行特征匹配的方法, 卷积运算的输出是<strong>若干个相邻输入的加权求和</strong>。卷积运算常用于处理时间序列数据(金融数据, 经济数据), 以及空间序列数据(图数据，图像数据等)。</p>
 <p>卷积神经网络是一种由<strong>多层卷积运算构成的模型</strong>，它能够将输入通过一层一层的过滤分解为不同粒度的特征，并在不同的粒度上学习相应的特征。每经过一层卷积层，特征就会<strong>在不同卷积核下分离</strong>，同时每一个分离特征的粒度则会损失一些，这个过程就是从细粒度特征(fine-grained) 到粗粒度特征(coarse-grained) 的分解过程。</p>
 <p>卷积神经网络具有序列不变性，即它的所有特征层都保留了输入空间对应的序列关系，而这些序列关系在做出判断时非常重要。</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/18/eb58388bc5a2621cfa2158f9d297b411adbfa9e4.png" alt="cnn-1"></p>
 <h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><p>对于一个复杂的模型损失函数 $f(\theta;X)$ 而言，我们总可以在 $\theta$ 离 $\theta_0$ 不远的地方把它写成</p>
 <script type="math/tex; mode=display">
-f(\theta)\approx f(\theta_0)+f'(\theta_0)(\theta-\theta_0)</script><p>利用这个近似公式, 如果我们给定一个比较小的区域$\theta \in (\theta_0-d,\theta_0+d)$， 在这个区域里，我们想要找到$f(\theta)$的最小值, 就应该利用该近似公式，将求$f(\theta)$的最小值的问题转化为求近似的一次方程最小值的问题。显然，这个一次线性函数最小值是沿着$-f^′ (θ_0 )$的方向前进d步长而得到的. 这里$d$就对应于学习率。一个优化过程如下图所示：</p>
+f(\theta)\approx f(\theta_0)+f'(\theta_0)(\theta-\theta_0)</script><p>利用这个近似公式, 如果我们给定一个比较小的区域$\theta \in (\theta_0-d,\theta_0+d)$， 在这个区域里，我们想要找到$f(\theta)$的最小值, 就应该利用该近似公式，将求$f(\theta)$的最小值的问题转化为求近似的一次方程最小值的问题。显然，这个一次线性函数最小值是沿着$-f^′ (θ_0 )$的方向前进 d 步长而得到的. 这里$d$就对应于学习率。一个优化过程如下图所示：</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/18/b1a6e3910414b319cae6003ce691206be30c5041.png" alt="2"></p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/18/b924588ab9dfc81a952297e838c07a78596ed061.png" alt="3"></p>
 <h2 id="可解释视觉映射：找到模型推断依据"><a href="#可解释视觉映射：找到模型推断依据" class="headerlink" title="可解释视觉映射：找到模型推断依据"></a>可解释视觉映射：找到模型推断依据</h2><p>当我们说深度模型的可解释性的时候，我们在说什么？用动力学理论打开黑箱，用扰动理论构造对抗样本，还有——用视觉解释模型做出推断的依据。位置，轮廓，注意力焦点都是很好的依据，如下图所示，当模型判断这个人具有胸腔积液的时候，我们希望同时能得到模型的判断依据——积液位置与积液轮廓</p>
@@ -179,16 +179,16 @@ f(\theta)\approx f(\theta_0)+f'(\theta_0)(\theta-\theta_0)</script><p>利用这�
 <h3 id="粗粒度方法"><a href="#粗粒度方法" class="headerlink" title="粗粒度方法"></a>粗粒度方法</h3><p>细粒度将梯度转变为输入空间的激活，但是这种激活没有具备分层功能，受限于相关性，对输入空间的激活往往容易同时激活原图中多个彼此相关的目标。如我们希望得到狗的推断信心更大，但是可能同时也会激活猫的轮廓，这就是未分层导致的相关性作祟。利用卷积神经网络的序列不变性，我们可以对粗粒度的分层特征同样进行梯度激活，并将激活结果直接插值到与输入空间相同大小，从而获得粗粒度的视觉解释。这种映射方法的梯度计算公式为</p>
 <script type="math/tex; mode=display">
 𝑅𝑒𝐿𝑈(\frac{𝜕𝑦}{𝜕𝐹^𝑖 })∗𝐹^𝑖</script><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/18/d991b6841c01ef5bb1f5b106e200a6cf42f4295b.png" alt="6"></p>
-<h2 id="因子激活映射：从分类器到无监督特征Embedding模型"><a href="#因子激活映射：从分类器到无监督特征Embedding模型" class="headerlink" title="因子激活映射：从分类器到无监督特征Embedding模型"></a>因子激活映射：从分类器到无监督特征Embedding模型</h2><p>以上4篇文章的方法有以下3个局限之处：</p>
+<h2 id="因子激活映射：从分类器到无监督特征-Embedding-模型"><a href="#因子激活映射：从分类器到无监督特征-Embedding-模型" class="headerlink" title="因子激活映射：从分类器到无监督特征 Embedding 模型"></a>因子激活映射：从分类器到无监督特征 Embedding 模型</h2><p>以上 4 篇文章的方法有以下 3 个局限之处：</p>
 <ol>
-<li>仅能对分类器的embedding进行映射，无法进一步扩展到所有embedding方法</li>
+<li>仅能对分类器的 embedding 进行映射，无法进一步扩展到所有 embedding 方法</li>
 <li>需要知道真实的分类标签，但是很多特征映射方法并没有标签</li>
 <li>有时候，我们并不仅仅想知道某一个潜变量空间维度所对应的映射，我们希望知道几个潜变量联合起来的视觉解释是什么</li>
 </ol>
-<p>我们提出了自己的方法，对无监督VAE所提取的因子进行因子激活映射，大致思路如下：</p>
+<p>我们提出了自己的方法，对无监督 VAE 所提取的因子进行因子激活映射，大致思路如下：</p>
 <p>首先，对于一个<strong>VAE</strong>模型</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/18/a404360c4a4ad56aa0f610fd56530a931567171e.png" alt="7"></p>
-<p>我们通过训练ELBO得到它的因子分布，然后通过因子分布损失计算因子激活映射</p>
+<p>我们通过训练 ELBO 得到它的因子分布，然后通过因子分布损失计算因子激活映射</p>
 <p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2019/11/18/57696a6fcef1c0f21ff3a2f8607026fcc88b28af.png" alt="8"></p>
 <blockquote id="fn_ 1">
 <sup> 1</sup>. Visualizing and understanding convolutional networks<a href="#reffn_ 1" title="Jump back to footnote [ 1] in the text."> &#8617;</a>
@@ -208,42 +208,26 @@ f(\theta)\approx f(\theta_0)+f'(\theta_0)(\theta-\theta_0)</script><p>利用这�
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:fenghz@zju.edu.cn"><code> ✉️ fenghz@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -275,24 +259,5 @@ f(\theta)\approx f(\theta_0)+f'(\theta_0)(\theta-\theta_0)</script><p>利用这�
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

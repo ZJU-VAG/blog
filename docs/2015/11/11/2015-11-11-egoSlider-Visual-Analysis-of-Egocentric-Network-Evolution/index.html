@@ -158,74 +158,60 @@
         <p>论文: egoSlider: Visual Analysis of Egocentric Network Evolution</p>
 <p>作者: Yanhong Wu, Naveen Pitipornvivat, Jian Zhao, Sixiao Yang, Guowei Huang, and Huamin Qu</p>
 <p>发表会议: VAST2015</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>文章围绕ego-network的可视化展开. ego-network是社会网络分析研究中一个重要的研究对象, 它由ego(中心人物)和alters(与ego相连的人)组成. 研究ego-network随着时间演化的模式在不同领域(社会学, 人类学等)都是很重要的课题, 也是具有挑战性的问题, 因其具有复杂的时变的图结构.</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>文章围绕 ego-network 的可视化展开. ego-network 是社会网络分析研究中一个重要的研究对象, 它由 ego(中心人物)和 alters(与 ego 相连的人)组成. 研究 ego-network 随着时间演化的模式在不同领域(社会学, 人类学等)都是很重要的课题, 也是具有挑战性的问题, 因其具有复杂的时变的图结构.</p>
 <div align="center">简单的带tag的ego-network</div>
 
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/图片2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/%E5%9B%BE%E7%89%872.png" alt="img"></a></p>
 <p>在与专家讨论后, 文章从三个层次(macroscopic, mesoscopic, microscopic)来设定分析的问题(任务). 先前相关文献都没有从多层次的分析, 因而本文在这方面是考虑十分完善的.</p>
-<p>macro: </p>
+<p>macro:</p>
 <ol>
-<li>在每个时间段, 一大群人的ego-networks有怎样的pattern?  </li>
-<li>一大群人的ego-networks的演化趋势是怎样的?</li>
+<li>在每个时间段, 一大群人的 ego-networks 有怎样的 pattern?</li>
+<li>一大群人的 ego-networks 的演化趋势是怎样的?</li>
 </ol>
-<p>meso: </p>
+<p>meso:</p>
 <ol>
-<li>多人的ego-networks大体相似性? </li>
-<li>在特定时间点, 多人的ego-networks之间的区别?.</li>
+<li>多人的 ego-networks 大体相似性?</li>
+<li>在特定时间点, 多人的 ego-networks 之间的区别?.</li>
 </ol>
-<p>micro: </p>
-<pre><code>5.   一个ego的1阶和2阶alters数目随时间的变化?  
- 6.   ego和它alters之间边强度随时间的变化? 
- 7.   alters和一个ego之间如何连接的?  
- 8.   关系是如何生成的?
-</code></pre><p>依照这些, 作者设计了一个系统egoSlider, 三个视图Data Overview, Summary Timeline View, Alter Timeline View分别对应上面的macro, meso, micro.</p>
+<p>micro:</p>
+<pre><code>5.   一个ego的1阶和2阶alters数目随时间的变化?
+</code></pre><ol>
+<li>ego 和它 alters 之间边强度随时间的变化?</li>
+<li>alters 和一个 ego 之间如何连接的?</li>
+<li>关系是如何生成的?</li>
+</ol>
+<p>依照这些, 作者设计了一个系统 egoSlider, 三个视图 Data Overview, Summary Timeline View, Alter Timeline View 分别对应上面的 macro, meso, micro.</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/图片1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/%E5%9B%BE%E7%89%871.png" alt="img"></a></p>
-<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><h3 id="系统界面"><a href="#系统界面" class="headerlink" title="系统界面"></a>系统界面</h3><p>左边macro 右上meso, 单击一个人则出现micro. 作者设计了展示关键信息的glyph来编码其中的特征. 左边用到了一些图相似性的定义与MDS; 别的多为统计信息的展示以及简单的聚类. 提供了大量交互操作, 可以对不同时间段进行对比, 可以按照不同的分类目标用不同的颜色进行分类等等, 比较完备.</p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><h3 id="系统界面"><a href="#系统界面" class="headerlink" title="系统界面"></a>系统界面</h3><p>左边 macro 右上 meso, 单击一个人则出现 micro. 作者设计了展示关键信息的 glyph 来编码其中的特征. 左边用到了一些图相似性的定义与 MDS; 别的多为统计信息的展示以及简单的聚类. 提供了大量交互操作, 可以对不同时间段进行对比, 可以按照不同的分类目标用不同的颜色进行分类等等, 比较完备.</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/图片21.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2015/11/%E5%9B%BE%E7%89%8721.png" alt="img"></a></p>
-<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><p>文章的Evaluation分为两部分, 一是应用场景, 即dblp中图形学, 可视化相关领域的专家的一个ego-network的分析, 从系统中得到大量问题并在实际生活中找到例子得以验证. 二是用户调研, 体现其系统的高效性.</p>
-<p>作者没有具体的夸奖自己, 倒是提了一些缺点, 比如MDS导致上下图的点不一致性, 比如使用该系统还需要一定的不小的学习成本, 比如有些组件还是具有一些迷惑性. 从我的角度看, 这篇文章写的比较完备(分析的多层次多角度), 然后系统的美观性强, 紧扣分析任务. 对于ego-network的展示和简单的分析到位.</p>
+<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><p>文章的 Evaluation 分为两部分, 一是应用场景, 即 dblp 中图形学, 可视化相关领域的专家的一个 ego-network 的分析, 从系统中得到大量问题并在实际生活中找到例子得以验证. 二是用户调研, 体现其系统的高效性.</p>
+<p>作者没有具体的夸奖自己, 倒是提了一些缺点, 比如 MDS 导致上下图的点不一致性, 比如使用该系统还需要一定的不小的学习成本, 比如有些组件还是具有一些迷惑性. 从我的角度看, 这篇文章写的比较完备(分析的多层次多角度), 然后系统的美观性强, 紧扣分析任务. 对于 ego-network 的展示和简单的分析到位.</p>
 
         
         <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:akiori@zju.edu.cn"><code> ✉️ akiori@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -257,24 +243,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

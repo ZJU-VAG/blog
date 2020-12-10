@@ -169,20 +169,20 @@
 <li>动态图转化成静态图的方法：通过在时序上相邻的两个图之间增加时序边的方法，将一系列动态图组合成一整个图，再对该图进行小波变换</li>
 <li>小波变换对突变的检测：利用小波变换的高频部分来检测动态图中存在的突变。</li>
 <li>制定的四个目标，基本上包含了动态图可视化中所存在的任务：<ul>
-<li><strong>目标1</strong>：将网络当做整体来进行分析</li>
-<li><strong>目标2</strong>：对每个节点的分析。</li>
-<li><strong>目标3</strong>：重要节点的辨认。</li>
-<li><strong>目标4</strong>：相似节点的辨认。</li>
+<li><strong>目标 1</strong>：将网络当做整体来进行分析</li>
+<li><strong>目标 2</strong>：对每个节点的分析。</li>
+<li><strong>目标 3</strong>：重要节点的辨认。</li>
+<li><strong>目标 4</strong>：相似节点的辨认。</li>
 </ul>
 </li>
-<li>详尽的usage scenario，甚至可能可以当做模板</li>
+<li>详尽的 usage scenario，甚至可能可以当做模板</li>
 </ol>
 <p>为了阅读这篇文章，我花了一段时间补习了傅里叶变换、小波变换、谱图理论的相关背景知识，但读这篇文章的理论部分还是有点困难，想了很久。</p>
 <p>接下去说说它的不足：</p>
 <ol>
 <li>可视化设计简单：其几个视图的设计都异常简洁（或许其简洁也是其亮点），可视化设计方面没有太大的创新</li>
 <li>文章上下文背景知识的补充不足：经常出现不明所以的结论，没有任何铺垫，比如：为何小波变换后，高频部分比较突出的节点可以视作突变节点？</li>
-<li>Motivation的不足：可能多讲一些动态图可视化背景来引出4种目标会更好</li>
+<li>Motivation 的不足：可能多讲一些动态图可视化背景来引出 4 种目标会更好</li>
 </ol>
 <p>启发：</p>
 <ol>
@@ -205,7 +205,7 @@
 <li>对一组时间序列内的小波分析结果进行了表示</li>
 </ol>
 <h3 id="动态图模型"><a href="#动态图模型" class="headerlink" title="动态图模型"></a>动态图模型</h3><p>作者将一系列的动态图相互串联（两个邻时刻同样的点之间，用临时的边进行链接，如图中的蓝边），以形成一整个图，从而应用图小波变换对其进行分析。</p>
-<p>但并不是串联所有的动态图，作者在这里定义了一个时间窗口，在时间窗口内的图会被串联起来（比如5分钟）</p>
+<p>但并不是串联所有的动态图，作者在这里定义了一个时间窗口，在时间窗口内的图会被串联起来（比如 5 分钟）</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-135039.png" alt="image-20180624215039214"></p>
 <h3 id="节点信号和边权重"><a href="#节点信号和边权重" class="headerlink" title="节点信号和边权重"></a>节点信号和边权重</h3><p>节点信号的定义和边权重的定义都对分析有着重要影响。</p>
 <p>比如：</p>
@@ -215,19 +215,19 @@
 </ul>
 <p>总而言之，如果自己定义信号，用图小波变换进行可视分析则是对节点的某个特征在拓扑空间和时间上的分布进行的分析。如果没有定义，那么就是对这个节点的拓扑信息进行了分析。</p>
 <p>还可以控制那些不同时间片段的图之间的连接边的权重，用来控制分析过程中时间的影响。</p>
-<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>每个节点都用一个特征向量（feature vector，并非eigenvector）来进行分类，这个特征向量事实上就是小波系数$FV_j=(S_f(j), W_f(s_r,j), \ldots, W_f(s_1, j))$。</p>
-<p>减少噪声：每个时间片中的孤立节点会被分配为0类。</p>
+<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>每个节点都用一个特征向量（feature vector，并非 eigenvector）来进行分类，这个特征向量事实上就是小波系数$FV_j=(S_f(j), W_f(s_r,j), \ldots, W_f(s_1, j))$。</p>
+<p>减少噪声：每个时间片中的孤立节点会被分配为 0 类。</p>
 <p>分类方法：机械扭矩。类似于将特征向量的各个值放在跷跷板上，看这个跷跷板往哪边偏，来判定这个特征向量主要是低频的还是高频的。</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-143752.png" alt="image-20180624223752644"></p>
 <p>分类的这种方法，比直接解释系数容易的多。一共分成五类：</p>
 <p>[-1, -0.3), [0.3, -0.05], [-0.05, 0.05), [0.05, 0.3), [0.3, 1]，编码从深蓝到红色。<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-145102.png" alt="image-20180624225101805"></p>
 <p>红色的节点，代表了信号的突变（时间和空间邻域上），但作者并未解释为什么高频代表了突变。</p>
-<h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><p>宗旨是为了能够发现动态网络中的pattern以及这些pattern是如何随时间演变的。</p>
+<h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><p>宗旨是为了能够发现动态网络中的 pattern 以及这些 pattern 是如何随时间演变的。</p>
 <ul>
-<li><strong>目标1</strong>：将网络当做整体来进行分析</li>
-<li><strong>目标2</strong>：对每个节点的分析。</li>
-<li><strong>目标3</strong>：重要节点的辨认。</li>
-<li><strong>目标4</strong>：相似节点的辨认。</li>
+<li><strong>目标 1</strong>：将网络当做整体来进行分析</li>
+<li><strong>目标 2</strong>：对每个节点的分析。</li>
+<li><strong>目标 3</strong>：重要节点的辨认。</li>
+<li><strong>目标 4</strong>：相似节点的辨认。</li>
 </ul>
 <p>四个界面：</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161348.png" alt="image-20180625001348008"></p>
@@ -248,42 +248,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:panjiacheng@zju.edu.cn"><code> ✉️ panjiacheng@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -315,24 +299,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>

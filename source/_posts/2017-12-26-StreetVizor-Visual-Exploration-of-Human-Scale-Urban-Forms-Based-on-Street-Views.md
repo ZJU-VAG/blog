@@ -3,12 +3,13 @@ title: "StreetVizor: Visual Exploration of Human-Scale Urban Forms Based on Stre
 tags: ["论文评述", "报告"]
 date: 2017-12-26
 author: 朱闽峰
+mail: minfeng_zhu@zju.edu.cn
 mathjax: true
 ---
 
 论文：StreetVizor: Visual Exploration of Human-Scale Urban Forms Based on Street Views
 
-作者：Qiaomu Shen, Wei Zeng, Yu Ye, Stefan Müller Arisona, Simon Schubiger,  Remo Burkhard, Huamin Qu
+作者：Qiaomu Shen, Wei Zeng, Yu Ye, Stefan Müller Arisona, Simon Schubiger, Remo Burkhard, Huamin Qu
 
 发表：IEEE SciVis 2017
 
@@ -28,37 +29,37 @@ mathjax: true
 
 T1：多尺度的探索
 
-- 城市形态可以组织城市层次、区域层次、街道层次
+-   城市形态可以组织城市层次、区域层次、街道层次
 
-- overview到detail
+-   overview 到 detail
 
 T2：定量测定
 
-- 特征：绿化、天空、建筑、道路、车辆
+-   特征：绿化、天空、建筑、道路、车辆
 
-- 城市形态的特征统计、特征分布、特征方差
+-   城市形态的特征统计、特征分布、特征方差
 
 T3：排序和比较
 
-- 方便浏览和探索，特征需要被排序
+-   方便浏览和探索，特征需要被排序
 
-- 选择两个区域进行比较特征
+-   选择两个区域进行比较特征
 
 ## 系统框架
 
 1. 数据采集：Google Street View
 
-文章手机了170万张谷歌街景图片，包括新加坡、香港、伦敦和纽约等四个城市。首先从OpenStreetMap中获取路网信息，每隔50米采集一张谷歌街景图，只去街景采集车辆行进过程中向前向后的照片，因为这边照片包含了道路上的信息。
+文章手机了 170 万张谷歌街景图片，包括新加坡、香港、伦敦和纽约等四个城市。首先从 OpenStreetMap 中获取路网信息，每隔 50 米采集一张谷歌街景图，只去街景采集车辆行进过程中向前向后的照片，因为这边照片包含了道路上的信息。
 
 2. 数据处理：SegNet
 
-基于深度学习方法SegNet，所有图片的像素点被分为12个类，包括绿化、天空等。作者对12个类做了聚合，分为绿化、天空、建筑、道路、车辆和其他共6个类。每张图片按照6个类的像素点比例构成6维向量。
+基于深度学习方法 SegNet，所有图片的像素点被分为 12 个类，包括绿化、天空等。作者对 12 个类做了聚合，分为绿化、天空、建筑、道路、车辆和其他共 6 个类。每张图片按照 6 个类的像素点比例构成 6 维向量。
 
 ![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture1.png)
 
 3. 可视分析流程
 
-整个可视化分析的流程包括两个步骤，首先在Ranking Explorer视图中选取两个要比较的街道或者区域，然后在对应的AOI Explorer或者Street Explorer比较不同层次的城市形态。
+整个可视化分析的流程包括两个步骤，首先在 Ranking Explorer 视图中选取两个要比较的街道或者区域，然后在对应的 AOI Explorer 或者 Street Explorer 比较不同层次的城市形态。
 
 Ranking Explorer：选择两个街道/区域
 
@@ -72,13 +73,13 @@ Street Explorer：街道层次的比较
 
 ![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture12.png)
 
-可视化系统主要包含3个视图，分别是Ranking Explorer（左）、AOI Explorer（中）和Street Explorer（右）。
+可视化系统主要包含 3 个视图，分别是 Ranking Explorer（左）、AOI Explorer（中）和 Street Explorer（右）。
 
 ### Ranking Explorer
 
 本视图用于总览不同区域或者街道的特征分布，帮助用户选择感兴趣的对象。
 
-布局：每一行代表城市、区域或者街道，每一列代表6个特征维度，每个单元格展示了特征的平均值。
+布局：每一行代表城市、区域或者街道，每一列代表 6 个特征维度，每个单元格展示了特征的平均值。
 
 ### AOI Explorer
 
@@ -92,7 +93,7 @@ Feature Correlation（a）：散点图的形式展现两两维度之间的关系
 
 Feature Histogram（b）：每个维度的数量统计
 
-Feature Diversity（c）：x轴为类均值，y轴为标准差
+Feature Diversity（c）：x 轴为类均值，y 轴为标准差
 
 ![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture21.png)
 
@@ -122,7 +123,7 @@ City-scale Comparison
 
 Region-scale Exploration
 
-在这里我们比较了新加坡的东陵（红）和伦敦的中央公园（蓝），这两个地方都是公园性质的区域，具有类似的功能。从A1中可以看到，这两个区域都有非常高的绿化属性，而中央公园绿化更高一些。A2中说明新加坡的东陵有更高的建筑比例，这是由于新加坡希望最大化土地利用率。
+在这里我们比较了新加坡的东陵（红）和伦敦的中央公园（蓝），这两个地方都是公园性质的区域，具有类似的功能。从 A1 中可以看到，这两个区域都有非常高的绿化属性，而中央公园绿化更高一些。A2 中说明新加坡的东陵有更高的建筑比例，这是由于新加坡希望最大化土地利用率。
 
 [![img](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture6.png)](http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2017/12/Picture6.png)
 
@@ -134,4 +135,4 @@ Street-scale Comparison
 
 ## 总结
 
-文章提出了一个探索和比较城市形态的可视分析系统，StreetVizor。未来工作将从街景图中抽取更多的语义信息，比如布告板和POI信息等，这样可以接入更多种类的数据，从多个角度分析城市形态。
+文章提出了一个探索和比较城市形态的可视分析系统，StreetVizor。未来工作将从街景图中抽取更多的语义信息，比如布告板和 POI 信息等，这样可以接入更多种类的数据，从多个角度分析城市形态。

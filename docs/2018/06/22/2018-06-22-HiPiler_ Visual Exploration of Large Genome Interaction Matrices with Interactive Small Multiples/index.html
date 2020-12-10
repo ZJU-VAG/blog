@@ -160,15 +160,15 @@
     <div class="post-content ">
         <p>论文：HiPiler: Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples</p>
 <p>作者：Fritz Lekschas, Benjamin Bach, Peter Kerpedjiev, Nils Gehlenborg, and Hanspeter Pﬁster</p>
-<p>发表：IEEE InfoVis 2017 </p>
+<p>发表：IEEE InfoVis 2017</p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1）目标：辅助用户在巨大的矩阵（百万*百万级）中探索众多感兴趣的区域</p>
 <p>2）挑战：</p>
 <ul>
 <li><p>工作量大</p>
 </li>
-<li><p>算法识别结果不可信且缺少ground-truth难以评估</p>
+<li><p>算法识别结果不可信且缺少 ground-truth 难以评估</p>
 </li>
-<li><p>已有可视化系统不支持大数据中小ROI的细节探索</p>
+<li><p>已有可视化系统不支持大数据中小 ROI 的细节探索</p>
 </li>
 </ul>
 <p>3）贡献 (HiPiler )：</p>
@@ -177,31 +177,31 @@
 </li>
 <li><p>在大图案集中描述并检测集合和异常点</p>
 </li>
-<li><p>多矩阵比较ROIs</p>
+<li><p>多矩阵比较 ROIs</p>
 </li>
 <li><p>图案相关性</p>
 </li>
 </ul>
 <p>4）数据：</p>
 <ul>
-<li><p>DNA序列之间的接触次数→行列有固定顺序的大规模矩阵数据</p>
+<li><p>DNA 序列之间的接触次数 → 行列有固定顺序的大规模矩阵数据</p>
 </li>
 <li><p>包含用户感兴趣的片段</p>
 </li>
 <li><p>片段有距离对角线的距离等属性</p>
 </li>
 </ul>
-<h2 id="专家采访"><a href="#专家采访" class="headerlink" title="专家采访"></a>专家采访</h2><p>1）对象：7个博后+3个研究生|四个生物学+六个算法</p>
+<h2 id="专家采访"><a href="#专家采访" class="headerlink" title="专家采访"></a>专家采访</h2><p>1）对象：7 个博后+3 个研究生|四个生物学+六个算法</p>
 <p>2）长期目标：更好地理解基因组对基因调控等过程的作用</p>
 <p>3）可视化：- 用来探索，确认算法，展示结果并产生新想法</p>
 <ul>
-<li>相比于p-value更能增加新发现的信心</li>
+<li>相比于 p-value 更能增加新发现的信心</li>
 </ul>
 <p>4）当前挑战：</p>
 <ul>
-<li>大数据→平移放缩丢失上下文</li>
-<li>多图案→难以发现细微的差异或异常</li>
-<li>噪音→特征不一定突出</li>
+<li>大数据 → 平移放缩丢失上下文</li>
+<li>多图案 → 难以发现细微的差异或异常</li>
+<li>噪音 → 特征不一定突出</li>
 </ul>
 <p>5）任务：</p>
 <p>T1:寻找已知图案<br>T2:发现新图案<br>T3:研究一个图案的实例<br>T4:比较同图案的实例<br>T5:将特征和图案实例相关联<br>T6:在矩阵中比较感兴趣的区域</p>
@@ -214,27 +214,26 @@
 <li><p>如何有效地关联矩阵和片段？</p>
 </li>
 </ul>
-<p>2）界面：分为矩阵视图（左）和片段视图（右）。矩阵视图上方为整个矩阵的overview，下方为细节展示，可放缩平移；片段视图可以交互地对片段进行排列、探索。</p>
+<p>2）界面：分为矩阵视图（左）和片段视图（右）。矩阵视图上方为整个矩阵的 overview，下方为细节展示，可放缩平移；片段视图可以交互地对片段进行排列、探索。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/图片1.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/%E5%9B%BE%E7%89%871.png" alt="img"></a></p>
 <p>3）片段隐喻（T1, T2, T3, T5）：类别型属性用颜色再下方编码；有序型数据用边框的颜色和粗细编码</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/图片2.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/%E5%9B%BE%E7%89%872.png" alt="img"></a></p>
-<p>4）片段布局（T4）：分为一维、二维和多维三种。多维使用T-SNE方法降维得到布局。</p>
+<p>4）片段布局（T4）：分为一维、二维和多维三种。多维使用 T-SNE 方法降维得到布局。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/图片3.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/%E5%9B%BE%E7%89%873.png" alt="img"></a></p>
-<p>5）片段聚类（T4, T6）：聚类后，每个片段每列取平均值划为一行的形式显示在上方，可以hover查看具体图案。集合封面可以显示集合的平均值或者方差。</p>
+<p>5）片段聚类（T4, T6）：聚类后，每个片段每列取平均值划为一行的形式显示在上方，可以 hover 查看具体图案。集合封面可以显示集合的平均值或者方差。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/图片4.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/%E5%9B%BE%E7%89%874.png" alt="img"></a></p>
 <p>6）视图关联（T5, T6）：</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/图片51.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/%E5%9B%BE%E7%89%8751.png" alt="img"></a></p>
-<p>7）交互：系统提供三种交互创建集合：拖拽、lasso以及扫选（视频中显示还可以通过设定粒度格来分组）。集合可以通过双击删除。</p>
+<p>7）交互：系统提供三种交互创建集合：拖拽、lasso 以及扫选（视频中显示还可以通过设定粒度格来分组）。集合可以通过双击删除。</p>
 <p><a href="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/图片6.png" target="_blank" rel="noopener"><img src="http://www.cad.zju.edu.cn/home/vagblog/wp-content/uploads/2018/06/%E5%9B%BE%E7%89%876.png" alt="img"></a></p>
 <h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p>1）对象：计算生物学家*10</p>
 <p>2）流程：</p>
 <ul>
-<li>介绍（10-20分钟）</li>
-</ul>
-<ul>
-<li><p>练习+训练数据（10分钟）</p>
+<li><p>介绍（10-20 分钟）</p>
 </li>
-<li><p>探索自己的数据（30-90分钟）</p>
+<li><p>练习+训练数据（10 分钟）</p>
+</li>
+<li><p>探索自己的数据（30-90 分钟）</p>
 </li>
 </ul>
 <p>3）发现</p>
@@ -260,42 +259,26 @@
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
-
+        <hr/>
         <div id="lv-container">
+            Questions & Discussion：<a href="mailto:wangxumeng@zju.edu.cn"><code> ✉️ wangxumeng@zju.edu.cn </code> </a>
         </div>
-
+        <hr/>
     </div>
 </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
+             
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
 </footer>
-
-
 
 
 <script type="text/x-mathjax-config">
@@ -327,24 +310,5 @@
 
 
 
-
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
 
 </html>
