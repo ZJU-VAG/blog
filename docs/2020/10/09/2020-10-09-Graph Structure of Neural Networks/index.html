@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Graph Structure of Neural Networks - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/aircloud.css">
+    <link rel="stylesheet" href="/blog/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://zjuvag.org"><img
+                    src="https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg" /></a>
+        </div>
+        <div class="name">
+            <a href="http://zjuvag.org">
+                <i>ZJU VAG</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="http://zjuvag.org">
+                    <!-- <a href="/blog/about/"> -->
+                    <i class="iconfont icon-fanhui"></i>
+                    <span>小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>博客搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#作者介绍"><span class="toc-text">作者介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贡献"><span class="toc-text">贡献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系图"><span class="toc-text">关系图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优点"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#信息交换"><span class="toc-text">信息交换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关系图生成网络"><span class="toc-text">关系图生成网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图结构与网络性能"><span class="toc-text">图结构与网络性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结论"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Graph Structure of Neural Networks
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2020-10-09 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2020-10-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#潘如晟"
+                title="潘如晟">潘如晟</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h3 id="作者介绍"><a href="#作者介绍" class="headerlink" title="作者介绍"></a>作者介绍</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/b181f9b36d5d71a06f670005f360a7f9b8427b62.png" alt="作者介绍"></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>对于一个神经网络，我们往往能够很直观的把它和一张图联系起来。它可以是最简洁的示意图，tensorboard风格的计算图，甚至是精确到每个神经元之间的连接。我们希望能够找到一个综合以上特点的图表示，能够回答以下这些问题：</p>
+<ul>
+<li><p>图的结构和网络性能之间是否存在<strong>关联</strong>？</p>
+</li>
+<li><p>如果是，性能好的网络对应的图结构上有哪些<strong>特征</strong>？</p>
+</li>
+<li><p>这些特征是否可以<strong>推广</strong>到一般的任务和数据集？</p>
+</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/58c2f27de277fa7ac47013d137e2ebc61b9790e7.png" alt="背景1"></p>
+<p>此外，人脑也可以抽象成一个图结构数据，通过拓扑结构等分析方法与已有的图数据进行一些类比，如下图所示。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/e4de035c57e4a236218c5856dc3e4eb7fea2c027.png" alt="大脑网络"></p>
+<h3 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h3><p>现有的现有的神经网络图的表示主要是基于计算图形式，近年来主要有二部图，有向无环图和邻接矩阵几种常见形式。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/3a163993746f3fb25f087c6ace1c2c19872fc680.png" alt="相关工作"></p>
+<p>计算图这一特定形式由于人为设定了约束，存在以下几点局限性：</p>
+<ul>
+<li>缺乏灵活性<ul>
+<li>有向无环图：人为设置的约束限制了设计空间和应用范围</li>
+</ul>
+</li>
+<li>难以与神经科学关联<ul>
+<li>大脑网络的结构灵活而复杂</li>
+<li>双向的信息传输</li>
+</ul>
+</li>
+</ul>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><p>基于上述这些背景，本文有以下几点贡献：</p>
+<ul>
+<li>提出了一种新的神经网络的表示方式：关系图</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/daeb05c63837878559f39275bb2dbf05145e8a4a.png" alt></p>
+<ul>
+<li>基于不同的前提条件，同一关系图能够代表多种网络结构</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/1234ef795fff68bd641909526cd9ed4f2d0688ef.png" alt></p>
+<ul>
+<li>将网络科学的分析方法有效应用于图结构和神经网络性能的关系的分析</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/861b2ce7b4a7fcbf48f9c9f5dbcf807e27ed84b4.png" alt></p>
+<h3 id="关系图"><a href="#关系图" class="headerlink" title="关系图"></a>关系图</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<li><p>节点：神经元</p>
+</li>
+<li><p>无向边：代表神经元之间的连接</p>
+</li>
+<li><p>计算：通过节点和邻居节点之间的消息交换来表示</p>
+</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/24a83c692f5fdb5d7b4864f2b9cc4aa8d4698ade.png" alt></p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>灵活性<ul>
+<li>不受图结构的限制（无向图）</li>
+</ul>
+</li>
+<li>容易与神经科学联系<ul>
+<li>能够表示双向信息传输</li>
+</ul>
+</li>
+</ul>
+<h4 id="信息交换"><a href="#信息交换" class="headerlink" title="信息交换"></a>信息交换</h4><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/33520558ff4447ba7ebc3650e668316cbccb0450.png" alt></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/990c92fd4ac755b013c8ac7080aa0347e4f1a0e1.png" alt></p>
+<h3 id="关系图生成网络"><a href="#关系图生成网络" class="headerlink" title="关系图生成网络"></a>关系图生成网络</h3><p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/18659fbfb459a983ba5fbb074c4f4281d9ac00c1.png" alt></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/3edc254708005f315cc2b3f7cac4055759ebe98f.png" alt></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/123cb17c79cf1cbd63f377b573dd7bb77f951d7e.png" alt></p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/36ebe4b30fa2e8f680d7d033b81004dbec0d6911.png" alt></p>
+<h3 id="图结构与网络性能"><a href="#图结构与网络性能" class="headerlink" title="图结构与网络性能"></a>图结构与网络性能</h3><ul>
+<li><p>图结构的度量</p>
+<ul>
+<li>全局特征：平均路径长度</li>
+<li>局部特征：聚类系数（clustering coefficient）</li>
+</ul>
+</li>
+<li><p>图生成方法</p>
+</li>
+<li><p>WS-flex：有更好的覆盖范围</p>
+<pre><code>![](http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/88e70735a1a125f4f17572b8b5914401b2195509.png)
+</code></pre></li>
+</ul>
+<ul>
+<li>控制计算开销一致</li>
+</ul>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/770d4fe2a4733830968f0937b89b804ec5444578.png" alt></p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ol>
+<li>不同结构的神经网络存在一致的最佳位置：具有特定结构的图所对应的神经网络往往性能都很好</li>
+</ol>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/997c27f346dcf54c5557eab309868279ce2ad2b8.png" alt>2. 最好的人工神经网络和生物神经网络结构相似：最好的5层感知机和猿猴的大脑全皮层神经网络非常相似。</p>
+<p><img src="http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/10/9/ee5b8c3b710e5bd3c759042cc7a2b0e8d48814b3.png" alt></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><p>关系图基于FC，通用性有待提高</p>
+</li>
+<li><p>将网络科学和深度学习架构进一步结合</p>
+</li>
+<li><p>在图神经网络中的应用</p>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:"><code> ✉️  </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a href="https://hexo.io/">Hexo</a> Theme
+        <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
