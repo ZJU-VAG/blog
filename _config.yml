@@ -11,11 +11,11 @@ author: ZJU VAG
 language: zh
 timezone:
 sidebar-avatar: "https://zjuvag.org/authors/admin/avatar_hue342753856f1b55bb62d38c7380e0dc0_121560_250x250_fill_q90_lanczos_center.jpg"
-about: "http://zjuvag.org"
+about: "/"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zjuvag.org/blog/
+url: /
 root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -43,19 +43,19 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-    enable: true
-    line_number: true
-    auto_detect: false
-    tab_replace:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-    path: ""
-    per_page: 15
-    order_by: -date
+  path: ""
+  per_page: 15
+  order_by: -date
 
 # Category & Tag
 default_category: uncategorized
@@ -82,16 +82,16 @@ theme: hexo-theme-aircloud
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-    type: git
-    repo: git@github.com:ZJUVAG/blog.git
+  type: git
+  repo: git@github.com:ZJUVAG/blog.git
 
 search:
-    path: search.json
-    field: post
+  path: search.json
+  field: post
 
 math:
-    enable: true
-    engine: "mathjax"
+  enable: true
+  engine: "mathjax"
 
 # comment:
 #     type: livere
@@ -99,4 +99,4 @@ math:
 #     livere_uid: MTAyMC8yOTk2MC82NTI1
 
 author_generator:
-    per_page: 10
+  per_page: 10
